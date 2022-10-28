@@ -1,0 +1,65 @@
+---
+title: "Dr. David Simons"
+about:
+  template:  jolla
+  image: "images/david.jpg"
+  image-width: 30em
+  links:
+    - text: "{{< ai orcid >}} ORCID"
+      url: "https://orcid.org/0000-0001-9655-1656"
+    - text: Twitter
+      url: https://twitter.com/David_Simons_UK
+      icon: twitter
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      url: "https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en"
+    - text: GitHub
+      url: "https://github.com/DidDrog11"
+      icon: github
+    - text: Email
+      url: "mailto:dsimons19@rvc.ac.uk"
+      icon: envelope-fill
+    - text: C.V.
+      url: "data/cv.pdf"
+---
+
+# About me
+
+I am a practicing medical doctor and current PhD student based in the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed) at the Royal Veterinary College, London. I am funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/). I am supervised by an interdisciplinary team of researchers, Prof. [Richard Kock](https://www.rvc.ac.uk/about/our-people/richard-kock) (RVC), Prof. [Deborah Watson-Jones](https://scholar.google.com/citations?user=csCh6RsAAAAJ) (LSHTM), and Prof. [Kate Jones](https://www.ucl.ac.uk/biosciences/people/prof-kate-jones) (UCL). My research interests fit within the fields of [Planetary Health](https://unfccc.int/climate-action/momentum-for-change/planetary-health) and [One Health](https://www.cdc.gov/onehealth/basics/index.html) with a particular focus on the effect of anthropogenic change on the risks of zoonotic infectious disease emergence and subsequent spread. I use systems approaches to understand the interaction between human and biological factors on these risks. We are currently based in San Diego, USA where, [Olga Perski's](https://olgaperski.com) Marie Skłodowska–Curie fellowship is based at the University of California San Diego.
+
+## My PhD
+
+My PhD research is predominantly focused in Sierra Leone, West Africa with [Lassa fever](https://www.cdc.gov/vhf/lassa/index.html), [Monkeypox](https://www.cdc.gov/poxvirus/monkeypox/) and [Ebola](https://www.cdc.gov/vhf/ebola/) as model disease systems. I adopt interdisciplinary approaches using methods from clinical medicine, epidemiology, mathematical modelling and systems biology. I am a member of the [PANDORA-ID-net](https://pandora.tghn.org/) consortium and work closely with collaborators on the [One Health theme](https://pandora.tghn.org/one-health/). My field work is conducted with colleagues based at Njala University in Sierra Leone. With this work I aim to develop dynamic models of disease risk and translate these into policy implementations to promote the health and wellbeing of human communities in low resource settings within a planetary health framework. I am also interested in the area of antimicrobial resistance (AMR), another topic benefiting from a One Health approach.
+
+I am a proponent of Open Science with pre-specified research questions and study protocols posted to the [Open Science Framework](https://osf.io/dashboard). I am developing my programming skills and will continue to try and make all code used for my analyses available in reproducible files hosted on my [GitHub](https://github.com/diddrog11) page. All data where possible will be hosted on open data repositories and will be linked to the projects contained within this website.
+
+## Clinical practice
+
+I continue to practice as a clinician with the [Hospital for Tropical Diseases](http://www.thehtd.org) and within the emergency department at University College London Hospital. Alongside my clinical work during the COVID-19 pandemic I have contributed to the work of LSHTM's [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19/) to understand the transmission dynamics of SARS-CoV-2 and potential control measures.
+
+Alongside my PhD programme I worked with Public Health England (now the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency)). I was based in the Outbreak Surveillance Team starting shortly before the beginning of the Omicron variant importation and spread. During this period I was responsible for producing an automated approach to monitoring real time reported cases exploring spatial spread and informing contact tracing and the initial public health response. This work led to several insights which have been written up and published. I was nominated for and received an award for my contribution to the immediate response to Omicron emergence. I was also involved in the UK Monkeypox outbreak investigating how we could understand transmission parameters using contact tracing data within the dense community networks in which cases were identified.
+
+## Education
+
+**The Royal Veterinary College** \| London, UK
+
+PhD in Epidemiology of Emerging Zoonotic Infectious Diseases \| Sep 2019 - Ongoing
+
+**The London School of Hygiene and Tropical Medicine** \| London, UK
+
+MSc in Tropical Medicine and International Health \| Sep 2018 - Sep 2019
+
+**The London School of Hygiene and Tropical Medicine** \| London, UK
+
+DTM&H Diploma in Tropical Medicine and Hygiene \| Sep 2018 - Dec 2018
+
+**Guy's, King's and St. Thomas' Medical School, King's College London** \| London, UK
+
+MBBS in Medicine and Surgery \| Sep 2012 - Sep 2016
+
+**University of Leeds** \| Leeds, UK
+
+MSc in Biodiversity and Conservation \| Sep 2010 - Sep 2011
+
+**University of Leeds** \| Leeds, UK
+
+BSc in Natural Sciences w/ Industrial Placement \| Sep 2006 -Sep 2010

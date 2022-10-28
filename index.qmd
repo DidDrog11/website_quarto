@@ -1,0 +1,28 @@
+---
+title: "David Simons"
+subtitle: "Zoonoses, Infectious Diseases and Antimicrobial Resistance"
+---
+
+This is my personal website, I describe my journey so far in the [About me](about.qmd) section and I have organised my current work into themes.
+
+---
+
+# [Lassa Fever](lassa.qmd)
+
+[Lassa Fever](https://www.cdc.gov/vhf/lassa/index.html) is an endemic zoonotic infectious disease across much of West Africa. It is classed as a Viral Haemorrhagic Fever, there are no current effective treatments for individuals infected with this virus (*Lassa mammarenavirus*) and no licensed vaccines. Human cases of disease are regularly reported from Nigeria, Sierra Leone, Liberia and Guinea. Sporadic cases are also reported from other West African countries, including, Benin, Togo, Mali and Ghana. The annual incidence of disease is not known and is estimated between 100-900,000 cases annually. Epidemiological studies led by the [Coalition for Epidemic Preparedness Innovations](https://cepi.net/news_cepi/largest-ever-lassa-fever-research-programme-launches-in-west-africa/?swcfpc=1) are ongoing and will help local public health agencies understand the true scale of this disease.
+
+The zoonotic host of *Lassa mammarenavirus* are rodent species', primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)), although virus or evidence of viral infection has been found in 12 other rodent species across the endemic zone. This rodent species is found across sub-Saharan Africa although this pathogen is limited to it's Westernmost range. The reasons behind this are not understood and this raises concern that the endemic range of this pathogen has potential to expand.
+
+My research focusses on the ecology of rodent species within the endemic region and whether a better understanding of host dynamics can help us to quantify the risk of pathogen spillover into human populations. Understanding dynamics of both the host and virus will hopefully enable more targeted public health responses towards the communities that need them most.
+
+![A) Reported human cases of Lassa Fever from 2011-2022. The grey section represents the period of the Ebola epidemic in West Africa, the orange section represents an incomplete year of reporting. B) The predicted distribution of *Mastomys natalensis* overlain over known endemic countries.](images/lassa_cases_endemic.svg)
+
+# Monkeypox
+
+# COVID-19
+
+# Antimicrobial Resistance
+
+# Other work
+
+## African Swine Fever

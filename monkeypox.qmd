@@ -1,0 +1,14 @@
+---
+title: "Monkeypox"
+subtitle: "Re-emerging Monkeypox and worldwide transmission (March - Ongoing 2022)"
+---
+
+I  have been involved in two recently published pieces of work. The first, investigating Monkeypox community transmission following introduction into the UK identified as three separate incidents.
+
+### Community transmission of Monkeypox
+
+Monkeypox is a re-emerging zoonotic infection caused by monkeypox virus (MPXV). In the past case detection has been primarily detected in West and Central Africa. The incubation period of monkeypox can be up to 21 days. In the United Kingdom (UK) all previous seven cases ever reported were either imported, or household or healthcare contacts of imported cases. In this report, we described an ongoing outbreak of MPXV infections in the UK, detected since the beginning of May 2022 affecting people without documented history of travel to endemic countries [@vivancos2022community]. This work has been published in [Eurosurveillance](https://doi.org/10.2807/1560-7917.es.2022.27.22.2200422).
+
+### Current research gaps in understanding Monkeypox spillover
+
+In this work we explored the research gaps on Monkeypox (MPX) virus epidemiology in endemic countries. We presented hypotheses for the recent increase of MPX cases in West Africa as a possible explanation for the current outbreak of internationally distributed cases. First, that the true burden of MPX in West and Central Africa is poorly understood. Second, that the diversity and extent of the animal reservoir remains unknown. We hypothesised that the changing human-rodent interaction rates in recent years may facilitate increased transmission of MPXV in endemic settings. We further hypothesised that following the end of routine smallpox vaccination, the larger and more interconnected immune-naïve population has crossed a threshold resulting in more sustainable human-to-human transmission of MPXV. We call for local led research efforts on the estimation of the basic and effective reproduction rate (R0 and Re) in different populations is required [@haiderincreased]. This work has been published in the [International Journal of Infectious Diseases](https://doi.org/10.1016/j.ijid.2022.05.058)

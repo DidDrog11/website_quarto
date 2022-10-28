@@ -1,0 +1,9 @@
+---
+title: "Antimicrobial Resistance"
+---
+
+
+I  have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman [(ORCiD)](https://orcid.org/0000-0003-3172-5912) and Sharifo Ali-Elmi [(ORCiD)](https://orcid.org/0000-0002-4482-9182).
+
+  1. Antimicrobial Resistance Patterns and Risk Factors Associated with *Salmonella spp.* Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study. Available from [*pathogens*](https://www.mdpi.com/2076-0817/10/9/1160).
+  2. Identification of Risk Factors Associated with Resistant *Escherichia coli* Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study. Availables from [*antibiotics*](https://www.mdpi.com/2079-6382/10/2/117).

@@ -1,0 +1,59 @@
+project:
+  type: website
+
+website:
+  title: "David Simons"
+  favicon: /images/icon.ico
+  open-graph: true
+  twitter-card: true
+  google-analytics: "G-Z4H9BE4MVE"
+  page-navigation: true
+  navbar:
+    logo: /images/icon.ico
+    foreground: light
+    background: dark
+    search: true
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: talks.qmd
+        text: "Talks"
+      - text: "Themes"
+        menu:
+        - text: "Lassa fever"
+          icon: thermometer-sun
+          href: lassa.qmd
+        - text: "COVID-19"
+          icon: virus2
+          href: covid_19.qmd
+        - text: "Antimicrobial Resistance (AMR)"
+          href: amr.qmd
+          icon: prescription
+        - href: others.qmd
+          text: 'Others'
+    right:
+      - href: about.qmd
+        text: "About me"
+      - icon: twitter
+        href: https://twitter.com/David_Simons_UK
+        aria-label: David Twitter
+      - icon: github
+        href: https://github.com/DidDrog11
+        aria-label: David GitHub
+    
+format:
+  html:
+    theme: pulse
+    toc: true
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-icon: true
+    link-external-newwindow: true
+    link-external-filter: '^(?:http:|https:)\/\/www\.dsimons\.org\/'
+
+comments:
+  hypothesis: 
+    theme: clean
+    
+editor: visual
+
