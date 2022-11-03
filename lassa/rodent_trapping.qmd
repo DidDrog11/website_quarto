@@ -1,0 +1,47 @@
+---
+title: "Understanding the structure of rodent species assemblages and land use change on the occurrence of the rodent host of Lassa Fever."
+abstract: |
+  *Lassa mammarenavirus*, the causative agent of Lassa fever is endemic to Eastern Sierra Leone. The principal reservoir species (*Mastomys natalensis*), is considered abundant in human dominated habitats, however, rodent species' assemblages in this context are not well described. We conducted three monthly small-mammal trapping to describe these rodent assemblages, their structure and associations with land use. We model the effect of land use on rodent species occurrence along a land use gradient and produce species distribution maps of the study region to understand current and potential *Lassa mammarenavirus* spillover hazard.
+author: 
+  - "David Simons"
+categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation]
+image: images/rodent_trapping.jpg
+bibliography: rodent_trapping.bib
+date: 2022-11-02
+---
+
+## Motivation
+
+This study was designed to investigate the effect of changes in land use on the occurrence of different rodent species in a Lassa fever endemic region of Eastern Sierra Leone. While habitat preferences of *Mastomys natalensis* have been well studied in West Africa to better understand the risk to human populations from *Lassa mammarenavirus* spillover [@fichetcalvet_diversity_2010], there is limited understanding of the wider rodent species assemblages. The interaction between different species will govern occurrence and abundance in different habitats and this study was designed to understand how these species co-exist in these habitats.
+
+To understand the association between land-use on the occurrence of *M. natalensis* and more generally, the rodent species assemblage structure. We explore the occurrence of rodent species' at our trapping sites and describe these species assemblages. Second, we model the association of land-use with the probability of species occupancy at trapping sites and then model the probability of co-occurrence between different species detected in our study to understand competition between small mammal species in our study region. Together these analyses will further our understanding of rodent species assemblage structures and the hazard of Lassa fever outbreaks based on host species occurrence.
+
+## Method
+
+A protocol was developed prior to a pilot trapping session in November 2020. This [protocol](https://osf.io/usjrd/) is archived on the Open Science Framework. All field data is collected using the Open Data Kit ([ODK](https://getodk.org/)).
+
+### Trapping locations
+
+Study villages have been identified by the local team based on accessibility to the sites during all seasons and knowledge of prior Lassa fever cases in the region. Trapping sites within these regions have been chosen to be representative for land use type in Eastern Sierra Leone. Within each trap site 49 Sherman traps are placed in a grid (except for the traps placed in houses) of 7 by 7 traps. The coordinates of each trap are recorded to ensure subsequent grids are set in the same locations.
+
+### Rodent traps
+
+Sherman traps are baited with a mixture of locally purchased oil, grain and fish and set each night for four consecutive nights. Traps are checked each morning for rodents. 
+
+Trapped rodents are euthanised and samples of blood and tissue are obtained for testing for *Lassa mammarenavirus* antibodies and genetic identification of the rodent species. Mophological measurements are obtained to sex and age the individuals.
+
+### Lassa serology
+
+Rodent antibodies to *Lassa mammarenavirus* are detected using the [BLACKBOX](https://www.european-virus-archive.com/detection-kit/blackbox%C2%AE-lasv-igg-elisa-kit) LASV IgG ELISA kit.
+
+### Rodent genetic identification
+
+Identification to species level is challenging based on purely morphological measurements, because of this we identify individuals genetically. DNA is extracted from rodent tissue and samples are sent to Germany for sequencing of *CytB*.
+
+## Results
+
+An [interactive report](interactive_report.html) has been produced for collaborators, it may take some time to load.
+
+I presented data from the first year of trapping at the 2022 Ecology and Evolution of Infectious Diseases conference, the [slides](files/david_simons_EEID.pdf) are available and the talk is embedded below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vxQLYwDRvK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

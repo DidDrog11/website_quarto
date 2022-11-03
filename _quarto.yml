@@ -40,11 +40,22 @@ website:
       - icon: github
         href: https://github.com/DidDrog11
         aria-label: David GitHub
+    sidebar:
+    - title: "Lassa Fever"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - lassa.qmd
+        - lassa/rodent_trapping.qmd
+        - lassa/rodent_review.qmd
+        - lassa/lips.qmd
     
 format:
   html:
     theme: pulse
     toc: true
+    toc-depth: 3
     smooth-scroll: true
     anchor-sections: true
     link-external-icon: true
@@ -55,5 +66,3 @@ comments:
   hypothesis: 
     theme: clean
     
-editor: visual
-

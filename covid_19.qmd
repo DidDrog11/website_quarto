@@ -2,14 +2,12 @@
 title: "COVID-19"
 ---
 
-
 ### COVID-19 transmission and control strategies
 
-The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased after the summer I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response. 
+The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased after the summer I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response.
 
-  - [CMMID](https://cmmid.github.io/topics/covid19/) website with a list of the outputs from the working group
-  - [ASMODEE](https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html) an ongoing COVID-19 surveillance activity I remain involved in
-
+-   [CMMID](https://cmmid.github.io/topics/covid19/) website with a list of the outputs from the working group
+-   [ASMODEE](https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html) an ongoing COVID-19 surveillance activity I remain involved in
 
 ### COVID-19 and the association with smoking
 
@@ -19,14 +17,8 @@ Current and former smoking is associated with worse outcomes and increased rates
 
 Early data released from healthcare services in China in the early parts of 2020 suggested that smoking was not a significant risk factor for COVID-19 disease. Whether this was a true effect or reflected poor recording or reporting was unclear. We began to synthesise the published and pre-print literature to investigate the specific association of smoking and COVID-19. This was initially performed as a report for the Royal College of Physicians, London and was expanded following a request from Public Health England.
 
-  - [COVID-19 and smoking living evidence review](posts/2021-04-06-smoking-covid-living-review/index.html)
-  - [The association of smoking status with hospitalisation for COVID-19](posts/2021-04-06-smoking-covid-hospitalised/index.html)
-
-```{r, layout="l-body", echo=F, fig.cap="Quit for COVID", }
-library(here)
-
-knitr::include_graphics(here("images", "quit_for_covid.jpg"))
-```
+-   [COVID-19 and smoking living evidence review](posts/2021-04-06-smoking-covid-living-review/index.html)
+-   [The association of smoking status with hospitalisation for COVID-19](posts/2021-04-06-smoking-covid-hospitalised/index.html)
 
 ## Risk of COVID-19 in individuals with Sickle Cell Disease
 
@@ -50,4 +42,4 @@ This epidemiological study assessed differences in transmissibility between the 
 
 ### The use of clinical assessment tools in UK hospitals
 
-In my clinical role I was involved in a large scale audit of the use of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was designed to risk stratify hospitalised patients with COVID-19. We assessed the inclusion of this score in COVID-19 management guidance and its documentation in patients’ case notes in January 2021 in UK hospitals. We found that score documentation in case notes was highly variable. Higher documentation of 4C Score was associated with score integration within admissions proformas, inclusion of 4C Score variables or link to online calculator, and management decisions. Integration of 4C Score within clinical pathways may encourage more widespread use [@blunsum2021evaluation]. This work is currently registered as a pre-print on [MedRxiv](https://doi.org/10.1101/2021.12.18.21268003)
+In my clinical role I was involved in a large scale audit of the use of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was designed to risk stratify hospitalised patients with COVID-19. We assessed the inclusion of this score in COVID-19 management guidance and its documentation in patients' case notes in January 2021 in UK hospitals. We found that score documentation in case notes was highly variable. Higher documentation of 4C Score was associated with score integration within admissions proformas, inclusion of 4C Score variables or link to online calculator, and management decisions. Integration of 4C Score within clinical pathways may encourage more widespread use [@blunsum2021evaluation]. This work is currently registered as a pre-print on [MedRxiv](https://doi.org/10.1101/2021.12.18.21268003)

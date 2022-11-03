@@ -1,0 +1,26 @@
+---
+title: "The niche of One Health approaches in Lassa fever surveillance and control."
+abstract: |
+  Lassa fever (LF), a zoonotic illness, represents a public health burden in West African countries where the Lassa virus (LASV) circulates among rodents. Human exposure hinges significantly on LASV ecology, which is in turn shaped by various parameters such as weather seasonality and even virus and rodent-host genetics. Furthermore, human behaviour, despite playing a key role in the zoonotic nature of the disease, critically affects either the spread or control of human-to-human transmission. Previous estimations on LF burden date from the 80s and it is unclear how the population expansion and the improvement on diagnostics and surveillance methods have affected such predictions. Although recent data have contributed to the awareness of epidemics, the real impact of LF in West African communities will only be possible with the intensification of interdisciplinary efforts in research and public health approaches. This review discusses the causes and consequences of LF from a One Health perspective, and how the application of this concept can improve the surveillance and control of this disease in West Africa.
+author: 
+  - "Liã Arruda"
+  - "Najmul Haider"
+  - "Ayodeji Olayemi"
+  - "David Simons"
+  - "Deborah Ehichioya"
+  - "Adesola Yinka-Ogunleye"
+  - "Rashid Ansumana"
+  - "Margaret Thomason"
+  - "Danny Asogun"
+  - "Chikwe Ihekweazu"
+  - "Elisabeth Fichet-Calvet"
+  - "Richard Kock"
+categories: [One Health, Zoonosis, Lassa Fever, Published, West Africa, PANDORA]
+image: images/one_health.png
+bibliography: rodent_trapping.bib
+date: 2021-04-24
+---
+
+As part of the PANDORA-ID-NET consortium we wrote a review of Lassa Fever and the specific role of "One Health" approaches in order to identify potential interventions to mitigate the drivers of spill over into human populations. This review is available [here](https://doi.org/10.1186/s12941-021-00431-0) in the Open Access publication *Annals of Clinical Microbiology and Antimicrobials* [@arruda2021niche]
+
+![<a href="https://commons.wikimedia.org/wiki/File:One-Health-Triad-en.png">Thddbfk</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons](images/one_health.png)

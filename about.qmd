@@ -1,7 +1,8 @@
 ---
-title: "Dr. David Simons"
+title: "About me"
 about:
   template:  jolla
+  id: hero-heading
   image: "images/david.jpg"
   image-width: 30em
   links:
@@ -22,9 +23,12 @@ about:
       url: "data/cv.pdf"
 ---
 
-# About me
+:::{#hero-heading}
 
-I am a practicing medical doctor and current PhD student based in the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed) at the Royal Veterinary College, London. I am funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/). I am supervised by an interdisciplinary team of researchers, Prof. [Richard Kock](https://www.rvc.ac.uk/about/our-people/richard-kock) (RVC), Prof. [Deborah Watson-Jones](https://scholar.google.com/citations?user=csCh6RsAAAAJ) (LSHTM), and Prof. [Kate Jones](https://www.ucl.ac.uk/biosciences/people/prof-kate-jones) (UCL). My research interests fit within the fields of [Planetary Health](https://unfccc.int/climate-action/momentum-for-change/planetary-health) and [One Health](https://www.cdc.gov/onehealth/basics/index.html) with a particular focus on the effect of anthropogenic change on the risks of zoonotic infectious disease emergence and subsequent spread. I use systems approaches to understand the interaction between human and biological factors on these risks. We are currently based in San Diego, USA where, [Olga Perski's](https://olgaperski.com) Marie Skłodowska–Curie fellowship is based at the University of California San Diego.
+I am a practicing medical doctor and current PhD student based in the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed) at the Royal Veterinary College, London. I am funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/). I am supervised by an interdisciplinary team of researchers, Prof. [Richard Kock](https://www.rvc.ac.uk/about/our-people/richard-kock) (RVC), Prof. [Deborah Watson-Jones](https://scholar.google.com/citations?user=csCh6RsAAAAJ) (LSHTM), and Prof. [Kate Jones](https://www.ucl.ac.uk/biosciences/people/prof-kate-jones) (UCL). My research interests fit within the fields of [Planetary Health](https://unfccc.int/climate-action/momentum-for-change/planetary-health) and [One Health](https://www.cdc.gov/onehealth/basics/index.html) with a particular focus on the effect of anthropogenic change on the risks of zoonotic infectious disease emergence and subsequent spread. I use systems approaches to understand the interaction between human and biological factors on these risks. We are currently based in San Diego, USA where, [Olga Perski's](https://olgaperski.com) Marie Skłodowska--Curie fellowship is based at the University of California San Diego.
+
+:::
+------------------------------------------------------------------------
 
 ## My PhD
 
@@ -32,11 +36,15 @@ My PhD research is predominantly focused in Sierra Leone, West Africa with [Lass
 
 I am a proponent of Open Science with pre-specified research questions and study protocols posted to the [Open Science Framework](https://osf.io/dashboard). I am developing my programming skills and will continue to try and make all code used for my analyses available in reproducible files hosted on my [GitHub](https://github.com/diddrog11) page. All data where possible will be hosted on open data repositories and will be linked to the projects contained within this website.
 
+------------------------------------------------------------------------
+
 ## Clinical practice
 
 I continue to practice as a clinician with the [Hospital for Tropical Diseases](http://www.thehtd.org) and within the emergency department at University College London Hospital. Alongside my clinical work during the COVID-19 pandemic I have contributed to the work of LSHTM's [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19/) to understand the transmission dynamics of SARS-CoV-2 and potential control measures.
 
 Alongside my PhD programme I worked with Public Health England (now the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency)). I was based in the Outbreak Surveillance Team starting shortly before the beginning of the Omicron variant importation and spread. During this period I was responsible for producing an automated approach to monitoring real time reported cases exploring spatial spread and informing contact tracing and the initial public health response. This work led to several insights which have been written up and published. I was nominated for and received an award for my contribution to the immediate response to Omicron emergence. I was also involved in the UK Monkeypox outbreak investigating how we could understand transmission parameters using contact tracing data within the dense community networks in which cases were identified.
+
+------------------------------------------------------------------------
 
 ## Education
 

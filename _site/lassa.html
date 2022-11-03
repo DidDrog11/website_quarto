@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href=".//images/icon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,6 +61,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4H9BE4MVE"></script>
 
 <script type="text/javascript">
@@ -76,13 +107,16 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="David Simons - Lassa Fever">
 <meta property="og:description" content="Rodent ecology and human epidemiology">
+<meta property="og:image" content="./lassa/images/rodent_trapping_preview.png">
 <meta property="og:site-name" content="David Simons">
 <meta name="twitter:title" content="David Simons - Lassa Fever">
 <meta name="twitter:description" content="Rodent ecology and human epidemiology">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="./lassa/images/rodent_trapping_preview.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -165,22 +199,8 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#rodent-trapping-studies-as-an-overlooked-information-source-for-understanding-endemic-and-novel-zoonotic-spillover." id="toc-rodent-trapping-studies-as-an-overlooked-information-source-for-understanding-endemic-and-novel-zoonotic-spillover." class="nav-link active" data-scroll-target="#rodent-trapping-studies-as-an-overlooked-information-source-for-understanding-endemic-and-novel-zoonotic-spillover.">Rodent trapping studies as an overlooked information source for understanding endemic and novel zoonotic spillover.</a></li>
-  <li><a href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone" id="toc-rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone" class="nav-link" data-scroll-target="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</a>
-  <ul class="collapse">
-  <li><a href="#pilot-work" id="toc-pilot-work" class="nav-link" data-scroll-target="#pilot-work">Pilot work</a></li>
-  <li><a href="#interim-analyses" id="toc-interim-analyses" class="nav-link" data-scroll-target="#interim-analyses">Interim analyses</a></li>
-  </ul></li>
-  <li><a href="#lassa-mammarenavirus-assay-development" id="toc-lassa-mammarenavirus-assay-development" class="nav-link" data-scroll-target="#lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</a></li>
-  <li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa" id="toc-rodent-ecology-and-zoonoses-studies-in-west-africa" class="nav-link" data-scroll-target="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</a></li>
-  <li><a href="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche" id="toc-the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche" class="nav-link" data-scroll-target="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">[@arruda2021niche]</span></a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ecology">Ecology <span class="quarto-category-count">(2)</span></div><div class="category" data-category="In Preparation">In Preparation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Lassa Fever">Lassa Fever <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Molecular Epidemiology">Molecular Epidemiology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="One Health">One Health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PANDORA">PANDORA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Phylogeography">Phylogeography <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Preprint">Preprint <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Published">Published <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rodent">Rodent <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Under Review">Under Review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="West Africa">West Africa <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Zoonosis">Zoonosis <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -203,60 +223,238 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 </header>
 
 <p>The primary focus of my research on Lassa Fever caused by <em>Lassa mammarenavirus</em> is on the rodent system. I am also involved in research on the development of novel, cross-species diagnostics and human epidemiology.</p>
-<section id="rodent-trapping-studies-as-an-overlooked-information-source-for-understanding-endemic-and-novel-zoonotic-spillover." class="level2">
-<h2 class="anchored" data-anchor-id="rodent-trapping-studies-as-an-overlooked-information-source-for-understanding-endemic-and-novel-zoonotic-spillover.">Rodent trapping studies as an overlooked information source for understanding endemic and novel zoonotic spillover.</h2>
-</section>
-<section id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone" class="level2">
-<h2 class="anchored" data-anchor-id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</h2>
-<p><strong>Ongoing work</strong></p>
-<section id="pilot-work" class="level3">
-<h3 class="anchored" data-anchor-id="pilot-work">Pilot work</h3>
-<p>A pilot study has been performed to inform a planned 2 year programme of repeat trapping in several settings in Sierra Leone. This pilot study was presented as a poster at the <a href="https://www.planetaryhealthannualmeeting.com/">Planetary Health Annual Meeting</a>.</p>
-<ul>
-<li><a href="https://osf.io/usjrd/">Study protocol archived on the Open Science Framework</a></li>
-<li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent trapping pilot (November-December 2020)</a></li>
-<li><a href="posts/trapping_visits/index.html">Rodent trapping visit reports (Visit 1 to 3)</a></li>
-<li><a href="images/PHA_poster.pdf">Poster presented at PHAM 2021</a></li>
-<li><a href="https://www.youtube.com/watch?v=5CSVF45rn9Q&amp;t=1s">Short video introducing the work</a></li>
-</ul>
-</section>
-<section id="interim-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="interim-analyses">Interim analyses</h3>
-<p>Subsequent to the pilot activity we have conducted 6 rounds of rodent trapping (as of June 2022), obtaining in excess of 26,000 trap nights across 4 village study sites. The interim descriptive analysis and visualisation of potential contact networks between different rodent genera was <a href="images/david_simons_EEID.pdf">presented</a> at the Ecology and Evolution of Infectious Diseases conference in Atlanta, Georgia in 2022.</p>
-<p>I produced an interactive report to facilitate discussions around this work with collaborators based at the Bernhard Nocht Institute of Tropical Medicine in Hamburg, Germany. This is available <a href="posts/2022-06-09-interactive-rodent-trapping/index.html">here</a>, it may take some time to load and small images can be zoomed in on.</p>
-</section>
-</section>
-<section id="lassa-mammarenavirus-assay-development" class="level2">
-<h2 class="anchored" data-anchor-id="lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</h2>
-<p><strong>In progress</strong></p>
-<p>Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available. To our knowledge there no pan-species antibody assays. To support our ongoing work on understanding the epidemiology and transmission dynamics in multi-species systems in endemic regions we have begun developing a cross-species assay. We adopted an approach that has been found to be successful for <em>Peste des petits ruminants</em> a virus that affects goats, sheep and camels and is targeted for eradication. These assays are built on the Luciferase Immunoprecipitation System <span class="citation" data-cites="berguido_specific_2016">[@berguido_specific_2016]</span> which detect the presence of antibodies against the presented antigen.</p>
-<p>Our work so far in the development of the assay is presented in the following posts:</p>
-<ul>
-<li><a href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification of potential antigenic epitopes</a></li>
-</ul>
-</section>
-<section id="rodent-ecology-and-zoonoses-studies-in-west-africa" class="level2">
-<h2 class="anchored" data-anchor-id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</h2>
-<p><strong>In progress</strong></p>
-<p>I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.</p>
-<ul>
-<li><a href="posts/scoping-review/index.html">Rodent trapping to explore rodent ecology and zoonotic disease risk: A scoping review</a></li>
-<li>A <a href="images/EEID_poster.pdf">poster</a> was produced for the <a href="https://www.eeidconference2021.org/">Ecology and Evolution of Infectious Diseases</a> conference.</li>
-</ul>
-<p>This work has evolved from primarily descriptive towards focussing more on example species following feedback from my supervisors. The current version of the in progress, working manuscript is available <a href="images/manuscript_v4.pdf">here</a>.</p>
-<p>I have summarised the data from studies identified for this review and made it explorable through an RShiny application. The app is currently a work in progress but is available <a href="https://diddrog11.shinyapps.io/scoping_review_app/">here</a> if you have any comments on the app or would be interested in seeing the data explored slightly differently please don’t hesitate to contact me.</p>
-</section>
-<section id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche" class="level2">
-<h2 class="anchored" data-anchor-id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">[@arruda2021niche]</span></h2>
-<p>Lassa fever (LF), a zoonotic illness, represents a public health burden in West African countries where the Lassa virus (LASV) circulates among rodents. Human exposure hinges significantly on LASV ecology, which is in turn shaped by various parameters such as weather seasonality and even virus and rodent-host genetics. Furthermore, human behaviour, despite playing a key role in the zoonotic nature of the disease, critically affects either the spread or control of human-to-human transmission. Previous estimations on LF burden date from the 80s and it is unclear how the population expansion and the improvement on diagnostics and surveillance methods have affected such predictions. Although recent data have contributed to the awareness of epidemics, the real impact of LF in West African communities will only be possible with the intensification of interdisciplinary efforts in research and public health approaches. This review discusses the causes and consequences of LF from a One Health perspective, and how the application of this concept can improve the surveillance and control of this disease in West Africa.</p>
-<ul>
-<li><a href="https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0">Link to publication</a></li>
-</ul>
+<div id="lassa">
+
+</div>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-left" data-index="0" data-categories="Rodent,Ecology,Zoonosis,Lassa Fever,In Preparation" data-listing-date-sort="1667372400000" data-listing-file-modified-sort="1667427459145" data-listing-reading-time-sort="2.44">
+<div class="thumbnail">
+<p><a href="./lassa/rodent_trapping.html"> <img src="./lassa/images/rodent_trapping.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./lassa/rodent_trapping.html">
+<h3 class="no-anchor listing-title">
+Understanding the structure of rodent species assemblages and land use change on the occurrence of the rodent host of Lassa Fever.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Rodent'); return false;">
+Rodent
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Ecology'); return false;">
+Ecology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Zoonosis'); return false;">
+Zoonosis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lassa Fever'); return false;">
+Lassa Fever
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('In Preparation'); return false;">
+In Preparation
+</div>
+</div>
+<a href="./lassa/rodent_trapping.html">
+<div class="listing-description">
+<p><em>Lassa mammarenavirus</em>, the causative agent of Lassa fever is endemic to…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./lassa/rodent_trapping.html">
+<div class="listing-date">
+Nov 2, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="1" data-categories="One Health,Zoonosis,Lassa Fever,Published,West Africa,PANDORA" data-listing-date-sort="1619247600000" data-listing-file-modified-sort="1667436593694" data-listing-reading-time-sort="0.31">
+<div class="thumbnail">
+<p><a href="./lassa/one_health.html"> <img src="./lassa/images/one_health.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./lassa/one_health.html">
+<h3 class="no-anchor listing-title">
+The niche of One Health approaches in Lassa fever surveillance and control.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('One Health'); return false;">
+One Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Zoonosis'); return false;">
+Zoonosis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lassa Fever'); return false;">
+Lassa Fever
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('West Africa'); return false;">
+West Africa
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('PANDORA'); return false;">
+PANDORA
+</div>
+</div>
+<a href="./lassa/one_health.html">
+<div class="listing-description">
+<p>Lassa fever (LF), a zoonotic illness, represents a public health burden in…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./lassa/one_health.html">
+<div class="listing-date">
+Apr 24, 2021
+</div>
+<div class="listing-author">
+Liã Arruda, Najmul Haider, Ayodeji Olayemi, David Simons, Deborah Ehichioya, Adesola Yinka-Ogunleye, Rashid Ansumana, Margaret Thomason, Danny Asogun, Chikwe Ihekweazu, Elisabeth Fichet-Calvet, Richard Kock
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="2" data-categories="Rodent,Ecology,Zoonosis,West Africa,Under Review,Preprint" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667427444924" data-listing-reading-time-sort="9.03">
+<div class="thumbnail">
+<p><a href="./lassa/rodent_trapping_review.html"> <img src="./lassa/images/rodent_trapping_preview.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./lassa/rodent_trapping_review.html">
+<h3 class="no-anchor listing-title">
+Rodent trapping studies as an overlooked information source for understanding endemic and novel zoonotic spillover.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Rodent'); return false;">
+Rodent
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Ecology'); return false;">
+Ecology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Zoonosis'); return false;">
+Zoonosis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('West Africa'); return false;">
+West Africa
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Under Review'); return false;">
+Under Review
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Preprint'); return false;">
+Preprint
+</div>
+</div>
+<a href="./lassa/rodent_trapping_review.html">
+<div class="listing-description">
+<p>Rodents a diverse, globally distributed and ecologically important order of…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./lassa/rodent_trapping_review.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons, Lauren A. Attfield, Kate E. Jones, Deborah Watson-Jones, Richard Kock
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="3" data-categories="Phylogeography,Molecular Epidemiology,Zoonosis,Lassa Fever,West Africa,In Preparation" data-listing-date-sort="1667372400000" data-listing-file-modified-sort="1667437605472" data-listing-reading-time-sort="0.73">
+<div class="thumbnail">
+<p><a href="./lassa/lassa_phylogenetics.html"> <img src="./lassa/images/sequence_locations.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./lassa/lassa_phylogenetics.html">
+<h3 class="no-anchor listing-title">
+Inference from phylogeography and molecular epidemiology of Lassa virus is limited by sampling and sequencing bias in endemic regions.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Phylogeography'); return false;">
+Phylogeography
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Molecular Epidemiology'); return false;">
+Molecular Epidemiology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Zoonosis'); return false;">
+Zoonosis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lassa Fever'); return false;">
+Lassa Fever
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('West Africa'); return false;">
+West Africa
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('In Preparation'); return false;">
+In Preparation
+</div>
+</div>
+<a href="./lassa/lassa_phylogenetics.html">
+<div class="listing-description">
+<p>The viral haemorrhagic infection caused by Lassa virus (LASV) is an important…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./lassa/lassa_phylogenetics.html">
+<div class="listing-date">
+Nov 2, 2022
+</div>
+<div class="listing-author">
+Hayley Free, David Simons, Isobella Honeyborne, Linzy Elton, Najmul Haider, Rashid Ansumana, Richard Kock, Francine Ntoumi, Alimuddin Zumla, Timothy D McHugh, Liã Arruda
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
