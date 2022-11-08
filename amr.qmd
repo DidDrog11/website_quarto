@@ -1,6 +1,7 @@
 ---
 title: "Antimicrobial Resistance"
 bibliography: amr/amr_refs.bib
+title-block-banner: true
 ---
 
 

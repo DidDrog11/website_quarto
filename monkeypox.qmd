@@ -9,6 +9,7 @@ listing:
     sort:
       - "date"
     sort-ui: true
+title-block-banner: true
 ---
 
 I  have been involved in two recently published pieces of work.

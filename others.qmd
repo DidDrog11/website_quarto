@@ -9,6 +9,7 @@ listing:
     sort:
       - "date des"
     sort-ui: true
+title-block-banner: true
 ---
 
 ::: {#others}

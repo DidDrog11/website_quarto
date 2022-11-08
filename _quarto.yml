@@ -66,3 +66,5 @@ comments:
   hypothesis: 
     theme: clean
     
+execute:
+  freeze: auto

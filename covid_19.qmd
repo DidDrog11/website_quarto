@@ -9,6 +9,7 @@ listing:
     sort:
       - "date des"
     sort-ui: true
+title-block-banner: true
 ---
 
 The primary focus of my research on SARS-CoV-2 and COVID-19 is on the epidemiology of infection following emergence of the virus.
