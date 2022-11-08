@@ -1,0 +1,21 @@
+---
+title: "A web-based application to explore rodent trapping data."
+abstract: |
+  As part of my review on rodent trapping studies as an overlooked information source for understanding zoonotic spillover I produced a Shiny application that allows exploration of the data. This current version has not been updated with manuscript. This is on my to-do list but the app may be helpful for researchers interested in visualising the dataset.
+author: 
+  - name: "David Simons"
+    affiliation: "The Royal Veterinary College"
+categories: [Application, Zoonosis, Rodent]
+image: images/app_screenshot.png
+bibliography: rodent_trapping.bib
+date: 2022-11-02
+
+citation:
+  url: https://diddrog11.shinyapps.io/scoping_review_app/
+---
+
+The primary purpose of this app is to provide an interactive interface to the data extracted as part of the rodent trapping [review](rodent_trapping_review.qmd). The most useful sections are the Species presence and absence and Microorganisms detected sections, as these allow individuals to identify the locations of these detections. The app is availble [here](https://diddrog11.shinyapps.io/scoping_review_app/).
+
+![The rodent species of interest can be selected on the left, the orange points refer to locations with detections, green refer to non-detection points. Selecting a point will provide further information including Study ID which can be cross-referenced to included studies, the Number of trapped indiviuals, the Village/Region and the trapping effort at that site (Number of trap nights).](images/app_screenshot.png)
+
+![The microorganisms detected page shows locations where assays for a microorganism was conducted. As multiple individuals are tested at each site, these are grouped points but explode if they are clicked. Selecting a point will split the point into samples from each species that was detected or not-detected at that site. In this way you will see some points have no samples tested. This is because individuals of that species were detected at that location but not tested. Purple points relate to presence of the microorganism, orange the absence. Further information includes the Rodent species, the Number of samples tested, the Number of positive samples, and the time period of sampling.](images/microorganism_screenshot.png)

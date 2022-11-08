@@ -1,0 +1,18 @@
+---
+title: "Understanding the risk of international transmission of a newly emerging pathogen."
+abstract: "Zoonotic disease spillover occurs at a local level, sustained subsequent transmission within the local communities can then result in wider geographic spread of the disease. We see this Ebola outbreaks, which often occur in isolated regions of countries followed by importation into population centres resulting in a rapid expansion of the number of cases. We expected that COVID-19 would follow a similar pattern and that the detection of the virus in Wuhan in 2019 was as the result of prior zoonotic spillover and we were observing an expanding outbreak. We were interested in how this pathogen may then spread through international transport routes and how it might establish community transmission in other countries."
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [COVID-19, Modelling, Public Health, International transmission, Published]
+image: images/risk_import.png
+date: 2022-11-01
+---
+
+Using international flight data we categorised countries by their risk of direct importation of the novel coronavirus while the epidemic was still limited to Wuhan, China [@haider_passengers_2020]. The limited direct travel links between this region of China and Southern America and sub-Saharan Africa produced a relatively low risk of rapid import into these regions. This approach did not take into account establishment in a third country and onward transmission from there along more established travel routes. 
+
+This work was done as part of support to the Africa CDC from the PANDORA-ID-NET to understand the risk from the newly emerging virus, highlighting that several African countries were likely to observe imported infection earlier than others (i.e. Ethiopia, South Africa). 
+
+![The risk of importing COVID-19 infections when community transmission was localised to Wuhan, China.](images/risk_import.png)
+
+This coincided with some work to highlight the current preparedness on the African continent following prior outbreaks of epidemic diseases [@kapata_is_2020].

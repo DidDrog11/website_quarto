@@ -7,12 +7,12 @@ listing:
     image-align: left
     max-description-length: 80
     sort:
-      - "title des"
-      - "date"
+      - "date des"
     sort-ui: true
+title-block-banner: true
 ---
 
-The primary focus of my research on Lassa Fever caused by *Lassa mammarenavirus* is on the rodent system. I am also involved in research on the development of novel, cross-species diagnostics and human epidemiology.
+The primary focus of my research on Lassa Fever, caused by *Lassa mammarenavirus*, is on the rodent system. I am also involved in research on the development of novel, cross-species diagnostics alongside human epidemiology.
 
 ::: {#lassa}
 

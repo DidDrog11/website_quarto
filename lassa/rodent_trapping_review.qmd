@@ -2,15 +2,25 @@
 title: "Rodent trapping studies as an overlooked information source for understanding endemic and novel zoonotic spillover."
 abstract: "Rodents a diverse, globally distributed and ecologically important order of mammals are nevertheless important globally distributed reservoirs of known and novel zoonotic pathogens. Ongoing anthropogenic land use change is altering the composition of these species’ abundance and distribution which among zoonotic host species may alter host species assemblages and modifying the risk of zoonoses spillover events. These changes mean demand that an a better understanding of the current distribution of rodent species is vital for accurately mitigating potential zoonoticdescribing  disease hazard and managing risk. However, available species distribution and host-pathogen association datasets (e.g. IUCN, GBIF, CLOVER) are often taxonomically and spatially biased. Here, we synthesise data from West Africa from 127 rodent trapping studies, published between 1964-2022, as an additional source of information to characterise the range and presence of rodent species and identify the subgroup of species that are potential or known important zoonotic pathogen hosts species in this region. We identify that these rodent trapping studies, although biased towards human dominated landscapes across West Africa, can usefully complement current rodent species distribution datasets and we calculate the discrepancies between these datasets. For five regionally important zoonotic pathogens (Arenaviridae spp., Borrelia spp., Lassa mammarenavirus, Leptospira spp. and Toxoplasma gondii), we identify host-pathogen associations that have not been previously reported in host-association datasets. These omissions have the potential for biasing estimates of current risk and drivers of zoonoses. Finally, for these five pathogen groups, we find that the proportion of a rodent hosts range that has been sampled remains small with geographic clustering. A priority of future rodent trapping studies should be to sample rodent hosts across a greater geographic range to better characterise current and future risk of zoonotic spillover events. In the interim, future studies of spatial pathogen risk informed by rodent distributions must incorporate a measure of the current sampling biases. The current synthesis of contextually rich rodent trapping data enriches available information from IUCN, GBIF and CLOVER which can support a more complete understanding of the hazard of zoonotic spillover events."
 author: 
-  - "David Simons"
-  - "Lauren A. Attfield"
-  - "Kate E. Jones"
-  - "Deborah Watson-Jones"
-  - "Richard Kock"
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+  - name: "Lauren A. Attfield"
+    affiliation: University College London
+  - name: "Kate E. Jones"
+    affiliation: University College London
+  - name: "Deborah Watson-Jones"
+    affiliation: The London School of Hygiene and Tropical Medicine
+  - name: "Richard Kock"
+    affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, West Africa, Under Review, Preprint]
 image: images/rodent_trapping_preview.png
 bibliography: rodent_trapping.bib
 date: 2022-11-01
+citation:
+  type: article-journal
+  container-title: "BioRxiv"
+  doi: "10.1101/2022.08.30.505792"
+  url: "https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full"  
 ---
 
 ## Motivation

@@ -1,0 +1,28 @@
+---
+title: "Digital healthcare interventions for sustained behaviour change."
+abstract: |
+  Olga Perski researches addictive behaviours and develops digital health interventions to support individuals who want to quit smoking or cut down excessive drinking. She focusses on individual level variability to better design interventions that often show efficacy at group level but may not be sustained at the individual level. I have previously assisted her with some data science components of this work.
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [Digital Health, Published]
+image: images/digital_health.png
+bibliography: other_refs.bib
+date: 2022-10-01
+---
+
+## Supervised Machine Learning to Classify Smoking Lapses
+
+Temporary smoking episodes after the quit date (‘lapses’) often lead to full relapse. Real-time support delivered via technology-mediated just-in-time adaptive interventions (JITAIs) offer a promising means of preventing lapses. To inform JITAI development, we used observational data from a popular smoking cessation app (‘Smoke Free’) to develop supervised machine learning algorithms to distinguish lapse from non-lapse reports at the group- and individual-level.
+
+We used data from app users with ≥20 unprompted craving feature entries within 3 months from the date of app registration, which included information about craving severity, mood, activity, social context, and lapse incidence. A series of group-level supervised machine learning algorithms (e.g., Random Forest, XGBoost) were trained and tested. Their ability to classify lapses for out-of-sample i) observations and ii) individuals were evaluated. Finally, a series of individual-level and hybrid (i.e., group- and individual-level) algorithms were trained and tested. A total of 791 participants were included, who provided 37,002 craving feature entries (7.6% lapses). The best-performing group-level algorithm had an area under the receiver operating characteristic curve (AUC) of 0.969 (95% CI = 0.961-0.978). Its ability to classify lapses for out-of-sample individuals ranged from poor to excellent (AUC = 0.482-1.000). 
+
+Individual-level algorithms could be constructed for 39/791 participants with sufficient data, with a median AUC of 0.938 (range: 0.518 to 1.000). For 31/39 participants, the individual-level algorithm led to improved performance compared with the group-level algorithm. Hybrid algorithms could be constructed for 184/791 participants and had a median AUC of 0.825 (range: 0.375 to 1.000). Using unprompted app data appeared feasible for constructing a high-performing group-level lapse classification algorithm but its performance was variable when applied to unseen individuals. Separate algorithms trained and tested on each individual’s dataset led to improved performance but could only be constructed for a minority of participants. Triangulation of results with those from a prompted study design is recommended prior to developing and evaluating a JITAI.
+
+This work [@perski_li_pontikos_simons_goldstein_naughton_brown_2022] is currently a pre-print and is under review.
+
+## Digital health at the age of the Anthropocene
+
+While digital health has a fantastic opportunity to provide individual level healthcare interventions harnessing growing amounts of available data there are concerns about the sustainability of these approaches. We wrote a commentary based on a report produced by the [Shift project](https://theshiftproject.org/wp-content/uploads/2019/03/Lean-ICT-Report_The-Shift-Project_2019.pdf) to raise awareness of these issues to the digital health community, this commentary [@chevance2020digital] is published in Lancet Digital Health.
+
+![Image from inofab.health.com (https://www.inofab.health/article/5-benefits-of-digital-health-systems)](images/digital_health.png)

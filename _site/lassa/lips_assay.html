@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.247">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Simons">
+<meta name="dcterms.date" content="2022-10-01">
+
+<title>David Simons - Development of a species agnostic assay for Lassa mammarenavirus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/icon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4H9BE4MVE"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
+<meta property="og:title" content="David Simons - Development of a species agnostic assay for Lassa mammarenavirus">
+<meta property="og:description" content="Diagnostics for *Lassa mammarenavirus* (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available.">
+<meta property="og:image" content="images/lips_outline.png">
+<meta property="og:site-name" content="David Simons">
+<meta name="twitter:title" content="David Simons - Development of a species agnostic assay for Lassa mammarenavirus">
+<meta name="twitter:description" content="Diagnostics for *Lassa mammarenavirus* (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available.">
+<meta name="twitter:image" content="images/lips_outline.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/icon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">David Simons</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../talks.qmd">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Themes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+        <li>
+    <a class="dropdown-item" href="../lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../amr.html"><i class="bi bi-prescription" role="img">
+</i> 
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../others.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/David_Simons_UK"><i class="bi bi-twitter" role="img" aria-label="David Twitter">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/DidDrog11"><i class="bi bi-github" role="img" aria-label="David GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Development of a species agnostic assay for <em>Lassa mammarenavirus</em></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Assay Development</div>
+    <div class="quarto-category">LIPS</div>
+    <div class="quarto-category">Zoonosis</div>
+    <div class="quarto-category">Lassa Fever</div>
+    <div class="quarto-category">In Preparation</div>
+  </div>
+  </div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading"></div>
+  
+    <div class="quarto-title-meta-contents">
+    David Simons 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            The Royal Veterinary College
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>Diagnostics for <em>Lassa mammarenavirus</em> (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available. To our knowledge there no pan-species antibody assays, although the BLACKBOX LASV IgG ELISA has been validated in both human and rodent systems. To support our ongoing work on understanding the epidemiology and transmission dynamics in multi-species systems in endemic regions we have begun developing a species agnostic assay. We adopted an approach that has been found to be successful for Peste des petits ruminants a virus that affects goats, sheep and camels and is targeted for eradication. These assays are built on the Luciferase Immunoprecipitation System <span class="citation" data-cites="berguido2016specific">(<a href="#ref-berguido2016specific" role="doc-biblioref">Berguido et al. 2016</a>)</span> which detect the presence of antibodies against the presented antigen.</p>
+  </div>
+</div>
+
+</header>
+
+<p>The Luciferase Immuno-Precipitation System functions through differential rates of flourescence based on the ability for the Ruc-Fusion protein to convert the substrate. This can be used to confirm the presence of conjugation between the target antibody/immune complexes and the specific Ruc-Fusion protein.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lips_outline.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">LIPS assay CC-BY-NC B. Drame</figcaption><p></p>
+</figure>
+</div>
+<p>A bioinformatic approach was implemented to identify potential antigen epitopes from previously published sequences on NCBI GenBank. This work was submitted to the ICREID 2020 conference, which unfortunately did not go ahead. These candidates have now progressed to a proof-of-principle stage and we are planning to visit Sierra Leone to validate this assay on samples stored there. A PDF of this poster can be accessed <a href="files/lips_poster.pdf">here</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/LIPS_poster.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Poster describing the development of the LIPS system</figcaption><p></p>
+</figure>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-berguido2016specific" class="csl-entry" role="doc-biblioentry">
+Berguido, Francisco J, Sanne Charles Bodjo, Angelika Loitsch, and Adama Diallo. 2016. <span>“Specific Detection of Peste Des Petits Ruminants Virus Antibodies in Sheep and Goat Sera by the Luciferase Immunoprecipitation System.”</span> <em>Journal of Virological Methods</em> 227: 40–46.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{simons2022,
+  author = {David Simons},
+  title = {Development of a Species Agnostic Assay for {*Lassa}
+    Mammarenavirus*},
+  date = {2022-10-01},
+  langid = {en},
+  abstract = {Diagnostics for *Lassa mammarenavirus* (LASV) are
+    challenging due to the variability in viral sequence and structure.
+    Several commercial PCR and antibody kits are available. To our
+    knowledge there no pan-species antibody assays, although the
+    BLACKBOX LASV IgG ELISA has been validated in both human and rodent
+    systems. To support our ongoing work on understanding the
+    epidemiology and transmission dynamics in multi-species systems in
+    endemic regions we have begun developing a species agnostic assay.
+    We adopted an approach that has been found to be successful for
+    Peste des petits ruminants a virus that affects goats, sheep and
+    camels and is targeted for eradication. These assays are built on
+    the Luciferase Immunoprecipitation System
+    {[}@berguido2016specific{]} which detect the presence of antibodies
+    against the presented antigen.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-simons2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+David Simons. 2022. <span>“Development of a Species Agnostic Assay for
+*Lassa Mammarenavirus*.”</span> October 1, 2022.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/www\.dsimons\.org\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

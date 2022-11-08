@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href=".//images/icon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,6 +64,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4H9BE4MVE"></script>
 
 <script type="text/javascript">
@@ -76,6 +110,7 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="David Simons - Monkeypox">
 <meta property="og:description" content="Re-emerging Monkeypox and worldwide transmission (March - Ongoing 2022)">
@@ -106,38 +141,40 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./talks.qmd">
- <span class="menu-text">Talks</span></a>
+ <span class="menu-text"><iconify-icon inline="" icon="mingcute:home-2-line"></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Themes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-ic-outline-category--research-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><iconify-icon inline="" icon="ic:outline-category"></iconify-icon> Research Themes</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-ic-outline-category--research-themes">    
         <li>
-    <a class="dropdown-item" href="./lassa.html"><i class="bi bi-thermometer-sun" role="img">
-</i> 
- <span class="dropdown-text">Lassa fever</span></a>
+    <a class="dropdown-item" href="./lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./covid_19.html"><i class="bi bi-virus2" role="img">
-</i> 
- <span class="dropdown-text">COVID-19</span></a>
+    <a class="dropdown-item" href="./monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./amr.html"><i class="bi bi-prescription" role="img">
 </i> 
- <span class="dropdown-text">Antimicrobial Resistance (AMR)</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./others.qmd">
- <span class="dropdown-text">Others</span></a>
+    <a class="dropdown-item" href="./others.html">
+ <span class="dropdown-text"><i class="fa-solid fa-shuffle" aria-label="shuffle"></i> Other Work</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=fT8u5MwAAAAJ&amp;hl=en">
+ <span class="menu-text"><iconify-icon inline="" icon="ooui:articles-ltr"></iconify-icon> Publications</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -165,15 +202,8 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#community-transmission-of-monkeypox" id="toc-community-transmission-of-monkeypox" class="nav-link active" data-scroll-target="#community-transmission-of-monkeypox">Community transmission of Monkeypox</a></li>
-  <li><a href="#current-research-gaps-in-understanding-monkeypox-spillover" id="toc-current-research-gaps-in-understanding-monkeypox-spillover" class="nav-link" data-scroll-target="#current-research-gaps-in-understanding-monkeypox-spillover">Current research gaps in understanding Monkeypox spillover</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Epidemiology">Epidemiology <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Monkeypox">Monkeypox <span class="quarto-category-count">(2)</span></div><div class="category" data-category="One Health">One Health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Published">Published <span class="quarto-category-count">(2)</span></div><div class="category" data-category="United Kingdom">United Kingdom <span class="quarto-category-count">(1)</span></div><div class="category" data-category="sub-Saharan Africa">sub-Saharan Africa <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -195,19 +225,133 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 </header>
 
-<p>I have been involved in two recently published pieces of work. The first, investigating Monkeypox community transmission following introduction into the UK identified as three separate incidents.</p>
-<section id="community-transmission-of-monkeypox" class="level3">
-<h3 class="anchored" data-anchor-id="community-transmission-of-monkeypox">Community transmission of Monkeypox</h3>
-<p>Monkeypox is a re-emerging zoonotic infection caused by monkeypox virus (MPXV). In the past case detection has been primarily detected in West and Central Africa. The incubation period of monkeypox can be up to 21 days. In the United Kingdom (UK) all previous seven cases ever reported were either imported, or household or healthcare contacts of imported cases. In this report, we described an ongoing outbreak of MPXV infections in the UK, detected since the beginning of May 2022 affecting people without documented history of travel to endemic countries <span class="citation" data-cites="vivancos2022community">[@vivancos2022community]</span>. This work has been published in <a href="https://doi.org/10.2807/1560-7917.es.2022.27.22.2200422">Eurosurveillance</a>.</p>
-</section>
-<section id="current-research-gaps-in-understanding-monkeypox-spillover" class="level3">
-<h3 class="anchored" data-anchor-id="current-research-gaps-in-understanding-monkeypox-spillover">Current research gaps in understanding Monkeypox spillover</h3>
-<p>In this work we explored the research gaps on Monkeypox (MPX) virus epidemiology in endemic countries. We presented hypotheses for the recent increase of MPX cases in West Africa as a possible explanation for the current outbreak of internationally distributed cases. First, that the true burden of MPX in West and Central Africa is poorly understood. Second, that the diversity and extent of the animal reservoir remains unknown. We hypothesised that the changing human-rodent interaction rates in recent years may facilitate increased transmission of MPXV in endemic settings. We further hypothesised that following the end of routine smallpox vaccination, the larger and more interconnected immune-naïve population has crossed a threshold resulting in more sustainable human-to-human transmission of MPXV. We call for local led research efforts on the estimation of the basic and effective reproduction rate (R0 and Re) in different populations is required <span class="citation" data-cites="haiderincreased">[@haiderincreased]</span>. This work has been published in the <a href="https://doi.org/10.1016/j.ijid.2022.05.058">International Journal of Infectious Diseases</a></p>
+<p>I have been involved in two recently published pieces of work.</p>
+<div id="monkeypox">
+
+</div>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-left" data-index="0" data-categories="Monkeypox,Published,Epidemiology,sub-Saharan Africa,One Health" data-listing-date-sort="1653721200000" data-listing-file-modified-sort="1667511671561" data-listing-reading-time-sort="0.295">
+<div class="thumbnail">
+<p><a href="./monkeypox/monkeypox_emergence.html"> <img src="./monkeypox/images/monkeypox_emergence.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./monkeypox/monkeypox_emergence.html">
+<h3 class="no-anchor listing-title">
+Increased outbreaks of monkeypox highlight gaps in actual disease burden in Sub-Saharan Africa and in animal reservoirs
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Monkeypox'); return false;">
+Monkeypox
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Epidemiology'); return false;">
+Epidemiology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sub-Saharan Africa'); return false;">
+sub-Saharan Africa
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('One Health'); return false;">
+One Health
+</div>
+</div>
+<a href="./monkeypox/monkeypox_emergence.html">
+<div class="listing-description">
+<p>We explain research gaps on Monkeypox (MPX) virus epidemiology in endemic…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./monkeypox/monkeypox_emergence.html">
+<div class="listing-date">
+May 28, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="1" data-categories="Monkeypox,Published,Epidemiology,United Kingdom" data-listing-date-sort="1654153200000" data-listing-file-modified-sort="1667511636936" data-listing-reading-time-sort="0.185">
+<div class="thumbnail">
+<p><a href="./monkeypox/community_transmission.html"> <img src="./monkeypox/images/community_transmission.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./monkeypox/community_transmission.html">
+<h3 class="no-anchor listing-title">
+Community transmission of monkeypox in the United Kingdom, April to May 2022
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Monkeypox'); return false;">
+Monkeypox
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Epidemiology'); return false;">
+Epidemiology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('United Kingdom'); return false;">
+United Kingdom
+</div>
+</div>
+<a href="./monkeypox/community_transmission.html">
+<div class="listing-description">
+<p>Monkeypox is an emerging zoonotic infection caused by monkeypox virus (MPXV)…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./monkeypox/community_transmission.html">
+<div class="listing-date">
+Jun 2, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,20 @@
+---
+title: "Increased outbreaks of monkeypox highlight gaps in actual disease burden in Sub-Saharan Africa and in animal reservoirs"
+abstract: |
+  We explain research gaps on Monkeypox (MPX) virus epidemiology in endemic countries and present hypotheses for the recent increase of MPX cases in West Africa as a possible explanation for the current epidemic in Europe, America, and Australia. The detection of >400 MPX cases in less than a month in May 2022, across many countries underscores the epidemic potential of MPX in humans and demonstrates several important research gaps. 
+  
+  First, the true burden of MPX in West and Central Africa is poorly understood, although it is critical for prevention and control of future outbreaks. Second, the diversity and extent of the animal reservoir remain unknown. We hypothesize that the synanthropic rodent population has increased in recent years in Africa leading to more human-rodent interactions and thus increased transmission of MPXV. We further hypothesise that nearly 45 years after the end of routine smallpox vaccination, the larger and more interconnected immune-naïve population has crossed a threshold resulting in more sustainable human-to-human transmission of MPXV. 
+  
+  The current epidemic in the Western World is possibly a consequence of increased local transmission of MPXV in Africa. A new estimation of the basic and effective reproduction rate (R~0~ and R~*e*~) in different populations is required. National, regional, and international collaborations are needed to address research gaps related to MPX outbreaks.
+author: 
+  - "David Simons"
+image: images/monkeypox_emergence.jpg
+categories: [Monkeypox, Published, Epidemiology, sub-Saharan Africa, One Health]
+date: 2022-05-28
+bibliography: monkeypox_references.bib
+---
+
+This article is available from the [International Journal of Infectious Diseases](https://doi.org/10.1016/j.ijid.2022.05.058) [@haider_increased_2022].
+
+
+![Choropleth maps displaying number of monkeypox cases reported by Nigerian Centre for Diseases Control and Prevention by states (n=37) for years 2017 to 2022 (up to 30th April 2022). Detection of monkeypox cases has expanded from South to North during this period. Taken from Haider *et al.*, 2022](images/monkeypox_emergence.jpg)

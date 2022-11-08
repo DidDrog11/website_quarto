@@ -1,0 +1,26 @@
+---
+title: "Clinical response to COVID-19."
+abstract: |
+  Alongside my epidemiological work I supported the clinical response to COVID-19. This was done mainly as a member of the infectious diseases team at University College London Hospital. In this role I was also involved with several other projects, including enrolling patients for the RECOVERY trial and evaluating the use of a tool to risk stratify individuals being admitted with COVID-19.
+  
+   In addition to hospital based treatment I was involved in performing health needs assessments with individuals experiencing homelessness who were temporarily housed in hostels as part of the COVID-19 response.
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [COVID-19, Clinical, Pre Print]
+image: images/recovery.jpg
+date: 2022-11-01
+bibliography: covid_references.bib
+---
+
+### The use of clinical assessment tools in UK hospitals
+
+In my clinical role I was involved in a large scale audit of the use of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was designed to risk stratify hospitalised patients with COVID-19. We assessed the inclusion of this score in COVID-19 management guidance and its documentation in patients' case notes in January 2021 in UK hospitals. We found that score documentation in case notes was highly variable. Higher documentation of 4C Score was associated with score integration within admissions proformas, inclusion of 4C Score variables or link to online calculator, and management decisions. Integration of 4C Score within clinical pathways may encourage more widespread use [@blunsum_evaluation_2022]. This work is currently registered as a pre-print on [MedRxiv](https://doi.org/10.1101/2021.12.18.21268003).
+
+### RECOVERY trial
+
+The [RECOVERY](https://www.recoverytrial.net/) trial is an international clinical trial that aimed to identify potential treatments for COVID-19, the open label trial was regularly reviewed to rapidly identify potentially efficacious treatments. This led to early evidence of the benefit of steroids, antivirals and antibody therapy. UCLH was one of the clinical sites for this trial and I assisted in identifying and enrolling patients into this vital trial.
+
+### Health needs assessments in temporarily housed individuals experiencing homelessness
+
+As part of the COVID-19 response hotels and hostels were used to house individuals with no locations where they were able to isolate or reduce their risk of SARS-CoV-2 infection. While individuals were being temporarily housed the UCLH Find and Treat team were performing visits to these locations to assess individuals and identify their health needs. We were focussed primarily on COVID-19, tuberculosis, hepatitis, mental health, sexual health and drug and alcohol services although support was provided for a wide range of medical and social issues. You can read more about these activities on this UCL [blog](https://blogs.ucl.ac.uk/iehc/tag/uclh-find-treat/).

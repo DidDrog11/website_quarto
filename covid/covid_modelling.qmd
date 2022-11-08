@@ -1,0 +1,18 @@
+---
+title: "Modelling COVID-19 transmission and control strategies."
+abstract: "The Centre for Mathematical Modelling of Infectious Diseases brought together a multidisciplinary group of epidemiologists, mathematicians, economists, statisticians and clinicians to support the COVID-19 response within the UK and Internationally."
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [COVID-19, Modelling, Public Health, Published]
+image: images/cmmid_logo.jpg
+date: 2022-11-01
+---
+
+The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased during the summer of 2020 I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response.
+
+The work of the CMMID COVID-19 working group is collected on their [website](https://cmmid.github.io/topics/covid19/).
+
+A project that was of particular interested was the use of the ASMODEE (Automatic Selection of Models and Outlier Detection for Epidemics) approach. This [tool](https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html) monitored changes in symptoms consisted with COVID-19 through the NHS 111, 999 and online helplines. Using the previous 6 weeks of data from these sources we attempted to monitor local regions where cases may be rising or falling which could feed into decision on localised public health responses.
+
+![A screenshot of the output of the model derived spatially lagged growth rate.](images/asmodee.png)

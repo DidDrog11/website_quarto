@@ -1,0 +1,18 @@
+---
+title: "Sickle Cell disease and COVID-19."
+abstract: |
+  Another group that were potentially at greater risk of adverse outcomes from COVID-19 infection were individuals suffering with Sickle Cell Disease. We wrote a commentary piece to draw attention to this group of individuals who are more prevalent in sub-Saharan countries in Africa that also suffer from a further burden of often under-developed healthcare infrastructure
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [COVID-19, Sickle Cell disease, Public Health, Published]
+image: images/sickle_cell.jpg
+date: 2022-11-01
+bibliography: covid_references.bib
+---
+
+The majority of Sickle Cell disease sufferers live in sub-Saharan Africa, this region was potentially at greater risk from COVID-19 than was being considered early in the pandemic. Fortunately, direct mortality from COVID-19 seems to be lowest in this region, potentially due to the younger age of the population, however, indirect impact has been huge with impact on economies, education and healthcare access having lasting impacts.
+
+During the early stages we wrote a commentary to draw attention to a sub-group of individuals that we thought were at increased risk from COVID-19 [@dexter_mitigating_2020]
+
+![Sickle Cell disease can cause blockages in blood vessels as the shape of red blood cells changes as haemaglobin molecules form strands. Image from the National Heart, Lung and Blood Institute](images/sickle_cell.jpg)

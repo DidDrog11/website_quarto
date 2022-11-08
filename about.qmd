@@ -19,8 +19,10 @@ about:
     - text: Email
       url: "mailto:dsimons19@rvc.ac.uk"
       icon: envelope-fill
-    - text: C.V.
-      url: "data/cv.pdf"
+    - text: "{{< fa clipboard >}} C.V."
+      url: "files/cv.pdf"
+    - text: "{{< ai osf >}} OSF"
+      url: "https://osf.io/rk8at/"
 ---
 
 :::{#hero-heading}

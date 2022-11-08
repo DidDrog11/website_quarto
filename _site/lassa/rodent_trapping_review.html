@@ -65,6 +65,9 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,38 +136,40 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../talks.qmd">
- <span class="menu-text">Talks</span></a>
+ <span class="menu-text"><iconify-icon inline="" icon="mingcute:home-2-line"></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Themes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-ic-outline-category--research-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><iconify-icon inline="" icon="ic:outline-category"></iconify-icon> Research Themes</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-ic-outline-category--research-themes">    
         <li>
-    <a class="dropdown-item" href="../lassa.html"><i class="bi bi-thermometer-sun" role="img">
-</i> 
- <span class="dropdown-text">Lassa fever</span></a>
+    <a class="dropdown-item" href="../lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../covid_19.html"><i class="bi bi-virus2" role="img">
-</i> 
- <span class="dropdown-text">COVID-19</span></a>
+    <a class="dropdown-item" href="../monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../amr.html"><i class="bi bi-prescription" role="img">
 </i> 
- <span class="dropdown-text">Antimicrobial Resistance (AMR)</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../others.qmd">
- <span class="dropdown-text">Others</span></a>
+    <a class="dropdown-item" href="../others.html">
+ <span class="dropdown-text"><i class="fa-solid fa-shuffle" aria-label="shuffle"></i> Other Work</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=fT8u5MwAAAAJ&amp;hl=en">
+ <span class="menu-text"><iconify-icon inline="" icon="ooui:articles-ltr"></iconify-icon> Publications</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -228,20 +233,55 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
   </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading"></div>
+  
+    <div class="quarto-title-meta-contents">
+    David Simons 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            The Royal Veterinary College
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Lauren A. Attfield 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University College London
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Kate E. Jones 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University College London
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Deborah Watson-Jones 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            The London School of Hygiene and Tropical Medicine
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Richard Kock 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            The Royal Veterinary College
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>David Simons </p>
-             <p>Lauren A. Attfield </p>
-             <p>Kate E. Jones </p>
-             <p>Deborah Watson-Jones </p>
-             <p>Richard Kock </p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
@@ -357,7 +397,60 @@ Han, Barbara A., Andrew M. Kramer, and John M. Drake. 2016. <span>“Global Patt
 <div id="ref-shaw_phylogenetic_2020" class="csl-entry" role="doc-biblioentry">
 Shaw, Liam P., Alethea D. Wang, David Dylus, Magda Meier, Grega Pogacnik, Christophe Dessimoz, and François Balloux. 2020. <span>“The Phylogenetic Range of Bacterial and Viral Pathogens of Vertebrates.”</span> <em>Molecular Ecology</em> 29 (17): 3361–79. <a href="https://doi.org/10.1111/mec.15463">https://doi.org/10.1111/mec.15463</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{simons2022,
+  author = {David Simons and Lauren A. Attfield and Kate E. Jones and
+    Deborah Watson-Jones and Richard Kock},
+  title = {Rodent Trapping Studies as an Overlooked Information Source
+    for Understanding Endemic and Novel Zoonotic Spillover.},
+  journal = {BioRxiv},
+  date = {2022-11-01},
+  url = {https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full},
+  doi = {10.1101/2022.08.30.505792},
+  langid = {en},
+  abstract = {Rodents a diverse, globally distributed and ecologically
+    important order of mammals are nevertheless important globally
+    distributed reservoirs of known and novel zoonotic pathogens.
+    Ongoing anthropogenic land use change is altering the composition of
+    these species’ abundance and distribution which among zoonotic host
+    species may alter host species assemblages and modifying the risk of
+    zoonoses spillover events. These changes mean demand that an a
+    better understanding of the current distribution of rodent species
+    is vital for accurately mitigating potential zoonoticdescribing
+    disease hazard and managing risk. However, available species
+    distribution and host-pathogen association datasets (e.g. IUCN,
+    GBIF, CLOVER) are often taxonomically and spatially biased. Here, we
+    synthesise data from West Africa from 127 rodent trapping studies,
+    published between 1964-2022, as an additional source of information
+    to characterise the range and presence of rodent species and
+    identify the subgroup of species that are potential or known
+    important zoonotic pathogen hosts species in this region. We
+    identify that these rodent trapping studies, although biased towards
+    human dominated landscapes across West Africa, can usefully
+    complement current rodent species distribution datasets and we
+    calculate the discrepancies between these datasets. For five
+    regionally important zoonotic pathogens (Arenaviridae spp., Borrelia
+    spp., Lassa mammarenavirus, Leptospira spp. and Toxoplasma gondii),
+    we identify host-pathogen associations that have not been previously
+    reported in host-association datasets. These omissions have the
+    potential for biasing estimates of current risk and drivers of
+    zoonoses. Finally, for these five pathogen groups, we find that the
+    proportion of a rodent hosts range that has been sampled remains
+    small with geographic clustering. A priority of future rodent
+    trapping studies should be to sample rodent hosts across a greater
+    geographic range to better characterise current and future risk of
+    zoonotic spillover events. In the interim, future studies of spatial
+    pathogen risk informed by rodent distributions must incorporate a
+    measure of the current sampling biases. The current synthesis of
+    contextually rich rodent trapping data enriches available
+    information from IUCN, GBIF and CLOVER which can support a more
+    complete understanding of the hazard of zoonotic spillover events.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-simons2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+David Simons, Lauren A. Attfield, Kate E. Jones, Deborah Watson-Jones,
+and Richard Kock. 2022. <span>“Rodent Trapping Studies as an Overlooked
+Information Source for Understanding Endemic and Novel Zoonotic
+Spillover.”</span> <em>BioRxiv</em>, November. <a href="https://doi.org/10.1101/2022.08.30.505792">https://doi.org/10.1101/2022.08.30.505792</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

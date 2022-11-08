@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -40,6 +59,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,10 +102,10 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 
 <meta property="og:title" content="David Simons - Antimicrobial Resistance">
-<meta property="og:description" content="I have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman (ORCiD) and Sharifo Ali-Elmi (ORCiD).">
+<meta property="og:description" content="I have contributed to two cross-sectional studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman  and Sharifo Ali-Elmi .">
 <meta property="og:site-name" content="David Simons">
 <meta name="twitter:title" content="David Simons - Antimicrobial Resistance">
-<meta name="twitter:description" content="I have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman (ORCiD) and Sharifo Ali-Elmi (ORCiD).">
+<meta name="twitter:description" content="I have contributed to two cross-sectional studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman  and Sharifo Ali-Elmi .">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -106,38 +130,40 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./talks.qmd">
- <span class="menu-text">Talks</span></a>
+ <span class="menu-text"><iconify-icon inline="" icon="mingcute:home-2-line"></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Themes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-ic-outline-category--research-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><iconify-icon inline="" icon="ic:outline-category"></iconify-icon> Research Themes</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-ic-outline-category--research-themes">    
         <li>
-    <a class="dropdown-item" href="./lassa.html"><i class="bi bi-thermometer-sun" role="img">
-</i> 
- <span class="dropdown-text">Lassa fever</span></a>
+    <a class="dropdown-item" href="./lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./covid_19.html"><i class="bi bi-virus2" role="img">
-</i> 
- <span class="dropdown-text">COVID-19</span></a>
+    <a class="dropdown-item" href="./monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./amr.html"><i class="bi bi-prescription" role="img">
 </i> 
- <span class="dropdown-text">Antimicrobial Resistance (AMR)</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./others.qmd">
- <span class="dropdown-text">Others</span></a>
+    <a class="dropdown-item" href="./others.html">
+ <span class="dropdown-text"><i class="fa-solid fa-shuffle" aria-label="shuffle"></i> Other Work</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=fT8u5MwAAAAJ&amp;hl=en">
+ <span class="menu-text"><iconify-icon inline="" icon="ooui:articles-ltr"></iconify-icon> Publications</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -187,15 +213,23 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 </header>
 
-<p>I have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman <a href="https://orcid.org/0000-0003-3172-5912">(ORCiD)</a> and Sharifo Ali-Elmi <a href="https://orcid.org/0000-0002-4482-9182">(ORCiD)</a>.</p>
+<p>I have contributed to two cross-sectional studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by <a href="https://orcid.org/0000-0003-3172-5912">Abdinasir Osman <i class="ai  ai-orcid" title="" style="color:"></i></a> and <a href="https://orcid.org/0000-0002-4482-9182">Sharifo Ali-Elmi <i class="ai  ai-orcid" title="" style="color:"></i></a>.</p>
 <ol type="1">
-<li>Antimicrobial Resistance Patterns and Risk Factors Associated with <em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study. Available from <a href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
-<li>Identification of Risk Factors Associated with Resistant <em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study. Availables from <a href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
+<li>Antimicrobial Resistance Patterns and Risk Factors Associated with <em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study <span class="citation" data-cites="osman_antimicrobial_2021">(<a href="#ref-osman_antimicrobial_2021" role="doc-biblioref">Osman et al. 2021</a>)</span>. Available from <a href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
+<li>Identification of Risk Factors Associated with Resistant <em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study <span class="citation" data-cites="elmi_identification_2021">(<a href="#ref-elmi_identification_2021" role="doc-biblioref">Elmi et al. 2021</a>)</span>. Available from <a href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
 </ol>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-elmi_identification_2021" class="csl-entry" role="doc-biblioentry">
+Elmi, Sharifo Ali, David Simons, Linzy Elton, Najmul Haider, Muzamil Mahdi Abdel Hamid, Yassir Adam Shuaib, Mohd Azam Khan, Iekhsan Othman, Richard Kock, and Abdinasir Yusuf Osman. 2021. <span>“Identification of Risk Factors Associated with Resistant Escherichia Coli Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study.”</span> <em>Antibiotics</em> 10 (2): 117. <a href="https://doi.org/10.3390/antibiotics10020117">https://doi.org/10.3390/antibiotics10020117</a>.
+</div>
+<div id="ref-osman_antimicrobial_2021" class="csl-entry" role="doc-biblioentry">
+Osman, Abdinasir Yusuf, Sharifo Ali Elmi, David Simons, Linzy Elton, Najmul Haider, Mohd Azam Khan, Iekhsan Othman, Alimuddin Zumla, David McCoy, and Richard Kock. 2021. <span>“Antimicrobial Resistance Patterns and Risk Factors Associated with Salmonella Spp. Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study.”</span> <em>Pathogens</em> 10 (9): 1160. <a href="https://doi.org/10.3390/pathogens10091160">https://doi.org/10.3390/pathogens10091160</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

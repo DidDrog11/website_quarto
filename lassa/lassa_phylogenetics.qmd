@@ -3,24 +3,38 @@ title: "Inference from phylogeography and molecular epidemiology of Lassa virus 
 abstract: |
   The viral haemorrhagic infection caused by Lassa virus (LASV) is an important endemic zoonotic disease in West AfricanAfrica with evidence for increasing outbreak sizes. The Natal multimammate mouse (*Mastomys natalensis*) is the predominant viral reservoir, although few studies have investigated the role of other animal species. To identify host sequencing biases, all LASV nucleotide sequences and associated metadata (n = 2,298) available on GenBank were retrieved. Most data originated from Nigeria (56%), Guinea (20%) and Sierra Leone (14%). Data from non-human hosts (n = 703) were limited, only 69 sequences encompassed complete genes. Spatial modelling of sequencing effort highlighted the bias in locations of available sequences. Using available sequences phylogenetic analyses showed geographic clustering of LASV lineages, suggested isolated events of human-to-rodent  transmission and the emergence of currently circulating strains of LASV from the year 1498 in Nigeria. Overall, the current study highlights significant geographic limitations in LASV surveillance, particularly, in non-human species. Further investigation of the non-human reservoir of this virus, alongside improved surveillance in other endemic countries, are required for further characterisation of the historic emergence and dispersal of LASV. Accurate assessment on viral circulation in non-human hosts is vital to guide public health interventions to prevent recurrent Lassa fever epidemics. 
 author: 
-  - "Hayley Free"
-  - "David Simons"
-  - "Isobella Honeyborne"
-  - "Linzy Elton"
-  - "Najmul Haider"
-  - "Rashid Ansumana"
-  - "Richard Kock"
-  - "Francine Ntoumi"
-  - "Alimuddin Zumla"
-  - "Timothy D McHugh"
-  - "Liã Arruda"
+  - name: "Hayley Free"
+    affiliation: The Royal Veterinary College
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+  - name: "Isobella Honeyborne"
+    affiliation: University College London
+  - name: "Linzy Elton"
+    affiliation: University College London
+  - name: "Najmul Haider"
+    affiliation: The Royal Veterinary College
+  - name: "Rashid Ansumana"
+    affiliation: Njala University
+  - name: "Richard Kock"
+    affiliation: The Royal Veterinary College
+  - name: "Francine Ntoumi"
+    affiliation: Fondation Congolaise pour la Recherche Médicale
+  - name: "Alimuddin Zumla"
+    affiliation: University College London
+  - name: "Timothy D McHugh"
+    affiliation: University College London
+  - name: "Liã Arruda"
+    affiliation: University College London
 categories: [Phylogeography, Molecular Epidemiology, Zoonosis, Lassa Fever, West Africa, In Preparation]
 image: images/sequence_locations.png
 bibliography: rodent_trapping.bib
-date: 2022-11-02
+date: 2022-10-01
+citation: true
 ---
 
 This project developed from [Hayley Free's](https://twitter.com/hayleybethfree) MSc project based at the Royal Veterinary College. We obtained GenBank data on *Lassa mammarenavirus* sequences to investigate the phylogeny of these samples and to understand how biased these may be as a dataset. We were particularly interested in how many human derived sequences were obtained from the different regions with known outbreaks of human disease and comparing this to the coverage of rodent derived sequences.
 
 We found that there is important spatial heterogeneity in where samples are obtained from that does not match the known distribution of rodent infections and human cases. For example, most human sequences came from Nigeria and Eastern Sierra Leone. While most rodent sequences came from Guinea and Eastern Sierra Leone with very few from Nigeria. This disparity likely has an important impact on the inference that can be drawn from phylogeographic studies of *Lassa mammarenavirus*.
+
+![The majority of human derived *Lassa mammarenavirus* sequences have been obtained from two states in South Nigeria, with few samples from elsewhere. Among rodents fewer samples have been obtained and from different regions in the endemic zone. Together this makes it difficult to combine these data for phylogeographic inference.](images/sequence_locations.png)
 

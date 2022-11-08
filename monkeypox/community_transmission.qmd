@@ -1,0 +1,15 @@
+---
+title: "Community transmission of monkeypox in the United Kingdom, April to May 2022"
+abstract: |
+  Monkeypox is an emerging zoonotic infection caused by monkeypox virus (MPXV), which in the past has been primarily detected in West and Central Africa. The incubation period of monkeypox can be up to 21 days. In the United Kingdom (UK) all previous seven cases ever reported were either imported, or household or healthcare contacts of imported cases. In this report, we describe an ongoing outbreak of MPXV infections in the UK detected since the beginning of May 2022 affecting people without documented history of travel to endemic countries.
+author: 
+  - "David Simons"
+image: images/community_transmission.png
+categories: [Monkeypox, Published, Epidemiology, United Kingdom]
+date: 2022-06-02
+bibliography: monkeypox_references.bib
+---
+
+The full article is available from [Eurosurveillance](https://doi.org/10.2807/1560-7917.ES.2022.27.22.2200422) [@vivancos_community_2022].
+
+![Distribution of laboratory-confirmed monkeypox cases, by symptom onset date and associated incident, United Kingdom, 20 April−25 May (N = 72 with known onset dates). Taken from Vivancanos *et al.*, 2022](images/community_transmission.png)

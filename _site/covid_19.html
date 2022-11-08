@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href=".//images/icon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,6 +64,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4H9BE4MVE"></script>
 
 <script type="text/javascript">
@@ -76,13 +110,16 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="David Simons - COVID-19">
-<meta property="og:description" content="The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases.">
+<meta property="og:description" content="COVID-19 epidemiology, clinical practice and modelling">
+<meta property="og:image" content="./covid/images/recovery.jpg">
 <meta property="og:site-name" content="David Simons">
 <meta name="twitter:title" content="David Simons - COVID-19">
-<meta name="twitter:description" content="The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="COVID-19 epidemiology, clinical practice and modelling">
+<meta name="twitter:image" content="./covid/images/recovery.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -106,38 +143,40 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./talks.qmd">
- <span class="menu-text">Talks</span></a>
+ <span class="menu-text"><iconify-icon inline="" icon="mingcute:home-2-line"></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Themes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-ic-outline-category--research-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><iconify-icon inline="" icon="ic:outline-category"></iconify-icon> Research Themes</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-ic-outline-category--research-themes">    
         <li>
-    <a class="dropdown-item" href="./lassa.html"><i class="bi bi-thermometer-sun" role="img">
-</i> 
- <span class="dropdown-text">Lassa fever</span></a>
+    <a class="dropdown-item" href="./lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./covid_19.html"><i class="bi bi-virus2" role="img">
-</i> 
- <span class="dropdown-text">COVID-19</span></a>
+    <a class="dropdown-item" href="./monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./amr.html"><i class="bi bi-prescription" role="img">
 </i> 
- <span class="dropdown-text">Antimicrobial Resistance (AMR)</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./others.qmd">
- <span class="dropdown-text">Others</span></a>
+    <a class="dropdown-item" href="./others.html">
+ <span class="dropdown-text"><i class="fa-solid fa-shuffle" aria-label="shuffle"></i> Other Work</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=fT8u5MwAAAAJ&amp;hl=en">
+ <span class="menu-text"><iconify-icon inline="" icon="ooui:articles-ltr"></iconify-icon> Publications</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -165,29 +204,15 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#covid-19-transmission-and-control-strategies" id="toc-covid-19-transmission-and-control-strategies" class="nav-link active" data-scroll-target="#covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</a></li>
-  <li><a href="#covid-19-and-the-association-with-smoking" id="toc-covid-19-and-the-association-with-smoking" class="nav-link" data-scroll-target="#covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</a></li>
-  <li><a href="#risk-of-covid-19-in-individuals-with-sickle-cell-disease" id="toc-risk-of-covid-19-in-individuals-with-sickle-cell-disease" class="nav-link" data-scroll-target="#risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk of COVID-19 in individuals with Sickle Cell Disease</a></li>
-  <li><a href="#omicron-response-work" id="toc-omicron-response-work" class="nav-link" data-scroll-target="#omicron-response-work">Omicron response work</a>
-  <ul class="collapse">
-  <li><a href="#vaccine-effectiveness" id="toc-vaccine-effectiveness" class="nav-link" data-scroll-target="#vaccine-effectiveness">Vaccine effectiveness</a></li>
-  <li><a href="#variant-detection" id="toc-variant-detection" class="nav-link" data-scroll-target="#variant-detection">Variant detection</a></li>
-  <li><a href="#comparing-transmission-of-omicron-and-delta" id="toc-comparing-transmission-of-omicron-and-delta" class="nav-link" data-scroll-target="#comparing-transmission-of-omicron-and-delta">Comparing transmission of Omicron and Delta</a></li>
-  <li><a href="#the-use-of-clinical-assessment-tools-in-uk-hospitals" id="toc-the-use-of-clinical-assessment-tools-in-uk-hospitals" class="nav-link" data-scroll-target="#the-use-of-clinical-assessment-tools-in-uk-hospitals">The use of clinical assessment tools in UK hospitals</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="COVID-19">COVID-19 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Clinical">Clinical <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Emerging variants">Emerging variants <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Epidemiology">Epidemiology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="In Preparation">In Preparation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="International transmission">International transmission <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Living Review">Living Review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Modelling">Modelling <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Pre Print">Pre Print <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Preprint">Preprint <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Public Health">Public Health <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Published">Published <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Sickle Cell disease">Sickle Cell disease <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Smoking">Smoking <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">COVID-19</h1>
+<p class="subtitle lead">COVID-19 epidemiology, clinical practice and modelling</p>
 </div>
 
 
@@ -202,52 +227,318 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 </header>
 
-<section id="covid-19-transmission-and-control-strategies" class="level3">
-<h3 class="anchored" data-anchor-id="covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</h3>
-<p>The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased after the summer I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response.</p>
-<ul>
-<li><a href="https://cmmid.github.io/topics/covid19/">CMMID</a> website with a list of the outputs from the working group</li>
-<li><a href="https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html">ASMODEE</a> an ongoing COVID-19 surveillance activity I remain involved in</li>
-</ul>
-</section>
-<section id="covid-19-and-the-association-with-smoking" class="level3">
-<h3 class="anchored" data-anchor-id="covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</h3>
-<p>Since March 2020 I have also been involved in a project investigating the association of smoking and SARS-CoV-2 infection, and COVID-19 severity and mortality. This work has been led by <a href="https://www.olgaperski.com">Olga Perski</a> and colleagues at <a href="https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/research/ucl-tobacco-alcohol-research-group-utarg">UCL-Tobacco and Alcohol Research Group</a>.</p>
-<p>Current and former smoking is associated with worse outcomes and increased rates of hospitalisation from respiratory infections such as Respiratory Synciatial Virus, Influenza viruses and bacterial infections. Because of this there was an early concern about how the pandemic caused by SARS-CoV-2 may interact with smoking.</p>
-<p>Early data released from healthcare services in China in the early parts of 2020 suggested that smoking was not a significant risk factor for COVID-19 disease. Whether this was a true effect or reflected poor recording or reporting was unclear. We began to synthesise the published and pre-print literature to investigate the specific association of smoking and COVID-19. This was initially performed as a report for the Royal College of Physicians, London and was expanded following a request from Public Health England.</p>
-<ul>
-<li><a href="posts/2021-04-06-smoking-covid-living-review/index.html">COVID-19 and smoking living evidence review</a></li>
-<li><a href="posts/2021-04-06-smoking-covid-hospitalised/index.html">The association of smoking status with hospitalisation for COVID-19</a></li>
-</ul>
-</section>
-<section id="risk-of-covid-19-in-individuals-with-sickle-cell-disease" class="level2">
-<h2 class="anchored" data-anchor-id="risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk of COVID-19 in individuals with Sickle Cell Disease</h2>
-<p>Another group that were potentially at greater risk of adverse outcomes from COVID-19 infection were individuals suffering with Sickle Cell Disease. We wrote a commentary piece to draw attention to this group of individuals who are more prevalent in sub-Saharan countries in Africa that also suffer from a further burden of often under-developed healthcare infrastructure <span class="citation" data-cites="dexter_mitigating_2020">[@dexter_mitigating_2020]</span></p>
-<p>Along with colleagues from the PANDORA network we tried to identify the countries that could be at greatest risk of importation of cases early in the epidemic based off flight data <span class="citation" data-cites="haider_passengers_2020">[@haider_passengers_2020]</span></p>
-</section>
-<section id="omicron-response-work" class="level2">
-<h2 class="anchored" data-anchor-id="omicron-response-work">Omicron response work</h2>
-<section id="vaccine-effectiveness" class="level3">
-<h3 class="anchored" data-anchor-id="vaccine-effectiveness">Vaccine effectiveness</h3>
-<p>Following the emergence and rapid spread of the Omicron (B.1.1.529) variant of SARS-CoV-2 there was substantial interest in the effectiveness of current vaccines. A test-negative case-control design was used to estimate vaccine effectiveness against symptomatic disease compared to the previously circulating Delta (B.1.617.2) variant. We observed that primary vaccination with ChAdOx1 nCoV-19 or BNT162b2 vaccine provided limited protection against symptomatic disease. Booster vaccination following a completed primary course increased protection, but protection waned over time <span class="citation" data-cites="andrews2022covid">[@andrews2022covid]</span>. This work has been published in the <a href="https://doi.org/10.1056/nejmoa2119451">New England Journal of Medicine</a></p>
-</section>
-<section id="variant-detection" class="level3">
-<h3 class="anchored" data-anchor-id="variant-detection">Variant detection</h3>
-<p>Within UKHSA we were fortunate that we could monitor the emergence of Omicron against the background of the prior Delta wave. This was possible as many of the laboratories conducting surveillance were able to detect S-gene target failure allowing differentiation between Omicron and Delta. This led to rapid identification of possible Omicron cases, alongside real-time surveillance and modelling of Omicron growth. This was key to initial public health action (including case identification and incident management), and we share applied insights on how and when these surveillance approaches can inform public health interventions<span class="citation" data-cites="blomquist2022enhancing">[@blomquist2022enhancing]</span>. This work has been published in <a href="https://doi.org/10.2807/1560-7917.es.2022.27.11.2200143"><em>Eurosurveillance</em></a>.</p>
-</section>
-<section id="comparing-transmission-of-omicron-and-delta" class="level3">
-<h3 class="anchored" data-anchor-id="comparing-transmission-of-omicron-and-delta">Comparing transmission of Omicron and Delta</h3>
-<p>This epidemiological study assessed differences in transmissibility between the Omicron and Delta. We used contact tracing data alongside national surveillance to estimate the transmission parameters. We found that the proportion of index cases resulting in a cluster of transmission was twice as high for Omicron (16.1%) compared to Delta (7.3%). Our study identified increased risk of onward transmission of Omicron, consistent with its successful global displacement of Delta <span class="citation" data-cites="allen2022comparative">[@allen2022comparative]</span>. This work is currently registered as a pre-print on <a href="https://doi.org/10.1101/2022.02.15.22271001">MedRxiv</a></p>
-</section>
-<section id="the-use-of-clinical-assessment-tools-in-uk-hospitals" class="level3">
-<h3 class="anchored" data-anchor-id="the-use-of-clinical-assessment-tools-in-uk-hospitals">The use of clinical assessment tools in UK hospitals</h3>
-<p>In my clinical role I was involved in a large scale audit of the use of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was designed to risk stratify hospitalised patients with COVID-19. We assessed the inclusion of this score in COVID-19 management guidance and its documentation in patients’ case notes in January 2021 in UK hospitals. We found that score documentation in case notes was highly variable. Higher documentation of 4C Score was associated with score integration within admissions proformas, inclusion of 4C Score variables or link to online calculator, and management decisions. Integration of 4C Score within clinical pathways may encourage more widespread use <span class="citation" data-cites="blunsum2021evaluation">[@blunsum2021evaluation]</span>. This work is currently registered as a pre-print on <a href="https://doi.org/10.1101/2021.12.18.21268003">MedRxiv</a></p>
+<p>The primary focus of my research on SARS-CoV-2 and COVID-19 is on the epidemiology of infection following emergence of the virus.</p>
+<div id="covid">
+
+</div>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-left" data-index="0" data-categories="COVID-19,Clinical,Pre Print" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667847073126" data-listing-reading-time-sort="1.455">
+<div class="thumbnail">
+<p><a href="./covid/covid_clinical.html"> <img src="./covid/images/recovery.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/covid_clinical.html">
+<h3 class="no-anchor listing-title">
+Clinical response to COVID-19.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Clinical'); return false;">
+Clinical
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pre Print'); return false;">
+Pre Print
+</div>
+</div>
+<a href="./covid/covid_clinical.html">
+<div class="listing-description">
+<p>Alongside my epidemiological work I supported the clinical response to…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/covid_clinical.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="1" data-categories="COVID-19,Modelling,Public Health,Published" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667845812666" data-listing-reading-time-sort="0.86">
+<div class="thumbnail">
+<p><a href="./covid/covid_modelling.html"> <img src="./covid/images/cmmid_logo.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/covid_modelling.html">
+<h3 class="no-anchor listing-title">
+Modelling COVID-19 transmission and control strategies.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Modelling'); return false;">
+Modelling
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+</div>
+<a href="./covid/covid_modelling.html">
+<div class="listing-description">
+<p>The Centre for Mathematical Modelling of Infectious Diseases brought together…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/covid_modelling.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="2" data-categories="COVID-19,Smoking,Public Health,Published,Living Review" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667862915782" data-listing-reading-time-sort="1.84">
+<div class="thumbnail">
+<p><a href="./covid/covid_smoking.html"> <img src="./covid/images/quit_for_covid.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/covid_smoking.html">
+<h3 class="no-anchor listing-title">
+Smoking and COVID-19.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Smoking'); return false;">
+Smoking
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Living Review'); return false;">
+Living Review
+</div>
+</div>
+<a href="./covid/covid_smoking.html">
+<div class="listing-description">
+<p>Since March 2020 I have also been involved in a project investigating the…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/covid_smoking.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="3" data-categories="COVID-19,Modelling,Public Health,International transmission,Published" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667845805135" data-listing-reading-time-sort="0.76">
+<div class="thumbnail">
+<p><a href="./covid/covid_transmission.html"> <img src="./covid/images/risk_import.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/covid_transmission.html">
+<h3 class="no-anchor listing-title">
+Understanding the risk of international transmission of a newly emerging pathogen.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Modelling'); return false;">
+Modelling
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('International transmission'); return false;">
+International transmission
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+</div>
+<a href="./covid/covid_transmission.html">
+<div class="listing-description">
+<p>Zoonotic disease spillover occurs at a local level, sustained subsequent…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/covid_transmission.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="4" data-categories="COVID-19,Epidemiology,Public Health,Emerging variants,Published,In Preparation,Preprint" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667845800544" data-listing-reading-time-sort="3.72">
+<div class="thumbnail">
+<p><a href="./covid/omicron.html"> <img src="./covid/images/nejm.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/omicron.html">
+<h3 class="no-anchor listing-title">
+Response to the emerging Omicron variant of SARS-CoV-2.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Epidemiology'); return false;">
+Epidemiology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Emerging variants'); return false;">
+Emerging variants
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('In Preparation'); return false;">
+In Preparation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Preprint'); return false;">
+Preprint
+</div>
+</div>
+<a href="./covid/omicron.html">
+<div class="listing-description">
+<p>In October 2021 I began a role as a senior scientist with the Outbreak…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/omicron.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-left" data-index="5" data-categories="COVID-19,Sickle Cell disease,Public Health,Published" data-listing-date-sort="1667286000000" data-listing-file-modified-sort="1667516425864" data-listing-reading-time-sort="0.605">
+<div class="thumbnail">
+<p><a href="./covid/sickle_cell.html"> <img src="./covid/images/sickle_cell.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./covid/sickle_cell.html">
+<h3 class="no-anchor listing-title">
+Sickle Cell disease and COVID-19.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID-19'); return false;">
+COVID-19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sickle Cell disease'); return false;">
+Sickle Cell disease
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Published'); return false;">
+Published
+</div>
+</div>
+<a href="./covid/sickle_cell.html">
+<div class="listing-description">
+<p>Another group that were potentially at greater risk of adverse outcomes from…</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./covid/sickle_cell.html">
+<div class="listing-date">
+Nov 1, 2022
+</div>
+<div class="listing-author">
+David Simons
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

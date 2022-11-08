@@ -1,0 +1,16 @@
+---
+title: "Other work"
+subtitle: "A collection of projects I have been involved in more peripherally or those that do not fall into the previous themes."
+listing:
+    contents: others
+    categories: true
+    image-align: left
+    max-description-length: 80
+    sort:
+      - "date des"
+    sort-ui: true
+---
+
+::: {#others}
+
+:::

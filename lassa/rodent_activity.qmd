@@ -1,0 +1,15 @@
+---
+title: "Investigating rodent activity within houses in Eastern Sierra Leone."
+abstract: "The location of human infection with Lassa Fever is not known. Humans may encounter rodents in various habitats in endemic regions. We were interested in how rodents use space within human houses and so alongside our rodent trapping studies we deployed camera traps to observe their behaviour."
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [Rodent, Ecology, Camera Trapping, In Preparation]
+image: images/rodent_camera.JPG
+date: 2022-10-01
+---
+
+This work has been led by [Najmul Haider{{< ai orcid >}}](https://scholar.google.com/citations?user=Iv4wObEAAAAJ&hl=en&oi=ao) and is in preparation. We are collecting camera images from locations where we are trapping rodents to better characterise the risk to individuals in these locations.
+
+![Rodents located near food storage within a house.](images/rodent_camera.JPG)
+

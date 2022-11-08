@@ -1,0 +1,13 @@
+---
+title: "The sensitivity and specificity of assays for Peste des Petits Ruminants and the effect this may have on global eradication plans."
+abstract: |
+  Peste des petits ruminants (PPR) poses a serious threat to global food security and economic development due to animal mortality and associated restrictions of  international trade. The Food and Agriculture Organization (FAO) and World Organisation for Animal Health (OIE now WHOA) have called for global PPR eradication by 2030. Concerns about the role of multiple Artiodactyl species, both domestic and wild, in PPR circulation in complex ecosystems have been raised, with calls for better evaluation of its impact on PPR control strategies and biodiversity conservation. Serological assays are commonly used in the primary hosts of this virus (sheep and goats) to detect acute and prior infection. The performance characteristics of the different serodiagnostic assays for PPR have not been systematically validated for other PPR host species. We aimed to systematically review the literature to assess the performance of diagnostic accuracy of serological tests for PPR.  
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [Peste des Petites Ruminants, In Preparation]
+image: images/pprv.jpg
+date: 2022-11-01
+---
+
+We have conducted a systematic review of available serological assays and are in the process of conducting meta-analyses to compare sensitivity and specificity of available tests. It is possible that tests have different sensitivity and specifity within and between different host species. We are particularly interested if this is something that may impact aims of eradication and may necessitate the use of species agnostic assays.

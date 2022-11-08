@@ -1,0 +1,34 @@
+---
+title: "Response to the emerging Omicron variant of SARS-CoV-2."
+abstract: "In October 2021 I began a role as a senior scientist with the Outbreak Surveillance Team at the UKHSA. This was during a period where the number of COVID-19 cases were declining, unfortunately this did not last and a rapid rise of case counts, with viral sequences sharing a pattern of S-gene target failure alerted the department to the potential emergence of a novel variant. This variant, first identified in South Africa became known as Omicron (B.1.1.529)."
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [COVID-19, Epidemiology, Public Health, Emerging variants, Published, In Preparation, Preprint]
+image: images/nejm.jpg
+date: 2022-11-01
+---
+
+My role was to develop the system and maintain a linelist of cases suspected to be caused by this new variant and to provide epidemiological data in real time to guide the public health response to this rapidly changing landscape. With previous variants that became widespread, Alpha and Delta introduction of cases typically occurred at periods of low levels of underlying transmission (due to behavioural interventions such as lockdowns and travel restrictions), this was not the case with Omicron where introduction occurred in the setting of high levels of community transmission. This made it more challenging to monitor changing case patterns and to evaluate suitable responses. 
+
+Fortunately, UKHSA had a well developed laboratory network for both community and hospital acquired samples with PCR kits that were able to identify the SGTF feature of Omicron against a background of the dominant variant (Delta) that did not have SGTF. This allowed us to perform real time surveillance of the expanding number of cases and geographic expansion following introduction of the variant.
+
+The primary concern was that vaccines may be less effective against Omicron than they would be against other variants. We also were involved in work comparing the transmissibility of Omicron against Delta using national surveillance data. 
+
+### Vaccine effectiveness
+
+Following the emergence and rapid spread of the Omicron (B.1.1.529) variant of SARS-CoV-2 there was substantial interest in the effectiveness of current vaccines. A test-negative case-control design was used to estimate vaccine effectiveness against symptomatic disease compared to the previously circulating Delta (B.1.617.2) variant. We observed that primary vaccination with ChAdOx1 nCoV-19 or BNT162b2 vaccine provided limited protection against symptomatic disease. Booster vaccination following a completed primary course increased protection, but protection waned over time [@andrews_covid-19_2022]. This work has been published in the [New England Journal of Medicine](https://doi.org/10.1056/nejmoa2119451)
+
+### Variant detection
+
+Within UKHSA we were fortunate that we could monitor the emergence of Omicron against the background of the prior Delta wave. This was possible as many of the laboratories conducting surveillance were able to detect S-gene target failure allowing differentiation between Omicron and Delta. This led to rapid identification of possible Omicron cases, alongside real-time surveillance and modelling of Omicron growth. This was key to initial public health action (including case identification and incident management), and we share applied insights on how and when these surveillance approaches can inform public health interventions[@blomquist_enhancing_2022]. This work has been published in [*Eurosurveillance*](https://doi.org/10.2807/1560-7917.es.2022.27.11.2200143).
+
+### Comparing transmission of Omicron and Delta
+
+This epidemiological study assessed differences in transmissibility between the Omicron and Delta. We used contact tracing data alongside national surveillance to estimate the transmission parameters. We found that the proportion of index cases resulting in a cluster of transmission was twice as high for Omicron (16.1%) compared to Delta (7.3%). Our study identified increased risk of onward transmission of Omicron, consistent with its successful global displacement of Delta [@allen_comparative_2022]. This work is currently registered as a pre-print on [MedRxiv](https://doi.org/10.1101/2022.02.15.22271001)
+
+### Evaluating the effect of travel restrictions on the transmission of imported variants
+
+A piece of ongoing work is assessing the rate of geographic spread of SARS-CoV-2 variants across the UK following introduction. We are interested in comparing the speed of this initial spread taking into account the underlying transmission dynamics at the time to evaluate the effectiveness of implementing travel bans once a variant has been detected. 
+
+![These are some initial results from our study of the time to detection of each SARS-CoV-2 variant in a Lower Level Super Output Area (the smallest UK geographic statistical unit) following the detection of the variant within the UK. Left is wildtype which was first detected around York in the North of the country, unfilled regions are those areas that did not identify a case prior to introduction of the next variant. Second from left is Alpha, this variant was first detected in the UK and was identified in the South East of the country. This variant was detected during a period of low background transmission and took much longer to be detected across the country. Second from right is Delta, this variant was first detected in India and was introduced to the UK simultaneously in the areas around Liverpool and Birmingham, this variant led to a rapid rise in the rate of transmission and had been detected everywhere prior to introduction of Omicron. Right is Omicron, this was imported during a period of high background transmission of Delta variant. The first case was detected in the South East of England, although within a month was detected across most of the country.](images/covid_variant_spread.png)

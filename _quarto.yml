@@ -15,22 +15,22 @@ website:
     search: true
     left:
       - href: index.qmd
-        text: "Home"
-      - href: talks.qmd
-        text: "Talks"
-      - text: "Themes"
+        text: "{{< iconify mingcute home-2-line >}} Home"
+      - text: "{{< iconify ic outline-category >}} Research Themes"
         menu:
-        - text: "Lassa fever"
-          icon: thermometer-sun
+        - text: "{{< iconify twemoji rat >}} Lassa Fever"
           href: lassa.qmd
-        - text: "COVID-19"
-          icon: virus2
+        - text: "{{< fa virus >}} Monkeypox"
+          href: monkeypox.qmd
+        - text: "{{< fa lungs-virus >}} COVID-19"
           href: covid_19.qmd
-        - text: "Antimicrobial Resistance (AMR)"
+        - text: "{{< fa bacterium >}} Antimicrobial Resistance (AMR)"
           href: amr.qmd
           icon: prescription
         - href: others.qmd
-          text: 'Others'
+          text: "{{< fa shuffle >}} Other Work"
+      - href: https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en
+        text: "{{< iconify ooui articles-ltr >}} Publications"
     right:
       - href: about.qmd
         text: "About me"

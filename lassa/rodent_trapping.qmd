@@ -3,11 +3,13 @@ title: "Understanding the structure of rodent species assemblages and land use c
 abstract: |
   *Lassa mammarenavirus*, the causative agent of Lassa fever is endemic to Eastern Sierra Leone. The principal reservoir species (*Mastomys natalensis*), is considered abundant in human dominated habitats, however, rodent species' assemblages in this context are not well described. We conducted three monthly small-mammal trapping to describe these rodent assemblages, their structure and associations with land use. We model the effect of land use on rodent species occurrence along a land use gradient and produce species distribution maps of the study region to understand current and potential *Lassa mammarenavirus* spillover hazard.
 author: 
-  - "David Simons"
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation]
 image: images/rodent_trapping.jpg
 bibliography: rodent_trapping.bib
 date: 2022-11-02
+citation: true
 ---
 
 ## Motivation
@@ -40,7 +42,7 @@ Identification to species level is challenging based on purely morphological mea
 
 ## Results
 
-An [interactive report](interactive_report.html) has been produced for collaborators, it may take some time to load.
+An [interactive report](files/interactive_report.html) has been produced for collaborators, it may take some time to load.
 
 I presented data from the first year of trapping at the 2022 Ecology and Evolution of Infectious Diseases conference, the [slides](files/david_simons_EEID.pdf) are available and the talk is embedded below.
 

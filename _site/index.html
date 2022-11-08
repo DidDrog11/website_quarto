@@ -40,6 +40,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,38 +112,40 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./talks.qmd">
- <span class="menu-text">Talks</span></a>
+ <span class="menu-text"><iconify-icon inline="" icon="mingcute:home-2-line"></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Themes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-ic-outline-category--research-themes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><iconify-icon inline="" icon="ic:outline-category"></iconify-icon> Research Themes</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-themes">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-ic-outline-category--research-themes">    
         <li>
-    <a class="dropdown-item" href="./lassa.html"><i class="bi bi-thermometer-sun" role="img">
-</i> 
- <span class="dropdown-text">Lassa fever</span></a>
+    <a class="dropdown-item" href="./lassa.html">
+ <span class="dropdown-text"><iconify-icon inline="" icon="twemoji:rat"></iconify-icon> Lassa Fever</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./covid_19.html"><i class="bi bi-virus2" role="img">
-</i> 
- <span class="dropdown-text">COVID-19</span></a>
+    <a class="dropdown-item" href="./monkeypox.html">
+ <span class="dropdown-text"><i class="fa-solid fa-virus" aria-label="virus"></i> Monkeypox</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./covid_19.html">
+ <span class="dropdown-text"><i class="fa-solid fa-lungs-virus" aria-label="lungs-virus"></i> COVID-19</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./amr.html"><i class="bi bi-prescription" role="img">
 </i> 
- <span class="dropdown-text">Antimicrobial Resistance (AMR)</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-bacterium" aria-label="bacterium"></i> Antimicrobial Resistance (AMR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./others.qmd">
- <span class="dropdown-text">Others</span></a>
+    <a class="dropdown-item" href="./others.html">
+ <span class="dropdown-text"><i class="fa-solid fa-shuffle" aria-label="shuffle"></i> Other Work</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=fT8u5MwAAAAJ&amp;hl=en">
+ <span class="menu-text"><iconify-icon inline="" icon="ooui:articles-ltr"></iconify-icon> Publications</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -179,6 +184,8 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
   <li><a href="#other-work" id="toc-other-work" class="nav-link" data-scroll-target="#other-work">Other work</a>
   <ul class="collapse">
   <li><a href="#african-swine-fever" id="toc-african-swine-fever" class="nav-link" data-scroll-target="#african-swine-fever">African Swine Fever</a></li>
+  <li><a href="#digital-health" id="toc-digital-health" class="nav-link" data-scroll-target="#digital-health">Digital Health</a></li>
+  <li><a href="#peste-des-petits-ruminants" id="toc-peste-des-petits-ruminants" class="nav-link" data-scroll-target="#peste-des-petits-ruminants">Peste des Petits Ruminants</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -204,7 +211,8 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 </header>
 
-<p>This is my personal website, I describe my journey so far in the <a href="./about.html">About me</a> section and I have organised my current work into themes of the disease or process. On this page I introduce these diseases and link to more in-depth work.</p>
+<p><strong>Welcome to my personal website!</strong></p>
+<p>I have organised my work into research themes accessible by selecting the headings below or in the navigation bar. On this page I introduce these disease systems. I describe my journey so far in the <a href="./about.html">About me</a> section.</p>
 <hr>
 <section id="lassa-fever" class="level1">
 <h1><a href="./lassa.html">Lassa Fever</a></h1>
@@ -220,9 +228,7 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 </section>
 <section id="monkeypox" class="level1">
 <h1><a href="./monkeypox.html">Monkeypox</a></h1>
-<p><a href="https://www.cdc.gov/poxvirus/monkeypox/index.html">Monkeypox</a> is also an endemic zoonoses, caused by the Monkeypox Virus (MPXV). Despite the name, the primary zoonotic reservoir is unknown, although several species are suspected as reservoirs. The virus has been isolated from wild animals on two occasions, first from a Rope Squirrel (<a href="https://en.wikipedia.org/wiki/Thomas%27s_rope_squirrel"><em>Funisciurus anerythrus</em></a>) and second from a Sooty Mangeby (<a href="https://en.wikipedia.org/wiki/Sooty_mangabey"><em>Cercocebus atys</em></a>). Several other species, including shrews, rodents and pigs, have been identified to have antibodies against the virus suggesting prior infection.</p>
-<p>Human infections are regularly reported from several Central and West African nations, including the Democratic Republic of Congo, Nigeria and Cameroon. Reported cases have been increasing since the elimination of Smallpox and the end of routine vaccination against this virus. The Smallpox vaccine was found to provide some protection against Monkeypox disease and waning immunity in the region is suspected to be driving increasing human cases. Monkeypox outbreaks rarely occur outside of the endemic region. In early 2022, a globally distributed outbreak was identified, predominantly in populations of gay or bisexual and other men who have sex with men.</p>
-<p>My work with monkeypox has predominantly been in my role as an epidemiologist with the <a href="https://www.gov.uk/government/news/monkeypox-cases-confirmed-in-england-latest-updates">UK Health Security Agency</a> maintaining a linelist of cases and their contacts. With the <a href="https://pandora.tghn.org/">PANDORA-ID-NET</a> we looked at what factors may be driving the recent outbreak.</p>
+<p><a href="https://www.cdc.gov/poxvirus/monkeypox/index.html">Monkeypox</a> is an endemic zoonosis, caused by the Monkeypox Virus (MPXV). Despite the name, the primary zoonotic reservoir is unknown, although several species are suspected as reservoirs. The virus has been isolated from wild animals on two occasions, first from a Rope Squirrel (<a href="https://en.wikipedia.org/wiki/Thomas%27s_rope_squirrel"><em>Funisciurus anerythrus</em></a>) and second from a Sooty Mangeby (<a href="https://en.wikipedia.org/wiki/Sooty_mangabey"><em>Cercocebus atys</em></a>). Several other species, including shrews, rodents and pigs, have been identified to have antibodies against the virus suggesting prior infection.</p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -334,6 +340,8 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 
 </div>
 </div>
+<p>Human infections are regularly reported from several Central and West African nations, including the Democratic Republic of Congo, Nigeria and Cameroon. Reported cases have been increasing since the elimination of Smallpox and the end of routine vaccination against this virus. The Smallpox vaccine was found to provide some protection against Monkeypox disease and waning immunity in the region is suspected to be driving increasing human cases. Monkeypox outbreaks rarely occur outside of the endemic region. In early 2022, a globally distributed outbreak was identified, predominantly in populations of gay or bisexual and other men who have sex with men.</p>
+<p>My work with monkeypox has predominantly been in my role as an epidemiologist with the <a href="https://www.gov.uk/government/news/monkeypox-cases-confirmed-in-england-latest-updates">UK Health Security Agency</a> maintaining a linelist of cases and their contacts. With the <a href="https://pandora.tghn.org/">PANDORA-ID-NET</a> we looked at what factors may be driving the recent outbreak.</p>
 </section>
 <section id="covid-19" class="level1">
 <h1><a href="./covid_19.html">COVID-19</a></h1>
@@ -352,10 +360,27 @@ gtag('config', 'G-Z4H9BE4MVE', { 'anonymize_ip': true});
 <p><a href="https://www.who.int/health-topics/antimicrobial-resistance">Antimicrobial resistance</a> is increasingly recognised as a threat to human health as effectiveness of treatment and prevention falls. My work in this theme relates to epidemiological monitoring of resistance patterns in food production in Malaysia and involvement in antimicrobial stewardship in clinical practice.</p>
 </section>
 <section id="other-work" class="level1">
-<h1><a href="others.qmd">Other work</a></h1>
+<h1><a href="./others.html">Other work</a></h1>
 <p>I have collected other projects I have worked on in this section.</p>
 <section id="african-swine-fever" class="level2">
-<h2 class="anchored" data-anchor-id="african-swine-fever"><a href="others/asf.qmd">African Swine Fever</a></h2>
+<h2 class="anchored" data-anchor-id="african-swine-fever"><a href="./others/asf.html">African Swine Fever</a></h2>
+<p>African Swine Fever (<a href="https://www.woah.org/en/disease/african-swine-fever/">ASF</a>) is a highly contagious viral disease of domestic and wild pigs. Mortality is very high (up to 100%) and transmission is difficult to control. The virus can be transmitted through contact with environmental sources, fomites and infected meat products.</p>
+<p>The virus forms a complex dynamic system including domesticated and farmed suids and wild boar, with the primary route of transmission through contaminated carcasses, meat products and fluids from infected swine alongside contaminated fomites. The presence of a wild reservoir population during the ongoing epidemic introduces challenges to the control of viral spread, particularly as this is occurring on a background of increasing wild board population densities particularly in Europe.</p>
+<p>This project began as a summer internship with <a href="https://www.ecohealthalliance.org/">EcoHealth Alliance</a> looking at whether reporting of cases from the <a href="https://wahis.woah.org/#/home">World Animal Health Infromation System</a>, maintained by the World Organisation for Animal Health could help us to quantify the risk of cases being detected in regions not previously reporting cases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="others/images/asf_framework.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A conceptual model of ASF transmission in both sylvatic and agricultural settings.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="digital-health" class="level2">
+<h2 class="anchored" data-anchor-id="digital-health"><a href="./others/digital_health.html">Digital Health</a></h2>
+<p>I collaborate with <a href="https://www.olgaperski.com">Olga Perski</a>, typically providing some data-science support to her interests of smoking cessation through digital health interventions.</p>
+</section>
+<section id="peste-des-petits-ruminants" class="level2">
+<h2 class="anchored" data-anchor-id="peste-des-petits-ruminants"><a href="./others/pprv.html">Peste des Petits Ruminants</a></h2>
+<p><a href="https://www.woah.org/en/disease/peste-des-petits-ruminants/">Peste des petits ruminants</a> is caused by a morbilivirus which affects goats, sheep and other small ruminants. It has been targeted for global eradication by 2030. I assist with current work designed to assess the sensitivity and specificity of current assays against this virus to support elimination campaigns.</p>
 
 
 </section>
