@@ -11,6 +11,9 @@ about:
     - text: Twitter
       url: https://twitter.com/David_Simons_UK
       icon: twitter
+    - text: Mastodon
+      icon: mastodon
+      url: "https://ecoevo.social/@davidsimons"
     - text: "{{< ai google-scholar >}} Google Scholar"
       url: "https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en"
     - text: GitHub
@@ -23,6 +26,7 @@ about:
       url: "files/cv.pdf"
     - text: "{{< ai osf >}} OSF"
       url: "https://osf.io/rk8at/"
+
 ---
 
 :::{#hero-heading}
