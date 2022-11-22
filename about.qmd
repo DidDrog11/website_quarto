@@ -23,7 +23,7 @@ about:
       url: "mailto:dsimons19@rvc.ac.uk"
       icon: envelope-fill
     - text: "{{< fa clipboard >}} C.V."
-      url: "files/cv.pdf"
+      url: "cv.pdf"
     - text: "{{< ai osf >}} OSF"
       url: "https://osf.io/rk8at/"
 
@@ -46,11 +46,12 @@ I am a proponent of Open Science with pre-specified research questions and study
 
 ## Clinical practice
 
-I continue to practice as a clinician with the [Hospital for Tropical Diseases](http://www.thehtd.org) and within the emergency department at University College London Hospital. Alongside my clinical work during the COVID-19 pandemic I have contributed to the work of LSHTM's [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19/) to understand the transmission dynamics of SARS-CoV-2 and potential control measures.
+I continue to practice as a clinician with the [Hospital for Tropical Diseases](http://www.thehtd.org) and within the emergency department at University College London Hospital. My [CV](cv.pdf) contains a list of my clinical work. Alongside my clinical work during the COVID-19 pandemic I have contributed to the work of LSHTM's [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19/) to understand the transmission dynamics of SARS-CoV-2 and potential control measures.
 
 Alongside my PhD programme I worked with Public Health England (now the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency)). I was based in the Outbreak Surveillance Team starting shortly before the beginning of the Omicron variant importation and spread. During this period I was responsible for producing an automated approach to monitoring real time reported cases exploring spatial spread and informing contact tracing and the initial public health response. This work led to several insights which have been written up and published. I was nominated for and received an award for my contribution to the immediate response to Omicron emergence. I was also involved in the UK Monkeypox outbreak investigating how we could understand transmission parameters using contact tracing data within the dense community networks in which cases were identified.
 
 ------------------------------------------------------------------------
+
 
 ## Education
 
