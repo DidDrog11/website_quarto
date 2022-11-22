@@ -5,7 +5,9 @@ page-layout: full
 toc: true
 ---
 
-**Welcome to my personal website!** 
+<h1>Welcome to my personal website!</h1>
+
+<h2>I'm currently looking for a part time role in Southern California if you or anyone you know is looking for staff</h2>
 
 I have organised my work into research themes accessible by selecting the headings below or in the navigation bar. On this page I introduce these disease systems. I describe my journey so far in the [About me](about.qmd) section. 
 
