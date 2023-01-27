@@ -87,13 +87,13 @@ Future rodent trapping studies should be targeted towards regions that are curre
 
 Currently all data is accessible at an archived [Zenodo repository] (https://zenodo.org/badge/DOI/10.5281/zenodo.7416054) and on [GitHub](https://github.com/DidDrog11/scoping_review).
 
-## Pre-print
-
-This work is now peer reviewed, a pre-print has been deposited on [BioRxiv](https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full).
-
 ## Publication
 
 This work has been published in [PLOS Neglected Tropical Diseases](https://doi.org/10.1371/journal.pntd.0010772) following peer review. As part of the journals open peer-review process all peer review comments and author respones have been made available on the [Peer review](https://journals.plos.org/plosntds/article/peerReview?id=10.1371/journal.pntd.0010772) tab of the article.
+
+## Pre-print
+
+A pre-print was deposited on [BioRxiv](https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full).
 
 ## Poster
 

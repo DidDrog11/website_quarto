@@ -6,7 +6,7 @@ author:
   - name: "David Simons"
     affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation, Landuse Change]
-image: images/rodent_trapping.jpg
+image: files/rodent_landuse/Figure_1a.png
 bibliography: rodent_trapping.bib
 date: 2022-11-02
 citation: true
