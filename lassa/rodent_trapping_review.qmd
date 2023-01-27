@@ -12,15 +12,15 @@ author:
     affiliation: The London School of Hygiene and Tropical Medicine
   - name: "Richard Kock"
     affiliation: The Royal Veterinary College
-categories: [Rodent, Ecology, Zoonosis, West Africa, Under Review, Preprint]
+categories: [Rodent, Ecology, Zoonosis, West Africa, Published, Peer-Reviewed, Open Data]
 image: images/rodent_trapping_preview.png
 bibliography: rodent_trapping.bib
-date: 2022-11-01
+date: 2023-01-27
 citation:
   type: article-journal
-  container-title: "BioRxiv"
-  doi: "10.1101/2022.08.30.505792"
-  url: "https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full"  
+  container-title: "PLOS NTD"
+  doi: "10.1371/journal.pntd.0010772"
+  url: "https://doi.org/10.1371/journal.pntd.0010772"  
 ---
 
 ## Motivation
@@ -83,9 +83,17 @@ We have shown that synthesis of rodent trapping studies to supplement curated ro
 
 Future rodent trapping studies should be targeted towards regions that are currently under-studied. Further information on rodent presence and abundance across West Africa will aid the modelling of changing endemic zoonosis risk and the potential for novel pathogen emergence. Sharing of disaggregated data alongside research publications should be promoted with adoption of data standards to support ongoing data synthesis. Specifically, inclusion of exact locations of trapping sites, trapping effort and the dates at which trapping occurred would support more detailed inference of the spatio-temporal dynamics of host populations and the risk of endemic zoonosis spillover events. Despite these challenges we propose that rodent trapping studies can provide an important source of data to supplement curated datasets on rodent distributions to quantify the risk of endemic zoonosis spillover events and the hazard of novel pathogen emergence.
 
+## Data availability
+
+Currently all data is accessible at an archived [Zenodo repository] (https://zenodo.org/badge/DOI/10.5281/zenodo.7416054) and on [GitHub](https://github.com/DidDrog11/scoping_review).
+
 ## Pre-print
 
-This work is currently under review, a pre-print has been deposited on [BioRxiv](https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full) and all data has been made available.
+This work is now peer reviewed, a pre-print has been deposited on [BioRxiv](https://www.biorxiv.org/content/10.1101/2022.08.30.505792v2.full).
+
+## Publication
+
+This work has been published in [PLOS Neglected Tropical Diseases](https://doi.org/10.1371/journal.pntd.0010772) following peer review. As part of the journals open peer-review process all peer review comments and author respones have been made available on the [Peer review](https://journals.plos.org/plosntds/article/peerReview?id=10.1371/journal.pntd.0010772) tab of the article.
 
 ## Poster
 

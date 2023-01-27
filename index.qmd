@@ -7,7 +7,7 @@ toc: true
 
 <h1>Welcome to my personal website!</h1>
 
-<h2>I'm currently looking for a part time role in Southern California if you or anyone you know is looking for staff</h2>
+<h3>I'm currently looking for a part time role in Southern California if you - or anyone you know - are looking for research staff.</h3>
 
 I have organised my work into research themes accessible by selecting the headings below or in the navigation bar. On this page I introduce these disease systems. I describe my journey so far in the [About me](about.qmd) section. 
 
@@ -80,6 +80,10 @@ The virus forms a complex dynamic system including domesticated and farmed suids
 This project began as a summer internship with [EcoHealth Alliance](https://www.ecohealthalliance.org/) looking at whether reporting of cases from the [World Animal Health Infromation System](https://wahis.woah.org/#/home), maintained by the World Organisation for Animal Health could help us to quantify the risk of cases being detected in regions not previously reporting cases.
 
 ![A conceptual model of ASF transmission in both sylvatic and agricultural settings.](others/images/asf_framework.svg)
+
+## [Arenaviruses and Hantaviruses, globally distributed rodent borne zoonoses](others/arena_hanta.qmd)
+
+I am currently developing a project with Dr. [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/) where we will expand on my previous work developing a rodent trapping dataset to synthesise available information about the distribution of rodent hosts of Arenaviridae and Hanataviridae viruses, the prevalence of these viruses within these populations, the phylogeny of available viral sequences and prediction of genetic factors of cross-species transmission. This work will be submitted for the [Verena consortium](https://www.viralemergence.org/) Fellows-in-Residence programme.
 
 ## [Digital Health](others/digital_health.qmd)
 

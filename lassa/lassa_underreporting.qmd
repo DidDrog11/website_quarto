@@ -10,15 +10,15 @@ abstract: |
   **Conclusion:** This analysis highlights current uncertainty and systemic under-reporting of the morbidity and mortality burden Lassa Ffever in its endemic region and must be considered when discussing the epidemiology of this neglected tropical disease.
 author: 
   - "David Simons"
-categories: [Lassa Fever, In Press, Preprint, Epidemiology, West Africa]
+categories: [Lassa Fever, Published, Epidemiology, West Africa, Open Data, Peer Reviewed]
 image: images/lassa_epidemiology.png
 bibliography: rodent_trapping.bib
-date: 2022-11-02
+date: 2022-11-22
 citation:
   type: article-journal
-  container-title: "Qeios"
-  doi: "10.32388/R0Y17E.2"
-  url: "https://doi.org/10.32388/R0Y17E.2"
+  container-title: "International Health"
+  doi: "10.1093/inthealth/ihac076"
+  url: "https://doi.org/10.1093/inthealth/ihac076"
 ---
 
 ## Motivation
@@ -68,10 +68,11 @@ The estimated CFRs for method 1 and 2 did not differ importantly, producing esti
 
 Studies, particularly epidemiological reports, must incorporate a degree of uncertainty when reporting the number of cases. Inclusion of test positivity in reports and how this may vary over time and location would be vital to understand the scale of under-reporting. If this information is available and epidemiologists are interested in exploring this please do not hesitate to get in touch.
 
+## Publication
+
+This article has been published in [International Health](https://doi.org/10.1093/inthealth/ihac076).
+
 ## Pre-print
 
 The pre-print of this article following reviewer comments is available from [Qeios](https://doi.org/10.32388/R0Y17E.2).
 
-## Article
-
-The article is *in press* with *International Health*, when it is available I will post the link here.
