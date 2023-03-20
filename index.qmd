@@ -119,7 +119,7 @@ save_plot(here("lassa", "images", "lassa_cases_endemic.svg"), combined_plot, bas
 ```
 
 
-![A) Reported human cases of Lassa Fever from 2011-2022. The first grey section (2013-2016) represents the period of the Ebola epidemic in West Africa, the second grey section (2020-) corresponds to the ongoing COVID-19 pandemic, the orange section represents an incomplete year of reporting. B) The predicted distribution of *Mastomys natalensis* overlain over known endemic countries.](images/lassa_cases_endemic.svg)
+![A) Reported human cases of Lassa Fever from 2011-2022. The first grey section (2013-2016) represents the period of the Ebola epidemic in West Africa, the second grey section (2020-) corresponds to the ongoing COVID-19 pandemic, the orange section represents an incomplete year of reporting. B) The predicted distribution of *Mastomys natalensis* overlain over known endemic countries.](lassa/images/lassa_cases_endemic.svg)
 
 # [Monkeypox](monkeypox.qmd)
 
