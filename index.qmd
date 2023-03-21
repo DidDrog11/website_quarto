@@ -47,7 +47,7 @@ lassa_reservoirs %>%
   arrange(genus, species, country, year, method) %>%
   mutate(References = cell_spec(reference, "html", link = link)) %>%
   select(Year = year, Country = country, Species = species, Assay = method, References) %>%
-  kable("html", escape = FALSE) %>%
+  kable("html", escape = FALSE, caption = "Species and genera found to be acutely infected with, or seropositive to, Lassa mammarenavirus") %>%
   pack_rows(lassa_reservoirs_table, index = tbl_groups) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"),
                 font_size = 10)
