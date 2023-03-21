@@ -19,9 +19,7 @@ I have organised my work into research themes accessible by selecting the headin
 
 The zoonotic hosts of *Lassa mammarenavirus* are rodent species', primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)). Although live virus or evidence of viral infection has been detected in 12 other rodent species across the endemic region. The multimammate mouse is found throughout sub-Saharan Africa although this pathogen is limited to the western extent of its range. The reasons behind this are not well understood and this raises concerns that the endemic range of this pathogen has the potential to expand across a greater region.
 
-My research focusses on the ecology of rodent species within the endemic region and whether a better understanding of host dynamics can help us to quantify the risk of pathogen spillover into human populations. Understanding dynamics of both the host and virus will hopefully enable more targeted public health responses within the communities that need them most.
-
-```{r lassa-map, echo = FALSE, message = FALSE, warning = FALSE}
+```{r lassa-reservoirs, echo = FALSE, message = FALSE, warning = FALSE}
 if (!require("pacman")) install.packages("pacman")
 pkgs =
   c("cowplot",
@@ -35,6 +33,31 @@ pkgs =
 
 pacman::p_load(pkgs, character.only = T)
 
+lassa_reservoirs <- read_csv(here("lassa", "data", "lassa_reservoirs.csv")) %>%
+  drop_na(year) %>%
+  mutate(species = str_to_sentence(case_when(is.na(species) ~ paste0(genus, " spp."),
+                             TRUE ~ paste0(genus, " ", species))),
+         genus = fct_infreq(str_to_sentence(genus)),
+         species = fct_infreq(species))
+
+tbl_groups <- c(7, 4, 3, 2, 1, 1, 1, 1, 1)
+names(tbl_groups) <- c("Mastomys", "Mus", "Praomys", "Rattus", "Crocidura", "Gerbilliscus", "Hylomyscus", "Lemniscomys", "Lophuromys")
+
+lassa_reservoirs %>%
+  arrange(genus, species, country, year, method) %>%
+  mutate(References = cell_spec(reference, "html", link = link)) %>%
+  select(Year = year, Country = country, Species = species, Assay = method, References) %>%
+  kable("html", escape = FALSE) %>%
+  pack_rows(lassa_reservoirs_table, index = tbl_groups) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"),
+                font_size = 10)
+
+```
+
+
+My research focusses on the ecology of rodent species within the endemic region and whether a better understanding of host dynamics can help us to quantify the risk of pathogen spillover into human populations. Understanding dynamics of both the host and virus will hopefully enable more targeted public health responses within the communities that need them most.
+
+```{r lassa-map, echo = FALSE, message = FALSE, warning = FALSE}
 lassa_raw <- read_csv(here("lassa", "data", "confirmed_cases.csv"))
 
 lassa_clean <- lassa_raw %>%
