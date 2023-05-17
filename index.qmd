@@ -7,7 +7,7 @@ toc: true
 
 <h1>Welcome to my personal website!</h1>
 
-<h3>I'm currently looking for a part time role in Southern California if you - or anyone you know - are looking for research staff.</h3>
+<h3>I will be submitting my PhD thesis in the Summer of 2023 and will be looking for post-doctoral positions on rodent borne zoonotic diseases, zoonotic disease epidemiology or disease ecology based in the USA. Please get in touch if you may have a position you are looking to fill.</h3>
 
 I have organised my work into research themes accessible by selecting the headings below or in the navigation bar. On this page I introduce these disease systems. I describe my journey so far in the [About me](about.qmd) section. 
 
