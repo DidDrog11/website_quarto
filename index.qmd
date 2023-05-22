@@ -20,18 +20,16 @@ I have organised my work into research themes accessible by selecting the headin
 The zoonotic hosts of *Lassa mammarenavirus* are rodent species', primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)). Although live virus or evidence of viral infection has been detected in 12 other rodent species across the endemic region. The multimammate mouse is found throughout sub-Saharan Africa although this pathogen is limited to the western extent of its range. The reasons behind this are not well understood and this raises concerns that the endemic range of this pathogen has the potential to expand across a greater region.
 
 ```{r lassa-reservoirs, echo = FALSE, message = FALSE, warning = FALSE}
-if (!require("pacman")) install.packages("pacman")
-pkgs =
-  c("cowplot",
+invisible(if (!require("pacman")) { install.packages("pacman") })
+pkgs = c("cowplot",
     "ggspatial",
     "here",
     "kableExtra",
     "lubridate",
     "sf",
-    "tidyverse"
-  )
+    "tidyverse")
 
-pacman::p_load(pkgs, character.only = T)
+invisible(pacman::p_load(pkgs, character.only = T))
 
 lassa_reservoirs <- read_csv(here("lassa", "data", "lassa_reservoirs.csv")) %>%
   drop_na(year) %>%
