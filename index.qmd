@@ -195,6 +195,8 @@ This project began as a summer internship with [EcoHealth Alliance](https://www.
 
 I am currently developing a project with Dr. [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/) where we will expand on my previous work developing a rodent trapping dataset to synthesise available information about the distribution of rodent hosts of Arenaviridae and Hanataviridae viruses, the prevalence of these viruses within these populations, the phylogeny of available viral sequences and prediction of genetic factors of cross-species transmission. This work will be submitted for the [Verena consortium](https://www.viralemergence.org/) Fellows-in-Residence programme.
 
+A draft of the web-based application that will accompany the project has been developed and is available [here](https://diddrog11.shinyapps.io/arenavirus_hantavirus_app/) (n.b data extraction has only been performed for a pilot of 9 studies).
+
 ## [Digital Health](others/digital_health.qmd)
 
 I collaborate with [Olga Perski](https://www.olgaperski.com), typically providing some data-science support to her interests of smoking cessation through digital health interventions.
