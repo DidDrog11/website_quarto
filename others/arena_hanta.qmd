@@ -168,7 +168,7 @@ Raw data will be downloaded from Google Sheets using the `googledrive` API in `R
 
 ## Data visualisation
 
-An `RShiny` web-based application will be produced to visualise the database and support future analysis.
+An `RShiny` web-based application will be produced to visualise the database and support future analysis. The source code of the app is available from the GitHub [repository](https://github.com/DidDrog11/arenavirus_hantavirus_app) and it is currently hosted through shinyapps.io [here](https://diddrog11.shinyapps.io/arenavirus_hantavirus_app/)
 
 ### Rodent sampling
 
