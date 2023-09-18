@@ -31,7 +31,7 @@ about:
 
 :::{#hero-heading}
 
-I am a Postdoctoral Scholar within [Sagan Friant's RISK lab](https://www.saganfriant.com/) at Pennsylvania State University, primarily working on the [SCAPES](/lassa/SCAPES.qmd) project. I am also a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/) working with [Stephanie Seifert](https://labs.wsu.edu/mezap/) on a study investigating the ecological, geographic and molecular drivers of cross-species transmission of arena- and hantaviruses. 
+I am a Postdoctoral Scholar within [Sagan Friant's RISK lab](https://www.saganfriant.com/) at Pennsylvania State University, primarily working on the [SCAPES](/lassa/SCAPES.qmd) project. I am also a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/) working with [Stephanie Seifert](https://labs.wsu.edu/mezap/) on a [study investigating the ecological, geographic and molecular drivers of cross-species transmission of arena- and hantaviruses](/others/arena_hanta.qmd). 
 
 I have recently submitted my PhD thesis at the Royal Veterinary College, and am awaiting my viva examination. My PhD was based in the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed), Royal Veterinary College, London and funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/). My project was supervised by an interdisciplinary team of researchers, Prof. [Richard Kock](https://www.rvc.ac.uk/about/our-people/richard-kock) (RVC), Prof. [Deborah Watson-Jones](https://scholar.google.com/citations?user=csCh6RsAAAAJ) (LSHTM), and Prof. [Kate Jones](https://www.ucl.ac.uk/biosciences/people/prof-kate-jones) (UCL). 
 

@@ -26,7 +26,6 @@ website:
           href: covid_19.qmd
         - text: "{{< fa bacterium >}} Antimicrobial Resistance (AMR)"
           href: amr.qmd
-          icon: prescription
         - href: others.qmd
           text: "{{< fa shuffle >}} Other Work"
       - href: https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en

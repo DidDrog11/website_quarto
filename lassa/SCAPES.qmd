@@ -20,6 +20,6 @@ execute:
 
 # Background
 
-This is a five-year NSF EEID grant [NPM2J7MSCF61](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false) led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University in collaboration with [Christian Happi](https://staff.run.edu.ng/process.php?qp=RUN%2FREG%2FSS%2FPF%2F536&active=vprofile), [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [Dave Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and others. I am a postdoctoral scholar working on this project with a particular focus on factors of both human and rodent ecology which moderate the risk of Lassa fever infection in humans. 
+This is a five-year NSF EEID grant [Cross-scale dynamics of LASV spillover within human-driven ecosystems (NPM2J7MSCF61)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false) led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University in collaboration with [Christian Happi](https://staff.run.edu.ng/process.php?qp=RUN%2FREG%2FSS%2FPF%2F536&active=vprofile), [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [Dave Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and others. I am a postdoctoral scholar working on this project with a particular focus on factors of both human and rodent ecology which moderate the risk of Lassa fever infection in humans. 
 
 This project is being conducted in Ebonyi, Benue and Cross River states in Nigeria with field work to begin in late 2023. 
