@@ -14,7 +14,7 @@ author:
     affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, West Africa, Published, Peer-Reviewed, Open Data]
 image: images/rodent_trapping_preview.png
-bibliography: rodent_trapping.bib
+bibliography: lassa.bib
 date: 2023-01-27
 citation:
   type: article-journal

@@ -7,8 +7,8 @@ author:
     affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation, Network, Transmission]
 image: files/rodent_network/preview_image.png
-bibliography: rodent_network.bib
-date: 2023-05-01
+bibliography: lassa.bib
+date: 2023-10-13
 citation: true
 execute:
   echo: false

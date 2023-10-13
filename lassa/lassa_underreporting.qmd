@@ -12,7 +12,7 @@ author:
   - "David Simons"
 categories: [Lassa Fever, Published, Epidemiology, West Africa, Open Data, Peer Reviewed]
 image: images/lassa_epidemiology.png
-bibliography: rodent_trapping.bib
+bibliography: lassa.bib
 date: 2022-11-22
 citation:
   type: article-journal

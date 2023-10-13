@@ -30,7 +30,7 @@ author:
 
 categories: [One Health, Zoonosis, Lassa Fever, Published, West Africa, PANDORA]
 image: images/one_health.png
-bibliography: rodent_trapping.bib
+bibliography: lassa.bib
 date: 2021-04-24
 citation:
   type: article-journal

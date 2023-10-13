@@ -7,7 +7,7 @@ author:
     affiliation: The Royal Veterinary College
 categories: [Assay Development, LIPS, Zoonosis, Lassa Fever, In Preparation]
 image: images/lips_outline.png
-bibliography: rodent_trapping.bib
+bibliography: lassa.bib
 date: 2022-10-01
 citation: true
 ---

@@ -7,10 +7,19 @@ author:
     affiliation: The Royal Veterinary College
 categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation, Landuse Change]
 image: files/rodent_landuse/Figure_1a.png
-bibliography: rodent_trapping.bib
-date: 2022-11-02
+bibliography: lassa.bib
+date: 2023-10-01
 citation: true
+execute:
+  echo: false
+  warning: false
 ---
+```{r}
+library(dplyr)
+library(readr)
+library(here)
+library(flextable)
+```
 
 ## Authors
 
@@ -58,7 +67,7 @@ Species identification was performed in the field based on external characterist
 
 \captionsetup[figure]{labelformat=empty}
 
-```{r figure-1, layout = "l-page", out.width = "100%", fig.cap = "Village site locations and dates of small-mammal trapping in the Eastern Province of Sierra Leone. A) Location of village study sites (Baiama, Lalehun, Lambayama and Seilama), in the Eastern Province of Sierra Leone. Kenema, the major city of the province is also shown. The inset map shows the location of Sierra Leone in Africa. B) Number of trap nights obtained from each study visit within a village is shown, the blue shaded regions represent the rainy season in Sierra Leone."}
+```{r figure-1, out.width = "100%", fig.cap = "Village site locations and dates of small-mammal trapping in the Eastern Province of Sierra Leone. A) Location of village study sites (Baiama, Lalehun, Lambayama and Seilama), in the Eastern Province of Sierra Leone. Kenema, the major city of the province is also shown. The inset map shows the location of Sierra Leone in Africa. B) Number of trap nights obtained from each study visit within a village is shown, the blue shaded regions represent the rainy season in Sierra Leone."}
 
 knitr::include_graphics(here("lassa", "files", "rodent_landuse", "Figure_1_combined.png"))
 
@@ -134,11 +143,9 @@ To investigate the presence of competitive exclusion of the reservoir host of La
 
 During the study period 684 individuals were detected from 43,266 trap-nights across the four village study sites (1.6% trap-success (TS)). The greatest number of individuals, highest species richness and Shannon diversity values were obtained in the agricultural areas, meanwhile, TS was greatest within village settings (i.e., within and outside of permanent structures) (Table 1). The Seilama study site had the highest overall TS, species' richness and Shannon diversity and unlike the three other study sites had the greatest TS in agricultural areas. Species richness in Seilama was twice that of the peri-urban village study site (Lambayama) and had high Shannon diversity across all land use types. The sole peri-urban village study site (Lambayama) located within the expanding boundaries of Kenema city, had the lowest species' richness and Shannon diversity with the majority of rodents detected within the village area.
 
-\newpage
-
-\captionsetup[table]{labelformat=empty}
-
-```{r table-1, layout = "l-page", tab.cap = "Table 1. The number of trapped individuals (N), the number of trap nights (TN), trap-success (TS %), species richness and Shannon diversity by village and land use type."}
+```{r table-1, out.width = "100%"}
+#| label: table-1
+#| tbl-cap: Table 1. The number of trapped individuals (N), the number of trap nights (TN), trap-success (TS %), species richness and Shannon diversity by village and land use type
 
 table_1a <- readRDS(here("lassa", "files", "rodent_landuse", "table_1a.rds"))
 table_1a %>%
@@ -157,14 +164,13 @@ table_1a %>%
 
 The most commonly detected rodent species across all land use types was *M. natalensis* (N = 113, 16.5%), followed by *Praomys rostratus* (N = 102, 14.9%), *M. musculus* (N = 90, 13.2%), *R. rattus* (N = 88, 12.9%) and *Lophuromys sikapusi* (N = 57, 8.3%). The insectivorous shrew species *Crocidura olivieri* was the most commonly detected non-rodent species (N = 105, 15.4%). *Mastomys natalensis* and *R. rattus* were detected at all village study sites, although *M. natalensis* was never detected in forest settings (Figure 2.). The invasive rodent species *M. musculus* was only detected in the Lambayama study site. The detection rate (the number of individuals detected per 1,000 TN) varied by species, land use type and village study site. The greatest rate of detection was for *M. musculus* in the Lambayama village study site, with the other commensal species *M. natalensis* and *R. rattus* having high detection rates across multiple village study sites within village land use types. *Praomys rostratus.* had the highest detection rates in forest and agricultural areas.
 
-```{r detection-rate, layout = "l-page", fig.cap = "**Figure 2.** Detection rate per 1,000 trap nights of small mammal species across different land use types. The plots are panelled by village study site. The absolute number of detections of each species in each land use type at each study site is shown in the label. The colour of the tile corresponds to the detection rate per 1,000 trap nights.", out.width = "100%"}
+```{r detection-rate, fig.cap = "**Figure 2.** Detection rate per 1,000 trap nights of small mammal species across different land use types. The plots are panelled by village study site. The absolute number of detections of each species in each land use type at each study site is shown in the label. The colour of the tile corresponds to the detection rate per 1,000 trap nights.", out.width = "100%"}
 
 knitr::include_graphics(here("lassa", "files", "rodent_landuse", "Figure_2.png"))
 
 ```
 
 There was some observed variation in species detection by season. Although, the prevalence of a species (measured as the rate of detections per 1,000 TN), not accounting for incomplete detection, did not show a single trend for all species (Supplementary Figure 5A). *Mus musculus* had a greater detection rate in the rainy season than dry. Conversely, *L. sikapusi*, and *Mus setulosus* had greater detection rates in the dry season. The other species had similar detection rates across both seasons. There was some further variation when stratified by land use type. *Mastomys natalensis* had greater detection rates in villages compared to agricultural areas in the rainy season while in the dry season it was detected at similar rates in village and agricultural areas. *Praomys rostratus* had greater detection rates in forests during the dry season compared with the rainy season. No other species had important variations by season stratified by land use type.
-
 
 ### Estimating the effect of land use on species occurrence and richness
 
@@ -177,7 +183,7 @@ To further explore thism we stratified village study sites by human population d
 In contrast to species found throughout our study area, *M. musculus* was predicted to have a low probability of occurrence in all land use types in rural areas, with high probabilities of occurrence only for village settings in peri-urban areas. The occurrence probabilities for the three commensal species (*M. natalensis*, *R. rattus* and *M. musculus*) suggest that competition may be a factor in reducing the occurrence probabilities of *M. natalensis* and *R. rattus* in the presence of *M. musculus* as in its absence these two species have high occurrence probabilities in villages.
 
 
-```{r within-village, layout = "l-page", fig.cap = "**Figure 3.** Probability of species occurrence ($\\psi$) across a land use gradient stratified by rural and peri-urban village study sites for the seven rodent and shrew species. Each coloured point is the median of the predicted probability of occurrence for a species obtained from the posterior distribution at a trapping grid cell, colours correspond to the different land use types. Predictions were obtained for each of the 2,068 trapping grid cells. Black points represent the median probability of occurrence within a land use type grouped by village, with lines connecting within villages for different land use types. Lines are only shown to link the estimates of occupancy for each land use type within a villages study site.", out.width = '100%'}
+```{r within-village, fig.cap = "**Figure 3.** Probability of species occurrence ($\\psi$) across a land use gradient stratified by rural and peri-urban village study sites for the seven rodent and shrew species. Each coloured point is the median of the predicted probability of occurrence for a species obtained from the posterior distribution at a trapping grid cell, colours correspond to the different land use types. Predictions were obtained for each of the 2,068 trapping grid cells. Black points represent the median probability of occurrence within a land use type grouped by village, with lines connecting within villages for different land use types. Lines are only shown to link the estimates of occupancy for each land use type within a villages study site.", out.width = '100%'}
 
 knitr::include_graphics(here("lassa", "files", "rodent_landuse", "Figure_3.png"))
 
@@ -190,7 +196,7 @@ The tests for species correlations show patterns consistent with the our origina
 
 Generally, within villages, high probabilities for the presence of *M. musculus* were associated with lower probabilities for all other rodent species. This was not replicated for *M. natalensis* and *R. rattus*, which were positively associated with the co-occurrence of other native rodent species *P. rostratus*, *L. sikapusi* and *M. setulosus*. Across all land use types, the presence of the shrew species *C. olivieri* had a negative correlation with the presence of rodent species.
 
-```{r species-correlations, layout = "l-page", fig.cap = "**Figure 4.** Spearman's rank correlations for the modelled probability of occurrence of species pairs in different land use types. Positive values (blue shades) represent positive correlation coefficients between the occurrence of two species. Negative values (red shades) represent negative correlation between the occurrence of two species. Numbers in bold typeface and indicated with an asterisk (*) are statistically significant at a level of *p* <= 0.005. Grey tiles are used where no detections of the species pair in the land use type were observed and therefore excluded from analysis.", out.width = '100%'}
+```{r species-correlations, fig.cap = "**Figure 4.** Spearman's rank correlations for the modelled probability of occurrence of species pairs in different land use types. Positive values (blue shades) represent positive correlation coefficients between the occurrence of two species. Negative values (red shades) represent negative correlation between the occurrence of two species. Numbers in bold typeface and indicated with an asterisk (*) are statistically significant at a level of *p* <= 0.005. Grey tiles are used where no detections of the species pair in the land use type were observed and therefore excluded from analysis.", out.width = '100%'}
 
 knitr::include_graphics(here("lassa", "files", "rodent_landuse", "Figure_4.png"))
 
