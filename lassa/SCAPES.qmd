@@ -1,5 +1,5 @@
 ---
-title: "SCAPES - Cross-scale dynamics of LASV spillver within human-driven ecosystems."
+title: "SCAPES - Cross-scale dynamics of LASV spillover within human-driven ecosystems."
 abstract: |
   Lassa virus (LASV) infection in humans causes Lassa fever, a hemorrhagic fever of public health significance in West Africa and a global health priority. Lassa fever epidemics are dominated by regular transmission of LASV from rodent reservoirs to humans within a rural context, which means LASV provides a uniquely tractable system to understand zoonotic spillover. 
   This study examines the human behaviors that create exposures to LASV. We look at the proximate forms of human-reservoir overlap and interactions, as well as how humans ultimately construct ecological processes that affect the rate of zoonotic spillover. Data from our fine-scale ecological and anthropological field studies will integrate into broad-scale risk models to fill key gaps in how risk is propagated across scales and inform ongoing disease management efforts.
