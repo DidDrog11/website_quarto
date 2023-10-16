@@ -330,3 +330,9 @@ knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_
 ## Data availability and draft manuscript
 
 Data are available in the project's GitHub [repository](https://github.com/DidDrog11/chapter_4/tree/main/data). The most recent version of the draft currently being shared with co-authors is [V2](https://github.com/DidDrog11/chapter_4/blob/main/report/chapter_4.docx).
+
+## ASTMH 2023 presentation
+
+This work has been presented at the American Society for Tropical Medicine and Hygiene annual conference 2023 in Chicago.
+
+{{< pdf files/rodent_network/ASTMH_presentation.pdf width=100% height=500 >}}
