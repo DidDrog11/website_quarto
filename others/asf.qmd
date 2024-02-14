@@ -1,5 +1,5 @@
 ---
-title: "Modelling range expansion of the emerging African Swine Flu epidemic."
+title: "Modelling range expansion of the emerging African Swine Fever epidemic."
 abstract: |
   African Swine Fever (ASF), caused by the large double-stranded DNA African swine fever virus (Asfaviridae) is a highly transmissible acute haemorrhagic fever causing high mortality in domestic pigs and wild boar. The virus is endemic in most sub-Saharan African countries, maintained in wild animal reservoirs. Warthogs (i.e. *Phacochoerus africanus*) are the primary reservoir species and do not show clinical disease. ASF was first reported outside of Africa and the Indian Ocean islands in 1957 from Portugal. Following the introduction of the disease into Portugal and its subsequent establishment in the Iberian peninsula it remained endemic until local eradication in the mid 1990’s. Transmission was found to be sustained through the involvement of a tick vector (*Ornithodoros erraticus*). ASF has subsequently been introduced to South America, the Caribbean and Asia.
 author: 
