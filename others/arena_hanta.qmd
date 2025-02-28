@@ -1,5 +1,5 @@
 ---
-title: "Synthesising Arena- and Hantavirus data from rodents to understand current known host distributions and viral pathogens."
+title: "Project ArHa: Arenaviruses and Hantaviruses, globally distributed rodent borne zoonoses"
 abstract: |
   Current host-pathogen association datasets provide synthesised information on hosts and their pathogens but do not contain temporal or geographic information. These resources often provide linking information to publications reporting the association but information including accession numbers of archived sequences, number of individuals tested and measures of prevalence among sampled populations are not immediately retrievable. Using these resources for inference beyond host-pathogen associations is therefore limited. Here, we aim to produce a database of host-pathogen associations for two viral families of small mammals which contain several known zoonoses, namely Arenaviridae and Hantaviridae. This database can be used to explore the distribution of small mammal hosts of known and suspected pathogens and the extent to which they have been sampled. Further, linkage to sequence data of known zoonoses will support analysis of the risk of viral reassortment between viral species within geographically co-located host species.
 author: 
@@ -7,14 +7,12 @@ author:
     affiliation: The Royal Veterinary College
   - name: "Steph Seifert"
     affiliation: Washington State University
-categories: [Rodent, Ecology, Zoonosis, Arenaviridae, Hantaviridae, Open Data]
+categories: [Rodent, Ecology, Zoonosis, Arenaviridae, Hantaviridae, Open Data, Preprint]
 image: images/hantavirus.png
-date: 2023-01-27
+date: 2025-02-28
 citation: true
 code-fold: true
 ---
-
-**ONGOING WORK**
 
 ``` {r setup, include = FALSE}
 if (!require("pacman")) install.packages("pacman")
@@ -36,28 +34,28 @@ pacman::p_load(pkgs, character.only = T)
   1. Review the literature to produce a synthesised dataset on Arenaviridae and Hantaviridae among small mammals
   2. Implement visualisation tools to explore sampling extent for hosts and pathogens to further understanding of host-pathogen associations
   3. Investigate the relative contributions of ecological, geographic, and genomic factors leading to cross-species transmission and reassortment in rodent-associated arenaviruses and hantaviruses
+  
+# Protocol pre-print
 
-# Method
+The protocol for this project has been submitted to *PLOS Neglected Tropical Diseases* and is currently available as a pre-print at [*bioRxiv*](https://doi.org/10.1101/2025.01.17.633514).
 
-## Search strategy
+## Abstract
 
-An initial search was run on NCBI Pubmed 2023-01-06.
+Arenaviruses and Hantaviruses, primarily hosted by rodents and shrews, represent significant public health threats due to their potential for zoonotic spillover into human populations. Despite their global distribution, the full impact of these viruses on human health remains poorly understood, particularly in regions like Africa, where data is sparse. Both virus families continue to emerge, with pathogen evolution and spillover driven by anthropogenic factors such as land use change, climate change, and biodiversity loss. Recent research highlights the complex interactions between ecological dynamics, host species, and environmental factors in shaping the risk of pathogen transmission and spillover. This underscores the need for integrated ecological and genomic approaches to better understand these zoonotic diseases. A comprehensive, spatially and temporally explicit dataset, incorporating host-pathogen dynamics and human disease data, is crucial for improving risk assessments, enhancing disease surveillance, and guiding public health interventions. Such a dataset (ArHa) would also support predictive modelling efforts aimed at mitigating future spillover events. This paper proposes the development of this unified database for small-mammal hosts of Arenaviruses and Hantaviruses, identifying gaps in current research and promoting a more comprehensive understanding of pathogen prevalence, spillover risk, and viral evolution.
 
-  1. rodent* - 165,513
-  2. arenavir* - 2,367
-  3. hantavir*.mp. - 4,022
-  4. 2 OR 3 - 6,308
-  5. 1 AND 4 - 1,842
+### Strengths and Limitations of this study
 
-Citations were downloaded as a text file and imported into `R` for processing. Deduplication by Pubmed ID resulted in 1821 distinct citations.
+  1.  This dataset combines detailed spatial and temporal information, providing a unique resource for understanding geographic and temporal trends in Arenavirus and Hantavirus host-pathogen relationships. 
+  2.  By explicitly quantifying sampling biases and detection efforts, the dataset allows more robust and accurate asssessments of pathogen prevalence and distribution.  
+  3.  The dataset offers a platform for linking ecological data with human health outcomes, supporting the identification of spillover hotspots.  
+  4.  The dataset relies on published material, which may vary in terms of detail, accuracy and completeness. Missing or imprecise information may limit the reliability of subsequent analyses.  
+  5.  The dataset will be produced as a static resource which could limit its relevance over time as emerging data will not be added. 
 
-``` {r search-results}
-search_date <- "2023-01-06"
-articles <- read_rds(here("others", "data", "search", paste0("citations_", search_date, ".rds")))
-articles
-```
+# Current status of the project
 
-An initial search of the returned citations was conducted to identify nine studies to trial data extraction. 
+We are currently nearing completion of the first round of data extraction. The slides below are a presentation I delivered to collaborators to summarise the current state of the database.
+
+{{< pdf files/arha_presentation_4.pdf width=100% height=500 >}}
 
 ## Data extraction
 
@@ -178,6 +176,8 @@ An example of a map produce from rodent sampling data included in the initial 9 
 #| fig-height: 8
 #| label: rodent-map
 #| fig-cap: An interactive map displaying the location of detected small species in included studies. Selecting points will expand the number of data points at those coordinates. Point colour indicates small mammal genus with size of the point varying by the number of individuals detected. Hovering over a point or selecting it will show the species name, the number detected and the time period surveyed at the location. Data is currently shown for 9 studies.
+
+search_date <- "2023-01-06"
 combined_data <- read_rds(here("others", "data", "raw_data", paste0(search_date, "_data.rds")))
 project_crs <- "EPSG:4326"
 rodent_locations <- combined_data$rodent %>%

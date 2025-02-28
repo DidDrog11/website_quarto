@@ -12,7 +12,7 @@ listing:
 title-block-banner: true
 ---
 
-The primary focus of my research on Lassa Fever, caused by *Lassa mammarenavirus*, is on the rodent system. I am also involved in research on the development of novel, cross-species diagnostics alongside human epidemiology.
+The primary focus of my research on Lassa Fever, caused by *Lassa mammarenavirus* (LASV), is on the rodent system in Sierra Leone. I am also involved in research on the development of novel, cross-species diagnostics alongside human epidemiology. My work with the [SCAPES](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false) project has led to me working with Nigerian collaborators where we are focussing on human epidemiology, interactions with rodents and wider socio-ecological determinants of human interactions with rodents that lead to LASV exposure.
 
 ::: {#lassa}
 

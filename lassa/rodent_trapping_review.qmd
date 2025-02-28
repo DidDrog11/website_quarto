@@ -12,7 +12,7 @@ author:
     affiliation: The London School of Hygiene and Tropical Medicine
   - name: "Richard Kock"
     affiliation: The Royal Veterinary College
-categories: [Rodent, Ecology, Zoonosis, West Africa, Published, Peer-Reviewed, Open Data]
+categories: [Rodent, Ecology, Zoonosis, West Africa, Published, Peer Reviewed, Open Data]
 image: images/rodent_trapping_preview.png
 bibliography: lassa.bib
 date: 2023-01-27

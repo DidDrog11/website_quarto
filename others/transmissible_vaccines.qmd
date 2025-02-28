@@ -1,0 +1,21 @@
+---
+title: "Developing transmissible vaccines for animal infections"
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [Transmissible vaccines, Policy, Published, Zoonosis]
+image: images/tv_graphic.jpg
+date: 2025-02-28
+---
+
+# Coordinating the development of self-disseminating vaccines for spillover prevention - workshop
+
+In March 2023 I was an invited participant to a workshop organised by [Prof. Scott Nuismer](https://www.leeef.org/) and [Prof. Daniel Striecker](https://streickerlab.com/). The workshop was designed to bring together an interdisciplinary group of researchers and  practitioners to discuss the development of [self-disseminating vaccines](https://transmissiblevaccines.org/) that could dramatically reduce or eliminate pathogen spillover to other species. At this workshop I presented my PhD research with a focus on the heterogeneities of rodent contact in endemic regions of Lassa fever and the implications this may have for transmission of self-disseminating vaccine in these contexts.
+
+An output of the workshop was the development of a policy forum manuscript.
+
+## Developing transmissible vaccines for animal infections: Intrinsically safe designs and a staged transparent development process will be essential
+
+This manuscript discusses the series of commitments and strategies for vaccine development that we believe increase the likelihood that the potential risks of vaccine transmission become outweighted by conservation, animal welfare and zoonosis prevention benefits. The manuscript, published in *Science* is available from the publishers website [here](https://www.science.org/stoken/author-tokens/ST-1824/full) or from the University of Glasgow repository [here](https://eprints.gla.ac.uk/323783/).
+
+![Transmissible vaccines for bats to innoculate colonies against rabies virus. Image obtained from https://transmissiblevaccines.org/](images/tv_graphic.jpg)

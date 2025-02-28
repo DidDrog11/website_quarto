@@ -7,7 +7,7 @@ abstract: |
 author: 
   - name: "David Simons"
     affiliation: The Royal Veterinary College
-categories: [COVID-19, Clinical, Pre Print]
+categories: [COVID-19, Clinical, Preprint]
 image: images/recovery.jpg
 date: 2022-11-01
 bibliography: covid_references.bib

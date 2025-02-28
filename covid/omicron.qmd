@@ -4,7 +4,7 @@ abstract: "In October 2021 I began a role as a senior scientist with the Outbrea
 author: 
   - name: "David Simons"
     affiliation: The Royal Veterinary College
-categories: [COVID-19, Epidemiology, Public Health, Emerging variants, Published, In Preparation, Preprint]
+categories: [COVID-19, Epidemiology, Public Health, Emerging variants, Published]
 image: images/nejm.jpg
 date: 2022-11-01
 ---

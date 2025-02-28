@@ -25,16 +25,17 @@ author:
     affiliation: University College London
   - name: "Liã Arruda"
     affiliation: University College London
-categories: [Phylogeography, Molecular Epidemiology, Zoonosis, Lassa Fever, West Africa, In Preparation]
+categories: [Phylogeography, Molecular Epidemiology, Zoonosis, Lassa Fever, West Africa, Published]
 image: images/sequence_locations.png
 bibliography: lassa.bib
 date: 2022-10-01
 citation: true
 ---
 
-This project developed from [Hayley Free's](https://twitter.com/hayleybethfree) MSc project based at the Royal Veterinary College. We obtained GenBank data on *Lassa mammarenavirus* sequences to investigate the phylogeny of these samples and to understand how biased these may be as a dataset. We were particularly interested in how many human derived sequences were obtained from the different regions with known outbreaks of human disease and comparing this to the coverage of rodent derived sequences.
+This project developed from [Hayley Free's](https://orcid.org/0009-0006-0565-9455) MSc project based at the Royal Veterinary College. We obtained GenBank data on *Lassa mammarenavirus* sequences to investigate the phylogeny of these samples and to understand how biased these may be as a dataset. We were particularly interested in how many human derived sequences were obtained from the different regions with known outbreaks of human disease and comparing this to the coverage of rodent derived sequences.
 
 We found that there is important spatial heterogeneity in where samples are obtained from that does not match the known distribution of rodent infections and human cases. For example, most human sequences came from Nigeria and Eastern Sierra Leone. While most rodent sequences came from Guinea and Eastern Sierra Leone with very few from Nigeria. This disparity likely has an important impact on the inference that can be drawn from phylogeographic studies of *Lassa mammarenavirus*.
 
 ![The majority of human derived *Lassa mammarenavirus* sequences have been obtained from two states in South Nigeria, with few samples from elsewhere. Among rodents fewer samples have been obtained and from different regions in the endemic zone. Together this makes it difficult to combine these data for phylogeographic inference.](images/sequence_locations.png)
 
+This work has been published as [*Current sampling and sequencing biases of Lassa mammarenavirus limit inference from phylogeography and molecular epidemiology in Lassa fever endemic regions*](https://doi.org/10.1371/journal.pgph.0002159) in *PLOS Global Public Health* and is available under open-access on the journal website.

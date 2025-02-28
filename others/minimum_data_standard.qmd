@@ -1,0 +1,21 @@
+---
+title: "A minimum data standard for wildlife disease studies"
+abstract: |
+  Thousands of scientists and practitioners conduct research on infectious diseases of wildlife. Rapid and comprehensive data sharing is vital to the transparency and actionability of their work, but unfortunately, most efforts designed to publically share these data are focused on pathogen determination and genetic sequence data. Other facets of existing surveillance data – particularly negative results – are often withheld or, at best, summarized in a descriptive table with limited metadata. Here, we propose a minimum data and metadata reporting standard for wildlife disease studies. Our checklist identifies a minimum set of 31 fields required to standardize and document a dataset consisting of records disaggregated to the finest possible spatial, temporal, and taxonomic scale. We illustrate how this standard is applied to an example study, which documented a novel alphacoronavirus found in bats in Belize. Finally, we outline best practices for how data should be formatted for optimal re-use, and how researchers can navigate potential safety concerns around data sharing.
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+categories: [Ecology, Open Data, Preprint, Zoonosis]
+image: images/pharos.jpg
+date: 2025-02-28
+---
+
+# Motivation  
+
+The Verena Consortium have produced an open-access database of wildlife disease surveillance ([The Pathogen Harmonised Observatory - PHAROS](https://pharos.viralemergence.org/about/)). Alongside these efforts a data standard [@stevens_minimum_2024] was developed to ensure the consistency of submitted data to ensure adequate meta-data is included to support re-use and accessibility of these data in adherence to FAIR guidance.
+
+## Preprint
+
+This manuscript has been submitted and is currently available as a preprint on [*ecoevoRxiv*](https://doi.org/10.32942/X2TW4J).
+
+![The Pathogen Harmonized Observatory (PHAROS). Image obtained from https://pharos.viralemergence.org/](images/pharos.jpg)

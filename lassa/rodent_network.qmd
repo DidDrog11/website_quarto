@@ -1,11 +1,15 @@
 ---
-title: "Reconstructing rodent contact networks to understand potential routes of Lassa mammarenavirus transmission."
+title: "Contact networks of small mammals highlight potential transmission foci of Lassa mammarenavirus."
 abstract: |
-  Lassa fever, caused by *Lassa mammarenavirus* (LASV), is an endemic zoonosis in several West African countries. Human infection is caused by spillover from rodent hosts, the reservoir species is *Mastomys natalensis*, a synanthropic rodent. In addition to the reservoir species a further 11 rodent and shrew species have been found to be acutely infected or to have evidence of prior infection with LASV. Within Sierra Leone species rich, small-mammal communities are structured along land use gradients. These community structures are expected to moderate the risk of Lassa fever disease spillover into human populations. Risk of human infection is presumed greatest in areas of human habitation, it is not known if these settings are also associated with substantial LASV transmission among small mammals. Here, I use a rodent trapping study, conducted over 43,266 trap nights, detecting 684 individual rodents and shrews to reconstruct contact networks within the Lassa fever endemic Eastern Province, Sierra Leone. We investigated whether these contact networks differ by land use type and whether some settings may be more conducive to viral transmission among host species. We found that small-mammal communities were larger in village and agricultural settings compared to forests, although contact rates were similar across these habitats. The structure of these networks differed by land use, with villages containing more disconnected networks than agricultural settings. Specifically, we found an increased odds of intra-specific contact among *M. natalensis* within agricultural settings compared to villages. This analysis suggests, that among these small-mammal communities, LASV transmission may occur with different dynamics within agricultural settings compared to villages. Finally, we report a LASV seroprevalence of 5.7% among these small-mammal communities with antibodies detected from nine rodent and shrew species. We anticipate that systematically expanding rodent surveillance to incorporate the likely different pathogen transmission dynamics in villages and agricultural habitats will improve the understanding of LASV transmission within endemic regions. More systematic approaches to LASV surveillance in rodent and shrew species will reveal host species which are important for the maintenance of viral populations and the subsequent risk of zoonosis to human populations.
+  Lassa fever, caused by *Lassa mammarenavirus* (LASV), is an endemic zoonosis in several West African countries. Human infections primarily result from transmission from rodent hosts, with the primary reservoir species being *Mastomys natalensis*, a synanthropic rodent. In Sierra Leone, small-mammal communities are structured along land use gradients, and this structure is hypothesized to influence the risk of Lassa fever outbreaks in human populations. However, whether anthropogenic habitats facilitate significant LASV transmission among small mammals is not well understood.    
+  
+  To address this, we conducted rodent sampling over 43,266 trap nights, detecting 684 rodents and shrews in the Lassa fever-endemic Eastern Province of Sierra Leone. We reconstructed small-mammal contact networks to investigate whether contact rates and network structures differed by land use to identify settings more conducive to viral transmission among hosts. We found that small-mammal communities were larger in villages and agricultural settings than in forests, but contact rates were similar across habitats. Network structures differed by land use, with villages exhibiting more disconnected networks compared to agricultural settings. Notably, intra-specific contact among *M. natalensis* was more likely in agricultural environments than in villages, suggesting that land use can influence LASV transmission dynamics.   
+  
+  Overall, LASV seroprevalence was 5.7% across the small-mammal communities, with LASV antibodies detected in nine rodent and shrew species. These findings underscore the importance of expanding rodent surveillance across various habitats to understand habitat-specific pathogen transmission dynamics. A more systematic approach to LASV surveillance in villages and agricultural settings will help identify key host species driving pathogen dynamics.
 author: 
   - name: "David Simons"
     affiliation: The Royal Veterinary College
-categories: [Rodent, Ecology, Zoonosis, Lassa Fever, In Preparation, Network, Transmission]
+categories: [Rodent, Ecology, Zoonosis, Lassa Fever, Preprint, Network, Transmission]
 image: files/rodent_network/preview_image.png
 bibliography: lassa.bib
 date: 2023-10-13
@@ -21,33 +25,29 @@ library(here)
 library(flextable)
 ```
 
-**This work is currently in preparation with additional data expected**
-
 # Authors
-David Simons ^1,2,3^, Umaru Bangura ^4,5^, Ravi Goyal ^6,7^, Ben Rushton ^8^, Dianah Sondufu ^5^, Joyce Lamin ^5^, James Koninga ^9^, Momoh Jimmy ^9^, Mike Dawson ^5^, Joseph Lahai ^5^, Rashid Ansumana ^5^, Richard Kock ^1^, Deborah Watson-Jones ^2,10^, Kate E. Jones ^3,11^
+David Simons ^1,2,3^, Ravi Goyal ^4^, Umaru Bangura ^5,6^, Rory Gibb ^2,9^ Ben Rushton ^8^, Dianah Sondufu ^6^, Joyce Lamin ^6^, James Koninga ^7^, Momoh Jimmy ^7^, Mike Dawson ^6^, Joseph Lahai ^6^, Rashid Ansumana ^6^, Elisabeth Fichet-Calvet ^5^, Richard Kock ^1^, Deborah Watson-Jones ^3,10^, Kate E. Jones ^2,9^
 
 
 ^1^ Centre for Emerging, Endemic and Exotic Diseases, The Royal Veterinary College, London, United Kingdom
 
 ^2^ Centre for Biodiversity and Environment Research, Department of Genetics, Evolution and Environment, University College London, London, United Kingdom
 
-^3^ Clinical Research Department, London School of Hygiene and Tropical Medicine, London, United Kingdom
+^3^ Department of Clinical Research, London School of Hygiene and Tropical Medicine, London, United Kingdom
 
-^4^ Bernard-Nocht Institute for Tropical Medicine, WHO Collaborating Centre for Arbovirus and Hemorrhagic Fever Reference and Research, 20359 Hamburg, Germany
+^4^ Department of Medicine, University of California, San Diego, USA
 
-^5^ Njala University, Bo, Sierra Leone
+^5^ Implementation Research, Zoonoses control, Bernard-Nocht Institute for Tropical Medicine, Hamburg, Germany
 
-^6^ University of California, San Diego
+^6^ Njala University, Bo, Sierra Leone
 
-^7^ University of Colorado
+^7^ Kenema Government Hospital, Kenema, Sierra Leone
 
-^8^ Diagnostics Development Lab, Bernard-Nocht Institute for Tropical Medicine
+^8^ Panadea Diagnostics GmbH, Hamburg, Germany
 
-^9^ Kenema Government Hospital, Kenema, Sierra Leone
+^9^ People & Nature Lab, UCL East, Department of Genetics, Evolution and Environment, University College London, London, United Kingdom
 
 ^10^ Mwanza Intervention Trials Unit, National Institute for Medical Research, Mwanza, Tanzania
-
-^11^ People & Nature Lab, UCL East, Department of Genetics, Evolution and Environment, University College London, London, United Kingdom
 
 ## Motivation
 
@@ -55,281 +55,13 @@ This study was designed to explore the contacts among individual rodents trapped
 
 We used data from our repeated, systematic, rodent trapping study in the Eastern province of Sierra Leone to investigate the following questions. First, what are the potential contact networks of individuals of different species. Second, do these contact rates vary by landuse type. Third, do we observe differential inter- and intra-specific contact rates among the primary rodent reservoir of LASV (*Mastomys natalensis*). To achieve this we reconstructed contact networks of rodent communities using geolocated trap data for each of our study visits. We further report the prevalence of antibodies to LASV among rodents in our study but do not currently combine this data with our contact networks due to few positive samples.
 
-## Method
+## Preprint
 
-Rodent sampling is described in further detail [elsewhere](rodent_trapping.qmd).
+This manuscript has been submitted to the *American Journal of Tropical Medicine and Hygiene*. The pre-peer reviewed version is available from [*bioRxiv*.](https://doi.org/10.1101/2025.02.25.639449)
 
-### Study area
+## Data availability
 
-Rodent trapping surveys were conducted between October 2020-February 2023 within and around four village study sites (Baiama; latitude = 7.8375, longitude = -11.2683, Lalehun; latitude = 8.1973, longitude = -11.0803, Lambayama; latitude = 7.8505, longitude = -11.1969, and Seilama; latitude = 8.1224, longitude = -11.1936) in the Lassa fever endemic zone of the Eastern Province of Sierra Leone. Surveys were conducted within trapping grids along a landuse gradient of anthropogenic disturbance comprising, forest, agriculture (including fallow and currently in-use areas), and villages (within and outside of permanent structures). Trapping survey sessions within each village occurred four times annually with two trapping surveys in each of the rainy and dry seasons (May to November and December to April, respectively), producing a total of 9 trapping sessions over the study period.
-
-Village study sites and trapping grids within the village study sites were selected to be representative of land use in the Eastern Province of Sierra Leone and based on accessibility to the sites during all seasons alongside acceptability of the study protocol to the village study site communities. [Supplementary Material 1](files/rodent_network/Supplementary-Material-1.pdf) contains detailed information about the trapping process. Briefly, at each trapping grid 49 Sherman traps (7.62cm x 8.89cm x 22.86cm) (H.B. Sherman Traps, Tallahasee, USA), were placed in a 7 trap by 7 trap grid, traps were placed 10 metres apart in a grid conforming to the local landscape (median trapping grid area = 4,813m2). For traps placed within permanent structures trap placement deviated from the grid structure. Permanent structures were selected randomly at each visit from a grid projected over the village area, with four traps placed within each structure. The location of each individual trap within trapping grids was geolocated. Traps were baited with a locally produced mixture of oats, palm oil and dried fish. Each morning the traps were checked and closed for the day prior to re-baiting during the evening. Each trapping survey session consisted of four consecutive trap-nights (TN) at each trapping grid within the village study site.
-
-Trapped rodents were associated with the coordinates of the trap they were detected in. The `sf` package in the R statistical computing language (R version 4.1.2) was used for geospatial manipulation and analysis [@pebesma_simple_2018; @r_core_team_r_2021]. All rodent handling was performed by trained researchers, rodents were sedated with halothane and euthanised prior to obtaining morphological measurements and samples of blood and tissue following published guidance [@fichet-calvet_chapter_2014]. The study protocol was approved by the Clinical Research Ethical Review Board and Animal Welfare Ethical Review Board of the Royal Veterinary College, United Kingdom (URN: 2019 1949-3), and Njala University, Sierra Leone. Carcasses were destroyed through incineration to eliminate the risk of onward pathogen transmission.
-
-### Species classification
-
-Taxonomic identification was performed in the field based on external characteristics using a taxonomic key, including external morphological measurements and characteristics, developed from Kingdon and Monadjem [@happold_mammals_2013; @monadjem_rodents_2015]. Morphological identification alone is unable to distinguish some small-mammal species within the study area at species level. Therefore, molecular identification was performed on whole blood, tissue or dried blood spots. Samples were stored at -20°C until processing, genomic DNA was extracted using QIAGEN DNAeasy kits as per the manufacturers instructions ([Supplementary Material 2](/files/rodent_network/Supplementary-Material-2.pdf)) [@qiagen_dneasy_2023]. DNA extracts were amplified using platinum *Taq* polymerase (Invitrogen) and cytochrome B primers [@bangura_lassa_2021]. DNA amplification was assessed through gel electrophoreisis with successful amplification products undergoing Sanger sequencing. Attribution of obtained sequences to rodent species was through the BLAST programme comparing NCBI species records for rodent cytochrome B to our sample sequences [@altschul_basic_1990].
-
-### Lassa mammarenavirus serology
-
-The BLACKBOX® LASV IgG ELISA Kit developed by the Diagnostics Development Laboratory hosted at the Bernhard Nocht Institute for Tropical Medicine and validated for rodent samples was used to determine serological status of trapped rodents [@gabriel_development_2018; @soubrier_detection_2022]. The full protocol is available as Supplementary Material 1. Briefly, 1 µL of whole blood was inactivated by mixing with the provided sample dilution buffer (1:50). Where whole blood was unavailable, blood was extracted from dried blood spots stored on filter paper by incubating with phosphate-buffered saline containing 0.08% Sodium Azide and 0.05% Tween-20. Samples alongside negative and positive controls were incubated on the provided ELISA plates for 24 hours at 4-8 °C in a wet chamber. Following incubation, the plates were washed and incubated for a further hour with 1:10,000 diluted HRP-labelled streptavidin. A final wash was performed prior to the addition of 100µL of 3,3’,5,5’-Tetramethylbenzidine (TMB) substrate to wells, with incubation for 10 min. The colorimetric reaction was stopped by adding 100µL of a stop solution.
-
-In a deviation from the kit protocol the optical density (OD) at 450nm and 630nm was measured (as opposed to 450nm and 620nm). The index value was produced from the OD difference (OD~450~-OD~630~) divided by the cut-off values (the mean values of the negative controls + 0.150). Samples were considered positive with index values greater or equal to 1.1, negative results less than or equal to 0.9, and inconclusive results when the index value lay between 0.9 and 1.1. Inconclusive results were repeated as advised by the kit manufacturers.
-
-### Describing small-mammal community networks
-
-Species contact networks were reconstructed from the trapping data. Capture-mark-recapture (CMR) methods have previously been used to identify space-sharing by individuals [@carslake_spacetime_2005; @clay_contact_2009; @wanelik_new_2022]. Within our study system a CMR design was not possible due to the risk of releasing an infected individual back into a human community. We therefore consider that rodents experience direct or indirect contacts with other individuals through detections at trapping locations co-located in time and space [@perkins_comparison_2009]. We assumed these potential contacts were sufficient to transmit LASV if they were trapped within a buffer zone of 30m radius (2,828 m^2^) from the location of the trap during the same 4 trap night session. A 30m radius was selected to encompass the potential home range of an individual. A strong assumption underlying this approach is that an individual was trapped at the center of their home range [@wanelik_new_2022]. This buffer was applied to all species, further assuming that each species shared the same size home range. 
-
-We assessed the appropriateness of the choice of 30m as our buffer radius using the `HomeRange` R package (version 1.0.2) [@broekman_homerange_2023]. This software contains a dataset on the home ranges of 960 species, including 265 rodent and 17 shrew species. Four of these rodent species are included in our trapping data namely, *M. natalensis* our primary species of interest, *Lemnisomys striatus*, *Mus musculus* and *Rattus rattus*. For these species a 30m buffer is expected to contain the entirety of *M. natelensis* home ranges (mean home range = 419m^2^) and greater than 50% of the area of the home range of the remaining species (*L. striatus* = 83%, *M. musculus* = 92%, *R. rattus* = 52%) (**Supplementary Figure 1.**). To assess the importance of the assumption of buffer radius defining contacts and subsequent analyses we performed sensitivity analyses  using buffer areas of 15m and 50m (**Supplementary Text 2**). 
-
-Networks were constructed from observed individuals (nodes) and the presence or absence of contacts between them (edges). Data were aggregated for land use type and sampling visit producing a potential 32 distinct networks from 201 trapping grid, village and visit combinations. However, as there were no detected rodents in three of the networks produced from forest sites, only 29 networks were used in subsequent analysis. 
-
-We first explore the properties of these network stratified by land use type, reporting species richness (number of different species), the number of nodes, the number of edges, mean node degree (i.e., the number of connections to other nodes in the network), and mean betweenness centrality (i.e., the number of times a node lies on the shortest path between other nodes) (**Supplementary Figure 3.1-3.29**). Descriptions of degree are reported at the global (i.e., network-level) and node-level (i.e., degree centrality). We then describe these contact networks stratified by small mammal species, reporting the degree distribution of contacts by species and investigating differences across a land use gradient. We finally explore these species level network characteristics by reporting the proportion of contacts each species has with other species (i.e., proportion of total inter- and intra-specific contacts) stratified by land use.
-
-### Modelling the probablity of inter- and intra-specific contact rates in *Mastomys natalensis* across a land use gradient
-
-To investigate whether land use and species are associated with the probability of a contact between two individuals we model these contacts as Exponential-Family Random Graphs (ERGM) [@hunter_ergm_2008]. We limit this analysis to *Mastomys natalensis*, the primary rodent host of LASV. Estimation of ERGM parameters provide an Odds Ratio (OR) for the probability of an edge in a network based on network properties included in the model and nodal attributes. Within our trapping grids only a subset of all individuals are detected in traps. Including unobserved individuals, and therefore unobserved contacts between these individuals aids interpretation of network models, by providing a measure of the total population size that our analytic sample is derived from.
-
-#### Incorporating unobserved individuals for modelling inter- and intra-specific *Mastomys natalensis* contacts
-
-Previous analysis of our study system suggests a probability of detection at each trap of less than 10% for 4 trap nights if the species is present in the trapping grid ([Rodent Trapping](rodent_trapping.qmd)). Therefore to estimate the abundance of individuals of each species within a trapping grid we modelled abundance (total population size) from repeated count data using an N-mixture model implemented in the `unmarked` R package (version 1.2.5) [@royle_n-mixture_2004; @fiske_unmarked_2011]. The latent abundance distribution can be modelled as a Poisson, negative binomial or zero-inflated Poisson random variable. The abundance distribution was modelled with the number of trap nights and season as replicate dependent detection covariates in addition to location (whether a site was based in a rural or peri-urban setting) and land use type (forest, agriculture or village) as occurrence covariates. 
-
-To select the most appropriate model for each species, the Akaike Information Criterion (AIC) of each of the Poisson, negative binomial or zero-inflated Poisson abundance distribution models were compared, with the best fitting model used to derive the estimated abundance. The median estimated abundance from the produced distribution at a trapping grid was then used to generate the unobserved individuals within each network aggregated to land use type (**Supplementary Figure 2.1-2.12**). The number of observed individuals was then subtracted from the predicted abundance to derive the number of unobserved individuals of each species. These unobserved individuals were explicitly set to have missing (i.e., unobserved) edge values. 
-
-Finally, the constructed adjacency matrices were converted to networks using the `network` R package (version 1.13.0.1) for subsequent ERGM modelling [@butts_network_2008].
-
-#### Network models to estimate the probability of inter- and intra-specific contact rates  
-
-ERGMs were specified for each of our inferred contact networks to compare the probabilities of edges forming based on rodent characteristics (i.e., species). The general model is shown in Equation 1:
-
-$$
-\text{P}\left(\text{Y}=\text{y} \right)\propto\exp\left(\theta_1g_1\left(\text{y}\right)+\theta_2g_2\left(\text{y}\right)+...+\theta_pg_p\left(\text{y}\right)\right)
-$$
-
-Where $p$ is the number of terms in the model, the values of the coefficients $\theta$ represent the size and direction of the effects of the covariates $g(\text{y})$ on the overall probability of an edge being present in the network. At the edge level the expression for the probability of the entire graph can be re-expressed as the conditional log-odds of a single edge between two nodes (a contact between two rodents) as in Equation 2.
-
-$$
-\operatorname{logit}\left(\text{P}\left(\text{Y}_{ij}=1|\text{y}^{c}_{ij}\right)\right)=\theta'\delta\left(\text{y}_{ij}\right)
-$$
-
-Here $\text{Y}_{ij}$ is the random variable for the state of the node pair $ij$ and $y^{c}_{i,j}$ signifies all dyads in the network other than $y_{i,j}$. $\theta'$ is the coefficient for the change production of an edge between the two nodes conditional on all other dyads remaining the same ($\delta(\text{y}_{ij})$). 
-
-ERGMs are implemented using the `ergm` package (version 4.3.2) in R [@handcock_ergm_2022]. Three terms were included in the final ERGM to model the probability of the formation of ties (Equation 3.). The first term (edges), describes the density of the network and is the probability of a tie being observed in the network. The second term (species), is the conditional probability of a tie forming conditional on the species of the nodes. The third term (species homophily), is the conditional probability of a tie forming accounting for intraspecific tie formation among rodent individuals (i.e., the conditional probability of two individuals of the same species forming a tie). To reduce linear dependency of the nodal terms and due to data sparsity within our inferred networks all non-*M. natalensis* are grouped as "Other species" through the `levels` term of the nodal covariates for the analysis of the effect of land use on the probability of inter- or intra-specific contacts for *M. natalensis*.
-
-$$
-\text{P}\left(\text{Y} = \text{y}\right) \propto \exp\left(\theta_\text{edges}g_\text{edges}\left(\text{y}\right) + \theta_\text{species}g_\text{species}\left(\text{y}\right) + \theta_\text{homophily}g_\text{homophily}\left(\text{y}\right)\right)
-$$
-
-ERGMs were implemented on the individual networks for each land use type at each visit. We pooled the effect sizes of each model through random-effects meta-analysis stratified by land use to produce a land use specific summary effect size for each coefficient [@riley_interpretation_2011]. Inclusion in meta-analysis was limited to ERGMs producing stable estimates for each of the model terms (i.e., sufficient detections of *M. natalensis* within the network). Random-effects models were conducted using the `metafor` package (version 4.0.0) in R [@viechtbauer_conducting_2010]. The amount of heterogeneity was assessed using the $Q$-test for heterogeneity and restricted maximum-likelihood estimator ($\tau^2$) with a prediction interval for the true outcomes produced [@cochran_combination_1954; @riley_interpretation_2011]. Weights for each network included in meta-analysis were assigned using inverse-variance weights [@borenstein_basic_2010]. The presence of influential networks was assessed using Cook's distance, for models including influential networks leave-one-out sensitivity analysis were performed [@cheung_guide_2019]. Forest plots were produced to visualise the summary OR of the probability of a tie for each model term stratified by land use type. 
-
-Models with unstable estimates for the species homophily term were not included in the random-effects meta-analysis. No contact networks from forest land use contributed to meta-analysis as no *M. natalensis* were detected in these settings. Five models from agricultural settings and eight from village settings were included in meta-analysis. 
-
-### Association of *Lassa mammarenavirus* seropositivity and position within a small-mammal community contact network
-
-To investigate pathogen transmission within our networks using our proxy of seropositivity for prior exposure we first report the small-mammal species found contain individuals seropositive for LASV. We then compared the nodal degree of seropositive and seronegative individuals using a Wilcoxon rank sum test with continuity correction [@bauer_constructing_1972]. We repeated this analysis stratifying by species to investigate if contact rates are associated with an individual being seropositive. Finally, we compared the node-level betweenness of seropositive and seronegative individuals to investigate whether an individuals position within a structured contact network was associated with prior exposure to LASV.
-
-## Results 
-
-Overall 684 small mammals were trapped from 43,266 trap-nights. Seventeen species were identified, 13 of which were rodent species (76%) with four species of insectivorous shrews identified (24%). *M. natalensis* was the most commonly detected species (N = 113, 16.5%), followed by *Crocidura olivieri* (N = 105, 15.3%) and *Praomys rostratus* (N = 102, 15%) (Table 1.). 
-
-### Prevalence of *Lassa mammarenavirus* antibodies within small mammal communities
-
-Antibodies to LASV were identified in 39 rodents and shrews (39/684, 5.7%) from 9 species, including *M. natalensis* (11/39, 28%), 5 *C. olivieri* (8/39, 21%), 8 *Lophuromys sikapusi* (8/39, 21%) and 4 *Rattus rattus* (4/39, 10%) (Table 1.). The highest proportion of positivity was observed in *Mastomys erythroleucus* (1/4, 25%), *Hybomys planifrons* (1/7, 14.3%), *L. sikapusi* (8/57, 14%) and *M. natalensis* (11/113, 10%).
-
-```{r, fig.cap = "Table 1: The number of individuals detected and antibodies to *Lassa mammarenavirus* among those individuals.", echo=FALSE, message=FALSE, warning=FALSE}
-
-read_rds(here("lassa", "files", "rodent_network", "Table_1.rds")) %>%
-  autofit()
-
-```
-
-Small mammals with antibodies to LASV were detected in three of the study villages, Lalehun (N = 18, 46%), Seilama (N = 12, 31%) and Baiama (N = 9, 23%). Lalehun had the highest percentage of antibody positive rodents (18/157, 12%), followed by Baiama (9/121, 7%) and Seilama (12/263, 5%), no positive individuals were detected in the most urbanised village study site Lambayama.
-
-Antibody positive small mammals were detected in all land use types, most positive individuals were trapped in agricultural (24/39, 62%), followed by village (13/39, 33%) and forest (2/39, 5%) settings. The proportion of antibody positive individuals among all small mammals trapped were similar across forest (2/44, 4.5%), agricultural (24/379, 6.3%) and village (13/261, 5%) land use types. Antibody positive individuals were detected during all study visits except visit 9 (2023-February), the proportion of seropositive individuals were significantly greater in the rainy season (23/240, 9.6%) than the dry season (16/444, 3.6%) ($\chi^2$ = 9.28, *p* = 0.002).
-
-### Small-mammal community contact networks
-
-Networks constructed from small mammals trapped in agricultural land use contained the highest species richness (12), followed by villages (9) and forests (6). More individuals (nodes) were detected in agricultural land use (N = 379) than villages (261) and forests (44). The mean global degree within a network was positively associated with the number of nodes within the network. Networks in village settings had the highest global degree (mean degree = 6.2, standard deviation (SD) = 4.6) compared to forest and agricultural settings (mean = 5.1, SD 3.3 and mean = 4.9, SD = 5.4 respectively). Agricultural and village settings contained the individual nodes with the highest degree centrality (24 and 20 respectively). Mean betweenness centrality, followed an anthropogenic land use gradient, it was highest in villages (mean betweenness = 3.06, standard deviation (SD) = 10.2), followed by agriculture (mean = 0.46, SD = 2.6) and forest (mean = 0.07, SD = 0.16).
-
-There was substantial variability in degree centrality within detected rodents and shrew species. Species more commonly found in agricultural settings had the highest number of detected contacts. Individuals from *L. sikapusi*, *M. setulosus*, *P. rostratus* and *C. olivieri*, three native rodent species and a shrew species had a degree centrality of up to 24, although most individuals of these species had a lower degree (Table 1. and Figure 1.). Within villages *Mus musculus*, an invasive, synanthropic rodent species had a degree centrality of up to 20 and a high median degree across all individuals of the species. Interestingly, *M. natalensis*, while commonly detected in both agricultural and village settings had a lower maximum degree centrality of 12 in villages and 9 in agriculture. The median degree centrality was similar across village and agricultural settings (5 and 4 respectively).
-
-```{r, fig.cap =  "Figure 1: The degree of individual small mammals stratified by species and land use type. Boxes contain the median and inter-quartile range of the degree distribution. Whiskers include the upper and lower quartile with outliers shown as points."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Figure_2.png"))
-
-```
-
-There was no consistent trend across all species of degree centrality varying with a land use gradient (Figure 2.). For commensal species including *M. natalensis*, *Rattus rattus* and *M. musculus* median nodal degree was increased in villages but for *M. natalensis* and *R. rattus* there was no statistically significant difference between the degree distribution stratified by land use.
-
-### Describing inter- and intra-specific contact within small mammal communities
-
-Generally, species with more detected individuals had a greater number of contacts with other species (*r(15)* = 0.62, *p* = 0.007). For example, the frequently detected species, *M. natalensis*, *P. rostratus* and *R. rattus* had contact with more than 13 other species. *M. musculus* is an important outlier to this trend, it was the fourth most observed species but only had observed contacts with four other species (Figure 2. and **Supplementary Figure 4A-B**). 
-
-Intra-specific contacts were common for most species. However, there was some important difference across land use type. *Mastomys natalensis* had contact with 13 other species in agricultural land use, but 45% of all observed contacts to this species were from other individuals of the same species (Figure 3.). However, in villages where fewer other species were contacted (9), the percentage of intra-specific contacts was lower at 31% (**Supplementary Figure 4B**). Not all species were observed to have a majority of intra-specific contacts. In comparison, *L. sikapusi* in agricultural settings also had contact with 13 other species, but a similar proportion of contacts to individuals of this species came from *P. rostratus* (27%) as from other individuals of *L. sikapusi* (26%).  
-
-```{r, fig.cap =  "Figure 2: The proportion of contacts between individual small mammals in agricultural land use. Darker colours indicate increasing proportions of observed contacts to a species (Contact to) from named species (Contact from). Numbers in the cells correspond to the proportion of contacts to a species from a named species. Percentages sum to 100% in the `Contact to` axis."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Figure_3.png"))
-
-```
-
-### The probability of inter- and intraspecific contact rates of *Mastomys natalensis* across a land use gradient
-
-Limiting the analysis of the probability of a contact being observed to the reservoir species of LASV, *M. natalensis*, resulted in 12 ERGM models of the constructed networks being suitable for random effects meta-analysis. The odds of a contact being observed in these networks were generally low with similar odds across both agricultural (Odds Ratio = 0.14, 95% Confidence Interval = 0.09-0.23, *p* \< 0.001) and village land use (OR = 0.24, 95% C.I. = 0.17-0.36, *p* \< 0.001) (Figure \@ref(fig:figure-4-4)A). There were high levels of heterogeneity in the odds of a contact being observed between networks from different visits for both agricultural and village settings ($\hat{\tau}^2_{\text{agriculture}}$ = 0.26, $Q$ = 112, *p* \< 0.001 and $\hat{\tau}^2_{\text{village}}$ = 0.23, $Q$ = 54, *p* \< 0.001). Compared to other rodent species *M. natalensis* formed fewer contacts.
-
-*Mastomys natalensis* had a non-statistically significant reduced odds of having contact with a different species (i.e., an inter-specific contact) in agricultural (OR = 0.49, 95% C.I. = 0.24-1.01, *p* = 0.054) and village settings (OR = 0.74, 95% C.I. = 0.55-1.01, *p* = 0.055) when compared to inter-specific contacts among other species in these communities (Figure \@ref(fig:figure-4-4)B). There were high levels of heterogeneity in the odds of inter-specific contacts being observed between networks ($\hat{\tau}^2_{\text{agriculture}}$ = 0.59, $Q$ = 31, *p* \< 0.001 and $\hat{\tau}^2_{\text{village}}$ = 0.09, $Q$ = 15, *p* = 0.03). *Mastomys natalensis* did not importantly differ from other species in their probability for inter-specific contacts, with no observed effect of land use.
-
-Finally, *M. natalensis* had a statistically significantly increased odds of forming contacts with other *M. natalensis* individuals (i.e., an intra-specific contact) in agricultural (OR = 7.5, 95% C.I. = 3.42-16.5, *p* \< 0.001) but not in village settings (OR = 1.69, 95% C.I. = 0.85-3.36, *p* = 0.13) when compared to inter-specific contacts among non-*M. natalensis* species (Figure \@ref(fig:figure-4-4)C). There was no substantial heterogeneity in the analysis of the odds of intra-specific contacts ($\hat{\tau}^2_{\text{agriculture}}$ = 0.22, $Q$ = 5.6, *p* = 0.23 and $\hat{\tau}^2_{\text{village}}$ = 0.39, $Q$ = 12, *p* = 0.1) in both land use types. *Mastomys natalensis* compared to other small mammal species was more likely to have intra-specific contacts within communities in agricultural but not village settings.
-
-In the first sensitivity analysis, altering the radius in which a contact was defined, there was no change in direction of the effect sizes for the random-effects meta-analysis (**Supplementary Text 3**). There were no important changes in effect size direction or magnitude in leave-one-out sensitivity testing for meta-analyses containing influential networks. The results of these sensitivity analyses suggest that the results are robust to the assumption of contact buffer range and changes to the rodent community over study visits.
-
-```{r, fig.cap =  "Figure 4: Random effects meta-analysis of ERGM network models reporting the odds of a contact being observed for *M natalensis*. A) The odds ratio of a contact being observed for *M. natalensis* in Agricultural or Village land use types. B) The odds ratio of a contact being observed between *M. natalensis* and an individual of a different rodent species. C) The odds ratio of a contact being observed between *M. natalensis* and another *M. natalensis*."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Figure_4.png"))
-
-```
-
-### Association of *Lassa mammarenavirus* seropositivity and position within a small-mammal community contact network
-
-The mean degree centrality of LASV seropositive rodents and shrews (mean = 3.7, SD = 2.9) was statistically significantly lower than the seronegative mean degree (mean = 5.5, SD = 5.1) (W = 9834.5, *p* = 0.049). Statistical tests to investigate the degree of seropositive and seronegative individuals stratified by species were only performed for three species with more than five seropositive individuals (i.e., *M. natalensis*, *L. sikapusi* and *C. olivieri*). There was no statistically significant difference in the degree centrality of LASV seropositive and seronegative individuals for *M. natalensis* (W = 160.5, *p* = 0.51) or *C. olivieri* (W = 0.98, *p* = 0.43) but seropositive *L. sikapusi* had statistically significantly lower degree centrality than seronegative individuals (W = 92, *p* = 0.02).
-
-There was no statistically significant difference in the betweenness centrality of seropositive and seronegative individuals, nor when compared between seropositive and seronegative individuals within species for those with more than five seropositive individuals.
-
-## Discussion
-
-In our study within the Eastern province of Sierra Leone, we found that small-mammal community contact networks while generally larger in village and agricultural settings had similar rates of contact across a land use gradient from forest, through agriculture to villages. We found that while some individual rodents and shrews had a high number of contacts, most had fewer than 5 contacts, indicating sparse networks. There was no clear difference in degree centrality by species across different land use types. For *M. natalensis* specifically, we observed a high probability of the formation of intra-specific contacts preferentially occurring within agricultural settings. The finding of increased intra-specific contact rates among the primary reservoir species in agricultural settings may suggest that these locations are the foci of LASV transmission. Finally, we found low prevalence of seropositivity to LASV within these small-mammal communities in four villages in the Eastern Province of Sierra Leone. Antibodies to LASV were detected in 6 rodent and shrew species with the majority of seropositive individuals belonging to *M. natalensis*. We found that seropositive individuals had reduced degree centrality, but that this population-wide association wasn't replicated when stratified by species. 
-
-We hypothesised that rodent contact rates would be greater in anthropogenically dominated habitats. Our findings did not support this, with an equivalent global degree observed across a land use gradient. However, the individuals with the highest degree centrality were detected in village and agricultural settings. The node-level heterogeneity of these networks is masked when only considering aggregated global descriptive metrics. 
-
-Small-mammal communities were found to have higher species richness in agricultural land. Species detected within these settings encountered a greater number of distinct species and had a generally higher proportion of inter-specific contacts. Several native rodent species (e.g., *P. rostratus*), particularly in agricultural settings, appeared to contain individuals that were members of more densely connected sub-components of the networks within these small-mammal communities, evidenced by high degree centrality for specific individuals. It may be that contact rates within species are heterogeneous and species-level measurements will mask the individual-level differences in contact rates [@farine_constructing_2015].
-
-The idiosyncratic nature of these networks is also shown through their different structures across the land use gradient. For example, we found higher betweenness centrality in villages, compared to agricultural or forest settings. This indicates that these networks have a structure that is more discontinuous and fragmented than those in other land use settings. The high betweenness centrality in village settings, will moderate pathogen transmission through the network as some individuals are more influential in bridging sub-components of the network.
-
-The results of our descriptive network analysis suggest that contact within small mammal communities occurs at similar rates across different land use types but that networks within villages are more discontinuous. Agricultural habitats provide opportunities for synanthropic and sylvatic species to interact, as evidenced by the high proportion of inter-specific contacts for most species in these locations. This, combined with the low betweenness centrality of nodes in agricultural land suggest that a pathogen (i.e., LASV) would be effectively transmitted among competent hosts within these well-connected networks.
-
-*Mastomys natalensis* was found to have fewer contacts than the other rodent species within small-mammal communities in agricultural and village settings. When contacts were observed for this species in agricultural settings, they had a higher odds of being intra-specific contacts. This was not replicated in village settings where inter-specific contacts were more common. This is supported by prior research showing that *M. natalensis* does not exhibit strong territorial responses, similar to *R. rattus* but in contrast to *M. musculus* [@anderson_density_1961; @whisson_home_2007; @borremans_happily_2014]. 
-
-
-Homophily in contacts of *M. natalensis* (i.e., intra-specific contacts) may be important for viral transmission if other species are not as effective hosts for LASV replication and transmission [@luis_species_2018]. For example, if an infected individual *M. natalensis* resides in an agricultural setting it will have higher odds of transmitting LASV to a contact capable of maintaining a chain of transmission (i.e., another individual of *M. natalensis*), compared to an individual that was located in a village that would have higher odds of contacting a non-*M. natalensis* individual. This may result in different pathogen dynamics by land use type. This is an important avenue for future research as such differences could impact the effectiveness of rodent control interventions to reduce zoonotic spillover risk [@garry_lassa_2023].
-
-Local pathogen extinction may be more likely in agricultural settings following viral introduction. High connectivity within the networks in these settings could lead to a greater force-of-infection where a single infected individual leads to an increased number of secondary infections [@keeling_networks_2005]. If this transmission were to occur at a faster rate than population births (i.e., replenishment of susceptible individuals), population level immunity would be rapidly reached, leading to local pathogen extinction [@messinger_consequences_2009]. The same may not be the case in village settings where an infected rodent will have fewer contacts, thus LASV transmission may be at a rate below the rate of replenishment of susceptible individuals [@peel_effect_2014]. In this scenario, the pathogen would be maintained in the population. This may be complicated further by migration of individuals between agricultural and village settings based on resource availability as has been reported elsewhere in the Lassa fever endemic region [@mari_saez_rodent_2018]. The risk of Lassa fever outbreaks in human communities is therefore likely governed by dynamic contacts among susceptible and infectious rodents in the local environment.
-
-
-The number and proportion of seropositive rodents and shrews detected in the current study, while low (5.7%), was similar (2.8%) to that reported by another study that sampled small-mammal populations in Eastern Sierra Leone [@bangura_lassa_2021]. Comparison of these studies is limited by different sampling design, for example, the current study sampled rodents in forest environments and locations more distant from areas of human habitation. The proportion of all seropositive individuals that were *M. natalensis* (28%) was lower in this study than in the study conducted in the neighbouring district (75%) although the proportion of all *M. natalensis* that were antibody positive was more similar (9.7% compared to 8%). We similarly identified antibodies in other rodent species including, *L. sikapusi* and *R. rattus*. Antibodies to LASV were identified in four further rodent and shrew species, *C. olivieri*, *M. setulosus*, *Hybomys planifrons* and *Mastomys erythroleucus* that were not reported from the Bangura study [@bangura_lassa_2021]. Antibodies to LASV have not previously been reported in *M. setulosus*, although they have been detected in other pygmy mice species (e.g., *Mus musculoides*) [@bangura_lassa_2021]. These results support previous studies' findings that evidence of prior acute infection is present in multiple species simultaneously within small-mammal communities in the Lassa fever endemic region [@demby_lassa_2001; @agbonlahor_prevalence_2017; @bangura_lassa_2021].
-
-We did not detect a sufficient number of seropositive individuals to directly model the transmission networks of LASV through our small-mammal communities in these different land use settings. Ideally transmission networks would be developed from acute infection data rather than seroprevalence, given the time varying structure of dynamic contact networks. Based on studies suggesting that fewer individuals will be PCR positive than seropositive, it is unlikely that sufficient data would be available to parameterise models of transmission networks without substantially increasing the number of sampling periods and locations [@demby_lassa_2001; @olayemi_new_2016; @bangura_lassa_2021]. Future studies in the Eastern province of Sierra Leone will benefit from recent studies, including this one, when estimating sample sizes required to parameterise transmission models.
-
-Several important assumptions were made that must be considered when contextualising the results of this research. First, we were unable to explicitly observe direct and indirect contacts among rodents in our study. To infer these contacts, we utilised co-location of trapped individuals in time and space [@perkins_comparison_2009]. This assumed that individuals were detected at the centroid of their home range and that they spend an equivalent amount of time at all points within the area of their home range [@wanelik_new_2022]. It is unlikely that this assumption holds true in our study system and this will lead to different contact rates than we infer in our networks [@wanelik_new_2022]. Modifications to the current study design to explore the impact of these assumptions could include radio tagging or fluorescent marking to monitor rodent contacts in real-time [@mohr_monitoring_2007; @clay_contact_2009; @borremans_nonlinear_2017]. Second, only a small proportion of rodents and shrews active within a study site would be detected by our trapping activity [@parmenter_small-mammal_2003; @moore_modeling_2005]. We account somewhat for the impact this will have on our network models by inferring the total abundance of species within these sites [@silk_understanding_2017; @vega_yon_exponential_2021]. However, if individuals that were detected display importantly different behaviours than those not detected then inferring across these populations may be problematic. For example, if trap shyness is associated with inter- or intra-specific space sharing then detection of less trap shy individuals may overestimate the number of contacts individuals of a species are likely to make. It would be illustrative to replicate the findings of this study on small-mammal networks elsewhere in the Lassa fever endemic region to assess the impact of these assumptions among others.
-
-In conclusion this study has highlighted the variability of inter- and intra-specific contact rates between different rodent and shrew species in different land use types in a setting of rodent associated zoonotic disease risk. We propose that the wider small-mammal community produces a more complex transmission network for LASV than previously assumed. These findings may highlight the mechanism through which the wide variety of rodent and shrew species found to be seropositive for LASV may have been infected. This could have important implications for the control of Lassa fever risk to human populations as there is likely to be a complex interaction between pathogen transmission within differently structured rodent networks in areas of human habitation and the wider landscape.
-
-## Supplementary material
-
-### [Supplementary Material 1](/files/rodent_network/Supplementary-Material-1.pdf)
-
-### [Supplementary Material 2](/files/rodent_network/Supplementary-Material-2.pdf)
-
-### Supplementary Figure 1
-
-```{r S.fig.1, fig.cap = "Supplementary Figure 1: Empirical Cumulative Density Function of the home range radius of rodent and shrew species with data available in the HomeRange dataset. Species that match detected genera in our study include two shrew species *Crocidura leucodon* and *Crocidura shantungensis* and two rodent species *Hylomyscus stella* and *Praomys tullbergi*. Four species matches to rodent species detected in our study were also included *Lemniscomys striatus*, *Mastomys natalensis*, *Mus musculus* and *Rattus rattus*. Only *Lemniscomys striatus* and *Mastomys natalensis* contain data from Africa (Uganda and Tanzania respectively). The dashed line represents the 30m range radius used for the primary analysis in the current study."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_1.png"))
-
-```
-
-### Supplementary Figure 2A-F
-
-```{r S.fig.2A, fig.cap = "Supplementary Figure 2A: Estimated abundance at each sampling site for *Mastomys natalensis*. The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2A.png"))
-
-```
-
-
-```{r S.fig.2B, fig.cap = "Supplementary Figure 2B: Estimated abundance at each sampling site for *Mus musculus*. The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2B.png"))
-
-```
-
-```{r S.fig.2C, fig.cap = "Supplementary Figure 2C: Estimated abundance at each sampling site for *Rattus rattus*. The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2C.png"))
-
-```
-
-```{r S.fig.2D, fig.cap = "Supplementary Figure 2D: Estimated abundance at each sampling site for *Crocidura spp*. The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2D.png"))
-
-```
-
-```{r S.fig.2E, fig.cap = "Supplementary Figure 2E: Estimated abundance at each sampling site for *Praomys spp*. The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2E.png"))
-
-```
-
-```{r S.fig.2F, fig.cap = "Supplementary Figure 2F: Estimated abundance at each sampling site for all other species (species with fewer than 20 observations). The dashed line and number is the median abundance used to infer the population size at this study site."}
-
-knitr::include_graphics(here("lassa", "files", "rodent_network", "Supplementary_Figure_2F.png"))
-
-```
-
-### Supplementary Figure 3A-W
-
-![Supplementary Figure 3A](files/rodent_network/Supplementary_Figure_3A.png)
-
-![Supplementary Figure 3B](files/rodent_network/Supplementary_Figure_3B.png)
-
-![Supplementary Figure 3C](files/rodent_network/Supplementary_Figure_3C.png)
-
-![Supplementary Figure 3D](files/rodent_network/Supplementary_Figure_3D.png)
-
-![Supplementary Figure 3E](files/rodent_network/Supplementary_Figure_3E.png)
-
-![Supplementary Figure 3E](files/rodent_network/Supplementary_Figure_3E.png)
-
-![Supplementary Figure 3F](files/rodent_network/Supplementary_Figure_3F.png)
-
-![Supplementary Figure 3G](files/rodent_network/Supplementary_Figure_3G.png)
-
-![Supplementary Figure 3H](files/rodent_network/Supplementary_Figure_3H.png)
-
-![Supplementary Figure 3I](files/rodent_network/Supplementary_Figure_3I.png)
-
-![Supplementary Figure 3J](files/rodent_network/Supplementary_Figure_3J.png)
-
-![Supplementary Figure 3K](files/rodent_network/Supplementary_Figure_3K.png)
-
-![Supplementary Figure 3L](files/rodent_network/Supplementary_Figure_3L.png)
-
-![Supplementary Figure 3M](files/rodent_network/Supplementary_Figure_3M.png)
-
-![Supplementary Figure 3N](files/rodent_network/Supplementary_Figure_3N.png)
-
-![Supplementary Figure 3O](files/rodent_network/Supplementary_Figure_3O.png)
-
-![Supplementary Figure 3P](files/rodent_network/Supplementary_Figure_3P.png)
-
-![Supplementary Figure 3Q](files/rodent_network/Supplementary_Figure_3Q.png)
-
-![Supplementary Figure 3R](files/rodent_network/Supplementary_Figure_3R.png)
-
-![Supplementary Figure 3S](files/rodent_network/Supplementary_Figure_3S.png)
-
-![Supplementary Figure 3T](files/rodent_network/Supplementary_Figure_3T.png)
-
-![Supplementary Figure 3U](files/rodent_network/Supplementary_Figure_3U.png)
-
-![Supplementary Figure 3V](files/rodent_network/Supplementary_Figure_3V.png)
-
-![Supplementary Figure 3W](files/rodent_network/Supplementary_Figure_3W.png)
-
-## Data availability and draft manuscript
-
-Data are available in the project's GitHub [repository](https://github.com/DidDrog11/chapter_4/tree/main/data). The most recent version of the draft currently being shared with co-authors is [V2](https://github.com/DidDrog11/chapter_4/blob/main/report/chapter_4.docx).
+Data are available in the project's GitHub [repository](https://github.com/DidDrog11/rodent-networks-lassa-sl). Individual level data on detected rodents and their serological status for LASV antibodies are available on [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk).
 
 ## ASTMH 2023 presentation
 
