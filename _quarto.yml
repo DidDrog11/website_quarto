@@ -60,6 +60,21 @@ website:
           - lassa/rodent_review.qmd
           - lassa/lips.qmd
     
+project:
+  type: website
+  render:
+    - "*.qmd"           
+    - "!cv.qmd"         
+    - "amr/"          
+    - "arha/"
+    - "covid/"
+    - "images/"
+    - "lassa/"          
+    - "monkeypox/"
+    - "policy/"
+    - "others/"
+    - "rodent_ecology/"
+    
 format:
   html:
     theme: pulse
