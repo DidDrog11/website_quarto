@@ -1,0 +1,25 @@
+---
+title: "E-learning Module for the ECDC on Environmental Determinants of Communicable Diseases"
+author: 
+  - name: "David Simons"
+    affiliation: "The Royal Veterinary College"
+date: 2025-09-24 # Or the date the contract was completed
+categories: [Consultancy, E-learning, One Health, ECDC, Policy]
+---
+
+As part of a contract with the European Centre for Disease Prevention and Control (ECDC), I developed content for an e-learning module on the environmental determinants of communicable diseases.
+
+## Project Overview
+
+The primary goal of this module is to strengthen the implementation of a One Health approach across the EU. It aims to improve practitioners' understanding of the critical interconnection between the health of humans, animals, plants, and their shared environment.
+
+## My Role
+
+My contribution focused on developing the curriculum and creating the module.
+
+## Key Topics Covered
+
+* The core principles of the One Health approach.
+* Impacts of climate change on the epidemiology of communicable diseases.
+* Environmental drivers of zoonotic spillover.
+* Integrated surveillance and response strategies.

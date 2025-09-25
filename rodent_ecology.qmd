@@ -1,0 +1,15 @@
+---
+title: "Rodent Ecology"
+subtitle: "Host dynamics in complex landscapes"
+listing:
+  contents: rodent_ecology
+  categories: true
+  sort: "date desc"
+  sort-ui: true
+title-block-banner: true
+---
+
+This section details my research into rodent population dynamics, community structure, and behaviour, particularly as these factors relate to zoonotic disease transmission. Understanding the fundamental ecology of reservoir hosts is critical for predicting and mitigating disease risk.
+
+::: {#rodent_ecology}
+:::

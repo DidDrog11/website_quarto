@@ -1,0 +1,36 @@
+---
+title: "Reducing the threats of rodent-borne zoonoses: The three pillars of disease ecology, synanthropy, and rodentation"
+author: 
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College
+date: 2025-08-26
+categories: [Rodent, Ecology, Zoonosis, Publication, Lancet, One Health, Policy]
+image: figures/lancet_preview.jpg
+---
+
+This Personal View, published in *The Lancet Planetary Health*, is the collaborative output from the 1st annual Rodent-Borne Zoonoses workshop. Now in its third year, this workshop brings together a diverse group of experts to synthesize knowledge and set a forward-looking agenda for preventing rodent-borne diseases.
+
+As a co-author, I contributed to this piece which outlines three key pillars that drive zoonotic spillover—disease ecology, synanthropy, and rodentation—and advocates for integrated, systems-based interventions.
+
+***
+
+## Summary
+
+> Rodents have co-existed with humans for centuries, and frequently exchange pathogens. Historically, rodent-driven plague outbreaks scoured the Old World, resulting in substantial human mortality. Although such pandemics have not occurred for centuries, serious threats from rodent-borne infections, such as the global emergence of mpox, still exist. Moreover, endemic and emerging rodent infections continue to cause substantial human morbidity and mortality in low-income and middle-income countries. Efforts by the medical community to control rodent-borne zoonoses primarily focus on treating or preventing symptoms in humans using biomedical interventions (eg, vaccination). Such approaches are geared towards preparedness and response but are insufficient for prevention. In this Personal View, we identify three key pillars that drive rodent-borne zoonotic spillover: ecology of rodent infections; use of human habitation by rodents (synanthropy); and the influence of humans on the ecological proliferation of rodents in our landscape (rodentation). The challenge is to leverage these pillars as entry points for interventions, to prevent spillover and reduce disease burden. Given shortcomings of rodent culling, we advocate for integrated countermeasures that are socially and ecologically grounded, apply systems thinking, and leverage emerging technologies to prevent spillover driven by persistent human–rodent interactions and global change.
+
+***
+
+### The Three Pillars of Spillover Prevention
+
+This conceptual model from our paper highlights the key interaction points between rodent ecology, human behaviour, and the environment that can be leveraged for disease control.
+
+![**Figure 2. Rodent–human–environment interactions and intervention points.** A conceptual model highlighting interactions and feedback between rodent ecology (gold), human behaviour (blue), and the ecological context (green). Arrows indicate the human–rodent–environment interactions that have immediate and downstream effects on rodent-borne zoonotic spillover. For example, human settlement and land-use change shape the ecological community, particularly predator and resource availability, which modulate rodent populations, disease dynamics, and the likelihood of spillover to humans. Red circles indicate opportunities for disease control that disrupt upstream interactions affecting spillover and provide entry points for control.](figures/lancet_preview.jpg)
+Source: Friant, S., et al. (2025). Reducing the threats of rodent-borne zoonoses requires an understanding and leveraging of three key pillars: disease ecology, synanthropy, and rodentation. *The Lancet Planetary Health*. Licensed under CC-BY 4.0. https://doi.org/10.1016/j.lanplh.2025.101300
+
+***
+
+## Publication Details
+
+* **Journal:** *The Lancet Planetary Health*
+* **Full Citation:** Friant, S., Mistrick, J., Luis, A. D., Harden, C., Simons, D., Fichet-Calvet, E., Gibb, R., Grube, N., Henttonen, H., Imirizian, N., Moses, L., Perry, G. H., Redding, D., Stenseth, N. C., Vandegrift, K., Bjornstad, O. N., Dobson, A., Lloyd-Smith, J. O., & Hudson, P. J. (2025). Reducing the threats of rodent-borne zoonoses requires an understanding and leveraging of three key pillars: disease ecology, synanthropy, and rodentation. *The Lancet Planetary Health*. 101300.
+* **DOI:** [10.1016/j.lanplh.2025.101300](https://doi.org/10.1016/j.lanplh.2025.101300)

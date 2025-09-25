@@ -1,0 +1,18 @@
+---
+title: "Strategy & Policy"
+subtitle: "Frameworks for Disease Control and One Health"
+listing:
+  contents: policy
+  categories: true
+  image-align: left
+  max-description-length: 150
+  sort:
+    - "date desc"
+  sort-ui: true
+title-block-banner: true
+---
+
+This section collects my work on high-level frameworks, strategies, and policy recommendations for the control of zoonotic diseases. The posts here focus on developing and evaluating novel public health interventions, such as transmissible vaccines and integrated One Health trial designs, that bridge the gap between ecological research and practical application.
+
+::: {#policy}
+:::

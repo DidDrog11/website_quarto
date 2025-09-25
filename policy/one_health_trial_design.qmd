@@ -1,0 +1,31 @@
+---
+title: "A ‘One Health Trial Design’ to accelerate Lassa fever vaccines"
+subtitle: "We propose an interdisciplinary framework to address significant challenges hampering the development of vaccines for zoonotic diseases with epidemic potential."
+author: 
+  - name: "David Simons"
+    affiliation: "The Pennsylvania State University"
+date: 2025-09-24
+categories: [Forthcoming, Nature Medicine, One Health, Trial Design, Lassa Fever, Vaccinology]
+image: images/ohtd_graphic.svg
+---
+
+This commentary, forthcoming in *Nature Medicine*, argues for a new ‘One Health Trial Design’ (OHTD) framework that systematically integrates ecological and social science data into the vaccine research and development pipeline. Using the current effort to develop a Lassa fever vaccine as a critical test case, we propose a path to accelerate the delivery of effective vaccines and provide a blueprint for future pandemic preparedness.
+
+***
+
+## Summary
+
+The development of vaccines for zoonotic diseases like Lassa fever is hampered by unpredictable spillover events, making clinical trial design particularly challenging. Overcoming these challenges requires adopting a ‘One Health vaccinology’ approach that weaves together human, animal, and environmental health. Our proposed OHTD framework systematically integrates ecological and social data into three critical areas of vaccine development: (1) incorporating viral diversity into vaccine design, (2) assisting in strategic site selection for clinical trials, and (3) evaluating vaccine performance across trial and real-world settings. By creating interdisciplinary governance and using prospective surveillance and adaptive recruitment, the OHTD can lead to more targeted, dynamic, and efficient trials that focus resources where spillover risk is highest.
+
+![A schematic of the proposed One Health Trial Design framework](images/ohtd_graphic.svg)
+
+***
+
+## Publication Details
+
+* **Journal:** *Nature Medicine* (In Press)
+* **Link:** A link will be added upon publication.
+
+## Authors
+
+David Simons, Deborah Watson-Jones, Daniela Manno, and Sagan Friant.

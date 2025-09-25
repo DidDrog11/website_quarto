@@ -9,17 +9,33 @@ author:
     affiliation: Pennsylvania State University
   - name: "Sagan Friant"
     affiliation: Pennsylvania State University
-categories: [Rodent, Ecology, Zoonosis, Lassa Fever, Human, Transmission, Nigeria]
+categories: [Rodent, Ecology, Zoonosis, Lassa Fever, Human, Transmission, Nigeria, Protocol]
 image: files/scapes/scapes_preview.png
-date: 2023-09-18
+date: 2025-09-24
 citation: true
 execute:
   echo: false
   warning: false
 ---
 
-# Background
+## Background
 
-This is a five-year NSF EEID grant [Cross-scale dynamics of LASV spillover within human-driven ecosystems (NPM2J7MSCF61)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false) led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University in collaboration with [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [Dave Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and others. I am a postdoctoral scholar working on this project with a particular focus on factors of both human and rodent ecology which moderate the risk of Lassa fever infection in humans. 
+This is a five-year NSF EEID grant, [Cross-scale dynamics of LASV spillover within human-driven ecosystems](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false), led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University in collaboration with [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [Dave Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding), and others. I am a postdoctoral scholar working on this project with a particular focus on factors of both human and rodent ecology which moderate the risk of Lassa fever infection in humans. 
 
-This project is being conducted in Ebonyi, Benue and Cross River states in Nigeria with field work to begin in late 2023. 
+This project is being conducted in Ebonyi, Benue, and Cross River states in Nigeria, with fieldwork ongoing since late 2023. More information, including details on our collaborators and field sites, is available on the **[SCAPES project website](https://storymaps.arcgis.com/templates/751190c765ee441c9589d65ac34fe9d0)**.
+
+---
+
+## Outputs & Updates
+
+### Protocol Paper
+
+We have developed a detailed protocol for the ecological and anthropological components of this project. The pre-peer-reviewed version is available as a preprint, and the manuscript is currently under review at *PLOS ONE*.
+
+* **Preprint:** [**Read the full protocol on medRxiv**](https://www.medrxiv.org/content/10.1101/2025.09.12.25335176v1)
+
+### Conference Presentations
+
+We presented preliminary findings of the cross-sectional human serology and project goals at the [2nd Lassa Fever International Conference (ECOWAS)](https://www.lassafeverinternationalconference.org/).
+
+{{< pdf files/scapes/scapes_poster_1.pdf width=100% height=600 >}}

@@ -1,0 +1,32 @@
+---
+title: "Book Chapter: A Comprehensive One Health Review of Lassa Fever"
+author: 
+  - name: "David Simons"
+    affiliation: Pennsylvania State University
+date: 2025-09-23
+categories: [Book Chapter, Forthcoming, Lassa Fever, One Health, Review, Policy]
+---
+
+I have authored a chapter on Lassa fever for the forthcoming Major Reference Work, *Zoonoses and Zoonotic Diseases*, published by Elsevier. This chapter provides a comprehensive overview of the virus, its ecology, epidemiology, and the integrated strategies required for its control.
+
+As the chapter is not yet published, I am sharing the abstract below.
+
+***
+
+## Forthcoming Publication Details
+
+* **Book:** *Zoonoses and Zoonotic Diseases: A Comprehensive Reference: Human-Animal-Environment Nexus*
+* **Co-authors:** Dr. Umaru Bangura, Dr. Elisabeth Fichet-Calvet, Dr. Danny Asogun, Dr. Sagan Friant
+* **Section:** 1 - Priority Zoonoses
+* **Chapter:** 1.29 Lassa Fever
+* **Editor:** Richard Kock
+* **Publisher:** Elsevier Major Reference Works
+* **Link:** A link will be added here once available from the publisher.
+
+***
+
+## Abstract
+
+> Lassa fever (LF), caused by the *Mammarenavirus lassaense* (LASV), is a significant rodent-borne zoonosis endemic to West Africa, posing a substantial public health threat. Primarily transmitted from its natural reservoir, *Mastomys natalensis*, to humans, LASV infection presents a wide clinical spectrum, ranging from asymptomatic to severe haemorrhagic fever. This chapter provides a comprehensive review of LASV, encompassing its virology, genetic diversity, and complex ecology within rodent hosts, including the dynamics of viral persistence and shedding. We detail the mechanisms of zoonotic spillover and human-to-human transmission, exploring the epidemiological landscape of LF across endemic regions, including Nigeria, Sierra Leone, Liberia, Guinea, and other West African nations, as well as the challenges posed by exported cases.
+>
+> The chapter further explores the pathogenesis of human infection, outlining systemic effects and immune responses that drive disease severity. We examine current approaches to diagnosis, treatment (including the role of ribavirin and novel therapeutics), and the critical importance of healthcare access and infection prevention and control. Recognizing the multifaceted nature of LF, we highlight the necessity of integrated One Health approaches, multisectoral collaboration, and the vital role of social sciences in designing effective interventions. Finally, we discuss how global socio-ecological transformations, such as urbanisation, land use change, and climate variability, may shape the future trajectory of LF, concluding with key research priorities essential for informing robust prevention, control, and response strategies in a changing world.

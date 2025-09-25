@@ -18,16 +18,26 @@ website:
         text: "{{< iconify mingcute home-2-line >}} Home"
       - text: "{{< iconify ic outline-category >}} Research Themes"
         menu:
-        - text: "{{< iconify twemoji rat >}} Lassa Fever"
-          href: lassa.qmd
-        - text: "{{< fa virus >}} Monkeypox"
-          href: monkeypox.qmd
-        - text: "{{< fa lungs-virus >}} COVID-19"
-          href: covid_19.qmd
-        - text: "{{< fa bacterium >}} Antimicrobial Resistance (AMR)"
-          href: amr.qmd
-        - href: others.qmd
-          text: "{{< fa shuffle >}} Other Work"
+          - text: "Rodent-Borne Zoonoses"
+          - text: "{{< iconify twemoji rat >}} Lassa Fever"
+            href: lassa.qmd
+          - text: "{{< iconify ph bug-bold >}} Project ArHa"
+            href: arha.qmd
+          - text: "{{< iconify fa6-solid bugs >}} Rodent Ecology"
+            href: rodent_ecology.qmd
+          - text: "{{< iconify mdi file-document-edit >}} Strategy & Policy"
+            href: policy.qmd
+          - text: "---"
+          - text: "Other Major Themes"
+          - text: "{{< fa virus >}} Monkeypox"
+            href: monkeypox.qmd
+          - text: "{{< fa lungs-virus >}} COVID-19"
+            href: covid_19.qmd
+          - text: "{{< fa bacterium >}} Antimicrobial Resistance (AMR)"
+            href: amr.qmd
+          - text: "---"
+          - href: others.qmd
+            text: "{{< fa shuffle >}} Other Work"
       - href: https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en
         text: "{{< iconify ooui articles-ltr >}} Publications"
     right:
@@ -40,15 +50,15 @@ website:
         href: https://github.com/DidDrog11
         aria-label: David GitHub
     sidebar:
-    - title: "Lassa Fever"
-      style: "floating"
-      collapse-level: 2
-      align: left
-      contents:
-        - lassa.qmd
-        - lassa/rodent_trapping.qmd
-        - lassa/rodent_review.qmd
-        - lassa/lips.qmd
+      - title: "Lassa Fever"
+        style: "floating"
+        collapse-level: 2
+        align: left
+        contents:
+          - lassa.qmd
+          - lassa/rodent_trapping.qmd
+          - lassa/rodent_review.qmd
+          - lassa/lips.qmd
     
 format:
   html:

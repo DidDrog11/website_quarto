@@ -1,5 +1,5 @@
 ---
-title: "Land use gradients drive spatial variation in Lassa fever host communities in Eastern Sierra Leone."
+title: "Land use gradients drive spatial variation in Lassa fever host communities in the Eastern Province of Sierra Leone."
 abstract: |
   1.  The natal multimammate mouse (*Mastomys natalensis*) is the primary reservoir host of *Lassa mammarenavirus* (LASV), a zoonotic pathogen causing Lassa fever that is endemic to West Africa. The occurrence and abundance of this species is regulated by the human environment and biotic interactions with other small-mammal species, but these ecological drivers remain poorly understood in the regions where Lassa fever outbreaks are observed.
   2.  We developed a Bayesian multi-species occupancy model incorporating incomplete detection to assess habitat use from data obtained as part of a multi-year small-mammal trapping study (43,226 trap nights across four village sites in Sierra Leone, 2020-2023). We investigated the effects of land use gradients and small-mammal community dynamics on the spatial distribution of *M. natalensis*.
@@ -12,7 +12,7 @@ author:
 categories: [Rodent, Ecology, Zoonosis, Lassa Fever, Preprint, Landuse Change]
 image: files/rodent_landuse/Figure_1a.png
 bibliography: lassa.bib
-date: 2023-10-01
+date: 2025-09-23
 citation: true
 execute:
   echo: false
@@ -47,22 +47,22 @@ David Simons ^1,2,3^, Rory Gibb ^2,4^, Umaru Bangura ^5,6^, Dianah Sondufu ^6^, 
 
 ## Motivation
 
-This study was designed to investigate the effect of changes in landuse on the occurrence of different rodent species in a Lassa fever endemic region of Eastern Sierra Leone. While habitat preferences of *Mastomys natalensis* have been well studied in West Africa to better understand the risk to human populations from *Lassa mammarenavirus* spillover [@fichetcalvet_diversity_2010], there is limited understanding of the wider rodent species communities. Biotic interactions between different species will drive occurrence and abundance in different habitats and this study was designed to understand how these species co-exist in these habitats.
+This study was designed to investigate the effect of changes in landuse on the occurrence of different rodent species in a Lassa fever endemic region of Eastern Sierra Leone. While habitat preferences of *Mastomys natalensis* have been well studied in West Africa to better understand the risk to human populations from *Mammarenavirus lassaense* spillover [@fichetcalvet_diversity_2010], there is limited understanding of the wider rodent species communities. Biotic interactions between different species will drive occurrence and abundance in different habitats and this study was designed to understand how these species co-exist in these habitats.
 
-We conducted repeated, systematic, rodent trapping in the Eastern province of Sierra Leone, along a landuse gradient to model the association of landuse and occurrence of *M. natalensis* and more generally small mammal communities. We aimed to investigate the following questions. First, what is the diversity of rodent communities in varied landuse types in Eastern Sierra Leone? Second, how do patterns of landuse affect the occupancy of *M. natalensis* and other sympatric rodents? Finally, is there evidence that the local spatial distribution of *M. natalensis* is regulated by biotic interactions with co-occurring species? We expect these analyses to further our understanding of rodent community structures that may explain observed patterns of Lassa fever spillover.
+We conducted repeated, systematic, rodent trapping in the Eastern province of Sierra Leone, along a landuse gradient to model the association of landuse and occurrence of *M. natalensis* and more generally small mammal communities. Our analysis addresses three main questions. First, what is the diversity of rodent communities in varied land-use types? Second, how do patterns of land use affect the occupancy of *M. natalensis* and other sympatric rodents? Finally, is there evidence that the local spatial distribution of *M. natalensis* is regulated by biotic interactions with co-occurring species?
 
 A protocol was developed prior to a pilot trapping session in November 2020. This [protocol](https://osf.io/usjrd/) is archived on the Open Science Framework. All field data is collected using the Open Data Kit ([ODK](https://getodk.org/)).
 
 ## Preprint
 
-This manuscript has been submitted to the *Journal of Animal Ecology*. The pre-peer reviewed version is available from [*ecoevoRxiv*](https://ecoevorxiv.org/repository/view/8476/).
+This manuscript is currently under review at the *Journal of Animal Ecology*. The pre-peer reviewed version, [Land use gradients drive spatial variation in Lassa fever host communities in the Eastern Sierra Leone](https://ecoevorxiv.org/repository/view/8476/) is available from *ecoevoRxiv*.
 
-## Data availability and draft manuscript
+## Data and Code Availability
 
-Data are available in the project's GitHub [repository](https://github.com/DidDrog11/land-use-lassa-hosts).
+Data and code are available in the project's GitHub [repository](https://github.com/DidDrog11/land-use-lassa-hosts) and archived on [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk).
 
 ## EEID 2022 presentation
 
-I presented data from the first year of trapping at the 2022 Ecology and Evolution of Infectious Diseases conference, the [slides](files/david_simons_EEID.pdf) are available and the talk is embedded below.
+I presented data from the first year of trapping at the 2022 Ecology and Evolution of Infectious Diseases conference, the [slides are available here](files/david_simons_EEID.pdf) and the talk is embedded below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vxQLYwDRvK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
