@@ -13,6 +13,7 @@ sitemap: false # Prevents search engines from indexing this page
 # -----------------
 format:
   pdf:
+    output-file: cv.pdf
     documentclass: article
     fontsize: 10pt
     mainfont: "TeX Gyre Termes" # A professional font similar to Times New Roman

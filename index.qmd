@@ -19,7 +19,7 @@ My primary research focuses on the complex ecology and epidemiology of viruses t
 
 [Lassa Fever](https://www.cdc.gov/vhf/lassa/index.html) is a zoonotic infectious disease, endemic across much of West Africa, caused by *Mammarenavirus lassaense* (LASV). It is classed as a Viral Haemorrhagic Fever - similar to Ebola Virus - there are no current effective treatments for individuals infected with this virus and no licensed vaccines. Human cases of disease are regularly reported from Nigeria, Sierra Leone, Liberia and Guinea. Sporadic cases are reported from other West African countries, including; Benin, Togo, Mali and Ghana. The annual incidence of disease is not known with an estimated 100-900,000 cases annually. Epidemiological studies funded by the [Coalition for Epidemic Preparedness Innovations](https://cepi.net/news_cepi/largest-ever-lassa-fever-research-programme-launches-in-west-africa/?swcfpc=1) are ongoing (ENABLE 1.0, ENABLE 1.5), these will help local public health agencies understand the true scale of this disease.
 
-The zoonotic hosts of LASV are rodent species, primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)). Although virus (7) or evidence of prior viral infection (16) has been detected in additional species across the endemic region. The multimammate mouse is found throughout sub-Saharan Africa although this pathogen is limited to the western extent of its range. The reasons behind this are not well understood and this raises concerns that the endemic range of this pathogen has the potential to expand across a greater region.
+The zoonotic hosts of LASV are rodent species, primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)). Although virus (6) or evidence of prior viral infection (16) has been detected in additional species across the endemic region. The multimammate mouse is found throughout sub-Saharan Africa although this pathogen is limited to the western extent of its range. The reasons behind this are not well understood and this raises concerns that the endemic range of this pathogen has the potential to expand across a greater region.
 
 ```{r}
 #| label: lassa-reservoirs
@@ -62,6 +62,7 @@ endemic_countries <- c("Nigeria", "Sierra Leone", "Liberia", "Guinea",
 # record for each host/assay combination within the endemic zone.
 arha_records <- arha_db$pathogen |>
   filter(pathogen_species_ncbi == "Mammarenavirus lassaense") |>
+  filter(study_id != "grant_75") |>
   select(pathogen_record_id, host_record_id, pathogen_species_ncbi, number_tested, number_positive, assay) |>
   left_join(arha_db$host |>
               select(host_record_id, study_id, host_species, host_genus, gadm_country, start_date), by = "host_record_id") |>
