@@ -52,6 +52,8 @@ website:
             text: "{{< fa shuffle >}} Other Work"
       - href: https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en
         text: "{{< iconify ooui articles-ltr >}} Publications"
+      - href: consultancy.qmd
+        text: "{{< iconify mdi briefcase-outline >}} Consultancy"
     right:
       - href: about.qmd
         text: "About me"

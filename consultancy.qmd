@@ -1,0 +1,27 @@
+---
+title: "Consultancy Services"
+subtitle: "Expertise in Quantitative Epidemiology and Zoonotic Disease Risk"
+---
+
+I provide independent scientific consultancy services to international NGOs, government agencies, and the vaccine industry. My work bridges the gap between clinical medicine, field ecology, and advanced statistical modelling.
+
+## Services Offered
+
+I am available for short-term expert assignments or long-term project collaborations in the following areas:
+
+* **Quantitative Disease Modelling:** Development of spatial and mathematical models to quantify pathogen spillover risk and transmission dynamics.
+* **Study & Trial Design:** Technical guidance on One Health trial designs, including transmissible vaccine frameworks and public health intervention assessments.
+* **Data Synthesis & Analysis:** Systematic review and meta-analysis of complex ecological and epidemiological datasets (e.g., host-pathogen sampling records).
+* **Public Health Policy:** Development of evidence-based frameworks for emerging zoonotic threats and antimicrobial resistance monitoring.
+* **Specialised Training:** Delivery of technical workshops on spatial analysis in R, rodent-borne disease ecology, and epidemiological monitoring.
+
+## Professional Background
+
+As a quantitative disease ecologist and spatial epidemiologist with a clinical background in infectious diseases, I bring a unique multi-disciplinary perspective to global health challenges. My independent consultancy is supported by high-performance computing infrastructure and expertise in R-based spatial workflows.
+
+## Get in Touch
+
+If you are interested in collaborating or require expert analysis for your project, please get in touch to discuss requirements and rates.
+
+{{< iconify material-symbols mail-outline >}} [Email me](mailto:dsimons1987@gmail.com)
+{{< iconify mdi linkedin >}} [LinkedIn](https://www.linkedin.com/in/david-simons-3110b06/)

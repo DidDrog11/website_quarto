@@ -290,3 +290,7 @@ I collaborate with [Olga Perski](https://www.olgaperski.com), typically providin
 ### [Peste des Petits Ruminants](others/pprv.qmd)
 
 [Peste des petits ruminants](https://www.woah.org/en/disease/peste-des-petits-ruminants/) is caused by a morbilivirus which affects goats, sheep and other small ruminants. It has been targeted for global eradication by 2030. I assist with current work designed to assess the sensitivity and specificity of current assays against this virus to support elimination campaigns.
+
+## Consultancy
+
+In addition to my academic research, I provide independent expert consultancy services in quantitative epidemiology and disease modelling for international health organisations and the biotechnology industry. Detailed information on services and contact details can be found on the [Consultancy](consultancy.qmd) page.
