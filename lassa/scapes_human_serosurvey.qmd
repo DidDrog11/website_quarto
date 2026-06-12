@@ -1,0 +1,49 @@
+---
+title: "Local heterogeneity in Lassa fever serology in rural Nigeria: Implications for vaccine trial site selection"
+author: 
+  - name: "David Simons"
+    affiliation: Pennsylvania State University
+  - name: "Christina Harden"
+  - name: "Natalie Imirzian"
+  - name: "Katharine E. T. Thompson"
+  - name: "Nzube Michael Ifebueme"
+  - name: "Sunday Eziechina"
+  - name: "Helen Ignatius"
+  - name: "Diana Marcus"
+  - name: "Fisayomi Aderibigbe"
+  - name: "James T. Koninga"
+  - name: "Martin Meremikwu"
+  - name: "Lina Moses"
+  - name: "David W. Redding"
+  - name: "Sagan Friant"
+categories: [Lassa Fever, Serology, Epidemiology, Nigeria, One Health, Vaccines, SCAPES]
+date: 2026-05-21
+image: "images/lassa_seroprev_age.png"
+citation: true
+---
+
+**[Read the full paper in *PLOS Neglected Tropical Diseases* {{< iconify bi box-arrow-up-right >}}](https://doi.org/10.1371/journal.pntd.0014379)**
+
+---
+
+## Background
+
+Lassa virus (LASV) causes significant morbidity in West Africa. With multiple vaccine candidates advancing into clinical trials, researchers must identify communities with active, ongoing viral transmission to successfully evaluate efficacy. However, Lassa virus spillover is highly unpredictable.
+
+Current surveillance relies primarily on passive case detection at sentinel hospitals, which overlooks mild infections and asymptomatic seroconversion. To address this, we conducted a cross-sectional serosurvey across nine villages in three Nigerian states (Benue, Ebonyi, and Cross River) as part of the [SCAPES Project](SCAPES.qmd). Our goal was to determine if current broad-scale risk models accurately reflect local exposure and to identify specific, community-level drivers of infection.
+
+## Key Findings
+
+We recruited 1,874 individuals and tested for LASV IgG using the highly specific Panadea LASV IgG ELISA.
+
+* **Hyper-Local Risk:** While overall infection rates were low (3.2%), we found marked fine-scale heterogeneity. Seroprevalence ranged from less than 1% to over 6% between villages, even those in close geographical proximity.
+* **Absence of Clear Behavioral Risk Factors:** We investigated 21 potential risk factors, including rodent consumption, agricultural practices, and household environments. Likely constrained by the low overall infection rate and high exposure ubiquity (e.g., 94% reported rodent entry into homes), we found no strong or consistent associations with infection.
+* **Divergent Transmission Dynamics:** The patterns of infection by age differed between villages. Some communities exhibited a classic pattern of increasing seroprevalence with age (suggesting stable, long-term exposure), while others showed peaks in younger groups, suggesting more episodic or recent focal transmission.
+
+![**Village-specific age-seroprevalence curves for Lassa virus.** Colored lines represent median posterior estimates from a Bayesian generalized additive model. The divergent curves suggest communities experience differing transmission dynamics, ranging from cumulative endemic exposure to recent focal outbreaks.](images/lassa_seroprev_age.png)
+
+## Implications for Vaccine Trials
+
+Our results demonstrate that LASV exposure in rural Nigeria is hyper-local and cannot be reliably predicted by broad regional incidence maps or human behavior alone. 
+
+For Phase III vaccine trials, relying on regional data may lead to the selection of sites with insufficient transmission intensity to measure vaccine success. To mitigate this risk, trial planning must adopt a **One Health** design. This shifts planning from a reactive reliance on lagging human clinical indicators to a predictive model that integrates active human serosurveillance with longitudinal monitoring of rodent reservoirs.

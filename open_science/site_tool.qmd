@@ -1,0 +1,43 @@
+---
+title: "‘SiteTool': a ‘Shiny' application for field site selection and evaluation"
+author: 
+  - name: "David Simons"
+    affiliation: Pennsylvania State University
+categories: [Open Source, GIS, Shiny, R, Ecology, Publication, Web App]
+image: "images/sitetool_interface.jpg"
+date: 2026-04-14
+citation: true
+---
+
+**[Access the codebase on GitHub {{< iconify bi github >}}](https://github.com/BioDivHealth/sitetool)** | **[Try the Web App {{< iconify bi display >}}](https://ecosyshealth.shinyapps.io/SiteTool)** | **[Read the paper in *Ecography* {{< iconify bi box-arrow-up-right >}}](https://doi.org/10.1002/ecog.08455)**
+
+---
+
+## The Challenge: Sampling Bias in Field Ecology
+
+Field studies are fundamental to ecological and epidemiological research. However, many studies still rely on unspecified, haphazard, or convenience-based methods for site selection. Poorly specified sampling designs can bias input data, compromise parameter estimates, and ultimately lead to unrepresentative or false conclusions—a particularly costly issue when estimating zoonotic disease risk or species abundance.
+
+While high-resolution remote-sensing data (such as land cover or climate layers) provides a quantitative way to evaluate potential sites without expensive pilot visits, interacting with raw spatial data can be computationally complex and inaccessible for many field researchers.
+
+## The Solution: SiteTool
+
+To bridge this gap, I collaborated with an interdisciplinary team to develop **SiteTool**, an open-source R ‘Shiny’ application. SiteTool integrates remote-sensing geospatial data directly into the site selection process through an intuitive graphical interface.
+
+The tool helps researchers generate a robust list of potential field sites within a region of interest, actively ensuring that the selected sites capture the full environmental gradient required to answer their research questions.
+
+### Key Features
+* **Interactive ROI Definition:** Define a Region of Interest (ROI) via an interactive map, bounding box, or GeoJSON upload. 
+* **Automated Site Generation:** Automatically generate random points or extract documented human settlements ('populated places') using OpenStreetMap (OSM) data.
+* **Spatial Data Integration:** Instantly query environmental gradients within a specified radius using default layers (ESA WorldCover, SRTM elevation, Human Footprint) or user-uploaded GeoTIFFs.
+* **Statistical Evaluation:** Conduct built-in Mann–Whitney U tests to compare selected sites against the background generated points, mathematically ensuring the chosen sites do not introduce environmental bias.
+
+## Application: Lassa Fever Ecology in Nigeria
+
+SiteTool was actively trialed to structure the sampling framework for our multi-year [SCAPES project](../lassa/SCAPES.qmd) investigating Lassa fever in Nigeria. 
+
+We required field sites spread across a specific agricultural land-use gradient to test hypotheses regarding rodent contact and viral spillover. Using SiteTool, we defined a 3-hour drive radius from our base city, extracted 273 candidate communities via OpenStreetMap, and calculated the proportion of cropland and grassland within a 2km radius of each settlement. This allowed us to quantitatively select optimal sites that captured the necessary environmental variation while meeting strict logistical constraints. 
+
+## Publication Details
+
+* **Full Citation:** Imirzian, N., Trebski, A., Johnson, E., Hewitson, M., Simons, D., Harden, C., Friant, S., & Redding, D. (2026). ‘SiteTool': a ‘Shiny' application for field site selection and evaluation. *Ecography*, e08455.
+* **DOI:** [10.1002/ecog.08455](https://doi.org/10.1002/ecog.08455)

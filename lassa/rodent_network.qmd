@@ -51,13 +51,13 @@ David Simons ^1,2,3^, Ravi Goyal ^4^, Umaru Bangura ^5,6^, Rory Gibb ^2,9^ Ben R
 
 ## Motivation
 
-This study was designed to explore the contacts among individual rodents trapped in our ongoing rodent trapping study in a Lassa fever endecmic region of Sierra Leone. While there is some understanding of where different individuals of rodent species are located across landuse gradients in the endemic region there has been little research on the probability of contact among individuals of these species and what this may mean for viral transmission in these settings. Direct and indirect contact between infected and susceptible individual rodents will modify how viral pathogens are transmitted in these settings and there may be different rates of contacts between individuals of different species or in different landuse types that could be important for understanding viral transmission.
+This study was designed to explore the contacts among individual rodents trapped in our ongoing rodent trapping study in a Lassa fever endemic region of Sierra Leone. While there is some understanding of where different individuals of rodent species are located across landuse gradients in the endemic region there has been little research on the probability of contact among individuals of these species and what this may mean for viral transmission in these settings. Direct and indirect contact between infected and susceptible individual rodents will modify how viral pathogens are transmitted in these settings and there may be different rates of contacts between individuals of different species or in different landuse types that could be important for understanding viral transmission.
 
 We used data from our repeated, systematic, rodent trapping study in the Eastern province of Sierra Leone to investigate the following questions. First, what are the potential contact networks of individuals of different species. Second, do these contact rates vary by landuse type. Third, do we observe differential inter- and intra-specific contact rates among the primary rodent reservoir of LASV (*Mastomys natalensis*). To achieve this we reconstructed contact networks of rodent communities using geolocated trap data for each of our study visits.
 
-## Preprint
+## Publication
 
-This manuscript is currently under review at the *American Journal of Tropical Medicine and Hygiene*. The pre-peer reviewed preprint **[Contact networks of small mammals highlight potential transmission foci of Mammarenavirus lassaense](https://doi.org/10.1101/2025.02.25.639449)** is available from *bioRxiv*.
+This manuscript is published in the [*American Journal of Tropical Medicine and Hygiene*](https://doi.org/10.4269/ajtmh.25-0120). Feel free to get in touch if you cannot access it from the publishers website. Alternatively the preprint **[Contact networks of small mammals highlight potential transmission foci of Mammarenavirus lassaense](https://doi.org/10.1101/2025.02.25.639449)** is available from *bioRxiv*.
 
 ## Conference Presentations
 

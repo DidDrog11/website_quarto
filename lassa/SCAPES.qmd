@@ -30,12 +30,16 @@ This project is being conducted in Ebonyi, Benue, and Cross River states in Nige
 
 ### Protocol Paper
 
-We have developed a detailed protocol for the ecological and anthropological components of this project. The pre-peer-reviewed version is available as a preprint, and the manuscript is currently under review at *PLOS ONE*.
+We have developed a detailed protocol for the ecological and anthropological components of this project.
 
-* **Preprint:** [**Read the full protocol on medRxiv**](https://www.medrxiv.org/content/10.1101/2025.09.12.25335176v1)
+* **Preprint:** [**Read the protocol on Wellcome Open Research**](https://doi.org/10.12688/wellcomeopenres.25937.1)
 
 ### Conference Presentations
 
 We presented preliminary findings of the cross-sectional human serology and project goals at the [2nd Lassa Fever International Conference (ECOWAS)](https://www.lassafeverinternationalconference.org/).
 
 {{< pdf files/scapes/scapes_poster_1.pdf width=100% height=600 >}}
+
+### SCAPES Human Serosurvey
+
+The human seroprevalence cross-sectional survey conducted as part of this project has been published and is linked to through this [page](scapes_human_serosurvey.qmd)

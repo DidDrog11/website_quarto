@@ -1,21 +1,27 @@
 ---
-title: "A minimum data standard for wildlife disease studies"
+title: "A minimum data standard for wildlife disease research and surveillance"
 author: 
   - name: "David Simons"
     affiliation: Pennsylvania State University
 categories: [Open Data, Data Standard, Policy, Zoonosis, Publication]
-image: images/pharos.jpg
+image: "images/pharos.jpg"
 date: 2025-06-21
+citation: true
 ---
 
-Rapid and transparent data sharing is critical for responding to threats from wildlife diseases. However, the value of shared data is often limited by a lack of standardization, with many datasets—especially those with negative results—being difficult to reuse.
+**[Read the full paper in *Scientific Data* {{< iconify bi box-arrow-up-right >}}](https://doi.org/10.1038/s41597-025-05332-x)**
+
+---
+
+Rapid and transparent data sharing is critical for responding to threats from wildlife diseases. However, the value of shared data is often limited by a lack of standardisation, with many datasets—especially those with negative results—being difficult to reuse.
 
 To address this challenge, the [Verena Consortium](https://www.viralemergence.org/) developed a minimum data standard to ensure that wildlife disease studies are shared in a way that is FAIR (Findable, Accessible, Interoperable, and Reusable). This work supports the consortium's open-access database, [The Pathogen Harmonised Observatory (PHAROS)](https://pharos.viralemergence.org/about/). As a contributor to this effort, I helped develop and apply this standard.
 
 ## The Proposed Standard
 
 Our checklist identifies a minimum set of **31 essential fields** required to properly document a dataset. These fields cover core metadata categories including:
-* **Host Information:** Standardized taxonomy and sampling details.
+
+* **Host Information:** Standardised taxonomy and sampling details.
 * **Pathogen Information:** Assay details and results, including negative findings.
 * **Spatio-temporal Data:** Precise geographic and temporal information for each record.
 
@@ -23,9 +29,7 @@ Adopting this standard helps ensure that data can be effectively integrated for 
 
 ## Publication Details
 
-This manuscript, detailing the data standard, has been published in **_Scientific Data_**.
-
 * **Full Citation:** Schwantes, C.J., Sánchez, C.A., Stevens, T. et al. A minimum data standard for wildlife disease research and surveillance. *Sci Data* **12**, 1054 (2025).
 * **DOI:** [10.1038/s41597-025-05332-x](https://doi.org/10.1038/s41597-025-05332-x)
 
-![The Pathogen Harmonized Observatory (PHAROS). Image obtained from https://pharos.viralemergence.org/](images/pharos.jpg)
+![The Pathogen Harmonised Observatory (PHAROS). Image obtained from https://pharos.viralemergence.org/](images/pharos.jpg)

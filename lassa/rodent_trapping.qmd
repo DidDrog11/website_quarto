@@ -55,7 +55,7 @@ A protocol was developed prior to a pilot trapping session in November 2020. Thi
 
 ## Preprint
 
-This manuscript is currently under review at the *Journal of Animal Ecology*. The pre-peer reviewed version, [Land use gradients drive spatial variation in Lassa fever host communities in the Eastern Sierra Leone](https://ecoevorxiv.org/repository/view/8476/) is available from *ecoevoRxiv*.
+This manuscript is published in the [*Journal of Animal Ecology*](https://doi.org/10.1111/1365-2656.70187). The pre-peer reviewed version, [Land use gradients drive spatial variation in Lassa fever host communities in the Eastern Sierra Leone](https://ecoevorxiv.org/repository/view/8476/) is available from *ecoevoRxiv*.
 
 ## Data and Code Availability
 

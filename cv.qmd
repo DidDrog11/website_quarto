@@ -4,9 +4,9 @@
 # -----------------
 title: "Curriculum Vitae"
 author: "David Simons, BSc, MBBS, DTM&H, MSc, PhD"
-date: "`r format(Sys.Date(), '%B %Y')`" # Automatically updates the date
-listing: false # Prevents this page from appearing in any listings
-sitemap: false # Prevents search engines from indexing this page
+date: "`r format(Sys.Date(), '%B %Y')`"
+listing: false
+sitemap: false
 
 # -----------------
 # PDF FORMATTING OPTIONS
@@ -16,9 +16,9 @@ format:
     output-file: cv.pdf
     documentclass: article
     fontsize: 10pt
-    mainfont: "TeX Gyre Termes" # A professional font similar to Times New Roman
-    sansfont: "TeX Gyre Heros"  # A professional sans-serif font
-    monofont: "TeX Gyre Cursor" # A professional monospace font
+    mainfont: "TeX Gyre Termes"
+    sansfont: "TeX Gyre Heros"
+    monofont: "TeX Gyre Cursor"
     geometry:
       - top=1in
       - bottom=1in
@@ -44,6 +44,9 @@ format:
 ---
 
 ### Professional Appointments
+
+**Birgitta Sintring Independent Research Fellow** \hfill Sept 2026 -- Present  
+*Department of Ecology and Genetics, Uppsala University, Sweden*
 
 **External Expert** \hfill 2025 -- Present  
 *European Centre for Disease Prevention and Control (ECDC), Stockholm, Sweden*
@@ -101,27 +104,36 @@ format:
 
 ### Research Funding and Grants
 
-**Principal Investigator, Marie Skłodowska-Curie Postdoctoral Fellowships (Under Review)** \hfill 2025  
-*HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. EUR200,000*
+**Principal Investigator, Birgitta Sintring Fellowship (Funded)** \hfill 2026 -- Present  
+*Functional connectivity and microbial transmission pathways in Fennoscandian rodents. Uppsala University.*
 
-**Principal Investigator, Vetenskapsrådet Project Grant (Under Review)** \hfill 2025  
-*RAVEN: Rodent-Associated Viral Ecology and Networks. SEK 2,500,000*
+**Principal Investigator, Vetenskapsrådet (VR) Starting Grant (Under Review)** \hfill 2026  
+*HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. SEK 6,000,000*
 
-**Co-Investigator, UKRI Grant (Under Review)** \hfill 2025  
-*ASSET: African Study on Spillover and Epidemic Take-off. £3,750,000*
+**Principal Investigator, Vetenskapsrådet (VR) Sweden-Korea Project Grant (Under Review)** \hfill 2026  
+*An AI-Directed One Health Risk Prediction Framework for Active Learning in Rodent-Borne Zoonoses. Uppsala University.*
 
-**Co-Principal Investigator, VERENA Institute Grant** \hfill 2023 -- 2024  
+**Co-Principal Investigator, FORMAS Project Grant (Under Review)** \hfill 2026  
+*Climate change impacts on public health and zoonotic dynamics in Sweden.*
+
+**Principal Investigator, Huck Seed Award Application (Under Review)** \hfill 2026  
+*Spillover Interface Surveillance: Geographically Informed Ecological Momentary Assessments (GEMA) for Lassa Fever Risk. \$80,000*
+
+**Co-Principal Investigator, VERENA Institute Grant (Funded)** \hfill 2023 -- 2024  
 *Project ArHa: Arenaviruses and Hantaviruses. \$5,000*
 
-**Principal Investigator, PhD Studentship (BBSRC LIDo DTP)** \hfill 2019 -- 2024  
+**Principal Investigator, PhD Studentship (BBSRC LIDo DTP - Funded)** \hfill 2019 -- 2024  
 *Investigating rodent ecology to understand Lassa fever spillover. £85,000*
 
-**Principal Investigator, EcoHealth Alliance Grant** \hfill 2020  
+**Principal Investigator, EcoHealth Alliance Grant (Funded)** \hfill 2020  
 *Forecasting Global Veterinary Disease: Modelling African Swine Fever. \$5,000*
+
+**Marie Skłodowska-Curie Postdoctoral Fellowship (Awarded Seal of Excellence)** \hfill 2025  
+*HOST-V framework score evaluated in top-tier threshold globally.*
 
 ---
 
-### Peer-Reviewed Publications
+### Publications
 
 ```{r}
 #| label: auto-pubs
@@ -131,31 +143,19 @@ format:
 #| warning: false
 #| results: asis
 
-# 1. Load the scholar package
 if (!require("scholar")) install.packages("scholar")
 library(scholar)
 library(tidyverse)
 library(here)
 
-# 2. Your Google Scholar ID
 scholar_id <- "fT8u5MwAAAAJ"
-
-# 3. Fetch your publications
 pubs <- get_publications(scholar_id)
 
-# 4. Sort by year (most recent first) and format for printing
 pubs |>
   arrange(desc(year)) |>
-  # Add a column for the publication number
   mutate(pub_number = row_number()) |>
-  # Use pwalk() to iterate over each ROW of the data frame
   pwalk(function(pub_number, author, year, title, journal, ...) {
-    # The arguments here (author, year, etc.) now refer to the values in each row
-    
-    # Make your name bold in the author list
     author_bold <- str_replace(author, "D Simons", "**D Simons**")
-    
-    # Print each entry as a numbered list item in Markdown format
     cat(
       paste0(
         pub_number, ". ", 
@@ -196,9 +196,10 @@ pubs |>
 
 **Peer Review** \hfill  
 *26 peer reviews for 14 international journals; 2 book chapter reviews.*
+*Academic Editor at PLOS Neglected Tropical Diseases*
 
 **Grant Review** \hfill  
-*Reviewer for the Grant Agency of the Czech Republic.*## Publications
+*Reviewer for the Grant Agency of the Czech Republic.*
 
 ---
 

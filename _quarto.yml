@@ -9,6 +9,7 @@ project:
     - "images/"
     - "lassa/"          
     - "monkeypox/"
+    - "open_science/"   # Added to ensure the new child pages render
     - "policy/"
     - "others/"
     - "rodent_ecology/"
@@ -37,6 +38,8 @@ website:
             href: arha.qmd
           - text: "{{< iconify fa6-solid bugs >}} Rodent Ecology"
             href: rodent_ecology.qmd
+          - text: "{{< iconify mdi open-source-initiative >}} Open Science & Data"
+            href: open_science.qmd
           - text: "{{< iconify mdi file-document-edit >}} Strategy & Policy"
             href: policy.qmd
           - text: "---"
@@ -57,23 +60,13 @@ website:
     right:
       - href: about.qmd
         text: "About me"
-      - icon: twitter
-        href: https://twitter.com/David_Simons_UK
-        aria-label: David Twitter
+      - icon: bluesky
+        href: https://bsky.app/profile/davidsimons.bsky.social
+        aria-label: David Bluesky
       - icon: github
         href: https://github.com/DidDrog11
         aria-label: David GitHub
-    sidebar:
-      - title: "Lassa Fever"
-        style: "floating"
-        collapse-level: 2
-        align: left
-        contents:
-          - lassa.qmd
-          - lassa/rodent_trapping.qmd
-          - lassa/rodent_review.qmd
-          - lassa/lips.qmd
-    
+
 format:
   html:
     theme: pulse

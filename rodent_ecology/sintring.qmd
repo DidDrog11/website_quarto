@@ -1,0 +1,59 @@
+---
+title: "Microbial Sensors and Functional Connectivity in Fennoscandian Rodents"
+author: 
+  - name: "David Simons"
+    affiliation: Uppsala University
+categories: [Rodent Ecology, Microbiome, Disease Ecology, Sweden, Fellowship]
+image: "figures/microbial_sensor.png"
+date: 2026-09-01 # Projected start date
+citation: true
+---
+
+**Funding:** Birgitta Sintring Fellowship  
+**Institution:** Department of Ecology and Genetics, Uppsala University  
+**Collaborators:** Elin Videvall, Heikki Henttonen, Grimsö Wildlife Research Station
+
+---
+
+## Overview
+
+This project aims to develop a **"Microbial Sensor"**—a high-resolution biological tracer that uses gut microbiome similarity to map the infrastructure of social and environmental contact in wild host populations. 
+
+By bridging field ecology with long-read sequencing and Bayesian modelling, this research seeks to define how functional connectivity (the actual networks of contact) governs biological flow across host populations. This addresses a fundamental challenge in disease ecology: understanding how environmentally persistent pathogens, such as Puumala orthohantavirus (PUUV), persist in the landscape and expand through host populations without requiring direct physical encounters.
+
+## The Ecological Challenge
+
+Rodent contact networks emerge from social organisation and movement ecology rather than density alone. These networks define the functional connectivity through which pathogens circulate. However, most ecological models approximate transmission potential using simple population density, implicitly assuming connectivity rather than measuring it. 
+
+The current state-of-the-art for sensing wildlife contact relies on logistically intensive technologies (e.g., RFID-logging and Capture-Mark-Recapture). While providing high-resolution spatial data, these approaches reduce contact history to coarse binary representations that fail to capture the intensity, temporal ordering, and cumulative duration of exposure via shared infrastructure (such as nests or burrows).
+
+## The Microbial Sensor Innovation
+
+Recent advances suggest that gut microbiota similarity can serve as a biological integrator of past associations. However, previous efforts have struggled to separate direct physical interaction from shared environmental exposure. 
+
+This project moves from community-level correlation to process-partitioned, strain-level transmission tracking using PacBio HiFi sequencing. By resolving specific shared microbial taxa, we can measure interaction intensity across two biologically grounded channels:
+
+* **The Social Channel (Direct Contact):** Focussing on obligate anaerobic, non-spore-forming taxa (e.g., *Bacteroidales*) with limited environmental persistence. These microbial signatures reflect recent physical proximity and direct host–host interactions.
+* **The Environmental Channel (Indirect Contact):** Focussing on aerotolerant and/or environmentally resilient spore-forming clades (e.g., subsets of *Lachnospiraceae*). By comparing faecal profiles with paired environmental samples (soil and nest material), we can distinguish between transient environmental noise and host-associated taxa that persist in shared infrastructure.
+
+## Project Architecture
+
+We apply a unified molecular-statistical pipeline across two complementary work packages, utilising cyclic Fennoscandian vole populations as a global model.
+
+### WP1: Comparative Model Development (Cross-sectional Benchmarking)
+WP1 quantifies how distinct modes of host contact are reflected in the structured components of the gut microbiome. Using archived long-term rodent monitoring data from Pallasjärvi (Finland) and Grimsö (Sweden), we will sequence 200 high-information dyads.
+
+By applying Pattern-Oriented Modelling, we will assess which large-scale microbial assembly patterns cannot be reproduced by host density and spatial overlap alone, falsifying density-only transmission assumptions and defining the parameter space for the sensor.
+
+### WP2: High-Resolution Triangulation and Validation
+WP2 provides mechanistic validation by directly resolving transmission pathways that are structurally non-identifiable in cross-sectional data. I will implement an intensive longitudinal live-trapping grid at Grimsö, Sweden. 
+
+Individuals will be monitored via RFID-logging and CMR to provide temporally ordered contact proxies, paired with repeated microbial sampling (faecal and environmental swabs). 
+
+## Mathematical Framework
+
+A unified Bayesian hierarchical model will be applied to ground-truth the temporally ordered monitoring data. We partition the microbial similarity ($S_{ij}$) between hosts into contributions from distinct ecological processes and genetic relatedness:
+
+$$S_{ij} = \beta_0 + \beta_1 \text{SocialContact}_{ij} + \beta_2 \text{SpaceSharing}_{ij} + \beta_3 \text{Environment}_{ij} + \beta_4 \text{Kinship}_{ij} + \epsilon$$
+
+Here, the coefficients ($\beta$) decompose the relative weight of direct versus indirect pathways, while the residual error ($\epsilon$) captures individual-level stochasticity and unobserved environmental variation. This pipeline will ultimately deliver a pathogen-agnostic framework for inferring weighted connectivity networks in wild populations.

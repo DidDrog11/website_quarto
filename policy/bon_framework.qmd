@@ -1,0 +1,56 @@
+---
+title: "A protocol for biodiversity-informed wildlife disease surveillance"
+author: 
+  - name: "Michael D. Catchen"
+  - name: "Francis Banville"
+  - name: "Amélie C. Boutin"
+  - name: "Cole B. Brookson"
+  - name: "Colin J. Carlson"
+  - name: "Gabriel Dansereau"
+  - name: "Rory Gibb"
+  - name: "Marianne Houle"
+  - name: "Benjamin Kaza"
+  - name: "Hailey Robertson"
+  - name: "David Simons"
+  - name: "Stephanie N. Seifert"
+  - name: "Timothée Poisot"
+categories: [Open Science, Biosurveillance, Biodiversity, One Health, Preprint]
+image: "images/bon_framework.png"
+date: 2025-10-01
+citation: true
+---
+
+**[Read the preprint on EcoEvoRxiv {{< iconify bi box-arrow-up-right >}}](https://doi.org/10.32942/X21D36)**
+
+---
+
+## Abstract
+
+Land use and climate change are increasing the risk of spillover of zoonotic disease into human populations. However, we lack actionable information about the prevalence of pathogens in wildlife populations for most of the globe, challenging our ability to implement strategies to prevent zoonoses. Even when this data exists, it has historically been sampled opportunistically and without guidance based on known geographic distributions of hosts of zoonotic pathogens. 
+
+Biosurveillance is essential to mitigating zoonotic spillover risk, but given the expensive nature of monitoring pathogens in wildlife, we need to be strategic about deciding where and what to sample to obtain as much useful information as possible. The field of biodiversity monitoring has established many practices that can directly inform optimal biosurveillance efforts. One such concept is the Biodiversity Observation Network (or BON), which aims to select monitoring locations that most effectively and efficiently capture the status and trends of biodiversity. 
+
+We present a protocol for integrating data on host biodiversity into sampling priority for wildlife disease surveillance based on host species distribution models, with optional potential to integrate pathogen prevalence data (if available). This protocol has the flexibility to target different forms of sampling (collecting host occurrence vs pathogen prevalence data) to adapt to different levels of data availability, but still makes adaptive sampling recommendations based on a principled understanding of host distribution and pathogen biology.
+
+---
+
+## The BON Framework for Biosurveillance
+
+Conceptualising zoonotic spillover requires distinguishing **hazard** (the active circulation of a pathogen in a host reservoir) from **risk** (the probability of that hazard being realised via spillover). To effectively monitor the underlying hazard, we must leverage open biodiversity data to predict the probable hosts and geographic ranges of pathogens.
+
+By adapting the Biodiversity Observation Network (BON) framework, we have developed an adaptive protocol that adjusts sampling priorities across space and by data type (host occurrence vs. disease prevalence). 
+
+### Key Components of the Protocol
+
+* **Biodiversity Dose:** We utilise a weighted average of Species Distribution Model (SDM) habitat suitability scores to estimate local host composition. This "dose" captures both the likely presence of host reservoirs and their relative importance in disease transmission.
+* **Uncertainty Mapping:** By extracting uncertainty metrics from SDMs, we can identify regions where host occurrence sampling is urgently needed to refine baseline predictions.
+* **Adaptive Priority Scoring:** The protocol dynamically balances the need for "discovery sampling" (targeting high-uncertainty regions) and "prevalence sampling" (targeting regions with high biodiversity dose), ensuring that limited field resources yield maximum informational value.
+* **Spatially Balanced Point Selection:** To prevent redundant sampling in autocorrelated high-priority areas, the protocol employs algorithms like Balanced-Acceptance Sampling (BAS) to generate spatially balanced, optimal field sites.
+
+## Case Studies & Application
+
+We illustrate the flexibility of this framework using two case studies focusing on *Hantaviridae* and *Arenaviridae* in rodents: India (representing a data-poor context requiring discovery sampling) and South Korea (representing a data-rich context allowing for spatially explicit estimates of prevalence).
+
+![**The Conceptual Framework.** (Left) Optimising sampling priority using host species distribution models and pathogen prevalence data. (Right) Determining the most informative type of sampling (pathogen prevalence vs. host occurrence) based on a location’s biodiversity dose and uncertainty.](images/bon_framework.png)
+
+![**Application in a Data-Poor Context (India Case Study).** (a) Bivariate plot of biodiversity dose and uncertainty. (b) Categorising hosts into prevalence regimes vs. discovery regimes. (c) The resulting sampling priority map and BON-generated sampling points (white), alongside historical sampling locations (teal). (d) The host species contributing most significantly to the local priority score.](images/india_casestudy.png)

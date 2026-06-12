@@ -1,0 +1,18 @@
+---
+title: "Open Science & Data Tools"
+subtitle: "Promoting FAIR principles and reproducibility in computational ecology"
+listing:
+  contents: open_science
+  categories: true
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+title-block-banner: true
+---
+
+I am a strong proponent of FAIR (Findable, Accessible, Interoperable, and Reusable) data principles and reproducibility in computational ecology. Rather than extracting data behind closed doors, I focus on building open-source infrastructure for the wider research community.
+
+This section details my contributions to standardising global disease surveillance, alongside links to my open datasets, interactive web applications, and reproducible analytical pipelines.
+
+::: {#open_science}
+:::

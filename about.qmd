@@ -11,9 +11,9 @@ about:
     - text: LinkedIn
       url: "www.linkedin.com/in/david-simons-3110b06"
       icon: linkedin
-    - text: Mastodon
-      icon: mastodon
-      url: "https://ecoevo.social/@davidsimons"
+    - text: Bluesky
+      icon: bluesky
+      url: "https://bsky.app/profile/davidsimons.bsky.social"
     - text: "{{< ai google-scholar >}} Google Scholar"
       url: "https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en"
     - text: GitHub
@@ -32,6 +32,8 @@ about:
 :::{#hero-heading}
 
 I am a Postdoctoral Scholar within [Sagan Friant's RISK lab](https://www.saganfriant.com/) at Pennsylvania State University, primarily working on the [SCAPES](lassa/SCAPES.qmd) project. I am also a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/) working with [Stephanie Seifert](https://labs.wsu.edu/mezap/) on a study investigating the ecological and molecular drivers of [cross-species transmission of arenaviruses and hantaviruses](arha.qmd). 
+
+Starting in September 2026, I will take up an independent research role as a Birgitta Sintring Fellow at the [Department of Ecology and Genetics, Uppsala University](https://www.uu.se/en/department/ecology-and-genetics). My project will focus on developing a microbial sensor to investigate indirect contact networks among bank voles, aiming to better understand the transmission dynamics of rodent-borne viruses.
 
 I completed my PhD at the University of London in early 2024. My doctoral research was based across the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed) (CEEED) at the Royal Veterinary College, the [Centre for Biodiversity and Environment Research](https://www.ucl.ac.uk/biosciences/gee/ucl-centre-biodiversity-and-environment-research) (CBER) at University College London, and the [Department of Clinical Research](https://www.lshtm.ac.uk/research/faculties/itd/crd) at the London School of Hygiene and Tropical Medicine, funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/).
 
