@@ -13,8 +13,8 @@ My research programme investigates the ecological and anthropogenic drivers of z
 
 ### 📢 Recent Highlights
 * **Grant Award:** Awarded the [Birgitta Sintring Fellowship](rodent_ecology/sintring.qmd) to investigate indirect contact networks in bank voles at Uppsala University (commencing Sept 2026).
-* **New Publication:** *A ‘One Health Trial Design’ to accelerate Lassa fever vaccines* published in [*Nature Medicine*](https://www.nature.com/articles/s41591-025-04018-6).
-* **Forthcoming:** [*The Socio-economic Shield Limits Lassa Virus Spillover in Urban West Africa*](lassa_urbanisation.qmd) in press at *Epidemiology & Infection*.
+* **New Publication:** [*The Socio-economic Shield Limits Lassa Virus Spillover in Urban West Africa*](lassa/lassa_urbanisation.qmd) published in [*Epidemiology & Infection*](https://doi.org/10.1017/S0950268826101824).
+* **Forthcoming:**  [*A protocol for biodiversity-informed wildlife disease surveillance*](https://ecoevorxiv.org/repository/view/11160/) in press at *PLoS Ecosystem*.
 
 ---
 
