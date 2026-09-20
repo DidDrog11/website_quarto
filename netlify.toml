@@ -1,2 +1,9 @@
 [[plugins]]
 package = "@quarto/netlify-plugin-quarto"
+
+# Serverless function for "request a copy" of paywalled papers.
+# Bundles the allowlist and the encrypted PDFs with the function.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["data/private_papers.csv", "private/*.pdf.enc"]

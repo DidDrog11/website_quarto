@@ -77,6 +77,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     link-external-filter: '^(?:http:|https:)\/\/www\.dsimons\.org\/'
+    include-after-body: assets/request-copy.html
 
 comments:
   hypothesis: 

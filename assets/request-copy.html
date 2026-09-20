@@ -1,0 +1,26 @@
+<script>
+// Turns <div class="request-copy" data-doi="10.xxxx/yyyy" data-title="..."></div>
+// into a "request a copy" form posting to the Netlify function at
+// /api/request-paper. Included site-wide via include-after-body in _quarto.yml.
+// Pages without the div are unaffected.
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".request-copy[data-doi]").forEach(function (el) {
+    var doi = el.getAttribute("data-doi");
+    var title = el.getAttribute("data-title") || "this paper";
+    var id = "rc-" + Math.random().toString(36).slice(2, 8);
+    el.innerHTML =
+      '<form method="post" action="/api/request-paper" class="request-copy-form">' +
+      '<p>The published version of ' + title + ' is behind a paywall. ' +
+      'Enter your email address and the author copy will be sent to you.</p>' +
+      '<input type="hidden" name="doi" value="' + doi + '">' +
+      '<div style="position:absolute;left:-9999px" aria-hidden="true">' +
+      '<label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>' +
+      '<div class="mb-2"><label for="' + id + '-name" class="form-label">Name (optional)</label>' +
+      '<input class="form-control" type="text" id="' + id + '-name" name="name" maxlength="120"></div>' +
+      '<div class="mb-2"><label for="' + id + '-email" class="form-label">Email</label>' +
+      '<input class="form-control" type="email" id="' + id + '-email" name="email" required></div>' +
+      '<button type="submit" class="btn btn-primary">Send me the paper</button>' +
+      '</form>';
+  });
+});
+</script>
