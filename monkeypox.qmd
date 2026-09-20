@@ -1,6 +1,6 @@
 ---
-title: "Monkeypox"
-subtitle: "Re-emerging Monkeypox and worldwide transmission (March - Ongoing 2022)"
+title: "mpox"
+subtitle: "Re-emerging mpox and the 2022 worldwide outbreak"
 listing:
     contents: monkeypox
     categories: true
