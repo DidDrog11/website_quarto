@@ -6,46 +6,54 @@
 // gradient and the site read as one system.
 // ---------------------------------------------------------------------------
 
-$ground:        #faf7f1;   // page background, warm off-white
-$surface:       #f3ede2;   // cards and wells
-$surface-edge:  #e3d9c8;
-$ink:           #23211c;
-$ink-muted:     #5e5950;
+// Every variable here carries !default. Quarto layers the defaults blocks of
+// a theme list in reverse, so scss/dark.scss is evaluated first and its values
+// must survive. Drop !default and the light values silently win in dark mode.
+$ground:        #faf7f1 !default;   // page background, warm off-white
+$surface:       #f3ede2 !default;   // cards and wells
+$surface-edge:  #e3d9c8 !default;
+$ink:           #23211c !default;
+$ink-muted:     #5e5950 !default;
 
-$forest:        #2c4739;
-$farm:          #5f7a46;
-$village:       #a88248;
-$dwelling:      #a4552f;
+$forest:        #2c4739 !default;
+$farm:          #5f7a46 !default;
+$village:       #a88248 !default;
+$dwelling:      #a4552f !default;
 
-$primary:       #35604b;
-$secondary:     $ink-muted;
-$accent:        #a8502c;
+$primary:       #35604b !default;
+$secondary:     $ink-muted !default;
+$accent:        #a8502c !default;
 
-$body-bg:       $ground;
-$body-color:    $ink;
-$link-color:    $primary;
-$link-hover-color: darken($primary, 10%);
+$body-bg:       $ground !default;
+$body-color:    $ink !default;
+$link-color:    $primary !default;
+$link-hover-color: darken($primary, 10%) !default;
 
 // Type. Display serif over a clean sans; never Inter, Roboto or Arial.
-$font-family-sans-serif: "Public Sans Variable", "Public Sans", ui-sans-serif, system-ui, sans-serif;
-$font-family-serif:      "Newsreader Variable", "Newsreader", ui-serif, Georgia, serif;
-$headings-font-family:   $font-family-serif;
-$headings-font-weight:   600;
-$headings-color:         $ink;
-$font-size-base:         1.0625rem;
-$line-height-base:       1.6;
+$font-family-sans-serif: "Public Sans Variable", "Public Sans", ui-sans-serif, system-ui, sans-serif !default;
+$font-family-serif:      "Newsreader Variable", "Newsreader", ui-serif, Georgia, serif !default;
+$headings-font-family:   $font-family-serif !default;
+$headings-font-weight:   600 !default;
+$headings-color:         $ink !default;
+$font-size-base:         1.0625rem !default;
+$line-height-base:       1.6 !default;
 
-$border-radius:    4px;
-$border-radius-lg: 6px;
+$border-radius:    4px !default;
+$border-radius-lg: 6px !default;
 
 // Quarto-specific
-$navbar-bg:        $ground;
-$navbar-fg:        $ink;
-$navbar-hl:        $primary;
-$footer-bg:        $ground;
-$footer-fg:        $ink-muted;
-$code-block-bg:    $surface;
-$table-border-color: $surface-edge;
+$navbar-bg:        $ground !default;
+$navbar-fg:        $ink !default;
+$navbar-hl:        $primary !default;
+$footer-bg:        $ground !default;
+$footer-fg:        $ink-muted !default;
+$code-block-bg:    $surface !default;
+$table-border-color: $surface-edge !default;
+
+// Hero-only tones, overridden in scss/dark.scss.
+$sky-top:    #e9e2d4 !default;
+$sky-bottom: #f7f2e8 !default;
+$hero-line:  rgba(35, 33, 28, 0.18) !default;
 
 /*-- scss:mixins --*/
 
@@ -111,9 +119,9 @@ $table-border-color: $surface-edge;
   --hab-village: #{$village};
   --hab-dwelling: #{$dwelling};
 
-  --ds-sky-top: #e9e2d4;
-  --ds-sky-bottom: #f7f2e8;
-  --ds-hero-line: rgba(35, 33, 28, 0.18);
+  --ds-sky-top: #{$sky-top};
+  --ds-sky-bottom: #{$sky-bottom};
+  --ds-hero-line: #{$hero-line};
 }
 
 // ---------------------------------------------------------------------------
