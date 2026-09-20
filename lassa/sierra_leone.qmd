@@ -1,0 +1,46 @@
+---
+title: "Host ecology in Sierra Leone"
+subtitle: "Small-mammal communities along a land-use gradient"
+description: "Four years of trapping across forest, farm bush and village in Eastern Province, and what land use does to the Lassa virus reservoir community."
+categories: [Rodent, Ecology, Lassa Fever, Sierra Leone]
+toc: true
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. Framing text is a draft. The three papers below have
+explainer notes written in `data/paper_notes/`; this page will render them
+as cards from `data/publications.csv` once the programme pages are wired to
+the publications data.
+:::
+
+Doctoral fieldwork in Eastern Province, Sierra Leone, between 2020 and 2023.
+Repeated trapping at four village sites, along a transect from closed forest
+through farm bush to the inside of dwellings, across 43,226 trap nights.
+
+The question underneath all of it: land use decides which small mammals live
+where, so does it also decide where *Mammarenavirus lassaense* circulates, and
+where people meet it?
+
+## Papers
+
+- **Land use gradients drive spatial variation in Lassa fever host communities.**
+  *Journal of Animal Ecology*, 2025. Occupancy of *Mastomys natalensis* rises
+  from forest to village, then falls in peri-urban settings where *Mus musculus*
+  is present.
+- **Contact networks of small mammals highlight potential transmission foci.**
+  *American Journal of Tropical Medicine and Hygiene*, 2026. Contact rates are
+  similar across habitats but network structure is not.
+- **Rodent trapping studies as an overlooked information source.**
+  *PLOS Neglected Tropical Diseases*, 2023. A synthesis of 127 West African
+  trapping studies, and the sampling bias it exposes.
+
+## Data and code
+
+Protocols are archived on the Open Science Framework, field data are collected
+with Open Data Kit, and analysis code sits in the project repositories. Trapping
+records are deposited on GBIF and PHAROS.
+
+::: {.callout-note appearance="minimal"}
+To add: the field photographs, the EEID talk embed carried over from the old
+trapping page, and links to each dataset.
+:::

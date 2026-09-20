@@ -1,0 +1,85 @@
+---
+title: "Surveillance and outbreak response"
+subtitle: "Where to sample, and what to do when something is already spreading"
+description: "Biodiversity-informed wildlife disease surveillance, and earlier outbreak response work on COVID-19 and mpox."
+categories: [Surveillance, One Health, Outbreak Response]
+toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. Framing text is a draft. This page absorbs the former
+COVID-19 and mpox theme pages, which is why those sections are written in the
+past tense. Explainer notes for the papers are in `data/paper_notes/`.
+:::
+
+Surveillance is a resource allocation problem before it is a laboratory one.
+Sampling wildlife is expensive, so the question is where a sample changes what
+we know. Outbreak response is the same question under time pressure.
+
+## Wildlife disease surveillance
+
+**A protocol for biodiversity-informed wildlife disease surveillance.**
+*PLOS Ecosystems*, 2026. Host species distribution models set a biodiversity
+dose, uncertainty identifies where discovery sampling would help most, and
+balanced-acceptance sampling turns the result into field sites. Case studies on
+*Hantaviridae* and *Arenaviridae* in India and South Korea.
+
+Ongoing work extends this to outbreak settings, where the sampling frame has to
+be revised as an event unfolds.
+
+## mpox
+
+Work from the 2022 outbreak and from the endemic range that preceded it.
+
+**Increased outbreaks of mpox highlight gaps in actual disease burden.**
+*International Journal of Infectious Diseases*, 2022. Two hypotheses for the
+global outbreak: growing synanthropic rodent populations in West and Central
+Africa, and an immunologically naive population 45 years after smallpox
+vaccination ended.
+
+**Community transmission of mpox in the United Kingdom.** *Eurosurveillance*,
+2022. The first UK cases without travel history, described during the
+investigation, from work in the UK Health Security Agency outbreak
+surveillance team.
+
+The reservoir of mpox virus is still unidentified. Virus has been isolated from
+wild animals twice, and antibodies have been found in several further species.
+
+```{r}
+#| label: mpox-setup
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, kableExtra, here, readr)
+```
+
+``` {r monkeypox-table, echo = FALSE, message = FALSE, warning = FALSE}
+monkeypox_table <- read_csv(here("monkeypox", "data", "monkeypox_reservoirs.csv"))
+
+monkeypox_table %>%
+  mutate(References = cell_spec(References, "html", link = Link)) %>%
+  select(-Link, -Identification) %>%
+  kable("html", escape = FALSE, caption = "Adapted from Haider et al. 2022") %>%
+  pack_rows(index = table(fct_inorder(monkeypox_table$Identification))) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"),
+                font_size = 10)
+
+```
+
+## COVID-19
+
+Between 2020 and 2022 I worked on the epidemiology of SARS-CoV-2: modelling
+international spread with the LSHTM Centre for Mathematical Modelling of
+Infectious Diseases, a living review of smoking and COVID-19 outcomes,
+clinical work through the pandemic, and real-time surveillance of the Omicron
+variant with the UK Health Security Agency.
+
+That work is finished. The papers are listed on the
+[publications page](/publications.html).
+
+::: {.callout-note appearance="minimal"}
+To add: the COVID-19 figure carried over from the old theme page, and a short
+account of the UKHSA surveillance work.
+:::

@@ -1,0 +1,69 @@
+/*-- scss:defaults --*/
+
+// Dark pair for scss/custom.scss. Same hues, repitched for a dark ground:
+// the habitat colours are lifted so they hold contrast against it, and the
+// ground stays warm rather than going to neutral charcoal.
+
+$ground:        #15130f;
+$surface:       #1f1c17;
+$surface-edge:  #322d25;
+$ink:           #ece6da;
+$ink-muted:     #a49b8c;
+
+$forest:        #5c8d75;
+$farm:          #8fa663;
+$village:       #d0a85f;
+$dwelling:      #d97a4e;
+
+$primary:       #7fb79b;
+$secondary:     $ink-muted;
+$accent:        #e08a62;
+
+$body-bg:       $ground;
+$body-color:    $ink;
+$link-color:    $primary;
+$link-hover-color: lighten($primary, 8%);
+
+$headings-color: $ink;
+$navbar-bg:      $ground;
+$navbar-fg:      $ink;
+$navbar-hl:      $primary;
+$footer-bg:      $ground;
+$footer-fg:      $ink-muted;
+$code-block-bg:  $surface;
+$table-border-color: $surface-edge;
+
+/*-- scss:rules --*/
+
+:root {
+  --ds-ground: #{$ground};
+  --ds-surface: #{$surface};
+  --ds-surface-edge: #{$surface-edge};
+  --ds-ink: #{$ink};
+  --ds-ink-muted: #{$ink-muted};
+  --ds-primary: #{$primary};
+  --ds-accent: #{$accent};
+
+  --hab-forest: #{$forest};
+  --hab-farm: #{$farm};
+  --hab-village: #{$village};
+  --hab-dwelling: #{$dwelling};
+
+  --ds-sky-top: #1b1813;
+  --ds-sky-bottom: #14120e;
+  --ds-hero-line: rgba(236, 230, 218, 0.22);
+}
+
+// Figures exported with a baked-in white background sit badly on a dark
+// ground. Lifting them off it is honest; recolouring the data is not.
+// Any figure that still reads wrong needs regenerating with a transparent
+// background rather than a CSS fix here.
+main img:not(.no-matte) {
+  background: #fdfcf9;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+// Inline SVG that carries its own theming opts out of the matte.
+main svg img,
+.hero-figure img { background: none; padding: 0; }

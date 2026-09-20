@@ -1,313 +1,107 @@
 ---
-title: "David Simons"
-subtitle: "Zoonoses, Infectious Diseases and Antimicrobial Resistance"
-page-layout: full
-toc: true
+pagetitle: "David Simons"
+description-meta: "Epidemiologist and infectious disease ecologist. Rodent-borne zoonoses, primarily Lassa fever."
+page-layout: custom
+toc: false
 ---
 
-<h1>Welcome to my personal website!</h1>
+{{< include _hero.qmd >}}
 
-I am an epidemiologist and infectious disease ecologist. Currently a Postdoctoral Scholar at Penn State University working on the SCAPES project in Nigeria, I am transitioning to an independent role as the incoming Birgitta Sintring Fellow at Uppsala University in Sweden. 
+::: {.landing-body}
 
-My research programme investigates the ecological and anthropogenic drivers of zoonotic viral spillover. I have organised my work into research themes accessible by selecting the headings below or in the navigation bar. You can read more about my clinical background and academic journey in the [About me](about.qmd) section. 
+## Along the gradient
 
-### 📢 Recent Highlights
-* **Grant Award:** Awarded the [Birgitta Sintring Fellowship](rodent_ecology/sintring.qmd) to investigate indirect contact networks in bank voles at Uppsala University (commencing Sept 2026).
-* **New Publication:** [*The Socio-economic Shield Limits Lassa Virus Spillover in Urban West Africa*](lassa/lassa_urbanisation.qmd) published in [*Epidemiology & Infection*](https://doi.org/10.1017/S0950268826101824).
-* **Forthcoming:**  [*A protocol for biodiversity-informed wildlife disease surveillance*](https://ecoevorxiv.org/repository/view/11160/) in press at *PLoS Ecosystem*.
+The transect above is the spine of my research. Land use sets which small
+mammals live where, which species meet people, and so where a virus crosses
+over. Each programme below sits somewhere on it.
 
----
-
-## Rodent-Borne Zoonoses
-
-My primary research focuses on the complex ecology and epidemiology of viruses transmitted by rodents. This work combines field ecology, molecular diagnostics, and mathematical modelling to understand the mechanisms of viral spillover and inform public health interventions.
-
-### [Lassa Fever](lassa.qmd)
-
-[Lassa Fever](https://www.cdc.gov/vhf/lassa/index.html) is a zoonotic infectious disease, endemic across much of West Africa, caused by *Mammarenavirus lassaense* (LASV). It is classed as a Viral Haemorrhagic Fever - similar to Ebola Virus - there are no current effective treatments for individuals infected with this virus and no licensed vaccines. Human cases of disease are regularly reported from Nigeria, Sierra Leone, Liberia and Guinea. Sporadic cases are reported from other West African countries, including; Benin, Togo, Mali and Ghana. The annual incidence of disease is not known with an estimated 100-900,000 cases annually. Epidemiological studies funded by the [Coalition for Epidemic Preparedness Innovations](https://cepi.net/news_cepi/largest-ever-lassa-fever-research-programme-launches-in-west-africa/?swcfpc=1) are ongoing (ENABLE 1.0, ENABLE 1.5), these will help local public health agencies understand the true scale of this disease.
-
-The zoonotic hosts of LASV are rodent species, primarily *Mastomys natalensis* (the [multimammate mouse](https://en.wikipedia.org/wiki/Natal_multimammate_mouse)). Although virus (6) or evidence of prior viral infection (16) has been detected in additional species across the endemic region. The multimammate mouse is found throughout sub-Saharan Africa although this pathogen is limited to the western extent of its range. The reasons behind this are not well understood and this raises concerns that the endemic range of this pathogen has the potential to expand across a greater region.
-
-```{r}
-#| label: lassa-reservoirs
-#| echo: false
-#| message: false
-#| warning: false
-
-# --- 1. Load Packages ---
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, kableExtra, here, ggspatial, cowplot, readr)
-
-# --- 2. Load and Prepare Data ---
-# Define the path to the database directory
-db_directory <- here::here("..", "arenavirus_hantavirus", "data", "database")
-
-# Find the most recent database file in that directory
-latest_db_file <- list.files(
-    path = db_directory,
-    pattern = "^Project_ArHa_database_.*\\.rds$",
-    full.names = TRUE
-  ) |>
-  sort(decreasing = TRUE) |> # Sort descending, newest file will be first
-  head(1) # Take the first file from the list
-
-if (length(latest_db_file) == 0) {
-  stop("No database file found in the directory: ", db_directory)
-}
-
-arha_db <- read_rds(latest_db_file)
-
-endemic_countries <- c("Nigeria", "Sierra Leone", "Liberia", "Guinea",
-                       "Benin", "Togo", "Mali", "Ghana", "Côte d'Ivoire",
-                       "Senegal", "Burkina Faso")
-
-# --- 3. Process Data to Find Earliest Evidence ---
-arha_records <- arha_db$pathogen |>
-  filter(pathogen_species_ncbi == "Mammarenavirus lassaense") |>
-  filter(study_id != "grant_75") |>
-  select(pathogen_record_id, host_record_id, pathogen_species_ncbi, number_tested, number_positive, assay) |>
-  left_join(arha_db$host |>
-              select(host_record_id, study_id, host_species, host_genus, gadm_country, start_date), by = "host_record_id") |>
-  mutate(host_species = case_when(is.na(host_species) ~ paste0(host_genus, " spp."),
-                                  TRUE ~ host_species)) |>
-  filter(
-    number_positive >= 1,
-    gadm_country %in% endemic_countries
-  ) |>
-  left_join(arha_db$citations, by = "study_id") |>
-  group_by(host_species, assay) |>
-  slice_min(order_by = start_date, n = 1, with_ties = FALSE) |>
-  ungroup()
-
-manual_records <- tribble(
-  ~study_id, ~host_species, ~host_genus, ~gadm_country, ~assay, ~publication_year, ~author, ~doi,
-  "ds_402", "Mastomys natalensis", "Mastomys", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_402", "Rattus rattus", "Rattus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_402", "Mus minutoides", "Mus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_403", "Mastomys natalensis", "Mastomys", "Sierra Leone", "Culture", 1974, "Monath, T. P., et al.", "https://www.jstor.org/stable/1738849"
-)
-
-# --- 4. Prepare Data for Table Display ---
-# This selects and formats the columns for the final table.
-combined_data_for_table <- bind_rows(arha_records, manual_records) |>
-  group_by(host_genus) |>
-  mutate(min_year_in_genus = min(publication_year, na.rm = TRUE)) |>
-  ungroup() |>
-  mutate(
-    host_genus = fct_reorder(host_genus, min_year_in_genus),
-    author_short = str_extract(author, "[^,]+"),
-    reference_text = paste(author_short, publication_year, sep = ", "),
-    link = case_when(
-      full_text_id == "ft_783" ~ "https://biblio.naturalsciences.be/associated_publications/bjz/bibliographic-references/139-2/bjz-139_2-p93-102.pdf",
-      str_detect(doi, fixed("ezaccess.libraries.psu.edu")) ~ str_replace(doi, fixed("pubmed-ncbi-nlm-nih-gov.ezaccess.libraries.psu.edu"), "pubmed.ncbi.nlm.nih.gov"),
-      !is.na(doi) & str_starts(doi, "10\\.") ~ paste0("https://doi.org/", doi),
-      !is.na(doi) ~ doi, # This handles pre-existing full URLs
-      TRUE ~ NA_character_
-    )
-  ) |>
-  arrange(host_genus, host_species, publication_year) |>
-  select(
-    Year = publication_year,
-    Country = gadm_country,
-    Species = host_species,
-    Assay = assay,
-    References = reference_text,
-    link,
-    Genus = host_genus
-  )
-
-# --- 5. Generate the kableExtra HTML Table ---
-# Dynamically create the index for grouping rows by genus.
-tbl_groups <- table(combined_data_for_table$Genus)
-names(tbl_groups) <- levels(combined_data_for_table$Genus)
-
-combined_data_for_table |>
-  mutate(References = cell_spec(References, "html", link = link)) |>
-  select(-link, -Genus) |>
-  kbl("html", escape = FALSE, caption = "Comprehensive list of Mammarenavirus lassaense findings in hosts across West Africa.") |>
-  pack_rows(index = tbl_groups) |>
-  kable_styling(bootstrap_options = c("hover", "condensed"),
-                font_size = 10)
-
+```{=html}
+<ul class="card-grid">
+  <li class="theme-card">
+    <h3><a href="lassa/sierra_leone.html">Host ecology in Sierra Leone</a></h3>
+    <p>Four years of small-mammal trapping across the gradient from forest to
+    dwelling, and what land use does to the reservoir community.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="lassa/SCAPES.html">SCAPES, Nigeria</a></h3>
+    <p>Human exposure to Lassa virus at village scale, and the behaviours that
+    generate contact with rodents.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="lassa/lassa_urbanisation.html">Lassa fever and cities</a></h3>
+    <p>What happens to spillover when the gradient runs into an expanding
+    West African city.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="arha.html">Project ArHa</a></h3>
+    <p>A global synthesis of arenavirus and hantavirus sampling in small
+    mammals, and what surveillance bias hides.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="rodent_ecology/sintring.html">Bank voles at Uppsala</a></h3>
+    <p>From September 2026, microbial sensors for the contact networks that
+    drive environmental transmission.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="lassa/lassa_epidemiology.html">Lassa epidemiology</a></h3>
+    <p>How many cases there really are, and what the sampling record can and
+    cannot support.</p>
+  </li>
+</ul>
 ```
 
+## Off the gradient
 
-My research focusses on the ecology of rodent species within the endemic region and whether a better understanding of host dynamics can help us to quantify the risk of pathogen spillover into human populations. Understanding dynamics of both the host and virus will hopefully enable more targeted public health responses within the communities that need them most.
+Work that does not sit on the transect: turning ecology into policy, building
+tools other people can use, and outbreak response.
 
-```{r lassa-map, echo = FALSE, message = FALSE, warning = FALSE}
-lassa_raw <- read_csv(here("lassa", "data", "confirmed_cases.csv"))
-
-lassa_clean <- lassa_raw %>%
-  filter(case_when(country == "nigeria" ~ region == "all",
-                   TRUE ~ confirmed_cases > 0)) %>%
-  group_by(year, country) %>%
-  summarise(confirmed_cases = sum(confirmed_cases)) %>%
-  mutate(country = str_to_title(country),
-         country = recode(country, 
-                          "Cote D'ivoire" = "Côte d'Ivoire"),
-         # confirmed_cases = log(confirmed_cases),
-         endemic = factor(case_when(country %in% c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
-                                                   "Nigeria", "Sierra Leone", "Togo") ~ "",
-                             TRUE ~ "Non-endemic")),
-         country_label = factor(case_when(country %in% c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
-                                                         "Nigeria", "Sierra Leone", "Togo") ~ country,
-                                          TRUE ~ "Combined"),
-                                levels = c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
-                                           "Nigeria", "Sierra Leone", "Togo", "Combined"))) %>%
-  filter(year >= 2011)
-
-colours_wa <- c("Endemic countries" = "white",
-                "Benin" = "#871a10",
-                "Ghana" = "#000000",
-                "Guinea" = "#be2a2c",
-                "Liberia" = "#0a2864",
-                "Mali" = "#50ab4a",
-                "Nigeria" = "#398053",
-                "Sierra Leone" = "#2f71c1",
-                "Togo" = "#f7d147",
-                " " = "white",
-                "Non-endemic countries" = "white",
-                "Côte d'Ivoire" = "#e6853b",
-                "Burkina Faso" = "#107d87")
-
-lassa_clean$country = factor(lassa_clean$country, levels=c("Endemic countries", "Benin", "Ghana", "Guinea",
-                                                           "Liberia", "Mali", "Nigeria", "Sierra Leone", "Togo", " ",
-                                                           "Non-endemic countries", "Côte d'Ivoire", "Burkina Faso"))
-
-case_plot <- ggplot(lassa_clean, aes(x = year, y = confirmed_cases, fill = country)) +
-  geom_col() +
-  scale_x_continuous(breaks = seq(from = min(lassa_clean$year), to = max(lassa_clean$year), by = 2)) +
-  scale_y_continuous(breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
-  scale_fill_manual(values = colours_wa,
-                    drop=FALSE) +
-  guides(fill=guide_legend(ncol=1)) +
-  theme(legend.key = element_rect(fill=NA),
-        legend.title = element_blank()) +
-  facet_wrap(~ endemic + country_label , scales = "free_y") +
-  annotate(geom = "rect", xmin = 2013, xmax = 2016, ymin = -Inf, ymax = Inf, alpha = 0.1) +
-  annotate(geom = "rect", xmin = 2020, xmax = 2024, ymin = -Inf, ymax = Inf, alpha = 0.1) +
-  annotate(geom = "rect", xmin = year(Sys.Date()), xmax = year(Sys.Date()) + 1, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "orange") +
-  theme_minimal() +
-  labs(x = element_blank(),
-       y = "Confirmed cases",
-       fill = element_blank())
-
-mastomys_data <- read_rds(here("lassa", "data", "mastomys_data.rds"))
-
-mastomys_distribution <- ggplot() +
-  geom_sf(data = mastomys_data$wa_countries, aes(fill = endemic), lwd = 0.1) +
-  geom_sf_text(data = mastomys_data$wa_countries, aes(label = NAME_0), size = 5) +
-  scale_fill_manual(values = c("Endemic" = "#f2aa86",
-                               "Outbreaks" = "#fef8e1",
-                               "No cases" = "#fafafa")) +
-  geom_sf(data = mastomys_data$iucn, fill = "#C12D20", alpha = 0.4, lwd = 0.1) +
-  theme_minimal() +
-  labs(fill = element_blank(),
-       x = element_blank(),
-       y = element_blank()) +
-  coord_sf(xlim = c(mastomys_data$afr_bbox[1], mastomys_data$afr_bbox[3]), ylim = c(mastomys_data$afr_bbox[2], mastomys_data$afr_bbox[4])) +
-  annotation_scale(height = unit(0.1, "cm")) +
-  annotation_north_arrow(style = north_arrow_minimal(text_size = 7),
-                         location = "tl")
-
-# This map has been produced using IUCN range data and country shapefiles. The code is available here: https://github.com/DidDrog11/miscellaneous/blob/main/scripts/lassa_cases.R
-
-combined_plot <- plot_grid(case_plot, mastomys_distribution, nrow = 2,
-                           labels = c("A", "B"), greedy = TRUE)
-save_plot(here("lassa", "images", "lassa_cases_endemic.svg"), combined_plot, base_height = c(8, 6), base_width = c(12, 12))
-
+```{=html}
+<ul class="card-grid">
+  <li class="theme-card">
+    <h3><a href="policy/vaccines.html">Vaccines and trial design</a></h3>
+    <p>Designing trials for pathogens that arrive from wildlife, and the
+    commitments that should govern self-disseminating vaccines.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="policy/surveillance.html">Surveillance and outbreak response</a></h3>
+    <p>Where to sample when resources are finite. Plus earlier work on
+    COVID-19 and mpox.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="open_science/tools.html">Open tools and data</a></h3>
+    <p>Map Liberator, SiteTool, and a minimum data standard for wildlife
+    disease research.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="rodent_ecology/lancet_pillars_view.html">Rodent-borne disease ecology</a></h3>
+    <p>Three pillars for prevention: disease ecology, synanthropy and
+    rodentation.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="consultancy.html">Consultancy</a></h3>
+    <p>Quantitative epidemiology and disease modelling for health
+    organisations and industry.</p>
+  </li>
+  <li class="theme-card">
+    <h3><a href="others.html">Earlier work</a></h3>
+    <p>Antimicrobial resistance, African swine fever, peste des petits
+    ruminants and digital health.</p>
+  </li>
+</ul>
 ```
 
+## Recent
 
-![A) Reported human cases of Lassa Fever from 2011-2023. The first grey section (2013-2016) represents the period of the Ebola epidemic in West Africa, the second grey section (2020-) corresponds to the ongoing COVID-19 pandemic, the orange section represents an incomplete year of reporting. Data current as of 2023-07-13. B) The predicted distribution of *Mastomys natalensis* overlain over known endemic countries.](lassa/images/lassa_cases_endemic.svg)
+::: {.callout-note appearance="minimal"}
+Placeholder. This block becomes the most recent entries from `data/news.yml`,
+dropping anything older than 18 months, so it cannot go stale on its own.
+:::
 
-### [Project ArHa: Arenaviruses and Hantaviruses](arha.qmd)
+- **New paper.** *The socio-economic shield limits Lassa virus spillover in urban West Africa*, in [*Epidemiology & Infection*](https://doi.org/10.1017/S0950268826101824).
+- **New paper.** *Viral reservoir status in small mammals emerges as a predictable life-history trait*, [preprint](https://doi.org/10.64898/2026.06.03.729761).
+- **Grant.** Birgitta Sintring Fellowship, Uppsala University, from September 2026.
 
-With Dr. [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/) we are leading a project synthesising published sampling records of small-mammals for arenaviruses and hantaviruses. This work is being supported by the Fellows-in-Residence programme of the [Verena consortium](https://www.viralemergence.org/).
+[All publications](publications.html){.btn .btn-outline-primary} &nbsp;
+[About me](about.html){.btn .btn-outline-primary}
 
-We recently released our first major preprint from this initiative: [*Viral reservoir status in small mammals emerges as a predictable life-history trait after correcting for surveillance bias*](https://doi.org/10.64898/2026.06.03.729761). By harmonising over 590,000 surveillance records, we demonstrated that viral reservoir status is a predictable biological trait strongly associated with a "fast" pace of life and synanthropy, independent of historical sampling biases. 
-
-Further macroecological analyses and the public release of the full ArHa database are forthcoming.
-
-### [Rodent Ecology](rodent_ecology.qmd)
-
-Underpinning much of my research is a fundamental interest in rodent ecology. Understanding the population dynamics, community structure, and behavioural ecology of host species is critical for predicting disease risk. This theme explores my work on host ecology independent of a specific pathogen system.
-
-It also houses my upcoming independent research programme, launching at Uppsala University, which focuses on developing [microbial sensors](rodent_ecology/sintring.qmd) to investigate the indirect detection of contact networks among bank voles. By mapping these hidden networks, we aim to better understand the environmental transmission dynamics of rodent-borne viruses.
-
-### [Strategy & Policy](policy.qmd)
-
-This theme translates ecological research into high-level frameworks for disease control and policy recommendations. Recent highlights include outlining an integrated 'One Health Trial Design' framework to accelerate Lassa fever vaccines (published in [Nature Medicine](https://www.nature.com/articles/s41591-025-04018-6)) and establishing a set of intrinsically safe design commitments for transmissible vaccines published in [Science](https://www.science.org/doi/abs/10.1126/science.adn3231).
-
-### [Open Science and Data Tools](open_science.qmd)
-
-I am a strong proponent of FAIR data principles and reproducibility in computational ecology. Rather than extracting data behind closed doors, I focus on building open-source infrastructure for the wider research community.   
-
-* Data Standards: I recently co-authored a minimum data standard for wildlife disease research published in [Scientific Data](https://www.nature.com/articles/s41597-025-05332-x), aimed at harmonising global surveillance efforts. I am involved in review exploring the use of geographic Ecological Momentary Assessments in addictive substance research, you can read our pre-registration [here](https://www.crd.york.ac.uk/PROSPERO/view/CRD420251247450).  
-* Public Datasets: All my spatial ecology and trapping data are hosted on open platforms, including [GBIF](https://www.gbif.org/dataset/3a08ab2b-9278-4784-ad02-451149e35332) and the [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk) database. 
-* Codebases & Apps: I maintain the open-source R codebase and interactive Shiny web applications for [Project ArHa](https://github.com/DidDrog11/arenavirus_hantavirus), allowing researchers to easily query and visualise global arenavirus and hantavirus data. You can explore my reproducible analysis pipelines on my [GitHub](https://github.com/DidDrog11).
-
----
-
-## Other Major Disease Systems
-
-### [mpox](monkeypox.qmd)
-
-[mpox](https://www.cdc.gov/poxvirus/monkeypox/index.html) is an endemic zoonosis, caused by the mpox virus (MPXV). Despite the name, the primary zoonotic reservoir is unknown, although several species are suspected as competent reservoirs. The virus has been isolated from wild animals on two occasions, first from a rope squirrel ([*Funisciurus anerythrus*](https://en.wikipedia.org/wiki/Thomas%27s_rope_squirrel)) and second from a sooty mangabey ([*Cercocebus atys*](https://en.wikipedia.org/wiki/Sooty_mangabey)). Several other species, including shrews, rodents and pigs, have been identified to have antibodies against the virus suggesting prior infection. 
-
-``` {r monkeypox-table, echo = FALSE, message = FALSE, warning = FALSE}
-monkeypox_table <- read_csv(here("monkeypox", "data", "monkeypox_reservoirs.csv"))
-
-monkeypox_table %>%
-  mutate(References = cell_spec(References, "html", link = Link)) %>%
-  select(-Link, -Identification) %>%
-  kable("html", escape = FALSE, caption = "Adapted from Haider et al. 2022") %>%
-  pack_rows(index = table(fct_inorder(monkeypox_table$Identification))) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"),
-                font_size = 10)
-
-```
-
-Human infections are reported from several Central and West African nations, including the Democratic Republic of Congo, Nigeria and Cameroon. Reported cases have been increasing since the elimination of Smallpox and the end of routine vaccination against this virus. The Smallpox vaccine was found to provide some protection against mpox and waning immunity in the region is suspected to be driving increasing human cases. mpox transmission rarely occurs outside of the endemic region, suggesting limited human-to-human transmission outside of endemic regions. In early 2022, a globally distributed outbreak was identified, predominantly in populations of gay or bisexual and other men who have sex with men. 
-
-My work with mpox has primarily been in my role as an epidemiologist with the [UK Health Security Agency](https://www.gov.uk/government/news/monkeypox-cases-confirmed-in-england-latest-updates) maintaining a linelist of cases and their contacts. With [PANDORA-ID-NET](https://pandora.tghn.org/) we looked at what factors may be driving the recent outbreak.
-
-### [COVID-19](covid_19.qmd)
-
-[COVID-19](https://www.who.int/health-topics/coronavirus#tab=tab_1) is a disease caused by infection with the SARS-Coronavirus-2 virus. This novel coronavirus was identified from a cluster of clinically diagnosed viral pneumonia cases in Wuhan, China in late 2019. This viral epidemic was declared a pandemic in early 2020 following global transmission and rapidly rising confirmed cases. The pandemic has highlighted the interconnectedness of current society and the vulnerability to diseases of pandemic potential. Public health responses have included travel bans, quarantine of confirmed and suspected contacts and national or regional lockdowns. The WHO records over 600 million cases of this disease and in excess of 6.5 million deaths on their [WHO Coronavirus Dashboard](https://covid19.who.int/).
-
-Vaccines were rapidly developed against this disease, although their reduced efficacy against more recently emerged viral variants has potentially reduced the protection that was expected from population level immunity. Effective treatments against this disease have been identified through global clinical trials, exemplified by the [RECOVERY](https://www.recoverytrial.net/) trial which provided evidence for the effectiveness of steroids, antivirals and antibody therapy.
-
-My work with this disease includes some early modelling work on the potential international spread of the recently identified virus, involvement in the London School of Hygiene and Tropical Medicine's Centre for Mathematical Modelling of Infectious Diseases [COVID-19 Working Group](https://cmmid.github.io/topics/covid19/), performing regular updates to a living review on the association of smoking and SARS-CoV-2 infection, working as an epidemiologist with the UKHSA on the emerging Omicron variant and clinical work as a member of the Infectious Diseases team at University College London Hospital.
-
-![Investigating the time to detection of different COVID-19 variants in the UK](images/covid_variant_spread.png)
-
-### [Antimicrobial Resistance](amr.qmd)
-
-[Antimicrobial resistance](https://www.who.int/health-topics/antimicrobial-resistance) is increasingly recognised as a threat to human health as effectiveness of treatment and prevention falls. My work in this theme relates to epidemiological monitoring of resistance patterns in food production in Malaysia and involvement in antimicrobial stewardship in clinical practice.
-
-## [Other work](others.qmd)
-
-I have collected other projects I have worked on in this section.
-
-### [African Swine Fever](others/asf.qmd)
-
-African Swine Fever ([ASF](https://www.woah.org/en/disease/african-swine-fever/)) is a highly contagious viral disease of domestic and wild pigs. Mortality is very high (up to 100%) and transmission is difficult to control. The virus can be transmitted through contact with environmental sources, fomites and infected meat products. 
-
-The virus forms a complex dynamic system including domesticated and farmed suids and wild boar, with the primary route of transmission through contaminated carcasses, meat products and fluids from infected swine alongside contaminated fomites. The presence of a wild reservoir population during the ongoing epidemic introduces challenges to the control of viral spread, particularly as this is occurring on a background of increasing wild boar population densities particularly in Europe.
-
-This project began as a summer internship with [EcoHealth Alliance](https://www.ecohealthalliance.org/) looking at whether reporting of cases from the [World Animal Health Information System](https://wahis.woah.org/#/home), maintained by the World Organisation for Animal Health could help us to quantify the risk of cases being detected in regions not previously reporting cases.
-
-![A conceptual model of ASF transmission in both sylvatic and agricultural settings.](others/images/asf_framework.svg)
-
-### [Digital Health](others/digital_health.qmd)
-
-I collaborate with [Olga Perski](https://www.olgaperski.com), typically providing some data-science support to her interests of smoking cessation through digital health interventions.
-
-### [Peste des Petits Ruminants](others/pprv.qmd)
-
-[Peste des petits ruminants](https://www.woah.org/en/disease/peste-des-petits-ruminants/) is caused by a morbilivirus which affects goats, sheep and other small ruminants. It has been targeted for global eradication by 2030. I assist with current work designed to assess the sensitivity and specificity of current assays against this virus to support elimination campaigns.
-
-## Consultancy
-
-In addition to my academic research, I provide independent expert consultancy services in quantitative epidemiology and disease modelling for international health organisations and the biotechnology industry. Detailed information on services and contact details can be found on the [Consultancy](consultancy.qmd) page.
+:::

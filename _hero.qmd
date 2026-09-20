@@ -1,0 +1,215 @@
+::: {.hero-band}
+::: {.hero-inner}
+
+::: {.hero-lede}
+# Rodents, land use and the risk of spillover
+
+I study how people reshape landscapes, how small mammals respond, and where
+that leaves the viruses they carry. Most of this work is on Lassa fever in
+West Africa.
+:::
+
+::: {.hero-figure-wrap}
+
+```{=html}
+<svg class="hero-figure" viewBox="0 0 1320 560" role="img"
+     aria-labelledby="hero-title hero-desc" preserveAspectRatio="xMidYMax meet">
+  <title id="hero-title">The synanthropy gradient, from closed forest to human dwelling</title>
+  <desc id="hero-desc">A cross-section of habitat running left to right: closed forest,
+  farm bush, village periphery, and dwelling. Seven small-mammal species are placed along
+  the transect at the point where each is most often found. Forest specialists such as
+  Praomys rostratus sit at the left. Mastomys natalensis, the primary reservoir of Lassa
+  virus, sits towards the village end. Commensal species, Rattus rattus and Mus musculus,
+  sit at the right, inside the dwelling. The same information is given as a list below
+  this graphic.</desc>
+
+  <defs>
+    <linearGradient id="ground-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="var(--hab-forest)"   stop-opacity="0.30"/>
+      <stop offset="27%"  stop-color="var(--hab-farm)"     stop-opacity="0.28"/>
+      <stop offset="60%"  stop-color="var(--hab-village)"  stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="var(--hab-dwelling)" stop-opacity="0.26"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ds-ink-muted)"/>
+    </marker>
+  </defs>
+
+  <!-- ground -->
+  <rect x="0" y="350" width="1320" height="16" fill="url(#ground-fade)"/>
+  <line x1="0" y1="350" x2="1320" y2="350" class="axis-line"/>
+
+  <!-- ================= closed forest, 0 to 330 ================= -->
+  <g fill="var(--hab-forest)">
+    <g opacity="0.35">
+      <circle cx="55"  cy="150" r="72"/>
+      <circle cx="140" cy="118" r="86"/>
+      <circle cx="232" cy="146" r="76"/>
+      <circle cx="310" cy="168" r="62"/>
+    </g>
+    <g opacity="0.75">
+      <rect x="66"  y="196" width="11" height="154" rx="3"/>
+      <circle cx="71" cy="188" r="50"/>
+      <rect x="150" y="168" width="13" height="182" rx="3"/>
+      <circle cx="157" cy="160" r="60"/>
+      <rect x="243" y="204" width="10" height="146" rx="3"/>
+      <circle cx="248" cy="196" r="46"/>
+    </g>
+    <g opacity="0.9">
+      <rect x="110" y="262" width="8" height="88" rx="3"/>
+      <circle cx="114" cy="256" r="30"/>
+      <rect x="200" y="276" width="7" height="74" rx="3"/>
+      <circle cx="204" cy="270" r="26"/>
+      <rect x="296" y="286" width="7" height="64" rx="3"/>
+      <circle cx="300" cy="280" r="23"/>
+    </g>
+  </g>
+
+  <!-- ================= farm bush, 330 to 660 ================= -->
+  <g fill="var(--hab-farm)">
+    <g opacity="0.4">
+      <circle cx="392" cy="252" r="46"/>
+      <circle cx="470" cy="238" r="52"/>
+      <circle cx="560" cy="256" r="44"/>
+      <circle cx="632" cy="268" r="38"/>
+    </g>
+    <g opacity="0.85">
+      <rect x="386" y="292" width="8" height="58" rx="3"/>
+      <circle cx="390" cy="288" r="26"/>
+      <rect x="474" y="286" width="8" height="64" rx="3"/>
+      <circle cx="478" cy="280" r="30"/>
+      <rect x="566" y="296" width="7" height="54" rx="3"/>
+      <circle cx="570" cy="292" r="24"/>
+    </g>
+    <!-- planted rows -->
+    <g opacity="0.7" stroke="var(--hab-farm)" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M344 350 q6 -22 12 -30"/><path d="M356 350 q-4 -20 -10 -28"/>
+      <path d="M416 350 q6 -22 12 -30"/><path d="M428 350 q-4 -20 -10 -28"/>
+      <path d="M506 350 q6 -22 12 -30"/><path d="M518 350 q-4 -20 -10 -28"/>
+      <path d="M600 350 q6 -22 12 -30"/><path d="M612 350 q-4 -20 -10 -28"/>
+      <path d="M644 350 q6 -22 12 -30"/>
+    </g>
+  </g>
+
+  <!-- ================= village periphery, 660 to 990 ================= -->
+  <g fill="var(--hab-village)">
+    <g opacity="0.75">
+      <rect x="706" y="300" width="7" height="50" rx="3"/>
+      <circle cx="709" cy="296" r="22"/>
+      <rect x="932" y="306" width="6" height="44" rx="3"/>
+      <circle cx="935" cy="302" r="18"/>
+    </g>
+    <!-- store hut, raised granary -->
+    <g opacity="0.9">
+      <path d="M770 350 v-54 h72 v54 z"/>
+      <path d="M760 296 l46 -42 l46 42 z"/>
+      <rect x="796" y="318" width="20" height="32" rx="2" fill="var(--ds-ground)" opacity="0.5"/>
+    </g>
+    <!-- fence line -->
+    <g opacity="0.55" stroke="var(--hab-village)" stroke-width="4" stroke-linecap="round">
+      <path d="M868 350 v-30"/><path d="M892 350 v-30"/><path d="M916 350 v-30"/>
+      <path d="M864 330 h56"/>
+    </g>
+  </g>
+
+  <!-- ================= dwelling, 990 to 1320 ================= -->
+  <g fill="var(--hab-dwelling)">
+    <g opacity="0.9">
+      <path d="M1040 350 v-96 h168 v96 z"/>
+      <path d="M1022 254 l102 -64 l102 64 z"/>
+      <rect x="1104" y="292" width="34" height="58" rx="2" fill="var(--ds-ground)" opacity="0.55"/>
+      <rect x="1060" y="286" width="26" height="24" rx="2" fill="var(--ds-ground)" opacity="0.4"/>
+      <rect x="1158" y="286" width="26" height="24" rx="2" fill="var(--ds-ground)" opacity="0.4"/>
+    </g>
+    <!-- stored grain beside the house -->
+    <g opacity="0.7">
+      <ellipse cx="1248" cy="336" rx="22" ry="14"/>
+      <ellipse cx="1276" cy="342" rx="18" ry="11"/>
+    </g>
+  </g>
+
+  <!-- ================= habitat labels ================= -->
+  <g class="habitat-label" text-anchor="middle">
+    <text x="165"  y="384">Closed forest</text>
+    <text x="495"  y="384">Farm bush</text>
+    <text x="825"  y="384">Village periphery</text>
+    <text x="1155" y="384">Dwelling</text>
+  </g>
+
+  <!-- ================= synanthropy axis ================= -->
+  <line x1="60" y1="430" x2="1268" y2="430" class="axis-line" marker-end="url(#arrow)"/>
+
+  <g class="species">
+    <title>Praomys rostratus, a forest specialist</title>
+    <line x1="130" y1="430" x2="130" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="130" cy="430" r="8" fill="var(--hab-forest)"/>
+    <text class="species-label" x="130" y="462" text-anchor="middle">Praomys rostratus</text>
+  </g>
+  <g class="species">
+    <title>Malacomys edwardsi, forest and riparian margins</title>
+    <line x1="268" y1="430" x2="268" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="268" cy="430" r="8" fill="var(--hab-forest)"/>
+    <text class="species-label" x="268" y="492" text-anchor="middle">Malacomys edwardsi</text>
+  </g>
+  <g class="species">
+    <title>Lophuromys sikapusi, farm bush and regrowth</title>
+    <line x1="452" y1="430" x2="452" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="452" cy="430" r="8" fill="var(--hab-farm)"/>
+    <text class="species-label" x="452" y="462" text-anchor="middle">Lophuromys sikapusi</text>
+  </g>
+  <g class="species">
+    <title>Lemniscomys striatus, grassland and cultivated margins</title>
+    <line x1="606" y1="430" x2="606" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="606" cy="430" r="8" fill="var(--hab-farm)"/>
+    <text class="species-label" x="606" y="492" text-anchor="middle">Lemniscomys striatus</text>
+  </g>
+  <g class="species">
+    <title>Mastomys natalensis, the primary reservoir of Lassa virus</title>
+    <line x1="806" y1="430" x2="806" y2="356" class="axis-line" opacity="0.65"/>
+    <circle class="species-dot" cx="806" cy="430" r="12" fill="var(--ds-accent)"/>
+    <text class="species-label" x="806" y="466" text-anchor="middle"
+          style="font-weight:600">Mastomys natalensis</text>
+  </g>
+  <g class="species">
+    <title>Rattus rattus, commensal, village and dwelling</title>
+    <line x1="1000" y1="430" x2="1000" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="1000" cy="430" r="8" fill="var(--hab-village)"/>
+    <text class="species-label" x="1000" y="492" text-anchor="middle">Rattus rattus</text>
+  </g>
+  <g class="species">
+    <title>Mus musculus, commensal, inside the dwelling</title>
+    <line x1="1168" y1="430" x2="1168" y2="356" class="axis-line" opacity="0.4"/>
+    <circle class="species-dot" cx="1168" cy="430" r="8" fill="var(--hab-dwelling)"/>
+    <text class="species-label" x="1168" y="462" text-anchor="middle">Mus musculus</text>
+  </g>
+
+  <text class="axis-label" x="60" y="528">Increasing synanthropy, the degree to which a species lives alongside people</text>
+</svg>
+```
+
+:::
+
+```{=html}
+<ul class="gradient-key">
+  <li style="--band: var(--hab-forest)">
+    <strong>Closed forest</strong>
+    <span>Forest specialists, rarely in contact with people. Where sampling effort is thinnest.</span>
+  </li>
+  <li style="--band: var(--hab-farm)">
+    <strong>Farm bush</strong>
+    <span>Regrowth and cultivation. The species mix turns over fastest here.</span>
+  </li>
+  <li style="--band: var(--hab-village)">
+    <strong>Village periphery</strong>
+    <span>Where <em>Mastomys natalensis</em> peaks, and where most spillover is thought to happen.</span>
+  </li>
+  <li style="--band: var(--hab-dwelling)">
+    <strong>Dwelling</strong>
+    <span>Commensal rodents, where invasive species can displace the reservoir.</span>
+  </li>
+</ul>
+```
+
+:::
+:::

@@ -1,75 +1,88 @@
 project:
   type: website
   render:
-    - "*.qmd"           
-    - "!cv.qmd"         
-    - "amr/"          
+    - "*.qmd"
+    - "!cv.qmd"
+    - "amr/"
     - "arha/"
     - "covid/"
     - "images/"
-    - "lassa/"          
+    - "lassa/"
     - "monkeypox/"
-    - "open_science/"   # Added to ensure the new child pages render
+    - "open_science/"
     - "policy/"
     - "others/"
     - "rodent_ecology/"
+  resources:
+    - "assets/fonts/*"
+    - "cv.pdf"
 
 website:
   title: "David Simons"
+  site-url: https://www.dsimons.org
   favicon: /images/icon.ico
   open-graph: true
   twitter-card: true
-  google-analytics: "G-Z4H9BE4MVE"
   page-navigation: true
+  # No analytics. Nothing here may set a cookie.
   navbar:
-    logo: /images/icon.ico
-    foreground: light
-    background: dark
+    foreground: dark
+    background: light
     search: true
     left:
-      - href: index.qmd
-        text: "{{< iconify mingcute home-2-line >}} Home"
-      - text: "{{< iconify ic outline-category >}} Research Themes"
+      - text: "Research"
         menu:
-          - text: "Rodent-Borne Zoonoses"
-          - text: "{{< iconify twemoji rat >}} Lassa Fever"
-            href: lassa.qmd
-          - text: "{{< iconify ph bug-bold >}} Project ArHa"
+          - text: "Along the gradient"
+          - text: "Host ecology in Sierra Leone"
+            href: lassa/sierra_leone.qmd
+          - text: "SCAPES, Nigeria"
+            href: lassa/SCAPES.qmd
+          - text: "Lassa fever and cities"
+            href: lassa/lassa_urbanisation.qmd
+          - text: "Lassa epidemiology"
+            href: lassa/lassa_epidemiology.qmd
+          - text: "Project ArHa"
             href: arha.qmd
-          - text: "{{< iconify fa6-solid bugs >}} Rodent Ecology"
-            href: rodent_ecology.qmd
-          - text: "{{< iconify mdi open-source-initiative >}} Open Science & Data"
-            href: open_science.qmd
-          - text: "{{< iconify mdi file-document-edit >}} Strategy & Policy"
-            href: policy.qmd
+          - text: "Bank voles at Uppsala"
+            href: rodent_ecology/sintring.qmd
           - text: "---"
-          - text: "Other Major Themes"
-          - text: "{{< fa virus >}} Monkeypox"
-            href: monkeypox.qmd
-          - text: "{{< fa lungs-virus >}} COVID-19"
-            href: covid_19.qmd
-          - text: "{{< fa bacterium >}} Antimicrobial Resistance (AMR)"
-            href: amr.qmd
+          - text: "Off the gradient"
+          - text: "Vaccines and trial design"
+            href: policy/vaccines.qmd
+          - text: "Surveillance and outbreak response"
+            href: policy/surveillance.qmd
+          - text: "Open tools and data"
+            href: open_science/tools.qmd
+          - text: "Rodent-borne disease ecology"
+            href: rodent_ecology/lancet_pillars_view.qmd
           - text: "---"
-          - href: others.qmd
-            text: "{{< fa shuffle >}} Other Work"
-      - href: https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en
-        text: "{{< iconify ooui articles-ltr >}} Publications"
-      - href: consultancy.qmd
-        text: "{{< iconify mdi briefcase-outline >}} Consultancy"
-    right:
+          - text: "Consultancy"
+            href: consultancy.qmd
+          - text: "Earlier work"
+            href: others.qmd
+      - href: publications.qmd
+        text: "Publications"
       - href: about.qmd
-        text: "About me"
+        text: "About"
+      - href: cv.pdf
+        text: "CV"
+    right:
       - icon: bluesky
         href: https://bsky.app/profile/davidsimons.bsky.social
-        aria-label: David Bluesky
+        aria-label: Bluesky
       - icon: github
         href: https://github.com/DidDrog11
-        aria-label: David GitHub
+        aria-label: GitHub
+  page-footer:
+    left: "© David Simons"
+    center: "Built with [Quarto](https://quarto.org). [Source](https://github.com/DidDrog11/website_quarto)."
+    right: "[ORCID](https://orcid.org/0000-0001-9655-1656)"
 
 format:
   html:
-    theme: pulse
+    theme:
+      light: scss/custom.scss
+      dark: [scss/custom.scss, scss/dark.scss]
     toc: true
     toc-depth: 3
     smooth-scroll: true
@@ -80,8 +93,8 @@ format:
     include-after-body: assets/request-copy.html
 
 comments:
-  hypothesis: 
+  hypothesis:
     theme: clean
-    
+
 execute:
   freeze: auto

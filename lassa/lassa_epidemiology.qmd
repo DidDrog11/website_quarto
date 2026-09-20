@@ -1,0 +1,223 @@
+---
+title: "Lassa epidemiology"
+subtitle: "Case burden, reporting and the limits of the sampling record"
+description: "How many Lassa fever cases there really are, and what the surveillance and sequence record can support."
+categories: [Lassa Fever, Epidemiology]
+toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. The framing text is a draft. The explainer notes for the
+under-reporting and sequencing-bias papers are written and will be pulled in
+from `data/paper_notes/` when the programme pages are wired to the
+publications data.
+:::
+
+Reported Lassa fever case counts are the input to almost every risk model, and
+they are incomplete in ways that vary by country and by year. This programme
+asks what can be inferred anyway.
+
+## Detections in hosts
+
+Records of *Mammarenavirus lassaense* detected in small mammals across West
+Africa, drawn from the Project ArHa database. The assay vocabulary is being
+reconciled, so some findings currently appear twice.
+
+```{r}
+#| label: lassa-reservoirs
+#| echo: false
+#| message: false
+#| warning: false
+
+# --- 1. Load Packages ---
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, kableExtra, here, ggspatial, cowplot, readr)
+
+# --- 2. Load and Prepare Data ---
+# Define the path to the database directory
+db_directory <- here::here("..", "arenavirus_hantavirus", "data", "database")
+
+# Find the most recent database file in that directory
+latest_db_file <- list.files(
+    path = db_directory,
+    pattern = "^Project_ArHa_database_.*\\.rds$",
+    full.names = TRUE
+  ) |>
+  sort(decreasing = TRUE) |> # Sort descending, newest file will be first
+  head(1) # Take the first file from the list
+
+if (length(latest_db_file) == 0) {
+  stop("No database file found in the directory: ", db_directory)
+}
+
+arha_db <- read_rds(latest_db_file)
+
+endemic_countries <- c("Nigeria", "Sierra Leone", "Liberia", "Guinea",
+                       "Benin", "Togo", "Mali", "Ghana", "Côte d'Ivoire",
+                       "Senegal", "Burkina Faso")
+
+# --- 3. Process Data to Find Earliest Evidence ---
+arha_records <- arha_db$pathogen |>
+  filter(pathogen_species_ncbi == "Mammarenavirus lassaense") |>
+  filter(study_id != "grant_75") |>
+  select(pathogen_record_id, host_record_id, pathogen_species_ncbi, number_tested, number_positive, assay) |>
+  left_join(arha_db$host |>
+              select(host_record_id, study_id, host_species, host_genus, gadm_country, start_date), by = "host_record_id") |>
+  mutate(host_species = case_when(is.na(host_species) ~ paste0(host_genus, " spp."),
+                                  TRUE ~ host_species)) |>
+  filter(
+    number_positive >= 1,
+    gadm_country %in% endemic_countries
+  ) |>
+  left_join(arha_db$citations, by = "study_id") |>
+  group_by(host_species, assay) |>
+  slice_min(order_by = start_date, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+manual_records <- tribble(
+  ~study_id, ~host_species, ~host_genus, ~gadm_country, ~assay, ~publication_year, ~author, ~doi,
+  "ds_402", "Mastomys natalensis", "Mastomys", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
+  "ds_402", "Rattus rattus", "Rattus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
+  "ds_402", "Mus minutoides", "Mus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
+  "ds_403", "Mastomys natalensis", "Mastomys", "Sierra Leone", "Culture", 1974, "Monath, T. P., et al.", "https://www.jstor.org/stable/1738849"
+)
+
+# --- 4. Prepare Data for Table Display ---
+# This selects and formats the columns for the final table.
+combined_data_for_table <- bind_rows(arha_records, manual_records) |>
+  group_by(host_genus) |>
+  mutate(min_year_in_genus = min(publication_year, na.rm = TRUE)) |>
+  ungroup() |>
+  mutate(
+    host_genus = fct_reorder(host_genus, min_year_in_genus),
+    author_short = str_extract(author, "[^,]+"),
+    reference_text = paste(author_short, publication_year, sep = ", "),
+    link = case_when(
+      full_text_id == "ft_783" ~ "https://biblio.naturalsciences.be/associated_publications/bjz/bibliographic-references/139-2/bjz-139_2-p93-102.pdf",
+      str_detect(doi, fixed("ezaccess.libraries.psu.edu")) ~ str_replace(doi, fixed("pubmed-ncbi-nlm-nih-gov.ezaccess.libraries.psu.edu"), "pubmed.ncbi.nlm.nih.gov"),
+      !is.na(doi) & str_starts(doi, "10\\.") ~ paste0("https://doi.org/", doi),
+      !is.na(doi) ~ doi, # This handles pre-existing full URLs
+      TRUE ~ NA_character_
+    )
+  ) |>
+  arrange(host_genus, host_species, publication_year) |>
+  select(
+    Year = publication_year,
+    Country = gadm_country,
+    Species = host_species,
+    Assay = assay,
+    References = reference_text,
+    link,
+    Genus = host_genus
+  )
+
+# --- 5. Generate the kableExtra HTML Table ---
+# Dynamically create the index for grouping rows by genus.
+tbl_groups <- table(combined_data_for_table$Genus)
+names(tbl_groups) <- levels(combined_data_for_table$Genus)
+
+combined_data_for_table |>
+  mutate(References = cell_spec(References, "html", link = link)) |>
+  select(-link, -Genus) |>
+  kbl("html", escape = FALSE, caption = "Comprehensive list of Mammarenavirus lassaense findings in hosts across West Africa.") |>
+  pack_rows(index = tbl_groups) |>
+  kable_styling(bootstrap_options = c("hover", "condensed"),
+                font_size = 10)
+
+```
+
+## Reported human cases
+
+```{r lassa-map, echo = FALSE, message = FALSE, warning = FALSE}
+lassa_raw <- read_csv(here("lassa", "data", "confirmed_cases.csv"))
+
+lassa_clean <- lassa_raw %>%
+  filter(case_when(country == "nigeria" ~ region == "all",
+                   TRUE ~ confirmed_cases > 0)) %>%
+  group_by(year, country) %>%
+  summarise(confirmed_cases = sum(confirmed_cases)) %>%
+  mutate(country = str_to_title(country),
+         country = recode(country, 
+                          "Cote D'ivoire" = "Côte d'Ivoire"),
+         # confirmed_cases = log(confirmed_cases),
+         endemic = factor(case_when(country %in% c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
+                                                   "Nigeria", "Sierra Leone", "Togo") ~ "",
+                             TRUE ~ "Non-endemic")),
+         country_label = factor(case_when(country %in% c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
+                                                         "Nigeria", "Sierra Leone", "Togo") ~ country,
+                                          TRUE ~ "Combined"),
+                                levels = c("Benin", "Ghana", "Guinea", "Liberia", "Mali",
+                                           "Nigeria", "Sierra Leone", "Togo", "Combined"))) %>%
+  filter(year >= 2011)
+
+colours_wa <- c("Endemic countries" = "white",
+                "Benin" = "#871a10",
+                "Ghana" = "#000000",
+                "Guinea" = "#be2a2c",
+                "Liberia" = "#0a2864",
+                "Mali" = "#50ab4a",
+                "Nigeria" = "#398053",
+                "Sierra Leone" = "#2f71c1",
+                "Togo" = "#f7d147",
+                " " = "white",
+                "Non-endemic countries" = "white",
+                "Côte d'Ivoire" = "#e6853b",
+                "Burkina Faso" = "#107d87")
+
+lassa_clean$country = factor(lassa_clean$country, levels=c("Endemic countries", "Benin", "Ghana", "Guinea",
+                                                           "Liberia", "Mali", "Nigeria", "Sierra Leone", "Togo", " ",
+                                                           "Non-endemic countries", "Côte d'Ivoire", "Burkina Faso"))
+
+case_plot <- ggplot(lassa_clean, aes(x = year, y = confirmed_cases, fill = country)) +
+  geom_col() +
+  scale_x_continuous(breaks = seq(from = min(lassa_clean$year), to = max(lassa_clean$year), by = 2)) +
+  scale_y_continuous(breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_fill_manual(values = colours_wa,
+                    drop=FALSE) +
+  guides(fill=guide_legend(ncol=1)) +
+  theme(legend.key = element_rect(fill=NA),
+        legend.title = element_blank()) +
+  facet_wrap(~ endemic + country_label , scales = "free_y") +
+  annotate(geom = "rect", xmin = 2013, xmax = 2016, ymin = -Inf, ymax = Inf, alpha = 0.1) +
+  annotate(geom = "rect", xmin = 2020, xmax = 2024, ymin = -Inf, ymax = Inf, alpha = 0.1) +
+  annotate(geom = "rect", xmin = year(Sys.Date()), xmax = year(Sys.Date()) + 1, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "orange") +
+  theme_minimal() +
+  labs(x = element_blank(),
+       y = "Confirmed cases",
+       fill = element_blank())
+
+mastomys_data <- read_rds(here("lassa", "data", "mastomys_data.rds"))
+
+mastomys_distribution <- ggplot() +
+  geom_sf(data = mastomys_data$wa_countries, aes(fill = endemic), lwd = 0.1) +
+  geom_sf_text(data = mastomys_data$wa_countries, aes(label = NAME_0), size = 5) +
+  scale_fill_manual(values = c("Endemic" = "#f2aa86",
+                               "Outbreaks" = "#fef8e1",
+                               "No cases" = "#fafafa")) +
+  geom_sf(data = mastomys_data$iucn, fill = "#C12D20", alpha = 0.4, lwd = 0.1) +
+  theme_minimal() +
+  labs(fill = element_blank(),
+       x = element_blank(),
+       y = element_blank()) +
+  coord_sf(xlim = c(mastomys_data$afr_bbox[1], mastomys_data$afr_bbox[3]), ylim = c(mastomys_data$afr_bbox[2], mastomys_data$afr_bbox[4])) +
+  annotation_scale(height = unit(0.1, "cm")) +
+  annotation_north_arrow(style = north_arrow_minimal(text_size = 7),
+                         location = "tl")
+
+# This map has been produced using IUCN range data and country shapefiles. The code is available here: https://github.com/DidDrog11/miscellaneous/blob/main/scripts/lassa_cases.R
+
+combined_plot <- plot_grid(case_plot, mastomys_distribution, nrow = 2,
+                           labels = c("A", "B"), greedy = TRUE)
+save_plot(here("lassa", "images", "lassa_cases_endemic.svg"), combined_plot, base_height = c(8, 6), base_width = c(12, 12))
+
+```
+
+![A) Reported human cases of Lassa fever, 2011 onwards. The first grey band (2013-2016) is the West African Ebola epidemic, the second (2020-) the COVID-19 pandemic, and the orange band an incomplete year of reporting. B) Predicted distribution of *Mastomys natalensis* over known endemic countries.](/lassa/images/lassa_cases_endemic.svg)
+
+::: {.callout-warning appearance="minimal"}
+The case figure is current to 2023-07-13 and needs regenerating.
+:::
