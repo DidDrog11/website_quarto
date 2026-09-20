@@ -52,6 +52,24 @@ unpaywall_pdf <- function(u) {
        licence = l$license %||% NA_character_, host = l$host_type %||% NA_character_)
 }
 
+# bioRxiv and medRxiv (prefixes 10.1101 and, from 2025, 10.64898) serve the
+# PDF at a predictable URL. Unpaywall lags on the new prefix, so ask the
+# bioRxiv API directly for the latest version.
+biorxiv_pdf <- function(doi) {
+  if (is.na(doi) || !grepl("^10\\.(1101|64898)/", doi)) return(NULL)
+  for (server in c("biorxiv", "medrxiv")) {
+    r <- fetch_json(sprintf("https://api.biorxiv.org/details/%s/%s", server, doi))
+    coll <- r$collection %||% list()
+    if (!length(coll)) next
+    latest <- coll[[length(coll)]]
+    v <- latest$version %||% "1"
+    return(list(url = sprintf("https://www.%s.org/content/%sv%s.full.pdf", server, doi, v),
+                version = "submittedVersion", licence = latest$license %||% NA_character_,
+                host = server, source = "biorxiv-api", which = "preprint"))
+  }
+  NULL
+}
+
 candidates <- function(row) {
   out <- list()
   # 1. Published version, open access.
@@ -68,9 +86,16 @@ candidates <- function(row) {
   if (!is.na(row$preprint_doi) && row$preprint_doi != "") {
     q <- unpaywall_pdf(unpaywall(row$preprint_doi))
     if (!is.null(q)) out[[length(out) + 1]] <- c(q, source = "unpaywall", which = "preprint")
+    b <- biorxiv_pdf(row$preprint_doi)
+    if (!is.null(b)) out[[length(out) + 1]] <- b
+  }
+  # 4. A preprint-only entry hosted on bioRxiv or medRxiv.
+  if (row$kind == "preprint") {
+    b <- biorxiv_pdf(row$doi)
+    if (!is.null(b)) out[[length(out) + 1]] <- b
   }
   # A preprint-only entry: its own DOI is the preprint.
-  if (row$kind == "preprint" && length(out)) out[[1]]$which <- "preprint"
+  if (row$kind == "preprint") for (k in seq_along(out)) out[[k]]$which <- "preprint"
   out
 }
 
@@ -124,20 +149,41 @@ for (i in seq_len(nrow(rows))) {
   row <- rows[i, ]
   have <- existing_file(row$id, row$year)
   if (!is.na(have)) {
-    if (!row$id %in% log$id) {
-      log <- bind_rows(log, tibble(id = row$id, doi = row$doi, file = have,
-                                   which = if (grepl("_preprint", have)) "preprint" else "published",
-                                   version = NA, source = "manual", url = NA, licence = NA,
-                                   fetched = as.character(Sys.Date())))
+    # A file on disk wins over whatever the log said last time (including a
+    # failed or none outcome), so hand-added copies get logged as manual.
+    logged_file <- log$file[log$id == row$id][1]
+    if (is.na(logged_file) || logged_file != have) {
+      log <- log |> filter(id != row$id) |>
+        bind_rows(tibble(id = row$id, doi = row$doi, file = have,
+                         which = if (grepl("_preprint", have)) "preprint" else "published",
+                         version = NA, source = "manual", url = NA, licence = NA,
+                         fetched = as.character(Sys.Date())))
+      write_csv(log, log_path, na = "")
+    }
+    next
+  }
+  # pdf_url in the overrides file means "do not fetch": either a publisher-hosted
+  # PDF the site links to, or "none" for a paywalled paper with no author copy.
+  if (!is.na(row$pdf_url) && row$pdf_url != "") {
+    if (!row$id %in% log$id || !log$which[log$id == row$id][1] %in% c("external", "skipped")) {
+      log <- log |> filter(id != row$id) |>
+        bind_rows(tibble(id = row$id, doi = row$doi, file = NA,
+                         which = if (row$pdf_url == "none") "skipped" else "external",
+                         version = NA, source = "overrides",
+                         url = if (row$pdf_url == "none") NA else row$pdf_url,
+                         licence = NA, fetched = as.character(Sys.Date())))
+      write_csv(log, log_path, na = "")
     }
     next
   }
   message(sprintf("[%d/%d] %s", i, nrow(rows), str_trunc(row$title, 70)))
   got <- FALSE
+  tried <- character()
   for (cand in candidates(row)) {
     suffix <- if (cand$which == "preprint") "_preprint" else ""
     dest <- file.path(pdf_dir, paste0(row$year, "_", row$id, suffix, ".pdf"))
     message(sprintf("    trying %s copy from %s", cand$which, cand$source))
+    tried <- c(tried, cand$url)
     if (download_pdf(cand$url, dest)) {
       log <- log |> filter(id != row$id) |>
         bind_rows(tibble(id = row$id, doi = row$doi, file = basename(dest), which = cand$which,
@@ -148,22 +194,42 @@ for (i in seq_len(nrow(rows))) {
     }
   }
   if (!got) {
+    # "failed": an open copy exists but the download did not work (bot
+    # protection, redirect to a landing page). The URLs are logged so it can
+    # be fetched in a browser. "none": no open copy was found anywhere.
     log <- log |> filter(id != row$id) |>
-      bind_rows(tibble(id = row$id, doi = row$doi, file = NA, which = "none", version = NA,
-                       source = NA, url = NA, licence = NA, fetched = as.character(Sys.Date())))
+      bind_rows(tibble(id = row$id, doi = row$doi, file = NA,
+                       which = if (length(tried)) "failed" else "none", version = NA,
+                       source = NA, url = if (length(tried)) paste(tried, collapse = " ") else NA,
+                       licence = NA, fetched = as.character(Sys.Date())))
   }
   write_csv(log, log_path, na = "")  # save progress after every entry
 }
 
+# Drop rows for entries no longer in publications.csv (for example a preprint
+# that has since been paired with its paper and is now part of that row).
+stale <- log |> filter(!id %in% rows$id)
+if (nrow(stale)) {
+  message(sprintf("  %d stale log rows removed (entries no longer listed): %s",
+                  nrow(stale), paste(stale$id, collapse = ", ")))
+  log <- log |> filter(id %in% rows$id)
+}
 write_csv(log, log_path, na = "")
 
 # ---- Summary ----------------------------------------------------------------
 
 tally <- log |> filter(id %in% rows$id) |> count(which)
 print(tally)
+failed <- log |> filter(id %in% rows$id, which == "failed") |>
+  left_join(rows |> select(id, title, year), by = "id")
+if (nrow(failed)) {
+  message("An open copy exists but the download failed. Fetch it in a browser and save as papers/<year>_<id>.pdf (add _preprint if it is the preprint):")
+  pwalk(list(failed$year, failed$id, failed$title, failed$url),
+        function(y, i, t, u) message("  - ", y, "_", i, "  ", str_trunc(t %||% "", 50), "\n      ", u))
+}
 none <- log |> filter(id %in% rows$id, which == "none") |>
   left_join(rows |> select(id, title, year), by = "id")
 if (nrow(none)) {
   message("No open-access copy found. Add the accepted manuscript by hand as papers/<year>_<id>.pdf:")
-  walk2(none$id, none$title, ~ message("  - ", .x, "  ", str_trunc(.y %||% "", 60)))
+  walk2(paste0(none$year, "_", none$id), none$title, ~ message("  - ", .x, "  ", str_trunc(.y %||% "", 60)))
 }

@@ -12,3 +12,6 @@
 
 # Plain PDFs of paywalled papers. Only the encrypted .enc copies are committed.
 /private/*.pdf
+
+# Personal archive of paper PDFs collected by scripts/fetch_pdfs.R. Not served; too large for git.
+/papers/

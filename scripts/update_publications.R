@@ -40,25 +40,38 @@ orcid <- fetch_json(sprintf("https://pub.orcid.org/v3.0/%s/works", orcid_id),
                     headers = list(Accept = "application/json"))
 if (is.null(orcid) || !length(orcid$group)) stop("ORCID returned no works. Is the API up?")
 
-orcid_works <- map_dfr(orcid$group, function(g) {
+# ORCID groups every DOI it considers the same work: a preprint alongside its
+# paper, and every version of a versioned DOI. Keep one DOI per base (the
+# newest version) and let distinct bases through as separate works that share
+# the group's summary metadata. group_id is kept so a group holding both a
+# preprint and an article becomes a known pair later.
+orcid_works <- imap_dfr(orcid$group, function(g, idx) {
   ids  <- g$`external-ids`$`external-id` %||% list()
   dois <- vapply(ids, function(i) {
     if (identical(tolower(i$`external-id-type` %||% ""), "doi")) i$`external-id-value` else NA_character_
   }, character(1))
-  dois <- dois[!is.na(dois)]
+  dois <- unique(doi_norm(dois[!is.na(dois)]))
   s <- g$`work-summary`[[1]]
-  tibble(
-    doi          = if (length(dois)) doi_norm(dois[[1]]) else NA_character_,
+  meta <- tibble(
+    group_id     = as.integer(idx),
     orcid_title  = s$title$title$value %||% NA_character_,
     orcid_type   = s$type %||% NA_character_,
     orcid_year   = suppressWarnings(as.integer(s$`publication-date`$year$value %||% NA)),
     put_code     = as.integer(s$`put-code` %||% NA),
     orcid_source = s$source$`source-name`$value %||% NA_character_
   )
+  if (!length(dois)) return(bind_cols(tibble(doi = NA_character_), meta))
+  tibble(doi = dois, base = doi_base(dois), version = doi_version(dois)) |>
+    group_by(base) |>
+    arrange(desc(version), .by_group = TRUE) |>
+    slice(1) |>
+    ungroup() |>
+    select(doi) |>
+    bind_cols(meta)
 })
 
-message(sprintf("  %d ORCID work groups, %d with a DOI",
-                nrow(orcid_works), sum(!is.na(orcid_works$doi))))
+message(sprintf("  %d ORCID work groups, %d DOIs after keeping one per version",
+                length(orcid$group), sum(!is.na(orcid_works$doi))))
 
 no_doi <- orcid_works |> filter(is.na(doi))
 if (nrow(no_doi)) {
@@ -70,16 +83,21 @@ orcid_works <- orcid_works |> filter(!is.na(doi))
 # ---- 2. Overrides -----------------------------------------------------------
 
 overrides <- read_csv(overrides_path, col_types = cols(.default = col_character()),
-                      show_col_types = FALSE) |>
+                      show_col_types = FALSE)
+for (col in c("tier", "page", "note", "action", "comment", "preprint_doi", "pdf_url")) {
+  if (!col %in% names(overrides)) overrides[[col]] <- ""
+}
+overrides <- overrides |>
   mutate(doi = doi_norm(doi)) |>
-  mutate(across(c(tier, page, note, action, comment), ~ replace_na(.x, "")))
+  mutate(across(c(tier, page, note, action, comment, preprint_doi, pdf_url), ~ replace_na(.x, ""))) |>
+  mutate(preprint_doi = ifelse(preprint_doi == "", "", doi_norm(preprint_doi)))
 
 bad_tier <- overrides |> filter(!tier %in% c("", "page", "card", "line"))
 if (nrow(bad_tier)) stop("Unknown tier in overrides: ", paste(bad_tier$tier, collapse = ", "))
 
 added <- overrides |>
   filter(action == "add", !doi %in% orcid_works$doi) |>
-  transmute(doi, orcid_title = NA_character_, orcid_type = "added",
+  transmute(doi, group_id = NA_integer_, orcid_title = NA_character_, orcid_type = "added",
             orcid_year = NA_integer_, put_code = NA_integer_, orcid_source = "overrides")
 if (nrow(added)) message(sprintf("  %d DOIs added from overrides (missing from ORCID)", nrow(added)))
 
@@ -146,11 +164,29 @@ classify <- function(df) {
 }
 pubs <- classify(pubs)
 
-# Crossref relations. Map any versioned DOI in a relation onto the DOI we kept.
+# Map any versioned DOI onto the DOI we kept for that base.
 to_kept <- function(d) {
   idx <- match(doi_base(d), pubs$base)
   ifelse(is.na(idx), doi_norm(d), pubs$doi[idx])
 }
+
+# Pair sources, in priority order:
+# 1. preprint_doi set on an article's row in the overrides file,
+# 2. an ORCID group that holds both a preprint and an article,
+# 3. Crossref is-preprint-of / has-preprint relations,
+# 4. exact title match (added further down).
+pair_manual <- overrides |>
+  filter(preprint_doi != "") |>
+  transmute(preprint_doi = to_kept(preprint_doi), published_doi = to_kept(doi))
+
+pair_orcid <- pubs |>
+  filter(!is.na(group_id)) |>
+  group_by(group_id) |>
+  filter(n() > 1, any(kind == "preprint"), any(kind == "article")) |>
+  summarise(preprint_doi = first(doi[kind == "preprint"]),
+            published_doi = first(doi[kind == "article"]), .groups = "drop") |>
+  select(-group_id)
+
 pair_rel <- bind_rows(
   pubs |> filter(kind == "preprint", !is.na(is_preprint_of)) |>
     transmute(preprint_doi = doi, published_doi = to_kept(is_preprint_of)),
@@ -159,7 +195,12 @@ pair_rel <- bind_rows(
 )
 
 # Published versions ORCID does not hold: fetch and add them.
-missing_pub <- setdiff(pair_rel$published_doi, pubs$doi)
+missing_pub <- setdiff(c(pair_manual$published_doi, pair_rel$published_doi), pubs$doi)
+missing_pre <- setdiff(pair_manual$preprint_doi, pubs$doi)
+if (length(missing_pre)) {
+  message("  preprint_doi values in overrides that are not in ORCID (pair ignored until added):")
+  walk(missing_pre, ~ message("    - ", .x))
+}
 if (length(missing_pub)) {
   message(sprintf("  %d published versions found via preprint relations but absent from ORCID; adding:", length(missing_pub)))
   walk(missing_pub, ~ message("    - ", .x, "  (add it to ORCID via search-and-link)"))
@@ -177,7 +218,7 @@ pair_title <- inner_join(
   by = "key", na_matches = "never"
 ) |> select(-key)
 
-pairs <- bind_rows(pair_rel, pair_title) |>
+pairs <- bind_rows(pair_manual, pair_orcid, pair_rel, pair_title) |>
   filter(!is.na(preprint_doi), !is.na(published_doi), preprint_doi != published_doi) |>
   distinct(preprint_doi, .keep_all = TRUE) |>
   distinct(published_doi, .keep_all = TRUE)
@@ -194,14 +235,17 @@ entries <- entries |>
 
 # ---- 7. Tier and output -----------------------------------------------------
 
-ov <- overrides |> select(doi, tier, page, note) |> mutate(across(c(tier, page, note), ~ na_if(.x, "")))
+ov <- overrides |> select(doi, tier, page, note, pdf_url) |>
+  mutate(across(c(tier, page, note, pdf_url), ~ na_if(.x, "")))
 entries <- entries |>
   left_join(ov, by = "doi", na_matches = "never") |>
-  left_join(ov |> rename(preprint_doi = doi, tier_pp = tier, page_pp = page, note_pp = note),
+  left_join(ov |> rename(preprint_doi = doi, tier_pp = tier, page_pp = page,
+                         note_pp = note, pdf_url_pp = pdf_url),
             by = "preprint_doi", na_matches = "never") |>
   mutate(tier = coalesce(tier, tier_pp, "line"),
          page = coalesce(page, page_pp, ""),
-         note = coalesce(note, note_pp, ""))
+         note = coalesce(note, note_pp, ""),
+         pdf_url = coalesce(pdf_url, pdf_url_pp))
 
 # A page tier needs a page file. Warn rather than stop so the CSV still builds.
 missing_pages <- entries |> filter(tier == "page", page == "" | !file.exists(here(page)))
@@ -229,6 +273,7 @@ out <- entries |>
     preprint_server,
     licence,
     pdf_link,
+    pdf_url,      # publisher-hosted open PDF set by hand in overrides; used when no local file
     orcid_type,
     orcid_source,
     put_code
@@ -245,4 +290,29 @@ if (file.exists(out_path)) {
 
 write_csv(out, out_path, na = "")
 message(sprintf("Wrote %d entries to %s", nrow(out), out_path))
+
+# Unpaired preprints whose title resembles an article's. These are candidates
+# only; confirm a pair by putting the preprint DOI in the article's
+# preprint_doi column in the overrides file.
+title_words <- function(x) unique(str_split(norm_title(x), " ")[[1]])
+unpaired <- out |> filter(kind == "preprint", !is.na(title))
+articles <- out |> filter(kind == "article", !is.na(title))
+if (nrow(unpaired) && nrow(articles)) {
+  suggestions <- map_dfr(seq_len(nrow(unpaired)), function(i) {
+    w <- title_words(unpaired$title[i])
+    sim <- vapply(articles$title, function(t) {
+      v <- title_words(t)
+      length(intersect(w, v)) / length(union(w, v))
+    }, numeric(1))
+    k <- which.max(sim)
+    tibble(preprint_doi = unpaired$doi[i], published_doi = articles$doi[k],
+           similarity = round(sim[k], 2), preprint_title = str_trunc(unpaired$title[i], 45))
+  }) |>
+    filter(similarity >= 0.4) |>
+    arrange(desc(similarity))
+  if (nrow(suggestions)) {
+    message(sprintf("  %d unpaired preprints resemble an article title. Confirm by adding preprint_doi to the article's overrides row:", nrow(suggestions)))
+    print(suggestions, n = Inf, width = 200)
+  }
+}
 print(count(out, kind, tier) |> arrange(kind, tier), n = Inf)
