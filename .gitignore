@@ -5,3 +5,10 @@
 
 /.quarto/
 /_site/
+**/*.quarto_ipynb
+
+# API response cache written by scripts/update_publications.R
+/data/cache/
+
+# Plain PDFs of paywalled papers. Only the encrypted .enc copies are committed.
+/private/*.pdf

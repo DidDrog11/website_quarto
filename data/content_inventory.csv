@@ -1,0 +1,49 @@
+source,live_url,title,date,tier,decision,target_url,note
+index.qmd,/,Home,,programme,keep,,Rewritten around the habitat-gradient hero; highlights derived from data/news.yml
+about.qmd,/about.html,About me,,programme,keep,,Affiliation and email move to _variables.yml
+consultancy.qmd,/consultancy.html,Consultancy,,programme,keep,,Absorbs the ECDC e-learning page
+cv.qmd,/cv.pdf,Curriculum Vitae,,programme,keep,,Direct navbar link to the PDF
+lassa.qmd,/lassa.html,Lassa Fever,,programme,keep,,Split narrative into Sierra Leone host ecology and Nigeria human epidemiology
+lassa/SCAPES.qmd,/lassa/SCAPES.html,SCAPES,2025-09-24,programme,keep,,Programme page for the Nigeria human epidemiology strand; status needs updating as the Penn State role ends
+arha.qmd,/arha.html,Project ArHa,,programme,keep,,Hosts the globe component in step 3
+rodent_ecology.qmd,/rodent_ecology.html,Rodent Ecology,,programme,keep,,
+rodent_ecology/sintring.qmd,/rodent_ecology/sintring.html,Microbial sensors and functional connectivity in Fennoscandian rodents,2026-09-01,programme,keep,,The Uppsala programme; now current rather than projected
+open_science.qmd,/open_science.html,Open Science and Data Tools,,programme,keep,,
+policy.qmd,/policy.html,Strategy and Policy,,programme,keep,,
+lassa/rodent_trapping.qmd,/lassa/rodent_trapping.html,Land use gradients drive spatial variation in Lassa fever host communities,2025-09-23,output,keep,,Has its own figure; source of the gradient idea
+lassa/rodent_network.qmd,/lassa/rodent_network.html,Contact networks of small mammals,2025-09-23,output,keep,,
+lassa/lassa_urbanisation.qmd,/lassa/lassa_urbanisation.html,The socio-economic shield limits Lassa virus spillover in urban West Africa,2025-12-17,output,keep,,Published in Epidemiology and Infection; update status tag
+lassa/scapes_human_serosurvey.qmd,/lassa/scapes_human_serosurvey.html,Local heterogeneity in Lassa fever serology in rural Nigeria,2026-05-21,output,keep,,
+lassa/rodent_trapping_review.qmd,/lassa/rodent_trapping_review.html,Rodent trapping studies as an overlooked information source,2023-01-27,output,keep,,Has data and a figure
+lassa/lassa_underreporting.qmd,/lassa/lassa_underreporting.html,Lassa fever cases suffer from severe under-reporting,2022-11-22,output,keep,,Has open data; feeds the case figure
+lassa/lassa_fever_chapter.qmd,/lassa/lassa_fever_chapter.html,Book chapter: a comprehensive One Health review of Lassa fever,2025-09-23,output,retire,/lassa.html,Becomes a publications-list line once the chapter is out
+lassa/lassa_phylogenetics.qmd,/lassa/lassa_phylogenetics.html,Inference from phylogeography and molecular epidemiology of Lassa virus is limited,2022-10-01,output,retire,/lassa.html,Publications list
+lassa/one_health.qmd,/lassa/one_health.html,The niche of One Health approaches in Lassa fever surveillance and control,2021-04-24,output,retire,/lassa.html,Publications list
+lassa/lips_assay.qmd,/lassa/lips_assay.html,Development of a species agnostic assay for Lassa mammarenavirus,2022-10-01,output,retire,/lassa.html,In preparation since 2022; retire unless the assay work is being published
+lassa/rodent_activity.qmd,/lassa/rodent_activity.html,Investigating rodent activity within houses in eastern Sierra Leone,2022-10-01,output,retire,/lassa.html,In preparation since 2022
+lassa/web_app.qmd,/lassa/web_app.html,A web-based application to explore rodent trapping data,2022-11-02,output,retire,/open_science.html,Retire if superseded by the ArHa app; otherwise merge into open_science
+arha/arena_hanta.qmd,/arha/arena_hanta.html,Project ArHa: a global database of arenaviruses and hantaviruses,2025-09-24,output,keep,,Candidate home for the globe
+arha/reservoir_trait.qmd,/arha/reservoir_trait.html,Viral reservoir status in small mammals emerges as a predictable life-history trait,2026-06-03,output,keep,,Synanthropy result behind the landing-page organising idea
+rodent_ecology/lancet_pillars_view.qmd,/rodent_ecology/lancet_pillars_view.html,Reducing the threats of rodent-borne zoonoses: the three pillars,2025-08-26,output,keep,,
+open_science/map_liberator.qmd,/open_science/map_liberator.html,Map Liberator,2026-01-26,output,keep,,Has an app
+open_science/site_tool.qmd,/open_science/site_tool.html,SiteTool,2026-04-14,output,keep,,Has an app
+open_science/minimum_data_standard.qmd,/open_science/minimum_data_standard.html,A minimum data standard for wildlife disease research and surveillance,2025-06-21,output,keep,,
+policy/one_health_trial_design.qmd,/policy/one_health_trial_design.html,A One Health trial design to accelerate Lassa fever vaccines,2025-09-24,output,keep,,Nature Medicine; drop the Forthcoming tag
+policy/transmissible_vaccines.qmd,/policy/transmissible_vaccines.html,Developing transmissible vaccines for animal infections,2025-02-28,output,keep,,Science
+policy/bon_framework.qmd,/policy/bon_framework.html,A protocol for biodiversity-informed wildlife disease surveillance,2025-10-01,output,keep,,
+policy/ecdc_elearning.qmd,/policy/ecdc_elearning.html,E-learning module for the ECDC,2025-09-24,output,merge,/consultancy.html,One paragraph on the consultancy page
+covid_19.qmd,/covid_19.html,COVID-19,,archive,merge,/outbreak_response.html,New single past-tense page covering COVID-19 and mpox response work 2020 to 2022
+covid/covid_clinical.qmd,/covid/covid_clinical.html,Clinical response to COVID-19,2022-11-01,archive,merge,/outbreak_response.html,One list entry
+covid/covid_modelling.qmd,/covid/covid_modelling.html,Modelling COVID-19 transmission and control strategies,2022-11-01,archive,merge,/outbreak_response.html,One list entry
+covid/covid_smoking.qmd,/covid/covid_smoking.html,Smoking and COVID-19,2022-11-01,archive,merge,/outbreak_response.html,One list entry; living review versions collapse to one
+covid/covid_transmission.qmd,/covid/covid_transmission.html,International transmission of a newly emerging pathogen,2022-11-01,archive,merge,/outbreak_response.html,One list entry
+covid/omicron.qmd,/covid/omicron.html,Response to the emerging Omicron variant,2022-11-01,archive,merge,/outbreak_response.html,One list entry; UKHSA work also on About
+covid/sickle_cell.qmd,/covid/sickle_cell.html,Sickle cell disease and COVID-19,2022-11-01,archive,merge,/outbreak_response.html,One list entry
+monkeypox.qmd,/monkeypox.html,mpox,,archive,merge,/outbreak_response.html,
+monkeypox/community_transmission.qmd,/monkeypox/community_transmission.html,Community transmission of monkeypox in the United Kingdom,2022-06-02,archive,merge,/outbreak_response.html,One list entry
+monkeypox/monkeypox_emergence.qmd,/monkeypox/monkeypox_emergence.html,Increased outbreaks of monkeypox highlight gaps in disease burden,2022-05-28,archive,merge,/outbreak_response.html,One list entry; mpox host table moves here or to the publications data
+amr.qmd,/amr.html,Antimicrobial Resistance,,archive,merge,/others.html,No leaf pages exist; one paragraph on the earlier-work page
+others.qmd,/others.html,Other work,,archive,keep,,Retitle as Earlier work; short paragraph per topic instead of leaf pages
+others/asf.qmd,/others/asf.html,Modelling range expansion of African swine fever,2022-11-01,archive,merge,/others.html,In preparation since 2022; keep the framework figure if worth it
+others/digital_health.qmd,/others/digital_health.html,Digital healthcare interventions for sustained behaviour change,2022-10-01,archive,merge,/others.html,
+others/pprv.qmd,/others/pprv.html,Sensitivity and specificity of assays for peste des petits ruminants,2022-11-01,archive,merge,/others.html,In preparation since 2022
