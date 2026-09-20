@@ -1,26 +1,27 @@
 doi,tier,page,note,action,preprint_doi,pdf_url,comment
-10.1111/1365-2656.70187,page,lassa/rodent_trapping.qmd,,,,,Land use gradients and Lassa host communities. Journal of Animal Ecology. Source of the landing-page gradient.
-10.4269/ajtmh.25-0120,page,lassa/rodent_network.qmd,,,,,Contact networks of small mammals. AJTMH. Preprint 10.1101/2025.02.25.639449 pairs automatically.
-10.1017/S0950268826101824,page,lassa/lassa_urbanisation.qmd,,add,10.64898/2025.12.17.25342147,,Socio-economic shield. Epidemiology and Infection. Journal version missing from ORCID as of 2026-09-20.
-10.1371/journal.pntd.0014379,page,lassa/scapes_human_serosurvey.qmd,,,10.64898/2025.12.17.25342407,,Lassa serology in rural Nigeria. PLoS NTD. Preprint title differs so paired here.
-10.64898/2026.06.03.729761,page,arha/reservoir_trait.qmd,,,,,Reservoir status as a life-history trait. Preprint; the synanthropy result.
-10.12688/wellcomeopenres.24037.2,page,arha/arena_hanta.qmd,,,10.1101/2025.01.17.633514,,ArHa protocol. Wellcome Open Research. Page also carries the database and the globe.
-10.1038/s41591-025-04018-6,page,policy/one_health_trial_design.qmd,,,,https://www.nature.com/articles/s41591-025-04018-6.pdf,One Health trial design. Nature Medicine. Free to read but not CC-licensed; link to the publisher PDF rather than hosting it.
-10.1126/science.adn3231,page,policy/transmissible_vaccines.qmd,,add,,,Transmissible vaccines. Science. Missing from ORCID as of 2026-09-20.
-10.1016/j.lanplh.2025.101300,page,rodent_ecology/lancet_pillars_view.qmd,,add,,,Three pillars of rodent-borne disease ecology. Lancet Planetary Health. Missing from ORCID.
-10.1038/s41597-025-05332-x,page,open_science/minimum_data_standard.qmd,,add,10.32942/X2TW4J,,Minimum data standard. Scientific Data. Missing from ORCID.
-10.1371/journal.pesy.0000023,page,policy/bon_framework.qmd,,,10.32942/X21D36,,Biodiversity-informed surveillance protocol. PLOS Ecosystems. EcoEvoRxiv preprint paired here.
-10.64898/2026.01.26.26344575,page,open_science/map_liberator.qmd,,,,,Map Liberator. Preprint with app.
-10.1002/ecog.08455,page,open_science/site_tool.qmd,,,10.32942/X2G65X,,SiteTool. Ecography. Preprint title differs so paired here.
-10.1093/inthealth/ihac076,card,,,,,,Lassa under-reporting. International Health. Preprint 10.32388/R0Y17E pairs automatically. Has open data.
-10.1371/journal.pntd.0010772,card,,,,,,Rodent trapping studies review. PLoS NTD. Preprint pairs automatically.
-10.1186/s12941-021-00431-0,card,,,,,,Niche of One Health approaches in Lassa fever.
-10.1371/journal.pgph.0002159,card,,,,,,Sampling and sequencing biases of Lassa mammarenavirus. PLoS Global Public Health.
-10.12688/wellcomeopenres.25937.2,card,,,,10.1101/2025.09.12.25335176,,SCAPES protocol. Wellcome Open Research. medRxiv preprint paired here. Programme page is lassa/SCAPES.qmd.
-10.2807/1560-7917.ES.2022.27.22.2200422,card,,,,,,Community transmission of mpox in the UK. Eurosurveillance.
-10.1016/j.ijid.2022.05.058,card,,,add,,,Increased outbreaks of mpox in sub-Saharan Africa. IJID. Only the Zenodo mirror is on ORCID.
+10.1111/1365-2656.70187,page,lassa/sierra_leone.qmd,,,,,Land use gradients. J Anim Ecol. Sierra Leone PhD programme page.
+10.4269/ajtmh.25-0120,page,lassa/sierra_leone.qmd,,,,,Contact networks of small mammals. AJTMH. Sierra Leone PhD programme page.
+10.1371/journal.pntd.0010772,page,lassa/sierra_leone.qmd,,,,,Rodent trapping studies review. PLoS NTD. Sierra Leone PhD programme page.
+10.1017/S0950268826101824,page,lassa/lassa_urbanisation.qmd,,add,10.64898/2025.12.17.25342147,,Socio-economic shield. Epidemiol Infect. Solo modelling paper; keeps its own page.
+10.1371/journal.pntd.0014379,page,lassa/SCAPES.qmd,,,10.64898/2025.12.17.25342407,,Lassa serology in rural Nigeria. PLoS NTD. SCAPES programme page.
+10.12688/wellcomeopenres.25937.2,page,lassa/SCAPES.qmd,,,10.1101/2025.09.12.25335176,,SCAPES protocol. Wellcome Open Res. SCAPES programme page.
+10.1093/inthealth/ihac076,page,lassa/lassa_epidemiology.qmd,,,,,Lassa under-reporting. Int Health. Lassa epidemiology page; follow-up work in progress.
+10.1371/journal.pgph.0002159,page,lassa/lassa_epidemiology.qmd,,,,,Sampling and sequencing biases of Lassa virus. PLOS GPH. Lassa epidemiology page.
+10.12688/wellcomeopenres.24037.2,page,arha.qmd,,,10.1101/2025.01.17.633514,,ArHa protocol. Wellcome Open Res. ArHa programme page.
+10.64898/2026.06.03.729761,page,arha.qmd,,,,,Reservoir status as a life-history trait. Preprint. ArHa programme page.
+10.64898/2026.06.10.731004,page,arha.qmd,,,,,Hantavirus reassortment determinants. Preprint. ArHa programme page.
+10.5281/zenodo.21978982,card,,,,,,ArHa software release. Data and code section.
+10.1038/s41591-025-04018-6,page,policy/vaccines.qmd,,,,https://www.nature.com/articles/s41591-025-04018-6.pdf,One Health trial design. Nature Medicine. Vaccines and trial design page. Free to read but not CC; link to publisher PDF.
+10.1126/science.adn3231,page,policy/vaccines.qmd,,add,,,Transmissible vaccines. Science. Vaccines and trial design page.
+10.1016/j.lanplh.2025.101300,page,rodent_ecology/lancet_pillars_view.qmd,,add,,,Three pillars of rodent-borne disease ecology. Lancet Planet Health. Own page.
+10.1371/journal.pesy.0000023,page,policy/surveillance.qmd,,,10.32942/X21D36,,Biodiversity-informed surveillance protocol. PLOS Ecosystems. Surveillance and outbreak response page.
+10.64898/2026.01.26.26344575,page,open_science/tools.qmd,,,,,Map Liberator. Preprint. Tools page.
+10.1002/ecog.08455,page,open_science/tools.qmd,,,10.32942/X2G65X,,SiteTool. Ecography. Tools page.
+10.1038/s41597-025-05332-x,page,open_science/tools.qmd,,add,10.32942/X2TW4J,,Minimum data standard. Scientific Data. Card on the tools page.
+10.1186/s12941-021-00431-0,card,,,,,,Niche of One Health approaches in Lassa fever. Card only.
+10.2807/1560-7917.ES.2022.27.22.2200422,card,,,,,,Community transmission of mpox in the UK. Eurosurveillance. Card only.
+10.1016/j.ijid.2022.05.058,card,,,add,,,Increased outbreaks of mpox in sub-Saharan Africa. IJID. Card only.
 10.60692/2a8k9-j6q73,,,,hide,,,Zenodo mirror of the IJID mpox paper above.
-10.5281/zenodo.21978982,card,,,,,,ArHa software release. Renders in the Data and code section.
 10.1111/add.15276,line,,,,10.32388/UJR2AW,,Smoking and SARS-CoV-2 living review. Addiction. Qeios living review is the preprint.
 10.12688/f1000research.55502.3,line,,,,10.1101/2020.11.26.20238469,,Smoking and hospitalisation for COVID-19. F1000Research. medRxiv preprint paired here.
 10.1016/j.appet.2012.07.017,line,,,,,none,Fat mass and eating behaviour. Appetite 2012. Paywalled and no author copy; citation only.
