@@ -21,7 +21,7 @@ about:
       url: "https://github.com/DidDrog11"
       icon: github
     - text: Email
-      url: "mailto:dzs6259@psu.edu"
+      url: "mailto:dsimons1987@gmail.com"  # literal: shortcodes do not resolve in about-link URLs; keep in step with _variables.yml
       icon: envelope-fill
     - text: "{{< fa clipboard >}} C.V."
       url: "cv.pdf"

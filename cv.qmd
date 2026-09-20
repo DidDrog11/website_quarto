@@ -35,7 +35,7 @@ format:
 
 \centering
 
-**dzs6259@psu.edu** • Stockholm, Sweden • [dsimons.org](https://www.dsimons.org) • [GitHub](https://github.com/DidDrog11) • [ORCID](https://orcid.org/0000-0001-9655-1656)
+**{{< var email >}}** • {{< var location >}} • [dsimons.org](https://www.dsimons.org) • [GitHub](https://github.com/DidDrog11) • [ORCID](https://orcid.org/0000-0001-9655-1656)
 
 \vspace{1cm}
 \noindent

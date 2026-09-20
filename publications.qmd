@@ -1,0 +1,168 @@
+---
+title: "Publications"
+description: "Papers, preprints, data and code, from ORCID."
+toc: false
+title-block-banner: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+Every entry is one piece of work. Where a preprint became a paper, both are linked so the
+progression is visible. The list is built from my [ORCID record](https://orcid.org/{{< var orcid >}}).
+Data and code releases are listed separately at the end.
+
+```{r}
+#| label: publications-list
+#| results: asis
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(dplyr, readr, stringr, purrr, here, yaml)
+
+pubs <- read_csv(here("data", "publications.csv"),
+                 col_types = cols(.default = col_character()), show_col_types = FALSE)
+
+pdf_log_path <- here("data", "pdfs.csv")
+pdfs <- if (file.exists(pdf_log_path)) {
+  read_csv(pdf_log_path, col_types = cols(.default = col_character()), show_col_types = FALSE)
+} else {
+  tibble(id = character(), which = character(), source = character(), url = character())
+}
+
+notes_dir <- here("data", "paper_notes")
+
+# ---- helpers ----------------------------------------------------------------
+
+owner_pattern <- "\\bSimons D\\b"
+
+format_authors <- function(a, max_show = 8) {
+  if (is.na(a) || a == "") return("")
+  parts <- str_split(a, ",\\s*")[[1]]
+  n <- length(parts)
+  if (n > max_show) {
+    keep <- seq_len(6)
+    me <- which(str_detect(parts, owner_pattern))
+    shown <- parts[keep]
+    if (length(me) && !me[1] %in% keep) shown <- c(shown, "…", parts[me[1]])
+    parts <- c(shown, "et al.")
+  }
+  out <- paste(parts, collapse = ", ")
+  str_replace_all(out, owner_pattern, "**Simons D**")
+}
+
+# A note is data/paper_notes/<id>.md with YAML front matter (figure, alt,
+# optional caption) and a short plain-language body.
+read_note <- function(id) {
+  f <- file.path(notes_dir, paste0(id, ".md"))
+  if (!file.exists(f)) return(NULL)
+  txt <- readLines(f, warn = FALSE, encoding = "UTF-8")
+  fm_end <- which(txt == "---")
+  meta <- list(); body <- txt
+  if (length(fm_end) >= 2 && fm_end[1] == 1) {
+    meta <- yaml::yaml.load(paste(txt[2:(fm_end[2] - 1)], collapse = "\n"))
+    body <- txt[(fm_end[2] + 1):length(txt)]
+  }
+  list(meta = meta, body = paste(body, collapse = "\n"))
+}
+
+# Open PDF link for an entry: a publisher link set in overrides, else the
+# open-access URL the fetch script found. Hand-added files are not served.
+pdf_link <- function(row) {
+  if (!is.na(row$pdf_url) && row$pdf_url != "" && row$pdf_url != "none") {
+    return(sprintf("[PDF](%s)", row$pdf_url))
+  }
+  hit <- pdfs |> filter(id == row$id, !is.na(url), url != "",
+                        source %in% c("unpaywall", "crossref", "biorxiv-api"))
+  if (!nrow(hit)) return(NULL)
+  label <- if (hit$which[1] == "preprint") "PDF (preprint)" else "PDF"
+  sprintf("[%s](%s)", label, hit$url[1])
+}
+
+venue_links <- function(row) {
+  links <- character()
+  has_pre <- !is.na(row$preprint_doi) && row$preprint_doi != ""
+  if (row$kind == "preprint") {
+    links <- c(links, sprintf("[Preprint, %s](%s)", row$year, row$url))
+  } else {
+    if (has_pre) {
+      pre_year <- if (is.na(row$preprint_year)) "" else row$preprint_year
+      links <- c(links, sprintf("[Preprint, %s](%s)", pre_year, row$preprint_url))
+    }
+    venue <- if (!is.na(row$journal) && row$journal != "") sprintf("*%s*, %s", row$journal, row$year) else sprintf("Published, %s", row$year)
+    links <- c(links, sprintf("[%s](%s)", venue, row$url))
+  }
+  p <- pdf_link(row)
+  if (!is.null(p)) links <- c(links, p)
+  paste(links, collapse = " · ")
+}
+
+entry_line <- function(row) {
+  cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
+  cat(sprintf("**%s**  \n", row$title))
+  auth <- format_authors(row$authors)
+  if (auth != "") cat(auth, "  \n", sep = "")
+  cat(venue_links(row), "\n")
+  cat(":::\n\n")
+}
+
+entry_card <- function(row, note) {
+  fig <- note$meta$figure %||% NULL
+  alt <- note$meta$alt %||% row$title
+  cat(sprintf("::: {.pub-entry .pub-card #pub-%s}\n", row$id))
+  cat("::: {.grid}\n")
+  if (!is.null(fig)) {
+    cat("::: {.g-col-12 .g-col-md-4}\n")
+    cat(sprintf("![%s](%s)\n", alt, fig))
+    cat(":::\n")
+    cat("::: {.g-col-12 .g-col-md-8}\n")
+  } else {
+    cat("::: {.g-col-12}\n")
+  }
+  cat(sprintf("**%s**  \n", row$title))
+  auth <- format_authors(row$authors)
+  if (auth != "") cat(auth, "  \n", sep = "")
+  cat(venue_links(row), "\n\n")
+  cat(note$body, "\n")
+  cat(":::\n:::\n:::\n\n")
+}
+
+render_entry <- function(row) {
+  note <- if (row$tier %in% c("card", "page")) read_note(row$id) else NULL
+  if (!is.null(note)) entry_card(row, note) else entry_line(row)
+}
+
+# ---- papers -----------------------------------------------------------------
+
+papers <- pubs |>
+  filter(kind %in% c("article", "preprint")) |>
+  mutate(year_n = suppressWarnings(as.integer(year))) |>
+  arrange(desc(year_n), title)
+
+for (y in unique(papers$year_n)) {
+  cat(sprintf("## %s\n\n", ifelse(is.na(y), "Undated", y)))
+  block <- papers |> filter(if (is.na(y)) is.na(year_n) else year_n == y)
+  for (i in seq_len(nrow(block))) render_entry(block[i, ])
+}
+
+# ---- data and code ----------------------------------------------------------
+
+datasets <- pubs |>
+  filter(kind %in% c("data", "software")) |>
+  mutate(year_n = suppressWarnings(as.integer(year))) |>
+  arrange(desc(year_n), title)
+
+if (nrow(datasets)) {
+  cat("## Data and code\n\n")
+  for (i in seq_len(nrow(datasets))) {
+    row <- datasets[i, ]
+    label <- if (row$kind == "software") "Software" else "Dataset"
+    cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
+    cat(sprintf("**%s**  \n", row$title))
+    auth <- format_authors(row$authors)
+    if (auth != "") cat(auth, "  \n", sep = "")
+    cat(sprintf("[%s, %s](%s)\n", label, row$year, row$url))
+    cat(":::\n\n")
+  }
+}
+```

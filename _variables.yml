@@ -1,0 +1,20 @@
+# Volatile facts, referenced in .qmd files as {{< var key >}}.
+# Change an affiliation or address here once; every page picks it up.
+
+name: David Simons
+job_title: Birgitta Sintring Fellow
+department: Department of Ecology and Genetics
+institution: Uppsala University
+institution_url: https://www.uu.se/en/department/ecology-and-genetics
+location: Stockholm, Sweden
+
+# Contact. Personal address for now; swap for a dsimons.org address once
+# forwarding is set up. Also read by scripts/update_publications.R and
+# scripts/fetch_pdfs.R for polite API use.
+email: dsimons1987@gmail.com
+
+orcid: 0000-0001-9655-1656
+github: DidDrog11
+bluesky: davidsimons.bsky.social
+linkedin: david-simons-3110b06
+scholar_id: fT8u5MwAAAAJ
