@@ -31,6 +31,12 @@ balanced-acceptance sampling turns the result into field sites. Case studies on
 Ongoing work extends this to outbreak settings, where the sampling frame has to
 be revised as an event unfolds.
 
+## Directing rodent sampling
+
+*An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses* is a Vetenskapsrådet South Korea–Sweden research collaboration grant, running from October 2026 to December 2027. I lead it from Uppsala University, with Chungnam National University as the Korean partner.
+
+The project combines three components. Landscape embeddings from Earth-observation imagery describe habitat, Bayesian spatial models downscale host hazard to human incidence, and an active-learning step directs rodent sampling to sites where a new sample would most reduce uncertainty and that a field team can reach. It builds on the South Korea case study in the protocol above.
+
 ## mpox
 
 Work from the 2022 outbreak and from the endemic range that preceded it.

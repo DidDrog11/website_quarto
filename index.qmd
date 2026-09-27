@@ -97,6 +97,7 @@ Placeholder. This block becomes the most recent entries from `data/news.yml`,
 dropping anything older than 18 months, so it cannot go stale on its own.
 :::
 
+- **Grant.** Vetenskapsrådet South Korea–Sweden research collaboration, *An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses*, with Chungnam National University, October 2026 to December 2027. [More](policy/surveillance.html#directing-rodent-sampling).
 - **New paper.** *The socio-economic shield limits Lassa virus spillover in urban West Africa*, in [*Epidemiology & Infection*](https://doi.org/10.1017/S0950268826101824).
 - **New paper.** *Viral reservoir status in small mammals emerges as a predictable life-history trait*, [preprint](https://doi.org/10.64898/2026.06.03.729761).
 - **Grant.** Birgitta Sintring Fellowship, Uppsala University, from September 2026.
