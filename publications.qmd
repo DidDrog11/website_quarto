@@ -9,9 +9,7 @@ execute:
   message: false
 ---
 
-Every entry is one piece of work. Where a preprint became a paper, both are linked so the
-progression is visible. The list is built from my [ORCID record](https://orcid.org/{{< var orcid >}}).
-Data and code releases are listed separately at the end.
+Every entry is one piece of work. Where a preprint became a paper, both are linked so the progression is visible. Papers with a short summary can be expanded. The list is built from my [ORCID record](https://orcid.org/{{< var orcid >}}). Data and code releases are listed separately at the end.
 
 ```{r}
 #| label: publications-list
@@ -97,52 +95,50 @@ venue_links <- function(row) {
   paste(links, collapse = " · ")
 }
 
-entry_line <- function(row) {
-  cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
-  cat(sprintf("**%s**  \n", row$title))
-  auth <- format_authors(row$authors)
-  if (auth != "") cat(auth, "  \n", sep = "")
-  cat(venue_links(row), "\n")
-  cat(":::\n\n")
+# Every paper is one numbered entry. A paper with an explainer note gets a
+# disclosure beneath its citation that expands to the figure and summary.
+# The citation and its links sit outside <summary>, so no link is nested
+# inside the toggle's button role.
+render_note <- function(row, note) {
+  fig <- note$meta$figure %||% NULL
+  cat('<details class="pub-more">\n<summary>Summary</summary>\n\n')
+  cat("::: {.pub-more-body}\n")
+  if (!is.null(fig)) {
+    cap <- note$meta$caption %||% ""
+    alt <- note$meta$alt %||% row$title
+    cat(sprintf('![%s](%s){.pub-fig fig-alt="%s"}\n\n', cap, fig, gsub('"', "'", alt)))
+  }
+  cat(note$body, "\n\n")
+  if (row$tier == "page" && nzchar(row$page %||% "")) cat(sprintf("[Read more](%s)\n\n", row$page))
+  cat(":::\n\n</details>\n\n")
 }
 
-entry_card <- function(row, note) {
-  fig <- note$meta$figure %||% NULL
-  alt <- note$meta$alt %||% row$title
-  cat(sprintf("::: {.pub-entry .pub-card #pub-%s}\n", row$id))
-  cat("::: {.grid}\n")
-  if (!is.null(fig)) {
-    cat("::: {.g-col-12 .g-col-md-4}\n")
-    cat(sprintf("![%s](%s)\n", alt, fig))
-    cat(":::\n")
-    cat("::: {.g-col-12 .g-col-md-8}\n")
-  } else {
-    cat("::: {.g-col-12}\n")
-  }
+render_entry <- function(row, n) {
+  note <- if (row$tier %in% c("card", "page")) read_note(row$id) else NULL
+  cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
+  cat(sprintf("::: {.pub-num}\n%d\n:::\n", n))
+  cat("::: {.pub-body}\n")
   cat(sprintf("**%s**  \n", row$title))
   auth <- format_authors(row$authors)
   if (auth != "") cat(auth, "  \n", sep = "")
   cat(venue_links(row), "\n\n")
-  cat(note$body, "\n")
-  cat(":::\n:::\n:::\n\n")
-}
-
-render_entry <- function(row) {
-  note <- if (row$tier %in% c("card", "page")) read_note(row$id) else NULL
-  if (!is.null(note)) entry_card(row, note) else entry_line(row)
+  if (!is.null(note)) render_note(row, note)
+  cat(":::\n:::\n\n")
 }
 
 # ---- papers -----------------------------------------------------------------
 
+# Numbered newest-highest, so a paper keeps its number as new ones arrive.
 papers <- pubs |>
   filter(kind %in% c("article", "preprint")) |>
   mutate(year_n = suppressWarnings(as.integer(year))) |>
-  arrange(desc(year_n), title)
+  arrange(desc(year_n), title) |>
+  mutate(n = rev(seq_len(n())))
 
 for (y in unique(papers$year_n)) {
   cat(sprintf("## %s\n\n", ifelse(is.na(y), "Undated", y)))
   block <- papers |> filter(if (is.na(y)) is.na(year_n) else year_n == y)
-  for (i in seq_len(nrow(block))) render_entry(block[i, ])
+  for (i in seq_len(nrow(block))) render_entry(block[i, ], block$n[i])
 }
 
 # ---- data and code ----------------------------------------------------------
