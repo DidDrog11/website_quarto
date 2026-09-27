@@ -55,6 +55,18 @@ $sky-top:    #e9e2d4 !default;
 $sky-bottom: #f7f2e8 !default;
 $hero-line:  rgba(35, 33, 28, 0.18) !default;
 
+// Globe (arha.qmd): land, sea and a five-step single-hue ramp for records per
+// hexagon. Steps are OKLCH lightness 0.74 to 0.32 at the primary hue, evenly
+// spaced; the dark pair runs the other way (0.40 to 0.86) so high counts stay
+// the most salient mark against a dark ground.
+$globe-sea:  #f3ede2 !default;
+$globe-land: #e2d8c7 !default;
+$seq-1: #75bd99 !default;
+$seq-2: #4a9c76 !default;
+$seq-3: #307958 !default;
+$seq-4: #195a3f !default;
+$seq-5: #0f3c29 !default;
+
 /*-- scss:mixins --*/
 
 @mixin measure($w: 68ch) {
@@ -122,6 +134,14 @@ $hero-line:  rgba(35, 33, 28, 0.18) !default;
   --ds-sky-top: #{$sky-top};
   --ds-sky-bottom: #{$sky-bottom};
   --ds-hero-line: #{$hero-line};
+
+  --globe-sea: #{$globe-sea};
+  --globe-land: #{$globe-land};
+  --seq-1: #{$seq-1};
+  --seq-2: #{$seq-2};
+  --seq-3: #{$seq-3};
+  --seq-4: #{$seq-4};
+  --seq-5: #{$seq-5};
 }
 
 // ---------------------------------------------------------------------------
@@ -309,7 +329,12 @@ a { text-underline-offset: 0.15em; }
 // Publications page
 // ---------------------------------------------------------------------------
 
+// One numbered entry per paper. Papers with an explainer note carry a
+// <details> disclosure beneath the citation.
 .pub-entry {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0 0.75rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--ds-surface-edge);
 
@@ -317,16 +342,53 @@ a { text-underline-offset: 0.15em; }
   p { margin-bottom: 0.25rem; }
 }
 
-.pub-card {
+.pub-num p {
+  margin: 0.1rem 0 0;
+  text-align: right;
+  font-family: #{$font-family-serif};
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ds-ink-muted);
+}
+
+.pub-more {
+  margin-top: 0.35rem;
+
+  > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ds-primary);
+    list-style: none;
+    &::-webkit-details-marker { display: none; }
+    &::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(-45deg);
+      transition: transform 0.15s ease;
+    }
+    &:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+    &:focus-visible { outline: 2px solid var(--ds-primary); outline-offset: 2px; border-radius: 2px; }
+  }
+  &[open] > summary::before { transform: rotate(45deg); }
+}
+
+.pub-more-body {
+  margin-top: 0.6rem;
+  padding: 1rem 1.1rem;
   background: var(--ds-surface);
   border: 1px solid var(--ds-surface-edge);
-  border-bottom: 1px solid var(--ds-surface-edge);
   border-radius: $border-radius-lg;
-  padding: 1.15rem;
-  margin: 1.25rem 0;
 
-  img { border-radius: $border-radius; width: 100%; height: auto; }
   p { max-width: 62ch; }
+  figure { margin: 0 0 0.85rem; }
+  img { display: block; max-width: 100%; max-height: 22rem; width: auto; height: auto; border-radius: $border-radius; }
+  figcaption { font-size: 0.85rem; color: var(--ds-ink-muted); margin-top: 0.35rem; }
 }
 
 // ---------------------------------------------------------------------------
@@ -343,4 +405,90 @@ a { text-underline-offset: 0.15em; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+// ---------------------------------------------------------------------------
+// ArHa sampling globe (_globe.qmd, arha.qmd)
+// ---------------------------------------------------------------------------
+
+// Stacked: the reading column is too narrow for a side panel beside the
+// globe, so the legend runs as a row beneath it.
+.arha-globe {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+  max-width: none;
+}
+
+.globe-stage {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    touch-action: none;
+    border-radius: 50%;
+    &:active { cursor: grabbing; }
+    &:focus-visible { outline: 2px solid var(--ds-primary); outline-offset: 4px; }
+  }
+}
+
+.globe-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--ds-ground);
+  border: 1px solid var(--ds-surface-edge);
+  border-radius: $border-radius;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--ds-ink-muted);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 12px));
+  strong { display: block; color: var(--ds-ink); font-size: 1rem; font-variant-numeric: tabular-nums; }
+  &[hidden] { display: none; }
+}
+
+.globe-side {
+  font-size: 0.93rem;
+  color: var(--ds-ink-muted);
+  max-width: none;
+
+  p { max-width: 62ch; }
+}
+
+.globe-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.2rem 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .swatch {
+    width: 1.1rem;
+    height: 0.8rem;
+    border-radius: 2px;
+    flex: none;
+  }
+}
+
+.globe-legend-title {
+  font-weight: 600;
+  color: var(--ds-ink);
+  margin-bottom: 0.25rem;
 }
