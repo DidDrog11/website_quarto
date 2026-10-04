@@ -57,6 +57,10 @@ hosts <- records |>
   mutate(doi = str_remove(str_remove(doi, "^https?://(dx\\.)?doi\\.org/"), "\\.$"),
          link = coalesce(fix, if_else(str_starts(doi, "10\\."), paste0("https://doi.org/", doi), doi)),
          reference = paste(author_key, publication_year)) |>
+  # Different papers by the same first author in the same year take a, b, ...
+  # in title order, so each label points to one paper.
+  mutate(suffix = if (n_distinct(link) > 1) letters[dense_rank(title)] else "",
+         reference = paste0(reference, suffix), .by = c(author_key, publication_year)) |>
   select(host_genus, host_species, assay, country, publication_year, reference, title, link) |>
   arrange(host_genus, host_species, assay, publication_year)
 

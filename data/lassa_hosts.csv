@@ -2,7 +2,7 @@ host_genus,host_species,assay,country,publication_year,reference,title,link
 Arvicanthis,Arvicanthis niloticus,Serology,Senegal,1988,Saluzzo 1988,Lassa fever virus in Senegal.,https://doi.org/10.1093/infdis/157.3.605
 Arvicanthis,Arvicanthis niloticus,Serology,Mali,2013,Safronetz 2013,Geographic distribution and genetic characterization of Lassa virus in sub-Saharan Mali.,https://doi.org/10.1371/journal.pntd.0002582
 Gerbilliscus,Gerbilliscus kempii,Serology,Senegal,1988,Saluzzo 1988,Lassa fever virus in Senegal.,https://doi.org/10.1093/infdis/157.3.605
-Hylomyscus,Hylomyscus pamfi,PCR,Nigeria,2016,Olayemi 2016,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
+Hylomyscus,Hylomyscus pamfi,PCR,Nigeria,2016,Olayemi 2016b,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
 Hylomyscus,Hylomyscus pamfi,PCR,Nigeria,2018,Olayemi 2018,"Widespread arenavirus occurrence and seroprevalence in small mammals, Nigeria.",https://doi.org/10.1186/s13071-018-2991-5
 Hylomyscus,Hylomyscus pamfi,Serology,Nigeria,2018,Olayemi 2018,"Widespread arenavirus occurrence and seroprevalence in small mammals, Nigeria.",https://doi.org/10.1186/s13071-018-2991-5
 Hylomyscus,Hylomyscus pamfi,Serology,Nigeria,2025,Oyeyiola 2025,Impact of seasonal change on virus-rodent dynamics in Nigeria’s Edo-Ondo hotspot for Lassa fever,https://doi.org/10.1016/j.crpvbd.2025.100271
@@ -14,8 +14,8 @@ Lophuromys,Lophuromys sikapusi,Serology,Côte d’Ivoire,2011,Coulibaly-N’Golo
 Lophuromys,Lophuromys sikapusi,Serology,Nigeria,2018,Olayemi 2018,"Widespread arenavirus occurrence and seroprevalence in small mammals, Nigeria.",https://doi.org/10.1186/s13071-018-2991-5
 Lophuromys,Lophuromys sikapusi,Serology,Sierra Leone,2021,Bangura 2021,"Lassa Virus Circulation in Small Mammal Populations in Bo District, Sierra Leone.",https://doi.org/10.3390/biology10010028
 Malacomys,Malacomys edwardsi,Serology,Sierra Leone,2021,Bangura 2021,"Lassa Virus Circulation in Small Mammal Populations in Bo District, Sierra Leone.",https://doi.org/10.3390/biology10010028
-Mastomys,Mastomys erythroleucus,PCR,Guinea,2016,Olayemi 2016,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
-Mastomys,Mastomys erythroleucus,PCR,Nigeria,2016,Olayemi 2016,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
+Mastomys,Mastomys erythroleucus,PCR,Guinea,2016,Olayemi 2016b,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
+Mastomys,Mastomys erythroleucus,PCR,Nigeria,2016,Olayemi 2016b,New Hosts of The Lassa Virus,https://doi.org/10.1038/srep25280
 Mastomys,Mastomys erythroleucus,PCR,Nigeria,2018,Olayemi 2018,"Widespread arenavirus occurrence and seroprevalence in small mammals, Nigeria.",https://doi.org/10.1186/s13071-018-2991-5
 Mastomys,Mastomys erythroleucus,PCR,Nigeria,2023,Adesina 2023,"Circulation of Lassa virus across the endemic Edo-Ondo axis, Nigeria, with cross-species transmission between multimammate mice",https://doi.org/10.1080/22221751.2023.2219350
 Mastomys,Mastomys erythroleucus,PCR,Sierra Leone,2024,Bangura 2024,"Spatio-temporal spread of Lassa virus and a new rodent host in the Mano River Union area, West Africa",https://doi.org/10.1080/22221751.2023.2290834
@@ -31,7 +31,7 @@ Mastomys,Mastomys natalensis,PCR,Mali,2013,Safronetz 2013,Geographic distributio
 Mastomys,Mastomys natalensis,PCR,Côte d’Ivoire,2015,Kouadio 2015,"Lassa Virus in Multimammate Rats, Côte d’Ivoire, 2013",https://doi.org/10.3201/eid2108.150312
 Mastomys,Mastomys natalensis,PCR,Sierra Leone,2015,Leski 2015,"Sequence Variability and Geographic Distribution of Lassa Virus, Sierra Leone",https://doi.org/10.3201/eid2104.141469
 Mastomys,Mastomys natalensis,PCR,Guinea,2016,Fichet-Calvet 2016,Spatial and temporal evolution of Lassa virus in the natural host population in Upper Guinea,https://doi.org/10.1038/srep21977
-Mastomys,Mastomys natalensis,PCR,Nigeria,2016,Olayemi 2016,"Arenavirus Diversity and Phylogeography of Mastomys natalensis Rodents, Nigeria.",https://doi.org/10.3201/eid2204.150155
+Mastomys,Mastomys natalensis,PCR,Nigeria,2016,Olayemi 2016a,"Arenavirus Diversity and Phylogeography of Mastomys natalensis Rodents, Nigeria.",https://doi.org/10.3201/eid2204.150155
 Mastomys,Mastomys natalensis,PCR,Nigeria,2018,Olayemi 2018,"Widespread arenavirus occurrence and seroprevalence in small mammals, Nigeria.",https://doi.org/10.1186/s13071-018-2991-5
 Mastomys,Mastomys natalensis,PCR,Guinea,2020,Mariën 2020,Households as hotspots of Lassa fever? Assessing the spatial distribution of Lassa virus-infected rodents in rural villages of Guinea.,https://doi.org/10.1080/22221751.2020.1766381
 Mastomys,Mastomys natalensis,PCR,Sierra Leone,2021,Bangura 2021,"Lassa Virus Circulation in Small Mammal Populations in Bo District, Sierra Leone.",https://doi.org/10.3390/biology10010028
