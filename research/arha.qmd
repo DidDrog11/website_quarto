@@ -1,17 +1,41 @@
 ---
 title: "Project ArHa: Arenaviruses & Hantaviruses"
 subtitle: "A global synthesis of rodent-borne viral pathogens"
+description: "An open database of small mammals sampled for arenaviruses and hantaviruses, and what it shows about where surveillance happens and which species are reservoirs."
 title-block-banner: true
+toc: true
 ---
 
-With Dr. [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/) we are leading a project synthesising published sampling records of small-mammals for arenaviruses and hantaviruses. This work is being supported by the Fellows-in-Residence programme of the [Verena consortium](https://www.viralemergence.org/). We are collaborating with Dr. [David Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and his group at the Natural History Museum in London.
+Project ArHa brings together published records of small mammals sampled for arenaviruses and hantaviruses, worldwide. I lead it with [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/), with support from the Fellows-in-Residence programme of the [Verena consortium](https://www.viralemergence.org/), and in collaboration with [David Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and his group at the Natural History Museum in London.
 
-A draft of the web-based application that will accompany the project has been developed and is available [here](https://diddrog11.shinyapps.io/arenavirus_hantavirus_app/).
+Each record gives the species sampled, the place and date, the assays used and their results. Records where no animal tested positive stay in the database, so it describes sampling effort as well as detection. That is what makes the biases in surveillance measurable.
+
+## Use the data
+
+- **Release.** Version 1.1 is archived on Zenodo, [doi:10.5281/zenodo.21978983](https://doi.org/10.5281/zenodo.21978983). To cite all versions, use the concept DOI [10.5281/zenodo.21978982](https://doi.org/10.5281/zenodo.21978982).
+- **Explore.** The [ArHa database explorer](https://diddrog11.shinyapps.io/ArHa_Database_Explorer/) filters records by virus, host and region.
+- **Code and data dictionary.** The [GitHub repository](https://github.com/DidDrog11/arenavirus_hantavirus) holds the extraction and cleaning code and the data dictionary. It is released under CC0.
+- **Methods.** The search strategy, extraction criteria and database structure are in the published protocol, [doi:10.12688/wellcomeopenres.22119.1](https://doi.org/10.12688/wellcomeopenres.22119.1). A data paper describing the release is in preparation.
 
 ## Where hosts have been sampled
 
 {{< include ../_includes/globe.qmd >}}
 
+## Which species are reservoirs
+
+Reservoir status for arenaviruses and hantaviruses appears to track synanthropy. Surveillance has also concentrated on synanthropic species in high-income regions, so the association could be an artefact of where sampling took place. The ArHa preprint uses the database's record of sampling effort to separate the two.
+
+Bayesian phylogenetic generalised linear mixed models estimate the probability that a species is a reservoir, holding historical sampling volume constant. A fast pace of life and synanthropy each remain independent predictors of reservoir status.
+
+![**Associations with reservoir status.** Posterior log-odds for the predictors of reservoir status, holding sampling effort constant. Figure 2 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig2_traits.png){fig-alt="Effect estimates showing that a fast life history and synanthropy each independently raise the probability of reservoir status, holding sampling effort constant."}
+
+Projected across the small mammal community in each grid cell, the models give a map of intrinsic hazard. Some species-poor, disturbed landscapes hold communities with higher reservoir potential than intact tropical forest.
+
+![**Intrinsic zoonotic potential.** Species richness against community competence, the mean predicted probability of reservoir status across the small mammals present in each cell. Figure 3 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig3_hazard_map.png){fig-alt="Bivariate world map of small mammal species richness against community competence."}
+
+The host and virus phylogenies are congruent at the level of lineages, with frequent host switching within them.
+
+![**Phylogenetic congruence between viruses and their hosts.** The mammalian host phylogeny (top) against the *Hantaviridae* (bottom left) and *Arenaviridae* (bottom right). Thicker, darker links mark stronger congruence; thinner, fainter links suggest host switching. Figure 4 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig4_tanglegram.webp){fig-alt="Tanglegram linking the mammalian host phylogeny above to hantavirus and arenavirus phylogenies below, with many crossing links."}
 
 ## Papers
 

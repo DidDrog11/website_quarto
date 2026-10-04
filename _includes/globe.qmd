@@ -9,6 +9,7 @@
     <p class="globe-legend-title">Host sampling records per hexagon</p>
     <ul class="globe-legend" id="arha-globe-legend"></ul>
     <p id="arha-globe-caption">Loading the sampling record.</p>
+    <p>A record is one host species sampled at one place and time. Records where no animals of that species were caught still count, so a hexagon can hold more records than individuals.</p>
     <p>Drag to rotate, or focus the globe and use the arrow keys. The records themselves are in the <a href="https://diddrog11.shinyapps.io/ArHa_Database_Explorer/">ArHa database explorer</a>.</p>
     <details class="globe-table">
       <summary>Show as a table</summary>
