@@ -1,22 +1,27 @@
 ---
 title: "Host ecology in Sierra Leone"
 subtitle: "Small-mammal communities along a land-use gradient"
-description: "Four years of trapping across forest, farm bush and village in Eastern Province, and what land use does to the Lassa virus reservoir community."
 categories: [Rodent, Ecology, Lassa Fever, Sierra Leone]
 toc: true
 ---
 
-::: {.callout-note appearance="minimal"}
-Placeholder page. The framing text is a draft; the papers below come from the publications data.
-:::
+My doctoral fieldwork trapped small mammals at four villages around Kenema, in the Eastern Province of Sierra Leone, from 2020 to 2023. At each village, trapping ran along a land-use gradient from forest through agriculture into houses. Over 43,226 trap nights, the study asked how land use structures small-mammal communities, and what that structure means for *Mammarenavirus lassaense* in its reservoir, *Mastomys natalensis*.
 
-Doctoral fieldwork in Eastern Province, Sierra Leone, between 2020 and 2023.
-Repeated trapping at four village sites, along a transect from closed forest
-through farm bush to the inside of dwellings, across 43,226 trap nights.
+The work was a collaboration between the Royal Veterinary College, University College London, the London School of Hygiene and Tropical Medicine, Njala University, Kenema Government Hospital and the Bernhard Nocht Institute for Tropical Medicine.
 
-The question underneath all of it: land use decides which small mammals live
-where, so does it also decide where *Mammarenavirus lassaense* circulates, and
-where people meet it?
+## Study design
+
+![**Study villages and trapping effort.** A) The four villages in Eastern Province, near Kenema. B) Trap nights at each visit, 2020 to 2023. Shaded bands mark the rainy season.](../lassa/files/rodent_landuse/Figure_1_combined.png){fig-alt="Map of Eastern Province, Sierra Leone, showing Baiama, Lalehun, Lambayama and Seilama near Kenema, above a plot of trap nights per visit from late 2020 to mid 2023." width="70%"}
+
+The protocol was registered on the [Open Science Framework](https://osf.io/usjrd/) before the pilot session in November 2020. Field data were collected with [Open Data Kit](https://getodk.org/). Lambayama, on the edge of Kenema, gives a peri-urban comparison with the three rural villages.
+
+![A trapping site in Eastern Province.](../lassa/images/rodent_trapping.jpg){fig-alt="Tree-crop land with cleared undergrowth and a marker flag, where traps were set." width="70%"}
+
+## Inside houses
+
+Camera traps set alongside the trapping record how rodents use space inside houses. This work is led by [Najmul Haider](https://scholar.google.com/citations?user=Iv4wObEAAAAJ) and is in preparation.
+
+![A rodent beside stored food inside a house.](../lassa/images/rodent_camera.JPG){fig-alt="Camera-trap image of a rodent next to food storage inside a house." width="70%"}
 
 ## Papers
 
@@ -29,13 +34,16 @@ where people meet it?
 source(here::here("scripts", "paper_cards.R"))
 render_programme_papers("research/sierra-leone.qmd")
 ```
+
 ## Data and code
 
-Protocols are archived on the Open Science Framework, field data are collected
-with Open Data Kit, and analysis code sits in the project repositories. Trapping
-records are deposited on GBIF and PHAROS.
+- **Land use and host communities.** Code and data on [GitHub](https://github.com/DidDrog11/land-use-lassa-hosts), archived on [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk).
+- **Contact networks.** Code and data on [GitHub](https://github.com/DidDrog11/rodent-networks-lassa-sl).
+- **Review of rodent trapping studies.** The dataset is on [Zenodo](https://doi.org/10.5281/zenodo.7022637), the code on [GitHub](https://github.com/DidDrog11/scoping_review), and an [app](https://diddrog11.shinyapps.io/scoping_review_app/) explores the records.
 
-::: {.callout-note appearance="minimal"}
-To add: the field photographs, the EEID talk embed carried over from the old
-trapping page, and links to each dataset.
-:::
+## Talks
+
+- **Ecology and Evolution of Infectious Diseases, 2022.** Results from the first year of trapping. [Watch the talk](https://www.youtube.com/watch?v=vxQLYwDRvK8) or read the [slides](../lassa/files/david_simons_EEID.pdf).
+- **American Society of Tropical Medicine and Hygiene, Chicago, 2023.** Contact networks. [Slides](../lassa/files/rodent_network/ASTMH_presentation.pdf).
+- **Second Lassa Fever International Conference, Abidjan, 2025.** Contact networks. [Slides](../lassa/files/rodent_network/oral_presentation_2.pdf).
+- **Ecology and Evolution of Infectious Diseases, 2021.** The review of rodent trapping studies. [Poster](../lassa/files/EEID_poster.pdf).

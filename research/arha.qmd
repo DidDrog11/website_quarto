@@ -30,7 +30,7 @@ Surveillance intensity follows night-time light intensity and accessibility, not
 
 Bayesian phylogenetic mixed models of 43,677 host–virus pairs estimate host status after adjusting for sampling effort. Faster-lived species tended to be detected as hosts more often, though the credible interval included zero. Synanthropy was independently associated with host status, with about twice the odds for obligate commensals. Withheld continents were predicted with an AUC of 0.81 to 0.88.
 
-![**Associations with host status.** Posterior log-odds for sampling effort, pace of life and synanthropy, and the marginal effect of each on the probability of host status. Figure 2 of the preprint, CC BY 4.0.](/arha/figures/fig2_host_status.webp){fig-alt="Four panels: posterior log-odds for synanthropy, pace of life and sampling effort; probability of host status rising with individuals sampled; falling slightly from fast to slow pace of life; and rising with synanthropy."}
+![**Associations with host status.** Posterior log-odds for sampling effort, pace of life and synanthropy, and the marginal effect of each on the probability of host status. Figure 2 of the preprint, CC BY 4.0.](/arha/figures/fig2_host_status.webp){width="70%" fig-alt="Four panels: posterior log-odds for synanthropy, pace of life and sampling effort; probability of host status rising with individuals sampled; falling slightly from fast to slow pace of life; and rising with synanthropy."}
 
 Projected globally, community host probability varies largely independently of species richness (*R*² = 0.028). Diverse assemblages do not carry systematically higher host probability.
 
