@@ -23,111 +23,44 @@ asks what can be inferred anyway.
 
 ## Detections in hosts
 
-Records of *Mammarenavirus lassaense* detected in small mammals across West
-Africa, drawn from the Project ArHa database. The assay vocabulary is being
-reconciled, so some findings currently appear twice.
+Small mammal species in which *Mammarenavirus lassaense* has been detected in West Africa, by assay, with the studies that report each detection. The records come from the Project ArHa database, reviewed and extended to 2026.
 
 ```{r}
 #| label: lassa-reservoirs
-#| echo: false
-#| message: false
-#| warning: false
 
 # --- 1. Load Packages ---
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, kableExtra, here, ggspatial, cowplot, readr)
 
-# --- 2. Load and Prepare Data ---
-# Define the path to the database directory
-db_directory <- here::here("..", "arenavirus_hantavirus", "data", "database")
+# --- 2. Host detections ---
+# data/lassa_hosts.csv is built by scripts/build_lassa_hosts.R. One row per
+# species, assay, country and study reporting a positive animal.
+lassa_hosts <- read_csv(here("data", "lassa_hosts.csv"), show_col_types = FALSE)
 
-# Find the most recent database file in that directory
-latest_db_file <- list.files(
-    path = db_directory,
-    pattern = "^Project_ArHa_database_.*\\.rds$",
-    full.names = TRUE
-  ) |>
-  sort(decreasing = TRUE) |> # Sort descending, newest file will be first
-  head(1) # Take the first file from the list
+# One row per species and assay; the studies listed in order of publication,
+# each linked once. Genera ordered by their earliest detection.
+assay_order <- c("Virus Culture", "PCR", "Serology")
 
-if (length(latest_db_file) == 0) {
-  stop("No database file found in the directory: ", db_directory)
-}
+host_table <- lassa_hosts |>
+  distinct(host_genus, host_species, assay, publication_year, reference, link) |>
+  arrange(publication_year) |>
+  summarise(first_year = min(publication_year),
+            references = paste(cell_spec(reference, "html", link = link), collapse = "; "),
+            .by = c(host_genus, host_species, assay)) |>
+  mutate(genus_first = min(first_year), .by = host_genus) |>
+  mutate(assay = factor(assay, levels = assay_order)) |>
+  arrange(genus_first, host_genus, host_species, assay)
 
-arha_db <- read_rds(latest_db_file)
+genus_rows <- table(fct_inorder(host_table$host_genus))
 
-endemic_countries <- c("Nigeria", "Sierra Leone", "Liberia", "Guinea",
-                       "Benin", "Togo", "Mali", "Ghana", "Côte d'Ivoire",
-                       "Senegal", "Burkina Faso")
-
-# --- 3. Process Data to Find Earliest Evidence ---
-arha_records <- arha_db$pathogen |>
-  filter(pathogen_species_ncbi == "Mammarenavirus lassaense") |>
-  filter(study_id != "grant_75") |>
-  select(pathogen_record_id, host_record_id, pathogen_species_ncbi, number_tested, number_positive, assay) |>
-  left_join(arha_db$host |>
-              select(host_record_id, study_id, host_species, host_genus, gadm_country, start_date), by = "host_record_id") |>
-  mutate(host_species = case_when(is.na(host_species) ~ paste0(host_genus, " spp."),
-                                  TRUE ~ host_species)) |>
-  filter(
-    number_positive >= 1,
-    gadm_country %in% endemic_countries
-  ) |>
-  left_join(arha_db$citations, by = "study_id") |>
-  group_by(host_species, assay) |>
-  slice_min(order_by = start_date, n = 1, with_ties = FALSE) |>
-  ungroup()
-
-manual_records <- tribble(
-  ~study_id, ~host_species, ~host_genus, ~gadm_country, ~assay, ~publication_year, ~author, ~doi,
-  "ds_402", "Mastomys natalensis", "Mastomys", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_402", "Rattus rattus", "Rattus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_402", "Mus minutoides", "Mus", "Nigeria", "Culture", 1975, "Wulff, H., et al.", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2366366/",
-  "ds_403", "Mastomys natalensis", "Mastomys", "Sierra Leone", "Culture", 1974, "Monath, T. P., et al.", "https://www.jstor.org/stable/1738849"
-)
-
-# --- 4. Prepare Data for Table Display ---
-# This selects and formats the columns for the final table.
-combined_data_for_table <- bind_rows(arha_records, manual_records) |>
-  group_by(host_genus) |>
-  mutate(min_year_in_genus = min(publication_year, na.rm = TRUE)) |>
-  ungroup() |>
-  mutate(
-    host_genus = fct_reorder(host_genus, min_year_in_genus),
-    author_short = str_extract(author, "[^,]+"),
-    reference_text = paste(author_short, publication_year, sep = ", "),
-    link = case_when(
-      full_text_id == "ft_783" ~ "https://biblio.naturalsciences.be/associated_publications/bjz/bibliographic-references/139-2/bjz-139_2-p93-102.pdf",
-      str_detect(doi, fixed("ezaccess.libraries.psu.edu")) ~ str_replace(doi, fixed("pubmed-ncbi-nlm-nih-gov.ezaccess.libraries.psu.edu"), "pubmed.ncbi.nlm.nih.gov"),
-      !is.na(doi) & str_starts(doi, "10\\.") ~ paste0("https://doi.org/", doi),
-      !is.na(doi) ~ doi, # This handles pre-existing full URLs
-      TRUE ~ NA_character_
-    )
-  ) |>
-  arrange(host_genus, host_species, publication_year) |>
-  select(
-    Year = publication_year,
-    Country = gadm_country,
-    Species = host_species,
-    Assay = assay,
-    References = reference_text,
-    link,
-    Genus = host_genus
-  )
-
-# --- 5. Generate the kableExtra HTML Table ---
-# Dynamically create the index for grouping rows by genus.
-tbl_groups <- table(combined_data_for_table$Genus)
-names(tbl_groups) <- levels(combined_data_for_table$Genus)
-
-combined_data_for_table |>
-  mutate(References = cell_spec(References, "html", link = link)) |>
-  select(-link, -Genus) |>
-  kbl("html", escape = FALSE, caption = "Comprehensive list of Mammarenavirus lassaense findings in hosts across West Africa.") |>
-  pack_rows(index = tbl_groups) |>
-  kable_styling(bootstrap_options = c("hover", "condensed"),
-                font_size = 10)
-
+host_table |>
+  mutate(host_species = paste0("<em>", host_species, "</em>"),
+         assay = str_replace(as.character(assay), "Virus Culture", "Virus culture")) |>
+  select(Species = host_species, Assay = assay, References = references) |>
+  kbl("html", escape = FALSE,
+      caption = "Small mammal species with reported <em>Mammarenavirus lassaense</em> detections in West Africa, by assay.") |>
+  pack_rows(index = genus_rows) |>
+  kable_styling(bootstrap_options = c("hover", "condensed"), font_size = 10)
 ```
 
 ## Reported human cases
