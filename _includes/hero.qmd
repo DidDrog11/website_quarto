@@ -124,27 +124,27 @@ I study how people reshape the landscapes they live in, how small mammals respon
 <ul class="gradient-key">
   <li style="--band: var(--hab-forest)">
     <strong>Closed forest</strong>
-    <span>Forest specialists, rarely in contact with people. Where sampling effort is thinnest.</span>
+    <span>Forest specialists, with little direct contact with people. Rodent sampling here is rare.</span>
   </li>
   <li style="--band: var(--hab-farm)">
     <strong>Forest edge and bush</strong>
-    <span>Regrowth and fallow at the forest margin. The species mix turns over fastest here.</span>
+    <span>Regrowth and fallow at the human margin. Small-mammal diversity is expected to peak here.</span>
   </li>
   <li style="--band: var(--hab-village)">
     <strong>Agricultural</strong>
-    <span>Crops and fallow, where <em>Praomys rostratus</em> and <em>Lemniscomys striatus</em> are often trapped.</span>
+    <span>Crops and fallow. Wild and commensal species meet where crops add food.</span>
   </li>
   <li style="--band: var(--hab-dwelling)">
     <strong>Rural dwellings</strong>
-    <span>Villages and their gardens. Where <em>Mastomys natalensis</em> peaks, and where most spillover is thought to happen.</span>
+    <span>Villages and their gardens, where crop pests peak and spillover is thought to occur.</span>
   </li>
   <li style="--band: var(--hab-periurban)">
     <strong>Peri-urban dwellings</strong>
-    <span>Invasive commensals. Where <em>Mus musculus</em> is present, the reservoir is less likely to be.</span>
+    <span>Invasive commensals may offer new hosts for zoonotic pathogens. Poor infrastructure may increase contact between rodents and people.</span>
   </li>
   <li style="--band: var(--hab-town)">
     <strong>Urbanised dwellings</strong>
-    <span>Urban commensals. The reservoir reaches the edge, yet no major city has had a documented Lassa fever outbreak.</span>
+    <span>Few rodent-borne zoonoses are reported from dense cities. Sanitation and human behaviour may limit spillover.</span>
   </li>
 </ul>
 <p class="hero-credit">Original illustration, modified with Gemini Flash 3.8 and Claude Opus 5.5.</p>

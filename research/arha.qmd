@@ -1,7 +1,6 @@
 ---
 title: "Project ArHa: Arenaviruses & Hantaviruses"
 subtitle: "A global synthesis of rodent-borne viral pathogens"
-description: "An open database of small mammals sampled for arenaviruses and hantaviruses, and what it shows about where surveillance happens and which species are reservoirs."
 title-block-banner: true
 toc: true
 ---
@@ -21,21 +20,25 @@ Each record gives the species sampled, the place and date, the assays used and t
 
 {{< include ../_includes/globe.qmd >}}
 
-## Which species are reservoirs
+## Host status and surveillance bias
 
-Reservoir status for arenaviruses and hantaviruses appears to track synanthropy. Surveillance has also concentrated on synanthropic species in high-income regions, so the association could be an artefact of where sampling took place. The ArHa preprint uses the database's record of sampling effort to separate the two.
+Host status for arenaviruses and hantaviruses appears to track synanthropy and a fast pace of life. Surveillance is not random, so these associations could be artefacts of where and what has been sampled. The ArHa [preprint](https://doi.org/10.64898/2026.06.03.729761) uses the database's record of sampling effort to assess whether host status is predictable once that effort is accounted for.
 
-Bayesian phylogenetic generalised linear mixed models estimate the probability that a species is a reservoir, holding historical sampling volume constant. A fast pace of life and synanthropy each remain independent predictors of reservoir status.
+Surveillance intensity follows night-time light intensity and accessibility, not local host richness. Forty-six per cent of rodent genera have never been sampled.
 
-![**Associations with reservoir status.** Posterior log-odds for the predictors of reservoir status, holding sampling effort constant. Figure 2 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig2_traits.png){fig-alt="Effect estimates showing that a fast life history and synanthropy each independently raise the probability of reservoir status, holding sampling effort constant."}
+![**Global surveillance inequality.** Residuals from a zero-inflated negative binomial model of surveillance effort. Orange districts are sampled more than night-time light, accessibility, population density and local host richness predict; blue districts less. Figure 1 of the preprint, CC BY 4.0.](/arha/figures/fig1_surveillance_residuals.webp){fig-alt="World map of surveillance residuals: districts sampled more or less intensely than predicted by night-time light, accessibility, population density and host richness."}
 
-Projected across the small mammal community in each grid cell, the models give a map of intrinsic hazard. Some species-poor, disturbed landscapes hold communities with higher reservoir potential than intact tropical forest.
+Bayesian phylogenetic mixed models of 43,677 host–virus pairs estimate host status after adjusting for sampling effort. Faster-lived species tended to be detected as hosts more often, though the credible interval included zero. Synanthropy was independently associated with host status, with about twice the odds for obligate commensals. Withheld continents were predicted with an AUC of 0.81 to 0.88.
 
-![**Intrinsic zoonotic potential.** Species richness against community competence, the mean predicted probability of reservoir status across the small mammals present in each cell. Figure 3 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig3_hazard_map.png){fig-alt="Bivariate world map of small mammal species richness against community competence."}
+![**Associations with host status.** Posterior log-odds for sampling effort, pace of life and synanthropy, and the marginal effect of each on the probability of host status. Figure 2 of the preprint, CC BY 4.0.](/arha/figures/fig2_host_status.webp){fig-alt="Four panels: posterior log-odds for synanthropy, pace of life and sampling effort; probability of host status rising with individuals sampled; falling slightly from fast to slow pace of life; and rising with synanthropy."}
 
-The host and virus phylogenies are congruent at the level of lineages, with frequent host switching within them.
+Projected globally, community host probability varies largely independently of species richness (*R*² = 0.028). Diverse assemblages do not carry systematically higher host probability.
 
-![**Phylogenetic congruence between viruses and their hosts.** The mammalian host phylogeny (top) against the *Hantaviridae* (bottom left) and *Arenaviridae* (bottom right). Thicker, darker links mark stronger congruence; thinner, fainter links suggest host switching. Figure 4 of the [preprint](https://doi.org/10.64898/2026.06.03.729761), CC BY 4.0.](/arha/figures/fig4_tanglegram.webp){fig-alt="Tanglegram linking the mammalian host phylogeny above to hantavirus and arenavirus phylogenies below, with many crossing links."}
+![**Community host probability.** Species richness against community host probability, the mean predicted probability of host status across the small mammals present in each 20 km cell. Figure 3 of the preprint, CC BY 4.0.](/arha/figures/fig3_community_host_probability.webp){fig-alt="Bivariate world map of small mammal species richness against community host probability at 20 km resolution."}
+
+Host and virus phylogenies are congruent in both families, but most associations depart from strict co-divergence. Host switching has occurred alongside shared evolutionary history.
+
+![**Phylogenetic congruence between viruses and their hosts.** The mammalian host phylogeny (top) against the *Hantaviridae* (bottom left) and *Arenaviridae* (bottom right), linked to PCR-positive host species. Thicker, darker links mark stronger congruence; thinner, fainter links suggest host switching. Figure 4 of the preprint, CC BY 4.0.](/arha/figures/fig4_tanglegram.webp){fig-alt="Tanglegram linking the mammalian host phylogeny above to hantavirus and arenavirus phylogenies below, with many crossing links."}
 
 ## Papers
 
