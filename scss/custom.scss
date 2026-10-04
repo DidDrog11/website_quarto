@@ -599,6 +599,7 @@ main.content .landing-recent ul { max-width: none; }
   > summary { cursor: pointer; color: var(--ds-primary); font-size: 0.9rem; }
   table { margin-top: 0.5rem; font-size: 0.85rem; }
   caption { caption-side: top; color: var(--ds-ink-muted); font-size: 0.8rem; }
-  td:not(:first-child), th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  td.num, thead th:nth-child(n+3) { text-align: right; font-variant-numeric: tabular-nums; }
+  th[scope="rowgroup"] { vertical-align: top; font-weight: 600; }
   &[open] { max-height: 24rem; overflow-y: auto; }
 }

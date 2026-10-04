@@ -14,8 +14,8 @@
     <details class="globe-table">
       <summary>Show as a table</summary>
       <table class="table table-sm">
-        <caption id="arha-globe-table-caption">Host sampling records by country.</caption>
-        <thead><tr><th scope="col">Country</th><th scope="col">Records</th><th scope="col">Locations</th><th scope="col">Individuals</th></tr></thead>
+        <caption id="arha-globe-table-caption">Host sampling records by continent and country.</caption>
+        <thead><tr><th scope="col">Continent</th><th scope="col">Country</th><th scope="col">Records</th><th scope="col">Locations</th><th scope="col">Individuals</th></tr></thead>
         <tbody id="arha-globe-table-body"></tbody>
       </table>
     </details>
@@ -181,18 +181,29 @@
       // drops ids on <caption>, so the caption is found through the table.
       try {
         const tbody = document.getElementById("arha-globe-table-body");
-        for (const [country, records, locations, individuals] of (h.countries || [])) {
+        // Rows arrive sorted by continent, then records. The continent cell
+        // spans its group, so each name appears once.
+        const rows = h.countries || [];
+        rows.forEach(([continent, country, records, locations, individuals], idx) => {
           const tr = document.createElement("tr");
-          for (const v of [country, fmt(records), fmt(locations), fmt(individuals)]) {
+          if (idx === 0 || rows[idx - 1][0] !== continent) {
+            const th = document.createElement("th");
+            th.scope = "rowgroup";
+            th.rowSpan = rows.filter(r => r[0] === continent).length;
+            th.textContent = continent;
+            tr.append(th);
+          }
+          [country, fmt(records), fmt(locations), fmt(individuals)].forEach((v, j) => {
             const td = document.createElement("td");
+            if (j > 0) td.className = "num";
             td.textContent = v;
             tr.append(td);
-          }
+          });
           tbody.append(tr);
-        }
+        });
         const tableCaption = tbody.closest("table")?.querySelector("caption");
         if (tableCaption && m.n_records_no_country) {
-          tableCaption.textContent = `Host sampling records by country. ${fmt(m.n_records_no_country)} records with coordinates but no country code are not shown.`;
+          tableCaption.textContent = `Host sampling records by continent and country. ${fmt(m.n_records_no_country)} records with coordinates but no country code are not shown.`;
         }
       } catch (e) {
         console.warn("Globe table view could not be built", e);

@@ -19,7 +19,7 @@
 #   Rscript scripts/build_globe_data.R
 
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(arrow, dplyr, h3jsr, sf, jsonlite, here)
+pacman::p_load(arrow, dplyr, h3jsr, sf, jsonlite, countrycode, here)
 
 h3_res <- 2  # H3 resolution. 2 is ~86,700 km2 per cell; 3 is ~12,400 km2.
 
@@ -78,10 +78,12 @@ by_country <- hosts |>
             n_locations = n_distinct(decimalLatitude, decimalLongitude),
             n_individuals = sum(individualCount, na.rm = TRUE),
             .by = countryCode) |>
-  arrange(desc(n_records))
-hex$countries <- Map(function(c, r, l, i) list(c, r, l, i),
-                     by_country$country, by_country$n_records, by_country$n_locations, by_country$n_individuals) |> unname()
-hex$meta$country_fields <- c("country", "n_records", "n_locations", "n_individuals")
+  mutate(continent = countrycode::countrycode(countryCode, "iso3c", "continent")) |>
+  arrange(continent, desc(n_records))
+if (anyNA(by_country$continent)) stop("No continent for: ", paste(by_country$countryCode[is.na(by_country$continent)], collapse = ", "))
+hex$countries <- Map(function(k, c, r, l, i) list(k, c, r, l, i),
+                     by_country$continent, by_country$country, by_country$n_records, by_country$n_locations, by_country$n_individuals) |> unname()
+hex$meta$country_fields <- c("continent", "country", "n_records", "n_locations", "n_individuals")
 hex$meta$n_records_no_country <- nrow(hosts) - sum(by_country$n_records)   # coordinates but no country code
 
 writeLines(toJSON(hex, auto_unbox = TRUE, digits = NA), out_hex)

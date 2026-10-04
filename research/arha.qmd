@@ -7,7 +7,7 @@ toc: true
 
 Project ArHa brings together published records of small mammals sampled for arenaviruses and hantaviruses, worldwide. I lead it with [Stephanie Seifert](https://vetmed.wsu.edu/profile/seifert-stephanie/), with support from the Fellows-in-Residence programme of the [Verena consortium](https://www.viralemergence.org/), and in collaboration with [David Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and his group at the Natural History Museum in London.
 
-Each record gives the species sampled, the place and date, the assays used and their results. Records where no animal tested positive stay in the database, so it describes sampling effort as well as detection. That is what makes the biases in surveillance measurable.
+Each record gives the species sampled, the place and date, the assays used and their results. Records where no animal tested positive are retained in the database, so it describes sampling effort as well as detection. That is what makes the biases in surveillance measurable.
 
 ## Use the data
 
