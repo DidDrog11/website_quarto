@@ -33,7 +33,7 @@ The tool helps researchers generate a robust list of potential field sites withi
 
 ## Application: Lassa Fever Ecology in Nigeria
 
-SiteTool was actively trialed to structure the sampling framework for our multi-year [SCAPES project](../lassa/SCAPES.qmd) investigating Lassa fever in Nigeria. 
+SiteTool was actively trialed to structure the sampling framework for our multi-year [SCAPES project](../research/scapes.qmd) investigating Lassa fever in Nigeria. 
 
 We required field sites spread across a specific agricultural land-use gradient to test hypotheses regarding rodent contact and viral spillover. Using SiteTool, we defined a 3-hour drive radius from our base city, extracted 273 candidate communities via OpenStreetMap, and calculated the proportion of cropland and grassland within a 2km radius of each settlement. This allowed us to quantitatively select optimal sites that captured the necessary environmental variation while meeting strict logistical constraints. 
 

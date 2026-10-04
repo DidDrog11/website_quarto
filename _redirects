@@ -1,0 +1,40 @@
+# Netlify redirects. Copied into _site/ through `resources:` in _quarto.yml.
+# Every URL the live site served (data/live_site_urls_2026-09-20.tsv) must
+# either still exist or have a rule here. 301 is permanent, so search engines
+# and reference managers update to the new address.
+#
+# Each rule is listed with and without .html, since Netlify serves both forms.
+
+# Programme pages moved into research/ (2026-10-04)
+/lassa/SCAPES.html                       /research/scapes.html                  301
+/lassa/SCAPES                            /research/scapes.html                  301
+/lassa/lassa_urbanisation.html           /research/lassa-cities.html            301
+/lassa/lassa_urbanisation                /research/lassa-cities.html            301
+/arha.html                               /research/arha.html                    301
+/arha                                    /research/arha.html                    301
+/rodent_ecology/sintring.html            /research/bank-voles.html              301
+/rodent_ecology/sintring                 /research/bank-voles.html              301
+/rodent_ecology/lancet_pillars_view.html /research/rodent-disease-ecology.html  301
+/rodent_ecology/lancet_pillars_view      /research/rodent-disease-ecology.html  301
+/others.html                             /research/earlier-work.html            301
+/others                                  /research/earlier-work.html            301
+
+# Old theme listing pages, retired (2026-10-04)
+/lassa.html                              /research/                             301
+/lassa                                   /research/                             301
+/rodent_ecology.html                     /research/                             301
+/rodent_ecology                          /research/                             301
+/policy.html                             /research/                             301
+/policy                                  /research/                             301
+/open_science.html                       /research/tools.html                   301
+/open_science                            /research/tools.html                   301
+/monkeypox.html                          /research/surveillance.html            301
+/monkeypox                               /research/surveillance.html            301
+/covid_19.html                           /research/surveillance.html            301
+/covid_19                                /research/surveillance.html            301
+/amr.html                                /research/earlier-work.html            301
+/amr                                     /research/earlier-work.html            301
+
+# Individual paper pages under lassa/, arha/, covid/, monkeypox/, policy/,
+# open_science/ and others/ still exist. They get rules here as each is
+# retired into its programme page.

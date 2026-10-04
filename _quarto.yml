@@ -3,7 +3,9 @@ project:
   render:
     - "*.qmd"
     - "!cv.qmd"
-    - "amr/"
+    # Talk decks are not published yet. "*.qmd" above matches in every
+    # folder, so they must be excluded explicitly. Remove this line to publish.
+    - "!presentations/"
     - "arha/"
     - "covid/"
     - "images/"
@@ -17,6 +19,8 @@ project:
     - "assets/fonts/*"
     - "assets/js/*"
     - "assets/data/*"
+    - "images/hero_landscape.webp"
+    - "_redirects"
     - "cv.pdf"
 
 website:
@@ -28,40 +32,43 @@ website:
   page-navigation: true
   # No analytics. Nothing here may set a cookie.
   navbar:
+    pinned: true   # always visible, so the menu is there at the bottom of a page
     foreground: dark
     background: light
     search: true
     left:
       - text: "Research"
         menu:
-          - text: "Along the gradient"
+          - text: "All research"
+            href: research/index.qmd
+          - text: "---"
+          - text: "On the gradient"
           - text: "Host ecology in Sierra Leone"
-            href: lassa/sierra_leone.qmd
+            href: research/sierra-leone.qmd
           - text: "SCAPES, Nigeria"
-            href: lassa/SCAPES.qmd
-          - text: "Lassa fever and cities"
-            href: lassa/lassa_urbanisation.qmd
-          - text: "Lassa epidemiology"
-            href: lassa/lassa_epidemiology.qmd
-          - text: "Project ArHa"
-            href: arha.qmd
+            href: research/scapes.qmd
           - text: "Bank voles at Uppsala"
-            href: rodent_ecology/sintring.qmd
+            href: research/bank-voles.qmd
+          - text: "Surveillance and outbreak response"
+            href: research/surveillance.qmd
+          - text: "Vaccines and trial design"
+            href: research/vaccines.qmd
+          - text: "Rodent-borne disease ecology"
+            href: research/rodent-disease-ecology.qmd
           - text: "---"
           - text: "Off the gradient"
-          - text: "Vaccines and trial design"
-            href: policy/vaccines.qmd
-          - text: "Surveillance and outbreak response"
-            href: policy/surveillance.qmd
+          - text: "Project ArHa"
+            href: research/arha.qmd
+          - text: "Lassa fever and cities"
+            href: research/lassa-cities.qmd
+          - text: "Lassa epidemiology"
+            href: research/lassa-epidemiology.qmd
           - text: "Open tools and data"
-            href: open_science/tools.qmd
-          - text: "Rodent-borne disease ecology"
-            href: rodent_ecology/lancet_pillars_view.qmd
-          - text: "---"
+            href: research/tools.qmd
           - text: "Consultancy"
             href: consultancy.qmd
           - text: "Earlier work"
-            href: others.qmd
+            href: research/earlier-work.qmd
       - href: publications.qmd
         text: "Publications"
       - href: about.qmd
@@ -91,7 +98,8 @@ format:
     anchor-sections: true
     link-external-icon: true
     link-external-newwindow: true
-    link-external-filter: '^(?:http:|https:)\/\/www\.dsimons\.org\/'
+    # Internal: the site with or without www, and local previews. Anything else is external.
+    link-external-filter: '^https?:\/\/(?:(?:www\.)?dsimons\.org|localhost|127\.0\.0\.1)(?::\d+)?(?:\/|$)'
     include-after-body: assets/request-copy.html
 
 comments:

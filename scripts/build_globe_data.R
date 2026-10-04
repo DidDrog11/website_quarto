@@ -66,6 +66,24 @@ hex <- list(
     fields = c("n_records", "n_individuals", "n_species", "boundary")),
   cells = Map(function(r, i, s, b) list(r, i, s, b), cells$n_records, cells$n_individuals, cells$n_species, bounds) |> unname())
 
+# Records by country, for the table view beneath the globe. Hover alone
+# should never be the only way to read the data.
+# Grouped by country code, not name: names vary in spelling between source
+# studies, which would split one country into several rows and disagree with
+# the caption's country count. Each code takes its most common name.
+by_country <- hosts |>
+  filter(!is.na(countryCode)) |>
+  summarise(country = names(sort(table(country), decreasing = TRUE))[1],
+            n_records = n(),
+            n_locations = n_distinct(decimalLatitude, decimalLongitude),
+            n_individuals = sum(individualCount, na.rm = TRUE),
+            .by = countryCode) |>
+  arrange(desc(n_records))
+hex$countries <- Map(function(c, r, l, i) list(c, r, l, i),
+                     by_country$country, by_country$n_records, by_country$n_locations, by_country$n_individuals) |> unname()
+hex$meta$country_fields <- c("country", "n_records", "n_locations", "n_individuals")
+hex$meta$n_records_no_country <- nrow(hosts) - sum(by_country$n_records)   # coordinates but no country code
+
 writeLines(toJSON(hex, auto_unbox = TRUE, digits = NA), out_hex)
 
 # ---- Natural Earth 110m land -----------------------------------------------

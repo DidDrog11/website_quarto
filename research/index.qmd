@@ -1,0 +1,14 @@
+---
+title: "Research"
+description: "Research programmes on rodents, land use, pathogen transmission and spillover."
+page-layout: full
+toc: false
+---
+
+Programmes on the left draw on fieldwork. Those on the right are computational or sit outside the field.
+
+:::: {.landing-columns}
+
+{{< include ../_includes/programme-columns.qmd >}}
+
+::::

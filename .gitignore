@@ -15,3 +15,6 @@
 
 # Personal archive of paper PDFs collected by scripts/fetch_pdfs.R. Not served; too large for git.
 /papers/
+
+# Talk decks, their figures and rendered output. Kept local; nothing here is committed.
+/presentations/

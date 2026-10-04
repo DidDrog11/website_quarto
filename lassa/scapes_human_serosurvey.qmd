@@ -30,7 +30,7 @@ citation: true
 
 Lassa virus (LASV) causes significant morbidity in West Africa. With multiple vaccine candidates advancing into clinical trials, researchers must identify communities with active, ongoing viral transmission to successfully evaluate efficacy. However, Lassa virus spillover is highly unpredictable.
 
-Current surveillance relies primarily on passive case detection at sentinel hospitals, which overlooks mild infections and asymptomatic seroconversion. To address this, we conducted a cross-sectional serosurvey across nine villages in three Nigerian states (Benue, Ebonyi, and Cross River) as part of the [SCAPES Project](SCAPES.qmd). Our goal was to determine if current broad-scale risk models accurately reflect local exposure and to identify specific, community-level drivers of infection.
+Current surveillance relies primarily on passive case detection at sentinel hospitals, which overlooks mild infections and asymptomatic seroconversion. To address this, we conducted a cross-sectional serosurvey across nine villages in three Nigerian states (Benue, Ebonyi, and Cross River) as part of the [SCAPES Project](../research/scapes.qmd). Our goal was to determine if current broad-scale risk models accurately reflect local exposure and to identify specific, community-level drivers of infection.
 
 ## Key Findings
 

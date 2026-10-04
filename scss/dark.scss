@@ -10,31 +10,33 @@
 // block lives in custom.scss and picks these values up automatically; it is
 // deliberately not repeated here.
 
-$ground:        #15130f;
-$surface:       #1f1c17;
-$surface-edge:  #322d25;
-$ink:           #ece6da;
-$ink-muted:     #a49b8c;
+$ground:        #121613;
+$surface:       #1b201c;
+$surface-edge:  #2c332d;
+$ink:           #e6ebe5;
+$ink-muted:     #9aa59d;
 
 $forest:        #5c8d75;
 $farm:          #8fa663;
 $village:       #d0a85f;
 $dwelling:      #d97a4e;
+$periurban:     #c09a8a;
+$town:          #9fb0b8;
 
 $primary:       #7fb79b;
 $accent:        #e08a62;
 
-$sky-top:       #1b1813;
-$sky-bottom:    #14120e;
-$hero-line:     rgba(236, 230, 218, 0.22);
+$sky-top:       #171c18;
+$sky-bottom:    #121613;
+$hero-line:     rgba(230, 235, 229, 0.22);
 
-$globe-sea:     #1f1c17;
-$globe-land:    #2b2720;
-$seq-1:         #2e503f;
-$seq-2:         #3e7359;
-$seq-3:         #4f9775;
-$seq-4:         #75bd99;
-$seq-5:         #a8e0c3;
+$globe-sea:     #181d19;
+$globe-land:    #2c352e;
+$seq-1:         #3c7a5d;
+$seq-2:         #4f9775;
+$seq-3:         #6bb390;
+$seq-4:         #8fceae;
+$seq-5:         #b8e8ce;
 
 $link-hover-color: lighten($primary, 8%);
 
@@ -45,7 +47,7 @@ $link-hover-color: lighten($primary, 8%);
 // Any figure that still reads wrong needs regenerating with a transparent
 // background rather than a CSS fix here.
 main img:not(.no-matte):not(.rounded-circle) {
-  background: #fdfcf9;
+  background: #f7f8f5;
   padding: 0.4rem;
   border-radius: 4px;
 }

@@ -9,16 +9,18 @@
 // Every variable here carries !default. Quarto layers the defaults blocks of
 // a theme list in reverse, so scss/dark.scss is evaluated first and its values
 // must survive. Drop !default and the light values silently win in dark mode.
-$ground:        #faf7f1 !default;   // page background, warm off-white
-$surface:       #f3ede2 !default;   // cards and wells
-$surface-edge:  #e3d9c8 !default;
-$ink:           #23211c !default;
-$ink-muted:     #5e5950 !default;
+$ground:        #f2f4ef !default;   // page background, pale sage (owner, 2026-10-04; replaced the FT-like cream)
+$surface:       #e7ebe4 !default;   // cards and wells
+$surface-edge:  #d5dbd1 !default;
+$ink:           #1e2420 !default;
+$ink-muted:     #56605a !default;
 
 $forest:        #2c4739 !default;
 $farm:          #5f7a46 !default;
 $village:       #a88248 !default;
 $dwelling:      #a4552f !default;
+$periurban:     #7e6458 !default;   // between rural terracotta and urban slate
+$town:          #5d6b72 !default;   // concrete slate, the urban end of the gradient
 
 $primary:       #35604b !default;
 $secondary:     $ink-muted !default;
@@ -51,20 +53,21 @@ $code-block-bg:    $surface !default;
 $table-border-color: $surface-edge !default;
 
 // Hero-only tones, overridden in scss/dark.scss.
-$sky-top:    #e9e2d4 !default;
-$sky-bottom: #f7f2e8 !default;
-$hero-line:  rgba(35, 33, 28, 0.18) !default;
+$sky-top:    #e4eae4 !default;
+$sky-bottom: #f2f4ef !default;
+$hero-line:  rgba(30, 36, 32, 0.18) !default;
 
 // Globe (arha.qmd): land, sea and a five-step single-hue ramp for records per
-// hexagon. Steps are OKLCH lightness 0.74 to 0.32 at the primary hue, evenly
-// spaced; the dark pair runs the other way (0.40 to 0.86) so high counts stay
-// the most salient mark against a dark ground.
-$globe-sea:  #f3ede2 !default;
-$globe-land: #e2d8c7 !default;
-$seq-1: #75bd99 !default;
-$seq-2: #4a9c76 !default;
-$seq-3: #307958 !default;
-$seq-4: #195a3f !default;
+// hexagon. Green, light to dark. The palest step is set so it still reaches
+// 2:1 against the land (2.19:1; checked with the dataviz skill's validator);
+// the dark pair runs the other way (2.50:1 against dark land) so high counts
+// stay the most salient mark against a dark ground.
+$globe-sea:  #eef1eb !default;
+$globe-land: #d9dfd4 !default;
+$seq-1: #53a57f !default;
+$seq-2: #378b66 !default;
+$seq-3: #267050 !default;
+$seq-4: #13563b !default;
 $seq-5: #0f3c29 !default;
 
 /*-- scss:mixins --*/
@@ -130,6 +133,8 @@ $seq-5: #0f3c29 !default;
   --hab-farm: #{$farm};
   --hab-village: #{$village};
   --hab-dwelling: #{$dwelling};
+  --hab-periurban: #{$periurban};
+  --hab-town: #{$town};
 
   --ds-sky-top: #{$sky-top};
   --ds-sky-bottom: #{$sky-bottom};
@@ -268,31 +273,117 @@ a { text-underline-offset: 0.15em; }
 @media (max-width: 700px) {
   .hero-band { margin-bottom: 1.5rem; }
   .hero-inner { padding-top: 1.5rem; }
-  .hero-figure { min-width: 680px; }
+  .hero-figure { min-width: 760px; }
 }
 
 // The gradient explained in text. Always present, never only in the graphic.
+// One column per hero zone, in the same proportions as the zones in the
+// illustration (195, 225, 170, 222, 244, 264 of 1320), so each card sits
+// under its section and the coloured tops join into one strip. The figure
+// and this list share .hero-inner, so they have the same width. If the zone
+// boundaries in _hero.qmd change, change these with them.
 .gradient-key {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0;
+  grid-template-columns: 195fr 225fr 170fr 222fr 244fr 264fr;
 
   li {
     border-top: 3px solid var(--band, var(--ds-primary));
-    padding-top: 0.6rem;
-    font-size: 0.95rem;
+    padding: 0.6rem 0.75rem 0 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
     max-width: none;
+    min-width: 0;
   }
-  strong { display: block; font-family: #{$font-family-serif}; font-size: 1.05rem; }
+  li:first-child { padding-left: 0; }
+  li:last-child { padding-right: 0; }
+  strong { display: block; font-family: #{$font-family-serif}; font-size: 1rem; }
   span { color: var(--ds-ink-muted); }
+
+  // Below the width at which the figure starts to scroll, alignment with
+  // the zones is lost anyway, so fall back to a plain two-column key.
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    li, li:first-child, li:last-child { padding: 0.6rem 0.75rem 0 0; }
+  }
+}
+
+// The reading-measure rule above (main.content ul, p) outranks a single class,
+// so the full-width key and credit opt out with a more specific selector.
+// Without this the key was capped at 68ch and the sixth card always wrapped.
+main.content .hero-band .gradient-key,
+main.content .hero-band .hero-credit { max-width: none; }
+
+.hero-credit {
+  margin: 0.35rem 0 0;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--ds-ink-muted);
+  max-width: none;
 }
 
 // ---------------------------------------------------------------------------
 // Second tier: card grid for everything off the gradient
 // ---------------------------------------------------------------------------
+
+// Landing page body. page-layout: custom removes Quarto's container, so the
+// body sets the same frame as .hero-inner and lines up with the figure.
+.landing-body {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding: 0 1rem 3rem;
+}
+
+// Two columns under the hero: on the gradient (field-informed research) on
+// the left, off the gradient (computational and other) on the right.
+.landing-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 3rem;
+  align-items: start;
+
+  h2 { margin-top: 1rem; }
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+// Landing page only: a narrow third column for recent news on wide screens.
+// Below 1200px the news drops beneath the cards and switches to the longer
+// wording; the short list is shown only while it sits in the narrow column.
+.landing-columns.with-recent {
+  @media (min-width: 1200px) { grid-template-columns: 1fr 1fr 220px; }
+  .landing-recent { grid-column: 1 / -1; }
+  @media (min-width: 1200px) { .landing-recent { grid-column: auto; } }
+}
+
+main.content .landing-recent ul { max-width: none; }
+
+.landing-recent {
+  h2 { font-size: 1.25rem; }
+  ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+
+  .recent-short {
+    li {
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--ds-surface-edge);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+    li:last-child { border-bottom: 1px solid var(--ds-surface-edge); }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
+  .recent-long li { margin-bottom: 0.6rem; }
+
+  .recent-long { display: none; }
+  @media (max-width: 1199.98px) {
+    .recent-short { display: none; }
+    .recent-long { display: block; }
+  }
+}
 
 .card-grid {
   display: grid;
@@ -317,7 +408,13 @@ a { text-underline-offset: 0.15em; }
     margin: 0 0 0.35rem;
     font-size: 1.1rem;
     a { text-decoration: none; }
-    a::after { content: ""; position: absolute; inset: 0; }
+    // The title link is stretched over the whole card to make it clickable.
+    // Quarto draws its external-link arrow on the same ::after, so strip any
+    // icon here; otherwise the arrow is stretched to fill the card.
+    a::after, a.external::after {
+      content: ""; position: absolute; inset: 0;
+      background: none !important; margin: 0; padding: 0;
+    }
   }
   p { margin: 0; font-size: 0.93rem; color: var(--ds-ink-muted); max-width: none; }
 
@@ -341,6 +438,9 @@ a { text-underline-offset: 0.15em; }
   strong { font-family: #{$font-family-serif}; font-size: 1.05rem; font-weight: 600; }
   p { margin-bottom: 0.25rem; }
 }
+
+// Programme pages list their papers without numbers.
+.pub-entry.pub-entry-plain { grid-template-columns: minmax(0, 1fr); }
 
 .pub-num p {
   margin: 0.1rem 0 0;
@@ -491,4 +591,14 @@ a { text-underline-offset: 0.15em; }
   font-weight: 600;
   color: var(--ds-ink);
   margin-bottom: 0.25rem;
+}
+
+// Table view under the globe: the same data by country, closed by default.
+.globe-table {
+  margin-top: 0.5rem;
+  > summary { cursor: pointer; color: var(--ds-primary); font-size: 0.9rem; }
+  table { margin-top: 0.5rem; font-size: 0.85rem; }
+  caption { caption-side: top; color: var(--ds-ink-muted); font-size: 0.8rem; }
+  td:not(:first-child), th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  &[open] { max-height: 24rem; overflow-y: auto; }
 }

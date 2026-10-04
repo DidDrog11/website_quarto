@@ -1,0 +1,203 @@
+```{=html}
+<div class="arha-globe">
+  <div class="globe-stage">
+    <canvas id="arha-globe-canvas" tabindex="0" role="img"
+            aria-label="Globe of Project ArHa host sampling records, binned into hexagons. Loading."></canvas>
+    <div class="globe-tooltip" hidden></div>
+  </div>
+  <div class="globe-side">
+    <p class="globe-legend-title">Host sampling records per hexagon</p>
+    <ul class="globe-legend" id="arha-globe-legend"></ul>
+    <p id="arha-globe-caption">Loading the sampling record.</p>
+    <p>Drag to rotate, or focus the globe and use the arrow keys. The records themselves are in the <a href="https://diddrog11.shinyapps.io/ArHa_Database_Explorer/">ArHa database explorer</a>.</p>
+    <details class="globe-table">
+      <summary>Show as a table</summary>
+      <table class="table table-sm">
+        <caption id="arha-globe-table-caption">Host sampling records by country.</caption>
+        <thead><tr><th scope="col">Country</th><th scope="col">Records</th><th scope="col">Locations</th><th scope="col">Individuals</th></tr></thead>
+        <tbody id="arha-globe-table-body"></tbody>
+      </table>
+    </details>
+  </div>
+</div>
+
+<script src="/assets/js/d3.v7.9.0.min.js"></script>
+<script>
+(() => {
+  // Data are built by scripts/build_globe_data.R into assets/data/. Nothing
+  // here fetches from a third party; d3 is self-hosted under assets/js/.
+  const canvas = document.getElementById("arha-globe-canvas");
+  if (!canvas || !window.d3) return;
+  const stage = canvas.parentElement;
+  const tip = stage.querySelector(".globe-tooltip");
+  const legend = document.getElementById("arha-globe-legend");
+  const caption = document.getElementById("arha-globe-caption");
+
+  // Records per cell are heavily skewed (median ~15, max ~16,000), so the
+  // ramp uses round, roughly logarithmic breaks rather than a linear scale.
+  const breaks = [5, 20, 100, 500];
+  const labels = ["1 to 4", "5 to 19", "20 to 99", "100 to 499", "500 or more"];
+  const classOf = n => { const i = breaks.findIndex(b => n < b); return i === -1 ? breaks.length : i; };
+  const cellArea = { 1: "609,000", 2: "86,700", 3: "12,400", 4: "1,770" };
+  const fmt = d3.format(",");
+  const plural = (n, one, many) => `${fmt(n)} ${n === 1 ? one : many}`;
+
+  // Colours come from the theme's custom properties, so light and dark
+  // follow the site toggle without duplicating values in script.
+  const token = name => getComputedStyle(document.body).getPropertyValue(name).trim();
+  let colours = {};
+  const readColours = () => {
+    colours = {
+      sea: token("--globe-sea"), land: token("--globe-land"), gap: token("--ds-ground"),
+      line: token("--ds-hero-line"), ink: token("--ds-ink"),
+      seq: [1, 2, 3, 4, 5].map(i => token(`--seq-${i}`))
+    };
+  };
+
+  readColours();
+
+  // Opens centred on Africa, where the gaps in coverage are widest.
+  const projection = d3.geoOrthographic().rotate([-20, -5]).clipAngle(90).precision(0.3);
+  const ctx = canvas.getContext("2d");
+  const path = d3.geoPath(projection, ctx);
+  const sphere = { type: "Sphere" };
+  const graticule = d3.geoGraticule10();
+  let land = null, cells = [], hovered = null, size = 0;
+
+  // d3-geo reads a ring enclosing more than a hemisphere as the complement
+  // of the shape, so any polygon that comes out that way is reversed.
+  const reverseRings = g => {
+    if (g.type === "Polygon") g.coordinates = g.coordinates.map(r => r.slice().reverse());
+    if (g.type === "MultiPolygon") g.coordinates = g.coordinates.map(p => p.map(r => r.slice().reverse()));
+  };
+  const fixWinding = f => { if (d3.geoArea(f) > 2 * Math.PI) reverseRings(f.geometry); return f; };
+
+  const draw = () => {
+    if (!size) return;
+    ctx.clearRect(0, 0, size, size);
+    ctx.beginPath(); path(sphere); ctx.fillStyle = colours.sea; ctx.fill();
+    ctx.beginPath(); path(graticule); ctx.strokeStyle = colours.line; ctx.lineWidth = 0.5; ctx.stroke();
+    if (land) { ctx.beginPath(); path(land); ctx.fillStyle = colours.land; ctx.fill(); }
+    colours.seq.forEach((fill, k) => {
+      ctx.beginPath();
+      for (const c of cells) if (c.k === k) path(c);
+      ctx.fillStyle = fill; ctx.fill();
+    });
+    ctx.beginPath(); for (const c of cells) path(c);
+    ctx.strokeStyle = colours.gap; ctx.lineWidth = 0.6; ctx.stroke();
+    if (hovered) { ctx.beginPath(); path(hovered); ctx.strokeStyle = colours.ink; ctx.lineWidth = 1.5; ctx.stroke(); }
+    ctx.beginPath(); path(sphere); ctx.strokeStyle = colours.line; ctx.lineWidth = 1; ctx.stroke();
+  };
+
+  const resize = () => {
+    size = stage.clientWidth;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(size * dpr);
+    canvas.height = Math.round(size * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    projection.translate([size / 2, size / 2]).scale(size / 2 - 2);
+    draw();
+  };
+
+  const hideTip = () => { tip.hidden = true; if (hovered) { hovered = null; draw(); } };
+  const showTip = (c, x, y) => {
+    const { r, i, s } = c.properties;
+    tip.replaceChildren();
+    const head = document.createElement("strong");
+    head.textContent = plural(r, "record", "records");
+    tip.append(head, document.createTextNode(plural(i, "individual", "individuals")),
+               document.createElement("br"), document.createTextNode(plural(s, "species", "species")));
+    tip.style.left = `${x}px`; tip.style.top = `${y}px`; tip.hidden = false;
+  };
+
+  const rotateBy = (dLon, dLat) => {
+    const [lon, lat] = projection.rotate();
+    projection.rotate([lon + dLon, Math.max(-90, Math.min(90, lat + dLat))]);
+    draw();
+  };
+
+  d3.select(canvas).call(d3.drag().on("start", hideTip).on("drag", e => {
+    const k = 75 / projection.scale();
+    rotateBy(e.dx * k, -e.dy * k);
+  }));
+
+  canvas.addEventListener("pointermove", e => {
+    if (!cells.length) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    const dx = x - size / 2, dy = y - size / 2;
+    if (dx * dx + dy * dy > (size / 2) ** 2) return hideTip();
+    const ll = projection.invert([x, y]);
+    const hit = cells.find(c => d3.geoContains(c, ll)) || null;
+    if (!hit) return hideTip();
+    if (hit !== hovered) { hovered = hit; draw(); }
+    showTip(hit, x, y);
+  });
+  canvas.addEventListener("pointerleave", hideTip);
+
+  canvas.addEventListener("keydown", e => {
+    const step = { ArrowLeft: [10, 0], ArrowRight: [-10, 0], ArrowUp: [0, -10], ArrowDown: [0, 10] }[e.key];
+    if (!step) return;
+    e.preventDefault(); hideTip(); rotateBy(...step);
+  });
+
+  // Quarto switches light and dark by swapping a class on <body>.
+  new MutationObserver(() => requestAnimationFrame(() => { readColours(); draw(); }))
+    .observe(document.body, { attributes: true, attributeFilter: ["class"] });
+  new ResizeObserver(resize).observe(stage);
+
+  labels.forEach((text, k) => {
+    const li = document.createElement("li");
+    const sw = document.createElement("span");
+    sw.className = "swatch";
+    sw.style.background = `var(--seq-${k + 1})`;
+    li.append(sw, document.createTextNode(text));
+    legend.append(li);
+  });
+
+  Promise.all([d3.json("/assets/data/land_110m.json"), d3.json("/assets/data/arha_host_hex.json")])
+    .then(([l, h]) => {
+      l.features.forEach(fixWinding);
+      land = l;
+      cells = h.cells.map(([r, i, s, b]) => {
+        const ring = [];
+        for (let j = 0; j < b.length; j += 2) ring.push([b[j], b[j + 1]]);
+        const f = fixWinding({ type: "Feature", properties: { r, i, s }, geometry: { type: "Polygon", coordinates: [ring] } });
+        f.k = classOf(r);
+        return f;
+      });
+      const m = h.meta;
+      const area = cellArea[m.h3_resolution] ? ` of about ${cellArea[m.h3_resolution]} km² each` : "";
+      caption.textContent = `${fmt(m.n_records)} host sampling records from ${fmt(m.n_locations)} locations in ${m.n_countries} countries, grouped into ${fmt(m.n_cells)} hexagons${area}. Empty and pale regions show where small mammals have rarely been sampled for these viruses, not where the viruses are absent. Project ArHa data, ${m.source_modified}.`;
+      canvas.setAttribute("aria-label", `Globe of Project ArHa host sampling records. ${caption.textContent}`);
+
+      readColours();
+      resize();
+
+      // Table view: the same records by country, so no value is reachable
+      // only by hovering. Built after the globe has drawn, and guarded, so a
+      // problem here can never stop the globe. Quarto rewrites HTML tables and
+      // drops ids on <caption>, so the caption is found through the table.
+      try {
+        const tbody = document.getElementById("arha-globe-table-body");
+        for (const [country, records, locations, individuals] of (h.countries || [])) {
+          const tr = document.createElement("tr");
+          for (const v of [country, fmt(records), fmt(locations), fmt(individuals)]) {
+            const td = document.createElement("td");
+            td.textContent = v;
+            tr.append(td);
+          }
+          tbody.append(tr);
+        }
+        const tableCaption = tbody.closest("table")?.querySelector("caption");
+        if (tableCaption && m.n_records_no_country) {
+          tableCaption.textContent = `Host sampling records by country. ${fmt(m.n_records_no_country)} records with coordinates but no country code are not shown.`;
+        }
+      } catch (e) {
+        console.warn("Globe table view could not be built", e);
+      }
+    })
+    .catch(() => { caption.textContent = "The globe could not load its data."; });
+})();
+</script>
+```

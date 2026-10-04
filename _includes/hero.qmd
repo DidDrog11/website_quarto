@@ -1,0 +1,154 @@
+::: {.hero-band}
+::: {.hero-inner}
+
+::: {.hero-lede}
+# Rodents, land use, pathogen transmission and spillover
+
+I study how people reshape the landscapes they live in, how small mammals respond, and what effects that has on the viruses they carry. Much of this work is on Lassa fever in West Africa.
+:::
+
+::: {.hero-figure-wrap}
+
+```{=html}
+<svg class="hero-figure" viewBox="0 40 1320 596" role="img"
+     aria-labelledby="hero-title hero-desc" preserveAspectRatio="xMidYMax meet">
+  <title id="hero-title">The synanthropy gradient, from closed forest to urbanised dwellings</title>
+  <desc id="hero-desc">An illustrated cross-section of a West African landscape running left to right:
+  closed forest, forest edge and bush with oil palms, agricultural land with crops, rural dwellings of
+  thatched huts beside a mango tree, peri-urban houses with corrugated roofs, and urbanised dwellings
+  of concrete buildings. Beneath it, a fading bar for each of eight small-mammal species shows
+  schematically where along the gradient it is most often found, ordered from forest to town:
+  Malacomys edwardsi in closed forest; Lophuromys sikapusi at the forest edge; Lemniscomys striatus
+  and Praomys rostratus in agricultural land, Praomys reaching into rural dwellings; Mastomys
+  natalensis, the primary reservoir of Lassa virus, peaking at rural dwellings; Rattus rattus around
+  rural dwellings; Mus musculus at peri-urban dwellings; and Rattus norvegicus in urbanised
+  dwellings. The same information is given as a list below this graphic.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ds-ink-muted)"/>
+    </marker>
+    <!-- One gradient per species: faint at the ends of its range, full at its
+         peak. Stop offsets are the peak's position within the bar. -->
+    <linearGradient id="range-mal"><stop offset="0" stop-color="var(--hab-forest)" stop-opacity="0.08"/><stop offset="0.30" stop-color="var(--hab-forest)"/><stop offset="1" stop-color="var(--hab-forest)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-lop"><stop offset="0" stop-color="var(--hab-farm)" stop-opacity="0.08"/><stop offset="0.51" stop-color="var(--hab-farm)"/><stop offset="1" stop-color="var(--hab-farm)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-lem"><stop offset="0" stop-color="var(--hab-village)" stop-opacity="0.08"/><stop offset="0.54" stop-color="var(--hab-village)"/><stop offset="1" stop-color="var(--hab-village)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-pra"><stop offset="0" stop-color="var(--hab-village)" stop-opacity="0.08"/><stop offset="0.60" stop-color="var(--hab-village)"/><stop offset="1" stop-color="var(--hab-village)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-mas"><stop offset="0" stop-color="var(--ds-accent)" stop-opacity="0.08"/><stop offset="0.47" stop-color="var(--ds-accent)"/><stop offset="1" stop-color="var(--ds-accent)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-rra"><stop offset="0" stop-color="var(--hab-dwelling)" stop-opacity="0.08"/><stop offset="0.42" stop-color="var(--hab-dwelling)"/><stop offset="1" stop-color="var(--hab-dwelling)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-mus"><stop offset="0" stop-color="var(--hab-periurban)" stop-opacity="0.08"/><stop offset="0.51" stop-color="var(--hab-periurban)"/><stop offset="1" stop-color="var(--hab-periurban)" stop-opacity="0.08"/></linearGradient>
+    <linearGradient id="range-rno"><stop offset="0" stop-color="var(--hab-town)" stop-opacity="0.08"/><stop offset="0.76" stop-color="var(--hab-town)"/><stop offset="1" stop-color="var(--hab-town)" stop-opacity="0.08"/></linearGradient>
+  </defs>
+
+  <!-- Landscape illustration, built by scripts/build_hero_image.R. Its ground
+       line falls at 306.4 of its 307.9 height, so y = 350 minus 306.4 puts it
+       on the ground at 350. Transparent background, so it sits on the page in
+       light and dark mode. -->
+  <image class="hero-landscape" href="images/hero_landscape.webp"
+         x="0" y="43.6" width="1320" height="307.9" preserveAspectRatio="none"/>
+
+  <!-- Zones as they fall in the illustration: closed forest 0 to 195, forest
+       edge and bush 195 to 420, agricultural 420 to 590, rural dwellings 590
+       to 812, peri-urban dwellings 812 to 1056, urbanised dwellings 1056 to
+       1320. Faint solid hairlines carry the boundaries down through the ranges
+       (dashed rules read as projections or thresholds, so they are avoided). -->
+  <g class="axis-line" opacity="0.3" stroke-width="1">
+    <line x1="195"  y1="356" x2="195"  y2="578"/>
+    <line x1="420"  y1="356" x2="420"  y2="578"/>
+    <line x1="590"  y1="356" x2="590"  y2="578"/>
+    <line x1="812"  y1="356" x2="812"  y2="578"/>
+    <line x1="1056" y1="356" x2="1056" y2="578"/>
+  </g>
+
+  <g class="habitat-label" text-anchor="middle">
+    <text x="97"   y="384">Closed forest</text>
+    <text x="307"  y="384">Forest edge and bush</text>
+    <text x="505"  y="384">Agricultural</text>
+    <text x="701"  y="384">Rural dwellings</text>
+    <text x="934"  y="384">Peri-urban dwellings</text>
+    <text x="1188" y="384">Urbanised dwellings</text>
+  </g>
+
+  <!-- Species ranges, schematic, ordered by where each peaks. Ranges are the
+       owner's to confirm. -->
+  <g class="species">
+    <title>Malacomys edwardsi, a closed-forest specialist</title>
+    <rect x="0" y="408" width="262" height="8" rx="4" fill="url(#range-mal)"/>
+    <text class="species-label" x="272" y="417">Malacomys edwardsi</text>
+  </g>
+  <g class="species">
+    <title>Lophuromys sikapusi, forest edge and bush</title>
+    <rect x="117" y="430" width="371" height="8" rx="4" fill="url(#range-lop)"/>
+    <text class="species-label" x="498" y="439">Lophuromys sikapusi</text>
+  </g>
+  <g class="species">
+    <title>Lemniscomys striatus, agricultural land and grassland</title>
+    <rect x="262" y="452" width="294" height="8" rx="4" fill="url(#range-lem)"/>
+    <text class="species-label" x="566" y="461">Lemniscomys striatus</text>
+  </g>
+  <g class="species">
+    <title>Praomys rostratus, agricultural land and rural dwellings</title>
+    <rect x="156" y="474" width="523" height="8" rx="4" fill="url(#range-pra)"/>
+    <text class="species-label" x="689" y="483">Praomys rostratus</text>
+  </g>
+  <g class="species">
+    <title>Mastomys natalensis, the primary reservoir of Lassa virus, peaking at rural dwellings</title>
+    <rect x="330" y="494" width="555" height="12" rx="6" fill="url(#range-mas)"/>
+    <text class="species-label" x="895" y="505" style="font-weight:600">Mastomys natalensis</text>
+  </g>
+  <g class="species">
+    <title>Rattus rattus, commensal, rural dwellings</title>
+    <rect x="454" y="518" width="480" height="8" rx="4" fill="url(#range-rra)"/>
+    <text class="species-label" x="944" y="527">Rattus rattus</text>
+  </g>
+  <g class="species">
+    <title>Mus musculus, commensal, peri-urban dwellings</title>
+    <rect x="590" y="540" width="624" height="8" rx="4" fill="url(#range-mus)"/>
+    <text class="species-label" x="580" y="549" text-anchor="end">Mus musculus</text>
+  </g>
+  <g class="species">
+    <title>Rattus norvegicus, commensal, urbanised dwellings</title>
+    <rect x="768" y="562" width="552" height="8" rx="4" fill="url(#range-rno)"/>
+    <text class="species-label" x="758" y="571" text-anchor="end">Rattus norvegicus</text>
+  </g>
+
+  <line x1="40" y1="594" x2="1282" y2="594" class="axis-line" marker-end="url(#arrow)"/>
+  <text class="axis-label" x="40" y="622">Increasing synanthropy. Bars show schematically where each species is most often found.</text>
+</svg>
+```
+
+:::
+
+```{=html}
+<ul class="gradient-key">
+  <li style="--band: var(--hab-forest)">
+    <strong>Closed forest</strong>
+    <span>Forest specialists, rarely in contact with people. Where sampling effort is thinnest.</span>
+  </li>
+  <li style="--band: var(--hab-farm)">
+    <strong>Forest edge and bush</strong>
+    <span>Regrowth and fallow at the forest margin. The species mix turns over fastest here.</span>
+  </li>
+  <li style="--band: var(--hab-village)">
+    <strong>Agricultural</strong>
+    <span>Crops and fallow, where <em>Praomys rostratus</em> and <em>Lemniscomys striatus</em> are often trapped.</span>
+  </li>
+  <li style="--band: var(--hab-dwelling)">
+    <strong>Rural dwellings</strong>
+    <span>Villages and their gardens. Where <em>Mastomys natalensis</em> peaks, and where most spillover is thought to happen.</span>
+  </li>
+  <li style="--band: var(--hab-periurban)">
+    <strong>Peri-urban dwellings</strong>
+    <span>Invasive commensals. Where <em>Mus musculus</em> is present, the reservoir is less likely to be.</span>
+  </li>
+  <li style="--band: var(--hab-town)">
+    <strong>Urbanised dwellings</strong>
+    <span>Urban commensals. The reservoir reaches the edge, yet no major city has had a documented Lassa fever outbreak.</span>
+  </li>
+</ul>
+<p class="hero-credit">Original illustration, modified with Gemini Flash 3.8 and Claude Opus 5.5.</p>
+```
+
+:::
+:::

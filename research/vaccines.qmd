@@ -1,0 +1,37 @@
+---
+title: "Vaccines and trial design"
+subtitle: "Getting vaccines for zoonotic pathogens through the pipeline"
+description: "One Health trial design for Lassa fever vaccines, and design commitments for self-disseminating vaccines."
+categories: [Policy, Vaccines, One Health, Lassa Fever]
+toc: true
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. The framing text is a draft and should be rewritten as the statement of where this research programme is going.
+:::
+
+Vaccine trials for zoonotic pathogens have a problem that trials for
+human-to-human pathogens do not. Efficacy is measured against incident
+infection, and infection arrives from wildlife at times and places nobody can
+predict. Ecology is therefore not background to the trial, it is part of its
+design.
+
+This is the direction I want my own work to take: using what we know about
+reservoirs and about human exposure to make trials of Lassa fever vaccines
+answerable, and doing the same for the next priority pathogen.
+
+## Papers
+
+```{r}
+#| results: asis
+#| echo: false
+#| message: false
+#| warning: false
+# Papers assigned to this page in data/publications_overrides.csv.
+source(here::here("scripts", "paper_cards.R"))
+render_programme_papers("research/vaccines.qmd")
+```
+::: {.callout-note appearance="minimal"}
+To add: how the SCAPES serosurvey and the urbanisation model feed site
+selection in practice, and what is planned next.
+:::

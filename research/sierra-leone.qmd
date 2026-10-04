@@ -1,0 +1,41 @@
+---
+title: "Host ecology in Sierra Leone"
+subtitle: "Small-mammal communities along a land-use gradient"
+description: "Four years of trapping across forest, farm bush and village in Eastern Province, and what land use does to the Lassa virus reservoir community."
+categories: [Rodent, Ecology, Lassa Fever, Sierra Leone]
+toc: true
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. The framing text is a draft; the papers below come from the publications data.
+:::
+
+Doctoral fieldwork in Eastern Province, Sierra Leone, between 2020 and 2023.
+Repeated trapping at four village sites, along a transect from closed forest
+through farm bush to the inside of dwellings, across 43,226 trap nights.
+
+The question underneath all of it: land use decides which small mammals live
+where, so does it also decide where *Mammarenavirus lassaense* circulates, and
+where people meet it?
+
+## Papers
+
+```{r}
+#| results: asis
+#| echo: false
+#| message: false
+#| warning: false
+# Papers assigned to this page in data/publications_overrides.csv.
+source(here::here("scripts", "paper_cards.R"))
+render_programme_papers("research/sierra-leone.qmd")
+```
+## Data and code
+
+Protocols are archived on the Open Science Framework, field data are collected
+with Open Data Kit, and analysis code sits in the project repositories. Trapping
+records are deposited on GBIF and PHAROS.
+
+::: {.callout-note appearance="minimal"}
+To add: the field photographs, the EEID talk embed carried over from the old
+trapping page, and links to each dataset.
+:::

@@ -1,0 +1,36 @@
+---
+title: "Open tools and data"
+subtitle: "Applications and standards for other people's fieldwork"
+description: "Map Liberator, SiteTool, and a minimum data standard for wildlife disease research."
+categories: [Open Source, Open Data, Shiny, R]
+toc: true
+---
+
+::: {.callout-note appearance="minimal"}
+Placeholder page. The framing text is a draft. App screenshots and launch links are still to come.
+:::
+
+Analyses are only as good as the data going in, and a surprising amount of what
+field epidemiology needs is either locked in a PDF or never recorded in the
+first place. These are tools and standards built to fix specific instances of
+that.
+
+## Papers and tools
+
+```{r}
+#| results: asis
+#| echo: false
+#| message: false
+#| warning: false
+# Papers assigned to this page in data/publications_overrides.csv.
+source(here::here("scripts", "paper_cards.R"))
+render_programme_papers("research/tools.qmd")
+```
+## Also
+
+The Project ArHa database and its Shiny application are the largest open data
+output. They live on the [Project ArHa](/research/arha.html) page.
+
+::: {.callout-note appearance="minimal"}
+To add: screenshots, repository links and the PHAROS and GBIF deposits.
+:::

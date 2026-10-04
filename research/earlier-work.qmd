@@ -1,0 +1,23 @@
+---
+title: "Earlier work"
+subtitle: "Projects outside the current programmes, or where my role was more peripheral."
+title-block-banner: true
+---
+
+## Antimicrobial resistance
+
+I contributed to two cross-sectional studies of antimicrobial resistance on poultry farms on the east coast of Peninsular Malaysia, led by [Abdinasir Osman {{< ai orcid >}}](https://orcid.org/0000-0003-3172-5912) and [Sharifo Ali-Elmi {{< ai orcid >}}](https://orcid.org/0000-0002-4482-9182).
+
+1. Antimicrobial resistance patterns and risk factors associated with *Salmonella* spp. isolates from poultry farms in the east coast of Peninsular Malaysia: a cross-sectional study. *Pathogens*, 2021. [doi:10.3390/pathogens10091160](https://doi.org/10.3390/pathogens10091160)
+2. Identification of risk factors associated with resistant *Escherichia coli* isolates from poultry farms in the east coast of Peninsular Malaysia: a cross-sectional study. *Antibiotics*, 2021. [doi:10.3390/antibiotics10020117](https://doi.org/10.3390/antibiotics10020117)
+
+## Other projects
+
+- [African swine fever](/others/asf.html). Modelling range expansion of the emerging epidemic in Europe.
+- [Digital health](/others/digital_health.html). Digital healthcare interventions for sustained behaviour change.
+- [Peste des petits ruminants](/others/pprv.html). The sensitivity and specificity of assays for the virus.
+
+![A conceptual model of African swine fever transmission in sylvatic and agricultural settings.](/others/images/asf_framework.svg)
+
+<!-- These three pages stay at their old URLs until their content is folded
+     into this page; then they get redirect rules in _redirects. -->
