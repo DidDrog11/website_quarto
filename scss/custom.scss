@@ -491,6 +491,12 @@ main.content .landing-recent ul { max-width: none; }
   figcaption { font-size: 0.85rem; color: var(--ds-ink-muted); margin-top: 0.35rem; }
 }
 
+// Figures exported on white: multiply drops the white into the page ground
+// and leaves the data colours as drawn. Dark mode turns this off and puts the
+// figure on a light card instead (dark.scss).
+main .quarto-figure img:not(.no-matte),
+main figure img:not(.no-matte) { mix-blend-mode: multiply; }
+
 // ---------------------------------------------------------------------------
 // Page age, printed in the footer of each page
 // ---------------------------------------------------------------------------

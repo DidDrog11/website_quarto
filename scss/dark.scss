@@ -47,6 +47,7 @@ $link-hover-color: lighten($primary, 8%);
 // Any figure that still reads wrong needs regenerating with a transparent
 // background rather than a CSS fix here.
 main img:not(.no-matte):not(.rounded-circle) {
+  mix-blend-mode: normal;
   background: #f7f8f5;
   padding: 0.4rem;
   border-radius: 4px;
