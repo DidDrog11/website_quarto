@@ -3,6 +3,7 @@ pagetitle: "David Simons"
 description-meta: "Epidemiologist and infectious disease ecologist. Rodent-borne zoonoses, primarily Lassa fever."
 page-layout: custom
 toc: false
+page-age: false
 ---
 
 {{< include _includes/hero.qmd >}}

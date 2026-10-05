@@ -75,42 +75,58 @@ I study how people reshape the landscapes they live in, how small mammals respon
   <g class="species">
     <title>Malacomys edwardsi, a closed-forest specialist</title>
     <rect x="0" y="408" width="262" height="8" rx="4" fill="url(#range-mal)"/>
+    <rect class="species-hit" x="0" y="402" width="1320" height="22"/>
     <text class="species-label" x="272" y="417">Malacomys edwardsi</text>
+    <text class="species-common" x="272" y="417">Edward's swamp rat</text>
   </g>
   <g class="species">
     <title>Lophuromys sikapusi, forest edge and bush</title>
     <rect x="117" y="430" width="371" height="8" rx="4" fill="url(#range-lop)"/>
+    <rect class="species-hit" x="0" y="424" width="1320" height="22"/>
     <text class="species-label" x="498" y="439">Lophuromys sikapusi</text>
+    <text class="species-common" x="498" y="439">Rusty-bellied brush-furred rat</text>
   </g>
   <g class="species">
     <title>Lemniscomys striatus, agricultural land and grassland</title>
     <rect x="262" y="452" width="294" height="8" rx="4" fill="url(#range-lem)"/>
+    <rect class="species-hit" x="0" y="446" width="1320" height="22"/>
     <text class="species-label" x="566" y="461">Lemniscomys striatus</text>
+    <text class="species-common" x="566" y="461">Typical striped grass mouse</text>
   </g>
   <g class="species">
     <title>Praomys rostratus, agricultural land and rural dwellings</title>
     <rect x="156" y="474" width="523" height="8" rx="4" fill="url(#range-pra)"/>
+    <rect class="species-hit" x="0" y="468" width="1320" height="22"/>
     <text class="species-label" x="689" y="483">Praomys rostratus</text>
+    <text class="species-common" x="689" y="483">Soft-furred mouse</text>
   </g>
   <g class="species">
     <title>Mastomys natalensis, the primary reservoir of Lassa virus, peaking at rural dwellings</title>
     <rect x="330" y="494" width="555" height="12" rx="6" fill="url(#range-mas)"/>
+    <rect class="species-hit" x="0" y="490" width="1320" height="22"/>
     <text class="species-label" x="895" y="505" style="font-weight:600">Mastomys natalensis</text>
+    <text class="species-common" x="895" y="505">Natal multimammate mouse</text>
   </g>
   <g class="species">
     <title>Rattus rattus, commensal, rural dwellings</title>
     <rect x="454" y="518" width="480" height="8" rx="4" fill="url(#range-rra)"/>
+    <rect class="species-hit" x="0" y="512" width="1320" height="22"/>
     <text class="species-label" x="944" y="527">Rattus rattus</text>
+    <text class="species-common" x="944" y="527">Black rat</text>
   </g>
   <g class="species">
     <title>Mus musculus, commensal, peri-urban dwellings</title>
     <rect x="590" y="540" width="624" height="8" rx="4" fill="url(#range-mus)"/>
+    <rect class="species-hit" x="0" y="534" width="1320" height="22"/>
     <text class="species-label" x="580" y="549" text-anchor="end">Mus musculus</text>
+    <text class="species-common" x="580" y="549" text-anchor="end">House mouse</text>
   </g>
   <g class="species">
     <title>Rattus norvegicus, commensal, urbanised dwellings</title>
     <rect x="768" y="562" width="552" height="8" rx="4" fill="url(#range-rno)"/>
+    <rect class="species-hit" x="0" y="556" width="1320" height="22"/>
     <text class="species-label" x="758" y="571" text-anchor="end">Rattus norvegicus</text>
+    <text class="species-common" x="758" y="571" text-anchor="end">Brown rat</text>
   </g>
 
   <line x1="40" y1="594" x2="1282" y2="594" class="axis-line" marker-end="url(#arrow)"/>

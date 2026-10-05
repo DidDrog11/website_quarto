@@ -257,15 +257,25 @@ a { text-underline-offset: 0.15em; }
   }
   .axis-line { stroke: var(--ds-hero-line); stroke-width: 1.5; }
 
-  // Markers, not links. Hover only surfaces the <title> tooltip.
-  .species {
-    .species-dot {
-      stroke: var(--ds-ground);
-      stroke-width: 2.5;
-      transition: r 0.15s ease;
-    }
-    &:hover .species-dot { r: 11; }
+  .species-common {
+    font-family: #{$font-family-sans-serif};
+    font-size: 15px;
+    font-weight: 500;
+    fill: var(--ds-ink);
+    opacity: 0;
   }
+
+  // Markers, not links. Hovering a species' row dims the others and swaps its
+  // scientific name for the common name in the same place. The transparent
+  // strip makes the whole row the target, not just the thin bar.
+  .species {
+    .species-hit { fill: transparent; }
+    .species-label, .species-common, rect { transition: opacity 0.2s ease; }
+    &:hover .species-label { opacity: 0; }
+    &:hover .species-common { opacity: 1; }
+  }
+  &:has(.species:hover) .species:not(:hover) { opacity: 0.3; }
+  .species { transition: opacity 0.2s ease; }
 }
 
 // Below about 700px the transect is unreadable; the text list carries it.

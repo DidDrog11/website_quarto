@@ -3,7 +3,7 @@ title: "SCAPES, Nigeria"
 body-classes: zone-scapes
 subtitle: "Cross-scale dynamics of Lassa virus spillover within human-driven ecosystems"
 categories: [Lassa Fever, One Health, Rodent, Human, Nigeria]
-image: ../lassa/files/scapes/scapes_training.webp
+image: ../images/og-card.png
 toc: true
 execute:
   echo: false

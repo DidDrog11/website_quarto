@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Source for images/og-card.png, the site's link-preview image (1200 x 630).
+     Rebuild with scripts/build_og_card.sh after changing the hero or the title. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Newsreader"; src: url("../assets/fonts/newsreader-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; }
+  @font-face { font-family: "Public Sans"; src: url("../assets/fonts/public-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    background: linear-gradient(180deg, #e4eae4 0%, #f2f4ef 70%);
+    color: #1e2420;
+    font-family: "Public Sans", sans-serif;
+  }
+  .text { position: absolute; left: 64px; top: 56px; width: 760px; }
+  .name { font-size: 26px; font-weight: 600; letter-spacing: 0.02em; color: #56605a; margin: 0 0 18px; }
+  h1 { font-family: "Newsreader", serif; font-weight: 600; font-size: 64px; line-height: 1.04; margin: 0; }
+  .role { font-size: 24px; color: #56605a; margin: 20px 0 0; }
+  .band { position: absolute; left: 64px; top: 40px; width: 120px; height: 6px; border-radius: 3px;
+          background: linear-gradient(90deg, #2c4739, #5f7a46, #a88248, #a4552f, #7e6458, #5d6b72); }
+  img { position: absolute; left: 0; bottom: 0; width: 1200px; }
+  .url { position: absolute; right: 64px; top: 62px; font-size: 22px; color: #56605a; }
+</style>
+</head>
+<body>
+  <div class="band"></div>
+  <div class="url">dsimons.org</div>
+  <div class="text">
+    <p class="name">David Simons</p>
+    <h1>Rodents, land use, pathogen transmission and spillover</h1>
+    <p class="role">Epidemiologist and infectious disease ecologist</p>
+  </div>
+  <img src="../images/hero_landscape.webp" alt="">
+</body>
+</html>

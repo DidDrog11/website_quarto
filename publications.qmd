@@ -3,6 +3,7 @@ title: "Publications"
 description: "Papers, preprints, data and code, from ORCID."
 toc: true
 toc-title: "By year"
+image: images/og-card.png
 toc-depth: 2
 title-block-banner: true
 execute:

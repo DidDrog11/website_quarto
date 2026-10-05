@@ -23,6 +23,7 @@ project:
     - "_redirects"
     - "cv.pdf"
     - "images/cards/*"
+    - "images/og-card.png"
     - "data/lassa_cases.csv"
     - "data/lassa_hosts.csv"
     # Images and files from the retired paper pages (2026-10-05). Nothing links
@@ -40,10 +41,14 @@ website:
   title: "David Simons"
   site-url: https://www.dsimons.org
   favicon: /images/icon.ico
+  # Default link-preview image, built by scripts/build_og_card.sh. Pages with
+  # their own image: front matter use that instead.
+  image: images/og-card.png
   open-graph: true
-  twitter-card: true
+  twitter-card:
+    card-style: summary_large_image
   page-navigation: true
-  # No analytics. Nothing here may set a cookie.
+  # Analytics: GoatCounter only (assets/goatcounter.html). Nothing may set a cookie.
   navbar:
     pinned: true   # always visible, so the menu is there at the bottom of a page
     foreground: dark
@@ -107,6 +112,9 @@ format:
       dark: [scss/custom.scss, scss/dark.scss]
     toc: true
     toc-depth: 3
+    # "Last updated" from git at the foot of each page (see the filter header).
+    filters:
+      - filters/page-age.lua
     smooth-scroll: true
     anchor-sections: true
     link-external-icon: true

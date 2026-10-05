@@ -2,7 +2,7 @@
 title: "Open tools and data"
 subtitle: "Applications and standards for other people's fieldwork"
 categories: [Open Source, Open Data, Shiny, R]
-image: ../open_science/images/map_liberator_app.webp
+image: ../images/og-card.png
 toc: true
 ---
 
