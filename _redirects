@@ -38,3 +38,68 @@
 # Individual paper pages under lassa/, arha/, covid/, monkeypox/, policy/,
 # open_science/ and others/ still exist. They get rules here as each is
 # retired into its programme page.
+
+# Old paper pages retired into programme pages (2026-10-05). Content moved
+# first; anchors point at the section that took it over.
+/lassa/lassa_fever_chapter.html               /research/lassa-epidemiology.html#ongoing-work                         301
+/lassa/lassa_fever_chapter                    /research/lassa-epidemiology.html#ongoing-work                         301
+/lassa/lassa_phylogenetics.html               /research/lassa-epidemiology.html                                      301
+/lassa/lassa_phylogenetics                    /research/lassa-epidemiology.html                                      301
+/lassa/lassa_underreporting.html              /research/lassa-epidemiology.html                                      301
+/lassa/lassa_underreporting                   /research/lassa-epidemiology.html                                      301
+/lassa/lips_assay.html                        /research/earlier-work.html                                            301
+/lassa/lips_assay                             /research/earlier-work.html                                            301
+/lassa/one_health.html                        /research/rodent-disease-ecology.html                                  301
+/lassa/one_health                             /research/rodent-disease-ecology.html                                  301
+/lassa/rodent_activity.html                   /research/sierra-leone.html#inside-houses                              301
+/lassa/rodent_activity                        /research/sierra-leone.html#inside-houses                              301
+/lassa/rodent_network.html                    /research/sierra-leone.html                                            301
+/lassa/rodent_network                         /research/sierra-leone.html                                            301
+/lassa/rodent_trapping.html                   /research/sierra-leone.html                                            301
+/lassa/rodent_trapping                        /research/sierra-leone.html                                            301
+/lassa/rodent_trapping_review.html            /research/sierra-leone.html                                            301
+/lassa/rodent_trapping_review                 /research/sierra-leone.html                                            301
+/lassa/scapes_human_serosurvey.html           /research/scapes.html                                                  301
+/lassa/scapes_human_serosurvey                /research/scapes.html                                                  301
+/lassa/web_app.html                           /research/tools.html                                                   301
+/lassa/web_app                                /research/tools.html                                                   301
+/arha/arena_hanta.html                        /research/arha.html                                                    301
+/arha/arena_hanta                             /research/arha.html                                                    301
+/arha/reservoir_trait.html                    /research/arha.html#host-status-and-surveillance-bias                  301
+/arha/reservoir_trait                         /research/arha.html#host-status-and-surveillance-bias                  301
+/covid/covid_clinical.html                    /research/surveillance.html#clinical-work                              301
+/covid/covid_clinical                         /research/surveillance.html#clinical-work                              301
+/covid/covid_modelling.html                   /research/surveillance.html#covid-19-modelling-with-cmmid              301
+/covid/covid_modelling                        /research/surveillance.html#covid-19-modelling-with-cmmid              301
+/covid/covid_smoking.html                     /research/earlier-work.html#digital-health-and-smoking                 301
+/covid/covid_smoking                          /research/earlier-work.html#digital-health-and-smoking                 301
+/covid/covid_transmission.html                /research/surveillance.html#covid-19-preparedness-in-africa            301
+/covid/covid_transmission                     /research/surveillance.html#covid-19-preparedness-in-africa            301
+/covid/omicron.html                           /research/surveillance.html#outbreak-surveillance-at-ukhsa             301
+/covid/omicron                                /research/surveillance.html#outbreak-surveillance-at-ukhsa             301
+/covid/sickle_cell.html                       /research/surveillance.html#clinical-work                              301
+/covid/sickle_cell                            /research/surveillance.html#clinical-work                              301
+/monkeypox/community_transmission.html        /research/surveillance.html#outbreak-surveillance-at-ukhsa             301
+/monkeypox/community_transmission             /research/surveillance.html#outbreak-surveillance-at-ukhsa             301
+/monkeypox/monkeypox_emergence.html           /research/surveillance.html#mpox-in-endemic-regions                    301
+/monkeypox/monkeypox_emergence                /research/surveillance.html#mpox-in-endemic-regions                    301
+/policy/bon_framework.html                    /research/surveillance.html#wildlife-disease-surveillance              301
+/policy/bon_framework                         /research/surveillance.html#wildlife-disease-surveillance              301
+/policy/ecdc_elearning.html                   /consultancy.html                                                      301
+/policy/ecdc_elearning                        /consultancy.html                                                      301
+/policy/one_health_trial_design.html          /research/vaccines.html                                                301
+/policy/one_health_trial_design               /research/vaccines.html                                                301
+/policy/transmissible_vaccines.html           /research/vaccines.html#transmissible-vaccines                         301
+/policy/transmissible_vaccines                /research/vaccines.html#transmissible-vaccines                         301
+/open_science/map_liberator.html              /research/tools.html                                                   301
+/open_science/map_liberator                   /research/tools.html                                                   301
+/open_science/minimum_data_standard.html      /research/tools.html#data-standard                                     301
+/open_science/minimum_data_standard           /research/tools.html#data-standard                                     301
+/open_science/site_tool.html                  /research/tools.html                                                   301
+/open_science/site_tool                       /research/tools.html                                                   301
+/others/asf.html                              /research/earlier-work.html#african-swine-fever                        301
+/others/asf                                   /research/earlier-work.html#african-swine-fever                        301
+/others/digital_health.html                   /research/earlier-work.html#digital-health-and-smoking                 301
+/others/digital_health                        /research/earlier-work.html#digital-health-and-smoking                 301
+/others/pprv.html                             /research/earlier-work.html#peste-des-petits-ruminants                 301
+/others/pprv                                  /research/earlier-work.html#peste-des-petits-ruminants                 301

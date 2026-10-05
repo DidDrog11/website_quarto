@@ -24,6 +24,16 @@ project:
     - "cv.pdf"
     - "data/lassa_cases.csv"
     - "data/lassa_hosts.csv"
+    # Images and files from the retired paper pages (2026-10-05). Nothing links
+    # to some of them any more, so they are listed here to keep their old URLs.
+    - "arha/figures/*"
+    - "arha/files/*"
+    - "covid/images/*"
+    - "lassa/images/*"
+    - "lassa/files/*"
+    - "open_science/images/*"
+    - "others/images/*"
+    - "policy/images/*"
 
 website:
   title: "David Simons"
