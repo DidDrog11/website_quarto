@@ -1,7 +1,7 @@
 # Shared rendering of publication entries for the site.
 #
 # Sourced by publications.qmd (the numbered list) and by each programme page
-# under research/ (its own papers, as open cards). Reads data/publications.csv,
+# under research/ (its own papers, summaries folded). Reads data/publications.csv,
 # data/pdfs.csv and the explainer notes in data/paper_notes/, and writes
 # Pandoc markdown with cat(), so call it from a chunk with `results: asis`.
 #
@@ -126,7 +126,7 @@ render_entry <- function(row, n = NULL, open = FALSE, read_more = TRUE) {
 }
 
 # The papers assigned to one programme page in data/publications_overrides.csv,
-# newest first, with summaries open. `page` is the page's path from the
+# newest first, with summaries folded. `page` is the page's path from the
 # project root, e.g. "research/arha.qmd".
 render_programme_papers <- function(page) {
   mine <- pubs |>
@@ -137,5 +137,5 @@ render_programme_papers <- function(page) {
     cat("::: {.callout-note appearance=\"minimal\"}\nNo papers are assigned to this page yet. Set its path in the `page` column of `data/publications_overrides.csv`.\n:::\n\n")
     return(invisible(NULL))
   }
-  for (i in seq_len(nrow(mine))) render_entry(mine[i, ], open = TRUE, read_more = FALSE)
+  for (i in seq_len(nrow(mine))) render_entry(mine[i, ], open = FALSE, read_more = FALSE)
 }
