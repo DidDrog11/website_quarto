@@ -14,7 +14,7 @@ Each record gives the species sampled, the place and date, the assays used and t
 - **Release.** Version 1.1 is archived on Zenodo, [doi:10.5281/zenodo.21978983](https://doi.org/10.5281/zenodo.21978983). To cite all versions, use the concept DOI [10.5281/zenodo.21978982](https://doi.org/10.5281/zenodo.21978982).
 - **Explore.** The [ArHa database explorer](https://diddrog11.shinyapps.io/ArHa_Database_Explorer/) filters records by virus, host and region.
 - **Code and data dictionary.** The [GitHub repository](https://github.com/DidDrog11/arenavirus_hantavirus) holds the extraction and cleaning code and the data dictionary. It is released under CC0.
-- **Methods.** The search strategy, extraction criteria and database structure are in the published protocol, [doi:10.12688/wellcomeopenres.22119.1](https://doi.org/10.12688/wellcomeopenres.22119.1). A data paper describing the release is in preparation.
+- **Methods.** The search strategy, extraction criteria and database structure are in the published protocol, [doi:10.12688/wellcomeopenres.24037.2](https://doi.org/10.12688/wellcomeopenres.24037.2). A data paper describing the release is in preparation.
 
 ## Where hosts have been sampled
 
