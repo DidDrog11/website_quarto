@@ -10,16 +10,8 @@ execute:
   message: false
 ---
 
-::: {.callout-note appearance="minimal"}
-Placeholder page. The framing text is a draft. The explainer notes for the
-under-reporting and sequencing-bias papers are written and will be pulled in
-from `data/paper_notes/` when the programme pages are wired to the
-publications data.
-:::
+Reported Lassa fever case counts feed almost every risk model, yet they are incomplete in ways that vary by country and by year. This programme assesses what can be inferred from the surveillance, sampling and sequence record as it stands: which hosts carry the virus, how far human cases are under-reported, and what a change in a reported indicator can and cannot show.
 
-Reported Lassa fever case counts are the input to almost every risk model, and
-they are incomplete in ways that vary by country and by year. This programme
-asks what can be inferred anyway.
 
 ## Detections in hosts
 
@@ -30,7 +22,7 @@ Small mammal species in which *Mammarenavirus lassaense* has been detected in We
 
 # --- 1. Load Packages ---
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, kableExtra, here, ggspatial, cowplot, readr)
+pacman::p_load(tidyverse, kableExtra, here, sf, readr)
 
 # --- 2. Host detections ---
 # data/lassa_hosts.csv is built by scripts/build_lassa_hosts.R. One row per
@@ -148,21 +140,68 @@ cat("\n</details>\n")
 #| dev.args: !expr list(bg = "transparent")
 mastomys_data <- read_rds(here("lassa", "data", "mastomys_data.rds"))
 
+# Country status is ordinal, so one hue from light to dark (checked with the
+# dataviz palette validator against the page ground). The host range is drawn
+# as an outline, not a fill, so it never mixes with the country colours.
+status_levels <- c("Endemic", "Outbreaks", "No cases")
+status_fill <- c("Endemic" = "#3a654f", "Outbreaks" = "#6b8f78", "No cases" = "#9db2a3")
+
+countries <- mastomys_data$wa_countries |>
+  mutate(endemic = factor(endemic, levels = status_levels),
+         label_colour = if_else(endemic == "Endemic", "#ffffff", "#1e2420"))
+
+# Small coastal countries are left unlabelled; their names would overlap.
+# Sierra Leone is nudged inland so its white label does not run onto the sea.
+country_labels <- countries |>
+  filter(!NAME_0 %in% c("Gambia", "Guinea-Bissau")) |>
+  st_point_on_surface()
+label_xy <- st_coordinates(country_labels)
+country_labels <- country_labels |>
+  st_drop_geometry() |>
+  mutate(x = label_xy[, 1] + if_else(NAME_0 == "Sierra Leone", 0.6, 0), y = label_xy[, 2])
+
+# The boundary only, clipped by the map frame, so no crop edges are drawn.
+host_range <- mastomys_data$iucn |>
+  st_make_valid() |>
+  st_boundary() |>
+  mutate(layer = "IUCN range of Mastomys natalensis")
+
 ggplot() +
-  geom_sf(data = mastomys_data$wa_countries, aes(fill = endemic), lwd = 0.1) +
-  geom_sf_text(data = mastomys_data$wa_countries, aes(label = NAME_0), size = 4) +
-  scale_fill_manual(values = c("Endemic" = "#f2aa86", "Outbreaks" = "#fef8e1", "No cases" = "#fafafa")) +
-  geom_sf(data = mastomys_data$iucn, fill = "#C12D20", alpha = 0.4, lwd = 0.1) +
+  geom_sf(data = countries, aes(fill = endemic), colour = "#f2f4ef", linewidth = 0.4) +
+  geom_sf(data = host_range, aes(colour = layer), linewidth = 1) +
+  geom_text(data = country_labels, aes(x = x, y = y, label = NAME_0, colour = I(label_colour)), size = 3.6) +
+  scale_fill_manual(values = status_fill, name = "Lassa fever") +
+  scale_colour_manual(values = c("IUCN range of Mastomys natalensis" = "#7e6458"), name = NULL,
+                      labels = expression(paste("IUCN range of ", italic("Mastomys natalensis")))) +
   coord_sf(xlim = c(mastomys_data$afr_bbox[1], mastomys_data$afr_bbox[3]),
-           ylim = c(mastomys_data$afr_bbox[2], mastomys_data$afr_bbox[4])) +
-  annotation_scale(height = unit(0.1, "cm")) +
-  annotation_north_arrow(style = north_arrow_minimal(text_size = 7), location = "tl") +
-  labs(fill = NULL, x = NULL, y = NULL) +
-  theme_minimal() +
-  theme(plot.background = element_blank(), panel.background = element_blank())
+           ylim = c(mastomys_data$afr_bbox[2], mastomys_data$afr_bbox[4]), expand = FALSE) +
+  guides(fill = guide_legend(order = 1), colour = guide_legend(order = 2)) +
+  theme_void(base_size = 12) +
+  theme(legend.position = "right", legend.justification = "top",
+        plot.background = element_blank(), panel.background = element_blank())
 ```
 
-The IUCN range of *Mastomys natalensis* (red) over countries with endemic Lassa fever, countries with outbreaks, and countries with no reported cases.
+Countries by Lassa fever status, with the IUCN range of *Mastomys natalensis*, the main reservoir, outlined.
+
+## Ongoing work
+
+::: {.pub-entry .pub-entry-plain #work-lassa-cfr}
+::: {.pub-body}
+**Reported Lassa fever case fatality in Nigeria, 2017–2026**  
+[Analysis plan, 2026](https://doi.org/10.5281/zenodo.23135368) · [Code on GitHub](https://github.com/DidDrog11/lassa-cfr)
+
+<details class="pub-more">
+<summary>Summary</summary>
+
+::: {.pub-more-body}
+The Nigeria Centre for Disease Control and Prevention reports a case fatality rate among laboratory-confirmed Lassa fever cases in every weekly situation report. A reported case fatality rate is a ratio of two surveillance counts, so it can change through who is tested, which deaths are found, where cases occur and when the figure is read, as well as through a change in the risk of death.
+
+The study sets out these mechanisms, assesses which of them the published situation reports from 2017 to 2026 allow to be evaluated, and evaluates those that can be. The analysis plan was fixed and archived before the analyses were run on the final data. No results are available yet.
+:::
+
+</details>
+:::
+:::
 
 ## Papers
 
