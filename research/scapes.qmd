@@ -1,48 +1,46 @@
 ---
-title: "SCAPES - Cross-scale dynamics of LASV spillover within human-driven ecosystems."
-abstract: |
-  Lassa virus (LASV) infection in humans causes Lassa fever, a hemorrhagic fever of public health significance in West Africa and a global health priority. Lassa fever epidemics are dominated by regular transmission of LASV from rodent reservoirs to humans within a rural context, which means LASV provides a uniquely tractable system to understand zoonotic spillover. 
-  This study examines the human behaviors that create exposures to LASV. We look at the proximate forms of human-reservoir overlap and interactions, as well as how humans ultimately construct ecological processes that affect the rate of zoonotic spillover. Data from our fine-scale ecological and anthropological field studies will integrate into broad-scale risk models to fill key gaps in how risk is propagated across scales and inform ongoing disease management efforts.
-  This research utilizes a One Health approach that mobilizes multiple disciplines, sectors, and communities to sustainably balance and optimize the interdependent health of people, animals, and ecosystems.
-author: 
-  - name: "David Simons"
-    affiliation: Pennsylvania State University
-  - name: "Sagan Friant"
-    affiliation: Pennsylvania State University
-categories: [Rodent, Ecology, Zoonosis, Lassa Fever, Human, Transmission, Nigeria, Protocol]
-image: ../lassa/files/scapes/scapes_preview.png
-date: 2025-09-24
-citation: true
+title: "SCAPES, Nigeria"
+subtitle: "Cross-scale dynamics of Lassa virus spillover within human-driven ecosystems"
+categories: [Lassa Fever, One Health, Rodent, Human, Nigeria]
+image: ../lassa/images/lassa_seroprev_age.png
+toc: true
 execute:
   echo: false
   warning: false
 ---
 
-## Background
+SCAPES (Scaling Lassa Virus Dynamics within Anthropogenic Ecosystems) asks how people's land use and movement shape their contact with the rodent reservoir of *Mammarenavirus lassaense*, and how that contact scales up to spillover across a landscape. It follows people, rodents and land cover together in nine villages in Benue, Ebonyi and Cross River states, Nigeria, with fieldwork since late 2023.
 
-This is a five-year NSF EEID grant, [Cross-scale dynamics of LASV spillover within human-driven ecosystems](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034&HistoricalAwards=false), led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University in collaboration with [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [Dave Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding), and others. I am a postdoctoral scholar working on this project with a particular focus on factors of both human and rodent ecology which moderate the risk of Lassa fever infection in humans. 
+The study is a five-year [NSF Ecology and Evolution of Infectious Diseases grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034), led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University with [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [David Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and partners in Nigeria. My work on it covers the human and rodent ecology that moderates the risk of infection.
 
-This project is being conducted in Ebonyi, Benue, and Cross River states in Nigeria, with fieldwork ongoing since late 2023. More information, including details on our collaborators and field sites, is available on the **[SCAPES project website](https://storymaps.arcgis.com/templates/751190c765ee441c9589d65ac34fe9d0)**.
+## Progress
 
----
+| Workstream | Status |
+| --- | --- |
+| Study protocol | Published, *Wellcome Open Research* |
+| Site selection | Published as SiteTool, *Ecography* |
+| Participatory rural appraisal | Published, *EcoHealth* |
+| Baseline human serosurvey | Published, *PLOS Neglected Tropical Diseases* |
+| Human movement (GPS tracking and activity diaries) | Data collection complete; paper in preparation |
+| Rodent sampling | Most sampling complete; laboratory analysis ongoing |
+| Land cover from drone imagery | Classification in preparation |
 
-## Outputs & Updates
+Later stages link rodent abundance, human movement and seroconversion in an interface model, test it in independent villages, and design interventions with the communities.
 
-### Protocol Paper
+## Findings so far
 
-We have developed a detailed protocol for the ecological and anthropological components of this project.
+- **Exposure is local.** Among 1,874 people tested, Lassa virus seroprevalence was 3.2% overall but ranged from under 1% to over 6% between neighbouring villages, and none of 21 candidate risk factors showed a strong or consistent association. Trial site selection needs active serosurveillance, not regional incidence maps. [Paper](#pub-10_1371_journal_pntd_0014379).
+- **Contact follows land use.** Communities reported more *Mastomys* activity after land clearing and the rice harvest, more movement between fields and homes where houses are interspersed with farmland, and contact that differs with gendered agricultural work. [Paper](#pub-10_1007_s10393_026_01810_9).
 
-* **Preprint:** [**Read the protocol on Wellcome Open Research**](https://doi.org/10.12688/wellcomeopenres.25937.1)
+## Data and code
 
-### Conference Presentations
+- **Project hub.** The [SCAPES repository](https://github.com/RiskLabPSU/SCAPES_Project) indexes the project's public code, data releases and protocols. Identifiable human data, including GPS tracks and household locations, are held privately under the study's ethical approvals.
+- **Baseline serosurvey.** Code on [GitHub](https://github.com/RiskLabPSU/baseline-seroprev-public); aggregated data on [Zenodo](https://doi.org/10.5281/zenodo.19677372).
+- **SiteTool.** The [Shiny application](https://github.com/BioDivHealth/sitetool) used to select the field sites.
+- **Project website.** Field sites and collaborators are on the [SCAPES story map](https://storymaps.arcgis.com/templates/751190c765ee441c9589d65ac34fe9d0).
 
-We presented preliminary findings of the cross-sectional human serology and project goals at the [2nd Lassa Fever International Conference (ECOWAS)](https://www.lassafeverinternationalconference.org/).
+Preliminary serology and the project's aims were presented at the Second Lassa Fever International Conference, Abidjan, 2025. [Poster](../lassa/files/scapes/scapes_poster_1.pdf).
 
-{{< pdf ../lassa/files/scapes/scapes_poster_1.pdf width=100% height=600 >}}
-
-### SCAPES Human Serosurvey
-
-The human seroprevalence cross-sectional survey conducted as part of this project has been published and is linked to through this [page](../lassa/scapes_human_serosurvey.qmd)
 ## Papers
 
 ```{r}

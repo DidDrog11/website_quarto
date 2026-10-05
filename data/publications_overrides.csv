@@ -16,7 +16,7 @@ doi,tier,page,note,action,preprint_doi,pdf_url,comment,also_on
 10.1016/j.lanplh.2025.101300,page,research/rodent-disease-ecology.qmd,,add,,,Three pillars of rodent-borne disease ecology. Lancet Planet Health. Own page.,
 10.1371/journal.pesy.0000023,page,research/surveillance.qmd,,,10.32942/X21D36,,Biodiversity-informed surveillance protocol. PLOS Ecosystems. Surveillance and outbreak response page.,
 10.64898/2026.01.26.26344575,page,research/tools.qmd,,,,,Map Liberator. Preprint. Tools page.,
-10.1002/ecog.08455,page,research/tools.qmd,,,10.32942/X2G65X,,SiteTool. Ecography. Tools page.,
+10.1002/ecog.08455,page,research/tools.qmd,,,10.32942/X2G65X,,SiteTool. Ecography. Tools page.,research/scapes.qmd
 10.1038/s41597-025-05332-x,page,research/tools.qmd,,add,10.32942/X2TW4J,,Minimum data standard. Scientific Data. Card on the tools page.,
 10.1186/s12941-021-00431-0,card,,,,,,Niche of One Health approaches in Lassa fever. Card only.,
 10.2807/1560-7917.ES.2022.27.22.2200422,card,,,,,,Community transmission of mpox in the UK. Eurosurveillance. Card only.,
@@ -25,3 +25,4 @@ doi,tier,page,note,action,preprint_doi,pdf_url,comment,also_on
 10.1111/add.15276,line,,,,10.32388/UJR2AW,,Smoking and SARS-CoV-2 living review. Addiction. Qeios living review is the preprint.,
 10.12688/f1000research.55502.3,line,,,,10.1101/2020.11.26.20238469,,Smoking and hospitalisation for COVID-19. F1000Research. medRxiv preprint paired here.,
 10.1016/j.appet.2012.07.017,line,,,,,none,Fat mass and eating behaviour. Appetite 2012. Paywalled and no author copy; citation only.,
+10.1007/s10393-026-01810-9,page,research/scapes.qmd,,,,,Participatory rural appraisal. EcoHealth. SCAPES programme page.,
