@@ -100,7 +100,9 @@ format:
     link-external-newwindow: true
     # Internal: the site with or without www, and local previews. Anything else is external.
     link-external-filter: '^https?:\/\/(?:(?:www\.)?dsimons\.org|localhost|127\.0\.0\.1)(?::\d+)?(?:\/|$)'
-    include-after-body: assets/request-copy.html
+    include-after-body:
+      - assets/request-copy.html
+      - assets/goatcounter.html
 
 comments:
   hypothesis:
