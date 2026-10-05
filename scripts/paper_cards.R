@@ -9,7 +9,7 @@
 # this script, re-render publications.qmd and the programme pages by hand.
 
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(dplyr, readr, stringr, here, yaml)
+pacman::p_load(dplyr, readr, stringr, purrr, here, yaml)
 
 # ---- Data ---------------------------------------------------------------------
 
@@ -23,6 +23,17 @@ pdfs <- if (file.exists(pdf_log_path)) {
 }
 
 notes_dir <- here("data", "paper_notes")
+
+# Extra pages a card appears on, beyond its home `page`. Read straight from the
+# overrides file, so a change needs no re-run of update_publications.R.
+# `also_on` holds page paths separated by semicolons.
+also_on <- read_csv(here("data", "publications_overrides.csv"), col_types = cols(.default = col_character()),
+                    show_col_types = FALSE)
+also_on <- if ("also_on" %in% names(also_on)) {
+  also_on |> filter(!is.na(also_on), also_on != "") |> transmute(doi = str_to_lower(doi), also_on)
+} else {
+  tibble(doi = character(), also_on = character())
+}
 
 # ---- Helpers ------------------------------------------------------------------
 
@@ -129,13 +140,19 @@ render_entry <- function(row, n = NULL, open = FALSE, read_more = TRUE) {
 # newest first, with summaries folded. `page` is the page's path from the
 # project root, e.g. "research/arha.qmd".
 render_programme_papers <- function(page) {
+  # Papers whose home is this page, plus those listed for it in `also_on`.
+  # A visiting card links back to its home page from its summary.
+  visiting <- also_on |>
+    filter(map_lgl(str_split(also_on, ";"), \(p) page %in% str_trim(p))) |>
+    pull(doi)
   mine <- pubs |>
-    filter(page == !!page) |>
-    mutate(year_n = suppressWarnings(as.integer(year))) |>
+    filter(page == !!page | str_to_lower(doi) %in% visiting) |>
+    mutate(year_n = suppressWarnings(as.integer(year)),
+           home = page == !!page) |>
     arrange(desc(year_n), title)
   if (!nrow(mine)) {
     cat("::: {.callout-note appearance=\"minimal\"}\nNo papers are assigned to this page yet. Set its path in the `page` column of `data/publications_overrides.csv`.\n:::\n\n")
     return(invisible(NULL))
   }
-  for (i in seq_len(nrow(mine))) render_entry(mine[i, ], open = FALSE, read_more = FALSE)
+  for (i in seq_len(nrow(mine))) render_entry(mine[i, ], open = FALSE, read_more = !mine$home[i])
 }
