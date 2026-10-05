@@ -19,5 +19,9 @@ I contributed to two cross-sectional studies of antimicrobial resistance on poul
 
 ![A conceptual model of African swine fever transmission in sylvatic and agricultural settings.](/others/images/asf_framework.svg)
 
+The same method for estimating the speed of spread was applied to SARS-CoV-2 variants in the United Kingdom. That project stopped when access to the data ended, so the figure below is a preliminary result.
+
+![Preliminary estimates of the time to detection of SARS-CoV-2 variants in the United Kingdom, from the African swine fever spread method. Unfinished work.](/images/covid_variant_spread.png){fig-alt="Preliminary figure of time to detection of SARS-CoV-2 variants across the United Kingdom."}
+
 <!-- These three pages stay at their old URLs until their content is folded
      into this page; then they get redirect rules in _redirects. -->

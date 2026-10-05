@@ -1,7 +1,6 @@
 ---
 title: "Surveillance and outbreak response"
 subtitle: "Where to sample, and what to do when something is already spreading"
-description: "Biodiversity-informed wildlife disease surveillance, and earlier outbreak response work on COVID-19 and mpox."
 categories: [Surveillance, One Health, Outbreak Response]
 toc: true
 execute:
@@ -10,94 +9,83 @@ execute:
   message: false
 ---
 
-::: {.callout-note appearance="minimal"}
-Placeholder page. Framing text is a draft. This page absorbs the former
-COVID-19 and mpox theme pages, which is why those sections are written in the
-past tense. Explainer notes for the papers are in `data/paper_notes/`.
-:::
+Surveillance is a resource allocation problem before it is a laboratory one. Sampling wildlife is expensive, so the question is where a sample changes what we know. Outbreak response is the same question under time pressure.
 
-Surveillance is a resource allocation problem before it is a laboratory one.
-Sampling wildlife is expensive, so the question is where a sample changes what
-we know. Outbreak response is the same question under time pressure.
+```{r}
+#| label: setup
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, kableExtra, here)
+source(here("scripts", "paper_cards.R"))
+this_page <- "research/surveillance.qmd"
+```
 
 ## Wildlife disease surveillance
 
-**A protocol for biodiversity-informed wildlife disease surveillance.**
-*PLOS Ecosystems*, 2026. Host species distribution models set a biodiversity
-dose, uncertainty identifies where discovery sampling would help most, and
-balanced-acceptance sampling turns the result into field sites. Case studies on
-*Hantaviridae* and *Arenaviridae* in India and South Korea.
+A [protocol for biodiversity-informed wildlife disease surveillance](https://doi.org/10.1371/journal.pesy.0000023) sets out where to sample. Host species distribution models set a biodiversity dose, uncertainty identifies where discovery sampling would help most, and balanced-acceptance sampling turns the result into field sites. The case studies are *Hantaviridae* and *Arenaviridae* in India and South Korea.
 
-Ongoing work extends this to outbreak settings, where the sampling frame has to
-be revised as an event unfolds.
-
-## Directing rodent sampling
-
-*An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses* is a Vetenskapsrådet South Korea–Sweden research collaboration grant, running from October 2026 to December 2027. I lead it from Uppsala University, with Chungnam National University as the Korean partner.
-
-The project combines three components. Landscape embeddings from Earth-observation imagery describe habitat, Bayesian spatial models downscale host hazard to human incidence, and an active-learning step directs rodent sampling to sites where a new sample would most reduce uncertainty and that a field team can reach. It builds on the South Korea case study in the protocol above.
-
-## mpox
-
-Work from the 2022 outbreak and from the endemic range that preceded it.
-
-**Increased outbreaks of mpox highlight gaps in actual disease burden.**
-*International Journal of Infectious Diseases*, 2022. Two hypotheses for the
-global outbreak: growing synanthropic rodent populations in West and Central
-Africa, and an immunologically naive population 45 years after smallpox
-vaccination ended.
-
-**Community transmission of mpox in the United Kingdom.** *Eurosurveillance*,
-2022. The first UK cases without travel history, described during the
-investigation, from work in the UK Health Security Agency outbreak
-surveillance team.
-
-The reservoir of mpox virus is still unidentified. Virus has been isolated from
-wild animals twice, and antibodies have been found in several further species.
-
-```{r}
-#| label: mpox-setup
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, kableExtra, here, readr)
-```
-
-``` {r monkeypox-table, echo = FALSE, message = FALSE, warning = FALSE}
-monkeypox_table <- read_csv(here("monkeypox", "data", "monkeypox_reservoirs.csv"))
-
-monkeypox_table %>%
-  mutate(References = cell_spec(References, "html", link = Link)) %>%
-  select(-Link, -Identification) %>%
-  kable("html", escape = FALSE, caption = "Adapted from Haider et al. 2022") %>%
-  pack_rows(index = table(fct_inorder(monkeypox_table$Identification))) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"),
-                font_size = 10)
-
-```
-
-## COVID-19
-
-Between 2020 and 2022 I worked on the epidemiology of SARS-CoV-2: modelling
-international spread with the LSHTM Centre for Mathematical Modelling of
-Infectious Diseases, a living review of smoking and COVID-19 outcomes,
-clinical work through the pandemic, and real-time surveillance of the Omicron
-variant with the UK Health Security Agency.
-
-That work is finished. The papers are listed on the [publications page](/publications.html).
-
-![Time to detection of different SARS-CoV-2 variants in the United Kingdom.](/images/covid_variant_spread.png)
-
-::: {.callout-note appearance="minimal"}
-To add: a short account of the UKHSA surveillance work.
-:::
-
-## Papers
+The Vetenskapsrådet South Korea–Sweden research collaboration grant *An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses* takes the South Korea case study forward, from October 2026 to December 2027. I lead it from Uppsala University, with Chungnam National University as the Korean partner. Landscape embeddings from Earth-observation imagery describe habitat, Bayesian spatial models downscale host hazard to human incidence, and an active-learning step directs rodent sampling to sites where a new sample would most reduce uncertainty and that a field team can reach.
 
 ```{r}
 #| results: asis
-#| echo: false
-#| message: false
-#| warning: false
-# Papers assigned to this page in data/publications_overrides.csv.
-source(here::here("scripts", "paper_cards.R"))
-render_programme_papers("research/surveillance.qmd")
+render_papers("10.1371/journal.pesy.0000023", this_page)
+```
+
+## Outbreak surveillance at UKHSA
+
+From 2021 to 2022 I was a Senior Analyst in the Outbreak Surveillance Team at the UK Health Security Agency, working on the emergence of the SARS-CoV-2 Omicron variant and the 2022 mpox outbreak. I compiled and managed the national Omicron line list, which made the early estimates of vaccine effectiveness against Omicron possible, and contributed to the investigation of the first UK mpox cases without travel history.
+
+```{r}
+#| results: asis
+render_papers(c("10.1056/nejmoa2119451", "10.1016/s1473-3099(22)00309-7", "10.1017/s0950268823000420",
+                "10.2807/1560-7917.es.2022.27.11.2200143", "10.2807/1560-7917.es.2022.27.22.2200422"), this_page)
+```
+
+## mpox in endemic regions
+
+The 2022 outbreak drew attention to a disease long under-reported where it is endemic. A commentary in the *International Journal of Infectious Diseases* proposes two drivers of the rise in outbreaks: growing synanthropic rodent populations in West and Central Africa, and a population without immunity 45 years after smallpox vaccination ended.
+
+The reservoir of mpox virus is still unidentified. Virus has been isolated from wild animals twice, and antibodies have been found in several further species.
+
+```{r}
+#| label: mpox-table
+mpox_reservoirs <- read_csv(here("monkeypox", "data", "monkeypox_reservoirs.csv"), show_col_types = FALSE)
+
+mpox_reservoirs |>
+  mutate(References = cell_spec(References, "html", link = Link)) |>
+  select(-Link, -Identification) |>
+  kable("html", escape = FALSE, caption = "Wild animals with evidence of mpox virus infection. Adapted from Haider et al. 2022.") |>
+  pack_rows(index = table(fct_inorder(mpox_reservoirs$Identification))) |>
+  kable_styling(bootstrap_options = c("hover", "condensed"), font_size = 10)
+```
+
+```{r}
+#| results: asis
+render_papers("10.1016/j.ijid.2022.05.058", this_page)
+```
+
+## COVID-19 modelling with CMMID
+
+In 2020 and 2021 I was part of the COVID-19 working group of the Centre for Mathematical Modelling of Infectious Diseases at the London School of Hygiene and Tropical Medicine. The group's models informed the response in the UK and internationally: early spread and under-ascertainment, contact tracing, testing and quarantine, travel, social contacts under restrictions, and the value of vaccination.
+
+```{r}
+#| results: asis
+cmmid_papers <- c(
+  "10.1016/s1473-3099(20)30457-6", "10.1038/s41467-021-25531-5", "10.1186/s12916-020-01872-8", "10.7554/elife.58699",
+  "10.1038/s41467-020-18783-0", "10.1016/s2468-2667(20)30308-x", "10.2807/1560-7917.es.2021.26.39.2001440",
+  "10.1038/s41591-020-1036-8", "10.1038/s41467-021-22213-0", "10.1016/s1473-3099(21)00079-7", "10.1186/s12916-020-01779-4",
+  "10.1186/s12916-021-01982-x", "10.1186/s12916-021-01906-9", "10.1186/s12916-021-01924-7", "10.1371/journal.pcbi.1009098",
+  "10.1186/s12916-020-01790-9", "10.1038/s41467-022-32404-y", "10.2807/1560-7917.es.2021.26.49.2001809",
+  "10.1017/s0950268820000424", "10.1186/s12889-022-13069-0", "10.1186/s12913-021-06509-x", "10.1038/s41598-021-86266-3")
+cat(sprintf('<details class="pub-group">\n<summary>Show the %d papers</summary>\n\n', length(cmmid_papers)))
+render_papers(cmmid_papers, this_page)
+cat("</details>\n\n")
+```
+
+## Clinical work
+
+From 2019 to 2022 I was a resident doctor at the Hospital for Tropical Diseases, University College London Hospitals, and worked clinically through the pandemic. With colleagues there I evaluated the 4C Mortality Score, a risk score for patients admitted with COVID-19, in UK hospitals.
+
+```{r}
+#| results: asis
+render_papers("10.1101/2021.12.18.21268003", this_page)
 ```

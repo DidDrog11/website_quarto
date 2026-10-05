@@ -156,3 +156,20 @@ render_programme_papers <- function(page) {
   }
   for (i in seq_len(nrow(mine))) render_entry(mine[i, ], open = FALSE, read_more = !mine$home[i])
 }
+
+# A chosen set of papers, by DOI, for pages split into sections that each list
+# their own papers. Newest first. `page` is the calling page, so a paper whose
+# home is elsewhere links back to it. Stops on a DOI not in the publications
+# data, so a typo cannot silently drop a paper.
+render_papers <- function(dois, page) {
+  dois <- str_to_lower(dois)
+  missing <- setdiff(dois, str_to_lower(pubs$doi))
+  if (length(missing)) stop("Not in data/publications.csv: ", paste(missing, collapse = ", "))
+  chosen <- pubs |>
+    filter(str_to_lower(doi) %in% dois) |>
+    mutate(year_n = suppressWarnings(as.integer(year))) |>
+    arrange(desc(year_n), title)
+  for (i in seq_len(nrow(chosen))) {
+    render_entry(chosen[i, ], open = FALSE, read_more = !identical(chosen$page[i], page))
+  }
+}
