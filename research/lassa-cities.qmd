@@ -1,5 +1,5 @@
 ---
-title: "Lassa fever in cities"
+title: "Lassa fever and cities"
 subtitle: "The socio-economic shield and the urban edge of the reservoir"
 categories: [Lassa Fever, Spatial Epidemiology, Urbanisation, Zoonosis]
 image: "../lassa/images/urban_shield_decoupling.png"
