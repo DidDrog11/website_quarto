@@ -14,7 +14,7 @@ Rodents live alongside people almost everywhere, and many of the pathogens they 
 
 ## The rodent-borne zoonotic disease workshop
 
-The [annual Rodent-Borne Zoonotic Disease Workshop](https://risklabpsu.github.io/rodentbornezoonoses/) brings together ecologists, epidemiologists, anthropologists and disease modellers to take a comparative approach to rodent-borne pathogens. It was first held in State College, Pennsylvania, in 2023, then in Oslo (2024), Paneveggio, Italy (2025) and Kilpisjärvi, Finland (2026).
+The [annual Rodent-Borne Zoonotic Disease Workshop](https://risklabpsu.github.io/rodentbornezoonoses/) brings together ecologists, epidemiologists, anthropologists and disease modellers to take a comparative approach to rodent-borne pathogens. I sit on its scientific committee. It was first held in State College, Pennsylvania, in 2023, then in Oslo (2024), Paneveggio, Italy (2025) and Kilpisjärvi, Finland (2026).
 
 The first workshop produced a Personal View in *The Lancet Planetary Health*, which sets out three pillars for preventing rodent-borne zoonoses: disease ecology, synanthropy and rodentation, the process by which human activity creates rodent habitat. It argues for integrated, systems-based interventions in place of reactive biomedical ones.
 
