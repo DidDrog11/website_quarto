@@ -17,9 +17,15 @@ The protocol was registered on the [Open Science Framework](https://osf.io/usjrd
 
 ![A trapping site in Eastern Province.](../lassa/images/rodent_trapping.jpg){fig-alt="Tree-crop land with cleared undergrowth and a marker flag, where traps were set." width="70%"}
 
+## Findings
+
+- **Land use and the reservoir.** Occupancy of *Mastomys natalensis* rose along the gradient from forest through agriculture to villages. It was lower in the peri-urban village than in rural ones. In the peri-urban village, the presence of the invasive *Mus musculus* was associated with reduced occupancy. [Paper](#pub-10_1111_1365_2656_70187).
+- **Contact networks.** Contact networks reconstructed from co-trapping were larger in villages and agriculture than in forest. Antibodies to *Mammarenavirus lassaense* were found in nine rodent and shrew species, at an overall seroprevalence of 5.7%, so surveillance restricted to *M. natalensis* would miss species that may contribute to local circulation. [Paper](#pub-10_4269_ajtmh_25_0120). The [bank vole project at Uppsala](/research/bank-voles.html) continues this work, using gut microbiome similarity to trace contact in wild rodent populations.
+- **Trapping studies as data.** A review of 127 rodent trapping studies across West Africa found trapping effort biased towards densely populated areas. Trapping records add the non-detections that range maps and occurrence databases lack. [Paper](#pub-10_1371_journal_pntd_0010772).
+
 ## Inside houses
 
-Camera traps set alongside the trapping record how rodents use space inside houses. This work is led by [Najmul Haider](https://scholar.google.com/citations?user=Iv4wObEAAAAJ) and is in preparation.
+Camera traps set alongside the trapping, with [Najmul Haider](https://scholar.google.com/citations?user=Iv4wObEAAAAJ), recorded rodents inside houses.
 
 ![A rodent beside stored food inside a house.](../lassa/images/rodent_camera.JPG){fig-alt="Camera-trap image of a rodent next to food storage inside a house." width="70%"}
 
