@@ -1,7 +1,9 @@
 ---
 title: "Publications"
 description: "Papers, preprints, data and code, from ORCID."
-toc: false
+toc: true
+toc-title: "By year"
+toc-depth: 2
 title-block-banner: true
 execute:
   echo: false
@@ -18,39 +20,88 @@ Every entry is one piece of work. Where a preprint became a paper, both are link
 # Data loading and the entry helpers are shared with the programme pages.
 source(here::here("scripts", "paper_cards.R"))
 
+# DOIs set to `hide` in the overrides file. update_publications.R drops them on
+# its next run; filtering here as well keeps the page right in the meantime.
+hidden <- read_csv(here::here("data", "publications_overrides.csv"), col_types = cols(.default = col_character()),
+                   show_col_types = FALSE) |>
+  filter(action %in% "hide") |>
+  pull(doi) |>
+  str_to_lower()
+
 # ---- papers -----------------------------------------------------------------
 
 # Numbered newest-highest, so a paper keeps its number as new ones arrive.
+# Each year heading carries an explicit id, which the year ladder links to.
 papers <- pubs |>
-  filter(kind %in% c("article", "preprint")) |>
+  filter(kind %in% c("article", "preprint"), !str_to_lower(doi) %in% hidden) |>
   mutate(year_n = suppressWarnings(as.integer(year))) |>
   arrange(desc(year_n), title) |>
   mutate(n = rev(seq_len(n())))
 
 for (y in unique(papers$year_n)) {
-  cat(sprintf("## %s\n\n", ifelse(is.na(y), "Undated", y)))
+  heading <- if (is.na(y)) "Undated {#year-undated}" else sprintf("%d {#year-%d}", y, y)
+  cat(sprintf("## %s\n\n", heading))
   block <- papers |> filter(if (is.na(y)) is.na(year_n) else year_n == y)
   for (i in seq_len(nrow(block))) render_entry(block[i, ], block$n[i])
 }
 
 # ---- data and code ----------------------------------------------------------
 
+# A Zenodo record has a concept DOI (all versions) and one DOI per version, and
+# ORCID can list both. Show one entry per title: the newest version, with a
+# link to all versions when the concept DOI is also present.
 datasets <- pubs |>
-  filter(kind %in% c("data", "software")) |>
-  mutate(year_n = suppressWarnings(as.integer(year))) |>
+  filter(kind %in% c("data", "software"), !str_to_lower(doi) %in% hidden) |>
+  mutate(year_n = suppressWarnings(as.integer(year)),
+         doi_n = suppressWarnings(as.integer(str_extract(doi, "\\d+$")))) |>
+  arrange(title, desc(doi_n)) |>
+  summarise(kind = first(kind), year = first(year), year_n = first(year_n), authors = first(authors),
+            url = first(url), all_versions = if (n() > 1) last(url) else NA_character_, id = first(id),
+            .by = title) |>
   arrange(desc(year_n), title)
 
 if (nrow(datasets)) {
-  cat("## Data and code\n\n")
+  cat("## Data and code {#data-and-code}\n\n")
   for (i in seq_len(nrow(datasets))) {
     row <- datasets[i, ]
     label <- if (row$kind == "software") "Software" else "Dataset"
-    cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
+    cat(sprintf("::: {.pub-entry .pub-entry-plain #pub-%s}\n::: {.pub-body}\n", row$id))
     cat(sprintf("**%s**  \n", row$title))
     auth <- format_authors(row$authors)
     if (auth != "") cat(auth, "  \n", sep = "")
-    cat(sprintf("[%s, %s](%s)\n", label, row$year, row$url))
-    cat(":::\n\n")
+    links <- sprintf("[%s, %s](%s)", label, row$year, row$url)
+    if (!is.na(row$all_versions)) links <- paste0(links, sprintf(" · [All versions](%s)", row$all_versions))
+    cat(links, "\n:::\n:::\n\n")
   }
 }
+```
+
+```{=html}
+<script>
+// Year ladder: one rung per paper beside each year in the sidebar, so the
+// navigation also shows how many papers each year holds. The count is in the
+// link text for screen readers; the rungs are decoration.
+const buildLadder = () => {
+  // Quarto rewrites the sidebar link addresses after load, so match on the
+  // fragment rather than the whole href.
+  document.querySelectorAll('#TOC a[href*="#year-"]').forEach(link => {
+    const section = document.getElementById(link.getAttribute("href").split("#")[1]);
+    if (!section) return;
+    const n = section.querySelectorAll(".pub-entry").length;
+    const rungs = document.createElement("span");
+    rungs.className = "year-rungs";
+    rungs.setAttribute("aria-hidden", "true");
+    for (let i = 0; i < n; i++) rungs.append(document.createElement("i"));
+    const count = document.createElement("span");
+    count.className = "year-count";
+    count.textContent = n;
+    link.prepend(rungs);
+    link.append(count);
+    link.setAttribute("aria-label", `${link.textContent.replace(/\d+$/, "").trim()}, ${n} ${n === 1 ? "paper" : "papers"}`);
+    link.closest("li")?.classList.add("year-rung-item");
+  });
+  document.querySelector("#TOC")?.classList.add("year-ladder");
+};
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", buildLadder); else buildLadder();
+</script>
 ```

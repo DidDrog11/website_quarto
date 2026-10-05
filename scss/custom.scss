@@ -639,3 +639,29 @@ main figure img:not(.no-matte) { mix-blend-mode: multiply; }
   p:last-child { margin-top: auto; margin-bottom: 0; font-size: 0.9rem; }
   .btn { margin: 0.25rem 0 0.5rem; }
 }
+
+// Year ladder on the publications page: the TOC lists years, and each year
+// carries one rung per paper on a shared rail, so the sidebar reads as a
+// timeline of output. Rungs are decoration; the count is also printed.
+#TOC.year-ladder {
+  ul { border-left: 2px solid var(--ds-surface-edge); padding-left: 0; }
+  li.year-rung-item > a.nav-link {
+    display: grid;
+    grid-template-columns: 1.4rem auto 1fr;
+    align-items: start;
+    gap: 0 0.5rem;
+    padding: 0.2rem 0 0.35rem;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    font-variant-numeric: tabular-nums lining-nums;
+    &.active, &:hover { border-left-color: var(--ds-primary); }
+  }
+  .year-rungs {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 0.45rem;
+    i { display: block; width: 1.1rem; height: 2px; border-radius: 1px; background: var(--seq-3); }
+  }
+  .year-count { justify-self: end; color: var(--ds-ink-muted); font-size: 0.8rem; padding-top: 0.1rem; }
+}
