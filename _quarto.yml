@@ -99,8 +99,12 @@ format:
     smooth-scroll: true
     anchor-sections: true
     link-external-icon: true
-    # Internal: the site with or without www, and local previews. Anything else is external.
-    link-external-filter: '^https?:\/\/(?:(?:www\.)?dsimons\.org|localhost|127\.0\.0\.1)(?::\d+)?(?:\/|$)'
+    link-external-newwindow: true
+    # Internal: the site with or without www, its Netlify addresses (branch and
+    # deploy previews are <name>--davidsimons.netlify.app), and local previews.
+    # Anything else is external. Quarto tests the full resolved address, so a host
+    # missing here makes every internal link open in a new tab on that host.
+    link-external-filter: '^https?:\/\/(?:(?:www\.)?dsimons\.org|(?:[a-z0-9-]+--)?davidsimons\.netlify\.app|localhost|127\.0\.0\.1)(?::\d+)?(?:\/|$)'
     include-after-body:
       - assets/request-copy.html
       - assets/goatcounter.html
