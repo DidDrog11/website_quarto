@@ -1,5 +1,6 @@
 ---
 title: "Host ecology in Sierra Leone"
+body-classes: zone-sierra-leone
 subtitle: "Small-mammal communities along a land-use gradient"
 categories: [Rodent, Ecology, Lassa Fever, Sierra Leone]
 toc: true
@@ -8,6 +9,21 @@ toc: true
 My doctoral fieldwork trapped small mammals at four villages around Kenema, in the Eastern Province of Sierra Leone, from 2020 to 2023. At each village, trapping ran along a land-use gradient from forest through agriculture into houses. Over 43,226 trap nights, the study asked how land use structures small-mammal communities, and what that structure means for *Mammarenavirus lassaense* in its reservoir, *Mastomys natalensis*.
 
 The work was a collaboration between the Royal Veterinary College, University College London, the London School of Hygiene and Tropical Medicine, Njala University, Kenema Government Hospital and the Bernhard Nocht Institute for Tropical Medicine.
+
+:::: {.stat-row}
+::: {.stat}
+[43,226]{.stat-num}
+[trap nights across four villages, 2020 to 2023]{.stat-label}
+:::
+::: {.stat}
+[684]{.stat-num}
+[rodents and shrews detected]{.stat-label}
+:::
+::: {.stat}
+[5.7%]{.stat-num}
+[Lassa virus seroprevalence across the small-mammal community]{.stat-label}
+:::
+::::
 
 ## Study design
 

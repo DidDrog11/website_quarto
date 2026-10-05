@@ -1,5 +1,6 @@
 ---
 title: "SCAPES, Nigeria"
+body-classes: zone-scapes
 subtitle: "Cross-scale dynamics of Lassa virus spillover within human-driven ecosystems"
 categories: [Lassa Fever, One Health, Rodent, Human, Nigeria]
 image: ../lassa/files/scapes/scapes_training.webp
@@ -14,6 +15,21 @@ SCAPES (Scaling Lassa Virus Dynamics within Anthropogenic Ecosystems) asks how p
 The study is a five-year [NSF Ecology and Evolution of Infectious Diseases grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2208034), led by [Sagan Friant](https://www.saganfriant.com/) at Pennsylvania State University with [Lina Moses](https://sph.tulane.edu/ihsd/lina-moses), [David Redding](https://www.zsl.org/about-zsl/our-people/dr-david-redding) and partners in Nigeria. I am a collaborator on the project, working on the human and rodent ecology that moderates the risk of infection.
 
 ![Training session for the human movement study.](../lassa/files/scapes/scapes_training.webp){fig-alt="Community members seated on benches in a village hall, working through paper forms with members of the study team." width="80%"}
+
+:::: {.stat-row}
+::: {.stat}
+[9]{.stat-num}
+[villages in Benue, Ebonyi and Cross River states]{.stat-label}
+:::
+::: {.stat}
+[1,874]{.stat-num}
+[people tested for Lassa virus antibodies]{.stat-label}
+:::
+::: {.stat}
+[1,200+]{.stat-num}
+[rodents and shrews sampled]{.stat-label}
+:::
+::::
 
 ## Progress
 

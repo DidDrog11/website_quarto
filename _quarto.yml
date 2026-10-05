@@ -22,6 +22,7 @@ project:
     - "images/hero_landscape.webp"
     - "_redirects"
     - "cv.pdf"
+    - "images/cards/*"
     - "data/lassa_cases.csv"
     - "data/lassa_hosts.csv"
     # Images and files from the retired paper pages (2026-10-05). Nothing links

@@ -665,3 +665,83 @@ main figure img:not(.no-matte) { mix-blend-mode: multiply; }
   }
   .year-count { justify-self: end; color: var(--ds-ink-muted); font-size: 0.8rem; padding-top: 0.1rem; }
 }
+
+// ---------------------------------------------------------------------------
+// Zone thread: each programme's position on the hero gradient
+// ---------------------------------------------------------------------------
+
+// A programme's band runs across the hero zones it spans, so the colour says
+// where on the gradient the work sits. Programmes off the gradient have none.
+// The class goes on the card and, through `body-classes`, on the page.
+.zone-sierra-leone { --zone: linear-gradient(90deg, var(--hab-forest), var(--hab-farm), var(--hab-village), var(--hab-dwelling)); }
+.zone-scapes { --zone: linear-gradient(90deg, var(--hab-village), var(--hab-dwelling)); }
+.zone-bank-voles { --zone: var(--hab-forest); }
+.zone-surveillance,
+.zone-rodent-disease-ecology { --zone: linear-gradient(90deg, var(--hab-forest), var(--hab-farm), var(--hab-village), var(--hab-dwelling), var(--hab-periurban), var(--hab-town)); }
+.zone-vaccines { --zone: linear-gradient(90deg, var(--hab-dwelling), var(--hab-periurban)); }
+.zone-lassa-cities { --zone: linear-gradient(90deg, var(--hab-periurban), var(--hab-town)); }
+
+// Card: a picture across the top, with the zone band along its upper edge.
+.theme-card {
+  overflow: hidden;
+  .card-thumb {
+    display: block;
+    width: calc(100% + 2.3rem);
+    max-width: none;
+    height: 7.5rem;
+    margin: -1.1rem -1.15rem 0.85rem;
+    object-fit: cover;
+    object-position: center;
+    background: var(--ds-ground);
+    border-bottom: 1px solid var(--ds-surface-edge);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: var(--zone, transparent);
+    z-index: 1;
+  }
+}
+
+// Page: a short band above the title.
+body[class*="zone-"] #title-block-header .quarto-title::before {
+  content: "";
+  display: block;
+  width: 7rem;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--zone, transparent);
+  margin-bottom: 1rem;
+}
+
+// ---------------------------------------------------------------------------
+// Stat tiles: a programme's headline numbers near the top of its page
+// ---------------------------------------------------------------------------
+
+// Numbers wear text colour, not a data colour; the zone band is the only
+// colour accent. Each tile states its own unit, so the number never stands
+// without what it counts.
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.stat {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-surface-edge);
+  border-radius: $border-radius-lg;
+  padding: 0.9rem 1rem 1rem;
+  p { margin: 0; max-width: none; }
+  .stat-num {
+    display: block;
+    font-family: #{$font-family-serif};
+    font-size: 2.1rem;
+    line-height: 1.1;
+    font-variant-numeric: lining-nums;
+    color: var(--ds-ink);
+  }
+  .stat-label { display: block; margin-top: 0.35rem; font-size: 0.88rem; color: var(--ds-ink-muted); line-height: 1.35; }
+}

@@ -1,5 +1,6 @@
 ---
 title: "Surveillance and outbreak response"
+body-classes: zone-surveillance
 subtitle: "Where to sample, and what to do when something is already spreading"
 categories: [Surveillance, One Health, Outbreak Response]
 toc: true

@@ -1,5 +1,6 @@
 ---
 title: "Microbial sensors in Fennoscandian voles"
+body-classes: zone-bank-voles
 subtitle: "Gut microbiome similarity as a measure of contact in wild rodents"
 categories: [Rodent Ecology, Microbiome, Disease Ecology, Sweden, Fellowship]
 image: "../rodent_ecology/figures/microbial_sensor.png"

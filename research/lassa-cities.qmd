@@ -1,5 +1,6 @@
 ---
 title: "Lassa fever and cities"
+body-classes: zone-lassa-cities
 subtitle: "The socio-economic shield and the urban edge of the reservoir"
 categories: [Lassa Fever, Spatial Epidemiology, Urbanisation, Zoonosis]
 image: "../lassa/images/urban_shield_decoupling.png"
@@ -7,6 +8,17 @@ toc: true
 ---
 
 Spatial risk models for Lassa fever have mostly described the reservoir, *Mastomys natalensis*, with climatic envelopes, and so predict a rural disease. West African cities are growing fast, and urban land use changes which rodents live where. This work assesses what happens to the predicted risk when the reservoir's interactions with other rodents and with human infrastructure are modelled directly.
+
+:::: {.stat-row}
+::: {.stat}
+[2.6 million]{.stat-num}
+[estimated Lassa virus infections a year across the endemic region]{.stat-label}
+:::
+::: {.stat}
+[3]{.stat-num}
+[countries with silent districts: Nigeria, Benin and Togo]{.stat-label}
+:::
+::::
 
 ## Approach
 

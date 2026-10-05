@@ -13,6 +13,21 @@ execute:
 Reported Lassa fever case counts feed almost every risk model, yet they are incomplete in ways that vary by country and by year. This programme assesses what can be inferred from the surveillance, sampling and sequence record as it stands: which hosts carry the virus, how far human cases are under-reported, and what a change in a reported indicator can and cannot show.
 
 
+:::: {.stat-row}
+::: {.stat}
+[17]{.stat-num}
+[small mammal species with Lassa virus detections]{.stat-label}
+:::
+::: {.stat}
+[2.6 million]{.stat-num}
+[estimated Lassa virus infections a year]{.stat-label}
+:::
+::: {.stat}
+[10]{.stat-num}
+[countries in the confirmed case record]{.stat-label}
+:::
+::::
+
 ## Detections in hosts
 
 Small mammal species in which *Mammarenavirus lassaense* has been detected in West Africa, by assay, with the studies that report each detection. The records come from the Project ArHa database, reviewed and extended to 2026.

@@ -1,5 +1,6 @@
 ---
 title: "Rodent-borne disease ecology"
+body-classes: zone-rodent-disease-ecology
 subtitle: "Disease ecology, synanthropy and rodentation"
 categories: [Rodent, Ecology, Zoonosis, One Health]
 image: ../rodent_ecology/figures/lancet_preview.jpg

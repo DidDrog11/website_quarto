@@ -1,5 +1,6 @@
 ---
 title: "Vaccines and trial design"
+body-classes: zone-vaccines
 subtitle: "Getting vaccines for zoonotic pathogens through the pipeline"
 categories: [Policy, Vaccines, One Health, Lassa Fever]
 toc: true

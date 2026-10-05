@@ -9,6 +9,21 @@ Project ArHa brings together published records of small mammals sampled for aren
 
 Each record gives the species sampled, the place and date, the assays used and their results. Records where no animal tested positive are retained in the database, so it describes sampling effort as well as detection. That is what makes the biases in surveillance measurable.
 
+:::: {.stat-row}
+::: {.stat}
+[54,865]{.stat-num}
+[host sampling records in the v1.1 release]{.stat-label}
+:::
+::: {.stat}
+[103]{.stat-num}
+[countries with sampling records]{.stat-label}
+:::
+::: {.stat}
+[46%]{.stat-num}
+[of rodent genera never sampled for these viruses]{.stat-label}
+:::
+::::
+
 ## Use the data
 
 - **Release.** Version 1.1 is archived on Zenodo, [doi:10.5281/zenodo.21978983](https://doi.org/10.5281/zenodo.21978983). To cite all versions, use the concept DOI [10.5281/zenodo.21978982](https://doi.org/10.5281/zenodo.21978982).
