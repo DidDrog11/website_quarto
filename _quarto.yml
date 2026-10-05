@@ -22,6 +22,8 @@ project:
     - "images/hero_landscape.webp"
     - "_redirects"
     - "cv.pdf"
+    - "data/lassa_cases.csv"
+    - "data/lassa_hosts.csv"
 
 website:
   title: "David Simons"
