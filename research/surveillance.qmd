@@ -83,9 +83,9 @@ cat("</details>\n\n")
 
 ## Clinical work
 
-From 2019 to 2022 I was a resident doctor at the Hospital for Tropical Diseases, University College London Hospitals, and worked clinically through the pandemic. With colleagues there I evaluated the 4C Mortality Score, a risk score for patients admitted with COVID-19, in UK hospitals.
+From 2019 to 2022 I was a resident doctor at the Hospital for Tropical Diseases, University College London Hospitals, and worked clinically through the pandemic. I assisted with the [RECOVERY trial](https://www.recoverytrial.net/), the randomised platform trial that identified effective treatments for COVID-19 while the pandemic was under way. With colleagues there I evaluated the 4C Mortality Score, a risk score for patients admitted with COVID-19, in UK hospitals, and contributed to a commentary on protecting sickle cell disease services in African countries during the pandemic.
 
 ```{r}
 #| results: asis
-render_papers("10.1101/2021.12.18.21268003", this_page)
+render_papers(c("10.1101/2021.12.18.21268003", "10.1016/s2352-3026(20)30122-8"), this_page)
 ```
