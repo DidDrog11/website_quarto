@@ -98,7 +98,7 @@ I study how people reshape the landscapes they live in, how small mammals respon
     <rect x="156" y="474" width="523" height="8" rx="4" fill="url(#range-pra)"/>
     <rect class="species-hit" x="0" y="468" width="1320" height="22"/>
     <text class="species-label" x="689" y="483">Praomys rostratus</text>
-    <text class="species-common" x="689" y="483">Soft-furred mouse</text>
+    <text class="species-common" x="689" y="483">Forest soft-furred mouse</text>
   </g>
   <g class="species">
     <title>Mastomys natalensis, the primary reservoir of Lassa virus, peaking at rural dwellings</title>
