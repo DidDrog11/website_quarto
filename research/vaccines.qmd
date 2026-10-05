@@ -1,24 +1,28 @@
 ---
 title: "Vaccines and trial design"
 subtitle: "Getting vaccines for zoonotic pathogens through the pipeline"
-description: "One Health trial design for Lassa fever vaccines, and design commitments for self-disseminating vaccines."
 categories: [Policy, Vaccines, One Health, Lassa Fever]
 toc: true
 ---
 
-::: {.callout-note appearance="minimal"}
-Placeholder page. The framing text is a draft and should be rewritten as the statement of where this research programme is going.
-:::
+Vaccine trials for zoonotic pathogens face a problem that trials for pathogens spread between people do not. Efficacy is measured against incident infection, and infection arrives from wildlife at times and places that are hard to predict. Ecology is therefore part of the trial's design, not its background.
 
-Vaccine trials for zoonotic pathogens have a problem that trials for
-human-to-human pathogens do not. Efficacy is measured against incident
-infection, and infection arrives from wildlife at times and places nobody can
-predict. Ecology is therefore not background to the trial, it is part of its
-design.
+This is the direction I want my work to take: using what we know about reservoirs and human exposure to make trials of Lassa fever vaccines answerable, and doing the same for the next priority pathogen.
 
-This is the direction I want my own work to take: using what we know about
-reservoirs and about human exposure to make trials of Lassa fever vaccines
-answerable, and doing the same for the next priority pathogen.
+## One Health trial design
+
+A commentary in *Nature Medicine* sets out a One Health trial design for Lassa fever vaccines, with ecological and social data entering at three stages. Viral diversity across the reservoir's range informs antigen selection. Reservoir distribution models and data on human–rodent contact guide the choice of sites with enough incident infection. Variation in exposure, from household rodent contact to occupation, enters the evaluation of vaccine performance.
+
+## Choosing trial sites
+
+Two lines of work feed site selection directly.
+
+- **Exposure varies between neighbouring villages.** The [SCAPES serosurvey](/research/scapes.html) found Lassa virus seroprevalence from under 1% to over 6% between villages close together, with no strong behavioural predictor. Sites need active serosurveillance, not regional incidence maps.
+- **Infection without reported cases.** The [socio-economic shield model](/research/lassa-cities.html) identifies districts with high predicted infection and no reported cases. These are candidates for serosurveys before a trial, not places to rule out.
+
+## Transmissible vaccines
+
+Vaccinating the reservoir could prevent spillover at source. A policy forum in *Science*, from an interdisciplinary workshop, sets out design commitments for self-disseminating vaccines, which spread between hosts: host-restricted vectors, designs that limit themselves, and staged field evaluation with the consent of affected communities. Candidate vaccines for rabies and Lassa fever are still in development, so these choices can be made now.
 
 ## Papers
 
@@ -31,7 +35,3 @@ answerable, and doing the same for the next priority pathogen.
 source(here::here("scripts", "paper_cards.R"))
 render_programme_papers("research/vaccines.qmd")
 ```
-::: {.callout-note appearance="minimal"}
-To add: how the SCAPES serosurvey and the urbanisation model feed site
-selection in practice, and what is planned next.
-:::
