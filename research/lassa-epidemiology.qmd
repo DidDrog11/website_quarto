@@ -183,6 +183,12 @@ ggplot() +
 
 Countries by Lassa fever status, with the IUCN range of *Mastomys natalensis*, the main reservoir, outlined.
 
+## Estimated burden
+
+Reported cases are a small fraction of infections. The [socio-economic shield paper](/research/lassa-cities.html) estimates the regional burden from where the reservoir persists, including at the urban fringe, and how urban infrastructure dampens spillover. After adjusting for seroreversion and shielding, it estimates about 2.6 million Lassa virus infections a year across the endemic region. It also identifies districts in Nigeria, Benin and Togo with high predicted infection and no reported cases.
+
+![**Silent districts.** A, B) Districts in Nigeria and the Mano River region by confirmed endemic status and predicted risk where no cases are reported. C) Predicted annual infections against reported cases by district. From the [socio-economic shield paper](/research/lassa-cities.html).](../lassa/images/silent_districts_map.png){fig-alt="Map of West African districts, highlighting those with high predicted Lassa virus infections and no reported cases, in Nigeria, Benin and Togo." width="80%"}
+
 ## Ongoing work
 
 ::: {.pub-entry .pub-entry-plain #work-lassa-cfr}
