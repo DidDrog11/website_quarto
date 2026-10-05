@@ -1,59 +1,42 @@
 ---
-title: "Microbial Sensors and Functional Connectivity in Fennoscandian Rodents"
-author: 
-  - name: "David Simons"
-    affiliation: Uppsala University
+title: "Microbial sensors in Fennoscandian voles"
+subtitle: "Gut microbiome similarity as a measure of contact in wild rodents"
 categories: [Rodent Ecology, Microbiome, Disease Ecology, Sweden, Fellowship]
 image: "../rodent_ecology/figures/microbial_sensor.png"
-date: 2026-09-01 # Projected start date
-citation: true
+toc: true
 ---
 
-**Funding:** Birgitta Sintring Fellowship  
-**Institution:** Department of Ecology and Genetics, Uppsala University  
+**Funding:** Birgitta Sintring Fellowship
+**Institution:** Department of Ecology and Genetics, Uppsala University
 **Collaborators:** Elin Videvall, Heikki Henttonen, Grimsö Wildlife Research Station
-
----
+**Code:** [GitHub](https://github.com/DidDrog11/microbial_sensor)
 
 ## Overview
 
-This project aims to develop a **"Microbial Sensor"**—a high-resolution biological tracer that uses gut microbiome similarity to map the infrastructure of social and environmental contact in wild host populations. 
+This project develops a "microbial sensor": a tracer that uses gut microbiome similarity to measure social and environmental contact in wild rodent populations. It combines field ecology, long-read sequencing and Bayesian modelling to ask how functional connectivity, the contacts that actually occur, governs the spread of environmentally persistent pathogens such as Puumala orthohantavirus through host populations. It continues the work on [small-mammal contact networks in Sierra Leone](/research/sierra-leone.html).
 
-By bridging field ecology with long-read sequencing and Bayesian modelling, this research seeks to define how functional connectivity (the actual networks of contact) governs biological flow across host populations. This addresses a fundamental challenge in disease ecology: understanding how environmentally persistent pathogens, such as Puumala orthohantavirus (PUUV), persist in the landscape and expand through host populations without requiring direct physical encounters.
+## The problem
 
-## The Ecological Challenge
+Rodent contact networks emerge from social organisation and movement, not from density alone, yet most models approximate transmission potential with population density. Methods that measure contact directly, such as RFID logging and capture–mark–recapture, are labour-intensive. They also reduce contact to a binary record, which misses the intensity, timing and cumulative duration of exposure through shared nests and burrows.
 
-Rodent contact networks emerge from social organisation and movement ecology rather than density alone. These networks define the functional connectivity through which pathogens circulate. However, most ecological models approximate transmission potential using simple population density, implicitly assuming connectivity rather than measuring it. 
+## The approach
 
-The current state-of-the-art for sensing wildlife contact relies on logistically intensive technologies (e.g., RFID-logging and Capture-Mark-Recapture). While providing high-resolution spatial data, these approaches reduce contact history to coarse binary representations that fail to capture the intensity, temporal ordering, and cumulative duration of exposure via shared infrastructure (such as nests or burrows).
+Gut microbiota similarity can integrate a history of past associations, but earlier work could not separate direct contact from a shared environment. PacBio HiFi sequencing resolves shared taxa at strain level, so similarity can be split into two channels:
 
-## The Microbial Sensor Innovation
+- **Social channel (direct contact).** Obligate anaerobic, non-spore-forming taxa such as *Bacteroidales*, which survive poorly outside the host and so mark recent physical proximity.
+- **Environmental channel (indirect contact).** Aerotolerant or spore-forming clades, such as some *Lachnospiraceae*. Comparing faecal profiles with paired soil and nest samples separates transient environmental taxa from those that persist in shared infrastructure.
 
-Recent advances suggest that gut microbiota similarity can serve as a biological integrator of past associations. However, previous efforts have struggled to separate direct physical interaction from shared environmental exposure. 
+## Work packages
 
-This project moves from community-level correlation to process-partitioned, strain-level transmission tracking using PacBio HiFi sequencing. By resolving specific shared microbial taxa, we can measure interaction intensity across two biologically grounded channels:
+Both work packages use cyclic Fennoscandian vole populations.
 
-* **The Social Channel (Direct Contact):** Focussing on obligate anaerobic, non-spore-forming taxa (e.g., *Bacteroidales*) with limited environmental persistence. These microbial signatures reflect recent physical proximity and direct host–host interactions.
-* **The Environmental Channel (Indirect Contact):** Focussing on aerotolerant and/or environmentally resilient spore-forming clades (e.g., subsets of *Lachnospiraceae*). By comparing faecal profiles with paired environmental samples (soil and nest material), we can distinguish between transient environmental noise and host-associated taxa that persist in shared infrastructure.
+- **WP1, comparative model development.** Sequencing of 200 high-information pairs of individuals from long-term monitoring at Pallasjärvi, Finland, and Grimsö, Sweden. Pattern-oriented modelling tests which microbial assembly patterns host density and spatial overlap alone cannot reproduce.
+- **WP2, validation.** An intensive longitudinal live-trapping grid at Grimsö, with RFID logging and capture–mark–recapture giving time-ordered contact, paired with repeated faecal and environmental sampling.
 
-## Project Architecture
+## Model
 
-We apply a unified molecular-statistical pipeline across two complementary work packages, utilising cyclic Fennoscandian vole populations as a global model.
-
-### WP1: Comparative Model Development (Cross-sectional Benchmarking)
-WP1 quantifies how distinct modes of host contact are reflected in the structured components of the gut microbiome. Using archived long-term rodent monitoring data from Pallasjärvi (Finland) and Grimsö (Sweden), we will sequence 200 high-information dyads.
-
-By applying Pattern-Oriented Modelling, we will assess which large-scale microbial assembly patterns cannot be reproduced by host density and spatial overlap alone, falsifying density-only transmission assumptions and defining the parameter space for the sensor.
-
-### WP2: High-Resolution Triangulation and Validation
-WP2 provides mechanistic validation by directly resolving transmission pathways that are structurally non-identifiable in cross-sectional data. I will implement an intensive longitudinal live-trapping grid at Grimsö, Sweden. 
-
-Individuals will be monitored via RFID-logging and CMR to provide temporally ordered contact proxies, paired with repeated microbial sampling (faecal and environmental swabs). 
-
-## Mathematical Framework
-
-A unified Bayesian hierarchical model will be applied to ground-truth the temporally ordered monitoring data. We partition the microbial similarity ($S_{ij}$) between hosts into contributions from distinct ecological processes and genetic relatedness:
+A Bayesian hierarchical model partitions the microbial similarity between hosts *i* and *j* into contributions from social contact, space sharing, shared environment and kinship:
 
 $$S_{ij} = \beta_0 + \beta_1 \text{SocialContact}_{ij} + \beta_2 \text{SpaceSharing}_{ij} + \beta_3 \text{Environment}_{ij} + \beta_4 \text{Kinship}_{ij} + \epsilon$$
 
-Here, the coefficients ($\beta$) decompose the relative weight of direct versus indirect pathways, while the residual error ($\epsilon$) captures individual-level stochasticity and unobserved environmental variation. This pipeline will ultimately deliver a pathogen-agnostic framework for inferring weighted connectivity networks in wild populations.
+The coefficients give the relative weight of direct and indirect pathways, and the residual captures individual variation and unobserved environmental effects. The result is a pathogen-agnostic way to infer weighted contact networks in wild populations.
