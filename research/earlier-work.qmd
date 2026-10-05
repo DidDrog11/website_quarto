@@ -2,7 +2,46 @@
 title: "Earlier work"
 subtitle: "Projects outside the current programmes, or where my role was more peripheral."
 title-block-banner: true
+toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
+
+```{r}
+#| label: setup
+source(here::here("scripts", "paper_cards.R"))
+this_page <- "research/earlier-work.qmd"
+```
+
+## Digital health and smoking
+
+With Olga Perski and colleagues in the UCL Tobacco and Alcohol Research Group, I worked on digital interventions for sustained behaviour change. Two studies used data from a smoking cessation app, and from ecological momentary assessments and sensors, to train machine learning algorithms that classify or predict lapses in people trying to stop smoking. Group-level algorithms performed well, but their performance varied when applied to new individuals.
+
+From March 2020 the same group asked whether smoking changes the risk of SARS-CoV-2 infection, severe COVID-19 and death. Early data suggested a lower prevalence of smoking among patients than expected, and it was unclear whether that reflected biology or poor recording. We produced a rapid evidence review for the Royal College of Physicians, kept a living review up to date as studies appeared, argued for triangulation of methods and preregistration, and compared hospitalisation for COVID-19 with other respiratory viruses in current and former smokers at University College London Hospitals. A planned analysis of the Office for National Statistics COVID-19 Infection Survey has a [protocol on the Open Science Framework](https://osf.io/rfjq7) but was not carried out.
+
+```{r}
+#| results: asis
+render_papers(c("10.1093/ntr/ntad051", "10.1371/journal.pdig.0000594", "10.1016/s2589-7500(20)30130-8",
+                "10.32388/vgjcun", "10.1111/add.15276", "10.1093/ntr/ntab214", "10.12688/f1000research.55502.3"), this_page)
+```
+
+## African swine fever
+
+As a visiting researcher at EcoHealth Alliance in 2020, with Noam Ross, I modelled the westward spread of African swine fever through Europe since its introduction to Georgia in 2007. Reports to the World Animal Health Information System were mapped to administrative areas across European countries, and generalised additive models described the invasion front as a non-linear spatial process, to identify conditions that speed up or slow down its spread. The work was not completed.
+
+![Regions of Europe that have reported African swine fever, with reports increasingly coming from the western edge of the outbreak.](/others/images/asf_map.png){fig-alt="Map of European administrative regions reporting African swine fever cases." width="80%"}
+
+![A conceptual model of African swine fever transmission in sylvatic and agricultural settings.](/others/images/asf_framework.svg){width="80%"}
+
+The same method for estimating the speed of spread was applied to SARS-CoV-2 variants in the United Kingdom. That project stopped when access to the data ended, so the figure below is a preliminary result.
+
+![Preliminary estimates of the time to detection of SARS-CoV-2 variants in the United Kingdom, from the African swine fever spread method. Unfinished work.](/images/covid_variant_spread.png){fig-alt="Preliminary figure of time to detection of SARS-CoV-2 variants across the United Kingdom." width="80%"}
+
+## Peste des petits ruminants
+
+The Food and Agriculture Organization and the World Organisation for Animal Health aim to eradicate peste des petits ruminants, and eradication depends on serology that performs consistently across host species. I carried out a systematic review of serological assays for the virus, with a meta-analysis of their sensitivity and specificity planned. The work was not completed.
 
 ## Antimicrobial resistance
 
@@ -10,18 +49,3 @@ I contributed to two cross-sectional studies of antimicrobial resistance on poul
 
 1. Antimicrobial resistance patterns and risk factors associated with *Salmonella* spp. isolates from poultry farms in the east coast of Peninsular Malaysia: a cross-sectional study. *Pathogens*, 2021. [doi:10.3390/pathogens10091160](https://doi.org/10.3390/pathogens10091160)
 2. Identification of risk factors associated with resistant *Escherichia coli* isolates from poultry farms in the east coast of Peninsular Malaysia: a cross-sectional study. *Antibiotics*, 2021. [doi:10.3390/antibiotics10020117](https://doi.org/10.3390/antibiotics10020117)
-
-## Other projects
-
-- [African swine fever](/others/asf.html). Modelling range expansion of the emerging epidemic in Europe.
-- [Digital health](/others/digital_health.html). Digital healthcare interventions for sustained behaviour change.
-- [Peste des petits ruminants](/others/pprv.html). The sensitivity and specificity of assays for the virus.
-
-![A conceptual model of African swine fever transmission in sylvatic and agricultural settings.](/others/images/asf_framework.svg)
-
-The same method for estimating the speed of spread was applied to SARS-CoV-2 variants in the United Kingdom. That project stopped when access to the data ended, so the figure below is a preliminary result.
-
-![Preliminary estimates of the time to detection of SARS-CoV-2 variants in the United Kingdom, from the African swine fever spread method. Unfinished work.](/images/covid_variant_spread.png){fig-alt="Preliminary figure of time to detection of SARS-CoV-2 variants across the United Kingdom."}
-
-<!-- These three pages stay at their old URLs until their content is folded
-     into this page; then they get redirect rules in _redirects. -->

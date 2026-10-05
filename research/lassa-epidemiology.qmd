@@ -209,6 +209,21 @@ The study sets out these mechanisms, assesses which of them the published situat
 :::
 :::
 
+::: {.pub-entry .pub-entry-plain #work-lassa-chapter}
+::: {.pub-body}
+**Lassa fever**  
+Simons D, Bangura U, Fichet-Calvet E, Asogun D, Friant S  
+Chapter 1.29 in Kock R (ed.), *Zoonoses and Zoonotic Diseases: A Comprehensive Reference*, Elsevier. Forthcoming.
+
+A One Health review of the virus, its reservoir, epidemiology, clinical disease, diagnosis and treatment, and the integrated strategies needed for its control.
+:::
+:::
+
+## Data and code
+
+- **Under-reporting.** Code and data for the estimate of under-reported cases from reported deaths are on [GitHub](https://github.com/DidDrog11/lassa_underreporting).
+- **Hosts and cases.** The [host detections](/data/lassa_hosts.csv) and [confirmed cases](/data/lassa_cases.csv) behind the table and figure on this page.
+
 ## Papers
 
 ```{r}
