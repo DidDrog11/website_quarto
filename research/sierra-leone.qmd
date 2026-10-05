@@ -43,7 +43,8 @@ render_programme_papers("research/sierra-leone.qmd")
 
 ## Data and code
 
-- **Land use and host communities.** Code and data on [GitHub](https://github.com/DidDrog11/land-use-lassa-hosts), archived on [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk).
+- **Individual-level data.** Records of the small mammals trapped and tested in the study are on [PHAROS](https://pharos.viralemergence.org/projects/?prj=prjyg91YQvrdk).
+- **Land use and host communities.** Code and data on [GitHub](https://github.com/DidDrog11/land-use-lassa-hosts).
 - **Contact networks.** Code and data on [GitHub](https://github.com/DidDrog11/rodent-networks-lassa-sl).
 - **Review of rodent trapping studies.** The dataset is on [Zenodo](https://doi.org/10.5281/zenodo.7022637), the code on [GitHub](https://github.com/DidDrog11/scoping_review), and an [app](https://diddrog11.shinyapps.io/scoping_review_app/) explores the records.
 

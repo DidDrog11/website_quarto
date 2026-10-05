@@ -615,3 +615,27 @@ main figure img:not(.no-matte) { mix-blend-mode: multiply; }
   margin: 0.5rem 0 1.5rem;
   > summary { cursor: pointer; color: var(--ds-primary); font-size: 0.95rem; margin-bottom: 0.75rem; }
 }
+
+// App showcase cards on research/tools.qmd: a screenshot, a one-line statement,
+// a launch button and secondary links. Static images only, never a live iframe,
+// so the card still works when a free-tier app is asleep.
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+.app-card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-surface-edge);
+  border-radius: $border-radius-lg;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  p, ul { max-width: none; }
+  img { width: 100%; height: 9rem; object-fit: cover; object-position: top left; border-radius: $border-radius; mix-blend-mode: normal; }
+  h3 { margin-top: 0.75rem; font-size: 1.15rem; }
+  font-size: 0.95rem;
+  p:last-child { margin-top: auto; margin-bottom: 0; font-size: 0.9rem; }
+  .btn { margin: 0.25rem 0 0.5rem; }
+}
