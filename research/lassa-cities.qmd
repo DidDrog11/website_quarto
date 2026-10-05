@@ -1,40 +1,33 @@
 ---
-title: "The Socio-economic Shield Limits Lassa Virus Spillover in Urban West Africa"
-author: 
-  - name: "David Simons"
-    affiliation: Pennsylvania State University
-categories: [Lassa Fever, Spatial Epidemiology, Urbanisation, Zoonosis, Spatial Modelling, IMSOM, Preprint]
-date: 2025-12-17
+title: "Lassa fever in cities"
+subtitle: "The socio-economic shield and the urban edge of the reservoir"
+categories: [Lassa Fever, Spatial Epidemiology, Urbanisation, Zoonosis]
 image: "../lassa/images/urban_shield_decoupling.png"
-citation: true
+toc: true
 ---
 
-**[Read the preprint {{< iconify bi box-arrow-up-right >}}](https://doi.org/10.64898/2025.12.17.25342147)**
-*Accepted for publication in Epidemiology & Infection.*
+Spatial risk models for Lassa fever have mostly described the reservoir, *Mastomys natalensis*, with climatic envelopes, and so predict a rural disease. West African cities are growing fast, and urban land use changes which rodents live where. This work assesses what happens to the predicted risk when the reservoir's interactions with other rodents and with human infrastructure are modelled directly.
 
----
+## Approach
 
-## Background
+An integrated multi-species occupancy model estimates the realised niche of *M. natalensis* together with two invasive commensals, *Rattus rattus* and *Mus musculus*, so that co-occurrence is part of the model rather than ignored. Spillover to people is then modelled with a socio-economic shield, proxied by night-time lights, which dampens transmission non-linearly as urban infrastructure increases.
 
-Spatial risk models for Lassa fever generally predict that the primary reservoir, *Mastomys natalensis*, is restricted to rural landscapes, relying heavily on abiotic climatic envelopes. However, the rapid expansion of West African cities fundamentally alters local rodent dynamics through anthropogenic land-use shifts and novel multi-species competition. 
+## Findings
 
-This study reconstructs the reservoir’s realised niche by implementing an Integrated Multi-Species Occupancy Model (IMSOM). This framework explicitly quantifies co-occurrence dynamics between *M. natalensis* and invasive commensals (*Rattus rattus*, *Mus musculus*) to correct the "urban blind spot" present in previous forecasting efforts. Furthermore, it introduces a "socio-economic shield"—proxied by nighttime lights—to model the non-linear dampening effect of urban infrastructure on zoonotic spillover. 
+- **The reservoir reaches the urban fringe.** With species interactions in the model, *M. natalensis* is estimated to persist in peri-urban and human-modified landscapes, not to be excluded by the invasive commensals.
+- **Hazard and incidence separate across a city.** Ecological hazard stays high towards the urban core, but predicted incidence peaks at the periphery, where the shield is weaker.
+- **About 2.6 million infections a year.** Adjusting for seroreversion and shielding gives an estimated regional burden near 2.6 million Lassa virus infections a year.
+- **Silent districts.** Validation against clinical data identifies districts in Nigeria, Benin and Togo with high predicted incidence and no reported cases. These are more plausibly surveillance gaps than places without hazard.
 
-## Key Findings
+![**Hazard and incidence across the city profile.** Radial profiles from the centres of major West African cities: ecological hazard (orange), predicted incidence (black) and the effect of the socio-economic shield (dotted).](../lassa/images/urban_shield_decoupling.png){fig-alt="Radial profiles from West African city centres: ecological hazard stays high while predicted incidence peaks at the periphery."}
 
-By integrating multi-species biotic interactions and anthropogenic land-use into a high-resolution framework, the model demonstrates that Lassa fever possesses the biological potential to become a peri-urban disease.
+![**Silent districts.** Districts with high predicted annual infections and no reported clinical cases.](../lassa/images/silent_districts_map.png){fig-alt="Maps of districts with high predicted Lassa virus infections and no reported cases, with predicted against reported cases by district."}
 
-* **Cryptic Urban Reservoir Niche:** Accounting for species interactions reveals that *M. natalensis* exhibits high ecological tolerance for peri-urban and human-modified landscapes, actively persisting alongside invasive competitors rather than facing strict competitive exclusion.
-* **The Socio-economic Shield:** Urban infrastructure acts as a physical barrier, decoupling biological hazard from realised human spillover. While the biological hazard remains high in the peri-urban fringes, dense urban cores remain shielded from intense transmission.
-* **Revised Infection Burden:** Adjusting for empirically modelled antibody waning (seroreversion) and spatial urban shielding yields an estimated regional burden of 2.6 million annual Lassa virus infections.
-* **Identification of Silent Districts:** Spatial validation against clinical data identifies highly suitable "silent districts" in Nigeria, Benin, and Togo. These top-quartile incidence areas report zero cases, exposing profound surveillance gaps actively produced by structural inequalities rather than an absence of biological hazard.
+The work points to the peri-urban interface as a priority for active surveillance, and it is a starting point for wider work on rodent-borne zoonoses in growing cities. See also [Lassa epidemiology](/research/lassa-epidemiology.html) and [rodent-borne disease ecology](/research/rodent-disease-ecology.html).
 
-## Visualising the Risk Dynamics
+**Code:** [GitHub](https://github.com/DidDrog11/lassa-bridging-reanalysis)
 
-![**Spatial Decoupling of Hazard and Risk.** Radial profiles demonstrating how the socio-economic shield (dotted line) displaces peak predicted incidence (black) away from the urban core despite high ecological hazard (orange) in major metropolitan areas.](../lassa/images/urban_shield_decoupling.png)
-
-![**Surveillance Gaps and Silent Districts.** Risk stratification highlights districts with high predicted annual infections but zero reported clinical cases, underscoring the urgent need for proactive endemic surveillance at the peri-urban interface.](../lassa/images/silent_districts_map.png)
-## Publication
+## Paper
 
 ```{r}
 #| results: asis
