@@ -5,9 +5,9 @@ categories: [Policy, Vaccines, One Health, Lassa Fever]
 toc: true
 ---
 
-Vaccine trials for zoonotic pathogens face a problem that trials for pathogens spread between people do not. Efficacy is measured against incident infection, and infection arrives from wildlife at times and places that are hard to predict. Ecology is therefore part of the trial's design, not its background.
+Vaccine trials for zoonotic pathogens face a problem that trials for pathogens spread between people do not. Efficacy is measured against incident infection, and infection arrives from wildlife at times and places that are hard to predict. Ecology must be part of a trial's design, not its background.
 
-This is the direction I want my work to take: using what we know about reservoirs and human exposure to make trials of Lassa fever vaccines answerable, and doing the same for the next priority pathogen.
+This is the direction I want my work to take: using what we know about reservoirs and human exposure to make trials of Lassa fever vaccines answerable, and doing the same for the next priority pathogen. A grant application to fund this work is under review.
 
 ## One Health trial design
 
