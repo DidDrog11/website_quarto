@@ -1,83 +1,65 @@
 ---
-title: "About me"
-description: "Epidemiologist and infectious disease ecologist studying rodent-borne zoonoses, primarily Lassa fever."
-about:
-  template:  jolla
-  id: hero-heading
-  image: "images/david.jpg"
-  image-width: 30em
-  links:
-    - text: "{{< ai orcid >}} ORCID"
-      url: "https://orcid.org/0000-0001-9655-1656"
-    - text: LinkedIn
-      url: "https://www.linkedin.com/in/david-simons-3110b06"
-      icon: linkedin
-    - text: Bluesky
-      icon: bluesky
-      url: "https://bsky.app/profile/davidsimons.bsky.social"
-    - text: "{{< ai google-scholar >}} Google Scholar"
-      url: "https://scholar.google.com/citations?user=fT8u5MwAAAAJ&hl=en"
-    - text: GitHub
-      url: "https://github.com/DidDrog11"
-      icon: github
-    - text: Email
-      url: "mailto:dsimons1987@gmail.com"  # literal: shortcodes do not resolve in about-link URLs; keep in step with _variables.yml
-      icon: envelope-fill
-    - text: "{{< fa clipboard >}} C.V."
-      url: "cv.pdf"
-    - text: "{{< ai osf >}} OSF"
-      url: "https://osf.io/rk8at/"
-
+title: "About"
+description-meta: "Epidemiologist and infectious disease ecologist studying rodent-borne zoonoses, primarily Lassa fever."
+image: images/david.jpg
+toc: false
 ---
 
-:::{#hero-heading}
+::: {.about-header}
 
-I am a {{< var job_title >}} in the [{{< var department >}}, {{< var institution >}}]({{< var institution_url >}}). My [fellowship](research/bank-voles.qmd) develops microbial sensors to measure indirect contact networks among bank voles, to understand the transmission dynamics of rodent-borne viruses.
+![](images/david_portrait.webp){.about-photo fig-alt="David Simons sitting on a rock in forest during fieldwork, with a backpack and a GPS unit."}
 
-Before moving to Uppsala I was a postdoctoral scholar in [Sagan Friant's RISK lab](https://www.saganfriant.com/) at Pennsylvania State University, working on the [SCAPES](research/scapes.qmd) project in Nigeria. I am also a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/), working with [Stephanie Seifert](https://labs.wsu.edu/mezap/) on [Project ArHa](research/arha.qmd), a study of the ecological and molecular drivers of cross-species transmission of arenaviruses and hantaviruses.
+::: {.about-intro}
+[{{< var job_title >}}]{.about-role}
 
-I completed my PhD at the University of London in early 2024. My doctoral research was based across the [Centre for Emerging, Endemic and Exotic diseases](https://www.rvc.ac.uk/research/research-centres-and-facilities/ceeed) (CEEED) at the Royal Veterinary College, the [Centre for Biodiversity and Environment Research](https://www.ucl.ac.uk/biosciences/gee/ucl-centre-biodiversity-and-environment-research) (CBER) at University College London, and the [Department of Clinical Research](https://www.lshtm.ac.uk/research/faculties/itd/crd) at the London School of Hygiene and Tropical Medicine, funded through a [BBSRC](https://bbsrc.ukri.org/) PhD studentship with the [LIDo DTP](https://www.lido-dtp.ac.uk/).
+[{{< var department >}}, {{< var institution >}}]({{< var institution_url >}})
 
-My research interests fit within the fields of [Planetary Health](https://unfccc.int/climate-action/momentum-for-change/planetary-health) and [One Health](https://www.cdc.gov/onehealth/basics/index.html), with a particular focus on how anthropogenic change affects the risk of zoonotic disease emergence. I use whole-systems approaches to understand the interaction between human and biological factors on these risks. I currently live in Stockholm, Sweden.
+Epidemiologist and infectious disease ecologist. I study how people reshape the landscapes they live in, how small mammals respond, and what that means for the viruses they carry, mostly Lassa fever in West Africa.
+
+::: {.about-links}
+[{{< ai orcid >}} ORCID](https://orcid.org/{{< var orcid >}})
+[{{< ai google-scholar >}} Scholar](https://scholar.google.com/citations?user={{< var scholar_id >}})
+[{{< fa brands github >}} GitHub](https://github.com/{{< var github >}})
+[<i class="bi bi-bluesky"></i> Bluesky](https://bsky.app/profile/{{< var bluesky >}})
+[{{< fa brands linkedin >}} LinkedIn](https://www.linkedin.com/in/{{< var linkedin >}})
+[{{< ai osf >}} OSF](https://osf.io/rk8at/)
+[{{< fa envelope >}} Email](mailto:{{< var email >}})
+[{{< fa file-lines >}} CV](cv.pdf)
+:::
+:::
 
 :::
-------------------------------------------------------------------------
 
-## Doctoral Research
+## Now
 
-My PhD research was mainly carried out in Sierra Leone, West Africa, using [Lassa fever](research/sierra-leone.qmd), [mpox](research/surveillance.qmd), and [Ebola](https://www.cdc.gov/vhf/ebola/) as model disease systems. I adopt interdisciplinary approaches using methods from clinical medicine, epidemiology, mathematical modelling, and systems biology. I am a member of the [PANDORA-ID-net](https://pandora.tghn.org/) consortium and work closely with collaborators on the [One Health theme](https://pandora.tghn.org/one-health/). My fieldwork is conducted with colleagues based at Njala University in Sierra Leone. With this work, I aim to develop dynamic models of disease risk and translate these into policy implementations to promote the health and wellbeing of human communities in low-resource settings.
+As a [Birgitta Sintring Fellow](research/bank-voles.qmd) at Uppsala University, I am developing microbial sensors that measure indirect contact among bank voles, to understand how rodent-borne viruses move through host populations. I also lead a Vetenskapsrådet South Korea–Sweden project on [directing rodent sampling](research/surveillance.qmd), and I am a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/), where I co-lead [Project ArHa](research/arha.qmd) with Stephanie Seifert.
 
-I am a proponent of Open Science; where possible, pre-specified research questions and study protocols are posted to the [Open Science Framework](https://osf.io/dashboard). I strive to make all code used for my analyses available in reproducible files hosted on my [GitHub](https://github.com/diddrog11) page. All data are hosted on open data repositories (e.g., [GBIF](https://www.gbif.org/), [PHAROS](https://pharos.viralemergence.org/)) and are linked to the projects on this website.
+Before Uppsala I was a postdoctoral scholar in Sagan Friant's RISK lab, working on the [SCAPES](research/scapes.qmd) project in Nigeria. My PhD, completed in 2024, studied Lassa fever host ecology in [Sierra Leone](research/sierra-leone.qmd), across the Royal Veterinary College, University College London and the London School of Hygiene and Tropical Medicine, funded by a BBSRC studentship through the LIDo doctoral training partnership.
 
-------------------------------------------------------------------------
+I trained in medicine first. I worked as a doctor at the Hospital for Tropical Diseases through the COVID-19 pandemic, and as an analyst in the UK Health Security Agency's outbreak surveillance team during the emergence of Omicron and the 2022 mpox outbreak. I am out of clinical practice while I learn Swedish to transfer my medical registration. I live in Stockholm.
 
-## Public Health & Clinical Experience
+## Appointments
 
-Prior to leaving the UK, I practiced as a clinician with the [Hospital for Tropical Diseases](http://www.thehtd.org) and in the emergency department at University College London Hospital. My [**CV (PDF)**](cv.pdf) contains a full list of my clinical work.
-
-Alongside my clinical work during the COVID-19 pandemic, I contributed to LSHTM's [Centre for Mathematical Modelling of Infectious Diseases](https://cmmid.github.io/topics/covid19/) to understand the transmission dynamics of SARS-CoV-2. More recently, I worked with the UK Health Security Agency (UKHSA) in the Outbreak Surveillance Team during the emergence of the Omicron variant, where I developed an automated approach to monitor real-time cases to inform the initial public health response. I was also involved in the UK mpox outbreak, investigating transmission parameters from contact tracing data.
-
-I am currently out of clinical practice while I improve my Swedish language proficiency to transfer my medical qualifications.
-
-------------------------------------------------------------------------
-
+::: {.cv-timeline}
+- [2026–]{.cv-when} [**Birgitta Sintring Fellow**, Department of Ecology and Genetics, Uppsala University]{.cv-what}
+- [2023–2026]{.cv-when} [**Postdoctoral Scholar**, Department of Anthropology and Center for Infectious Disease Dynamics, Pennsylvania State University]{.cv-what}
+- [2023–]{.cv-when} [**Fellow-in-Residence**, Verena Consortium]{.cv-what}
+- [2021–2022]{.cv-when} [**Senior Analyst**, Outbreak Surveillance Team, UK Health Security Agency]{.cv-what}
+- [2020]{.cv-when} [**Visiting Researcher**, EcoHealth Alliance, New York]{.cv-what}
+- [2019–2022]{.cv-when} [**Resident Doctor**, Hospital for Tropical Diseases, University College London Hospitals]{.cv-what}
+:::
 
 ## Education
 
-**The University of London** \| London, UK
-*PhD in Epidemiology of Emerging Zoonotic Infectious Diseases* \| 2019 - 2024
+::: {.cv-timeline}
+- [2024]{.cv-when} [**PhD**, Epidemiology of Emerging Zoonotic Infectious Diseases, University of London (RVC, UCL and LSHTM)]{.cv-what}
+- [2019]{.cv-when} [**MSc**, Tropical Medicine and International Health, London School of Hygiene and Tropical Medicine]{.cv-what}
+- [2018]{.cv-when} [**DTM&H**, Diploma in Tropical Medicine and Hygiene, London School of Hygiene and Tropical Medicine]{.cv-what}
+- [2016]{.cv-when} [**MBBS**, Medicine and Surgery, King's College London]{.cv-what}
+- [2011]{.cv-when} [**MSc**, Biodiversity and Conservation, University of Leeds]{.cv-what}
+- [2010]{.cv-when} [**BSc**, Natural Sciences, University of Leeds]{.cv-what}
+:::
 
-**The London School of Hygiene and Tropical Medicine** \| London, UK
-*MSc in Tropical Medicine and International Health* \| 2018 - 2019
+## Open science
 
-**The London School of Hygiene and Tropical Medicine** \| London, UK
-*DTM&H, Diploma in Tropical Medicine and Hygiene* \| 2018
-
-**King's College London, GKT School of Medical Education** \| London, UK
-*MBBS in Medicine and Surgery* \| 2012 - 2016
-
-**University of Leeds** \| Leeds, UK
-*MSc in Biodiversity and Conservation* \| 2010 - 2011
-
-**University of Leeds** \| Leeds, UK
-*BSc in Natural Sciences w/ Industrial Placement* \| 2006 - 2010
+Study protocols go on the [Open Science Framework](https://osf.io/rk8at/) before the analysis, code is on [GitHub](https://github.com/{{< var github >}}), and data are released openly where the ethics allow, for example through [PHAROS](https://pharos.viralemergence.org/) and Zenodo; the deposits are listed on the [tools page](research/tools.qmd#data-deposits). The full record is in my [CV](cv.pdf).

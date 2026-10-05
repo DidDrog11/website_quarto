@@ -755,3 +755,79 @@ body[class*="zone-"] #title-block-header .quarto-title::before {
   }
   .stat-label { display: block; margin-top: 0.35rem; font-size: 0.88rem; color: var(--ds-ink-muted); line-height: 1.35; }
 }
+
+// ---------------------------------------------------------------------------
+// About page
+// ---------------------------------------------------------------------------
+
+.about-header {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin: 0.5rem 0 2.5rem;
+  .about-photo, img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: $border-radius-lg;
+    mix-blend-mode: normal;
+  }
+  figure, p { margin-bottom: 0.6rem; }
+  .about-role { display: block; font-family: #{$font-family-serif}; font-size: 1.45rem; color: var(--ds-ink); }
+  @media (max-width: 640px) {
+    grid-template-columns: minmax(0, 1fr);
+    .about-photo, img { max-width: 14rem; }
+  }
+}
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  p { display: contents; }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--ds-surface-edge);
+    border-radius: 999px;
+    background: var(--ds-surface);
+    font-size: 0.88rem;
+    text-decoration: none;
+    color: var(--ds-ink);
+    &:hover { border-color: var(--ds-primary); color: var(--ds-primary); }
+    &::after { display: none !important; }
+  }
+}
+
+// Appointments and education: dated entries on the same rail as the
+// publications year ladder.
+.cv-timeline ul {
+  list-style: none;
+  padding: 0 0 0 1rem;
+  margin: 0.5rem 0 2rem;
+  border-left: 2px solid var(--ds-surface-edge);
+  max-width: none;
+}
+.cv-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 0.45rem 0;
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-1rem - 6px);
+    top: 0.95rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ds-ground);
+    border: 2px solid var(--seq-3);
+  }
+}
+.cv-when { color: var(--ds-ink-muted); font-variant-numeric: tabular-nums lining-nums; }
