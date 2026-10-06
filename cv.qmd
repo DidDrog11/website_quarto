@@ -4,7 +4,8 @@
 # -----------------
 title: "Curriculum Vitae"
 author: "David Simons, BSc, MBBS, DTM&H, MSc, PhD"
-date: "`r format(Sys.Date(), '%B %Y')`"
+date: today
+date-format: "MMMM YYYY"
 listing: false
 # The CV is excluded from the site build, so var shortcodes do not resolve
 # here; read the same file as metadata instead.
@@ -161,12 +162,18 @@ short_authors <- function(a) {
   if (length(me) && me[1] > 6) shown <- c(shown, "…", parts[me[1]])
   paste(c(shown, "et al."), collapse = ", ")
 }
+# The header turns on \centering for the whole document; the list reads
+# better left-aligned.
+cat("\\begingroup\\raggedright\n\n")
 for (i in seq_len(n)) {
   authors <- gsub("\\bSimons D\\b", "**Simons D**", short_authors(pubs$authors[i]))
   journal_name <- gsub("&amp;", "&", pubs$journal[i], fixed = TRUE)
   journal <- if (!is.na(journal_name) && nzchar(journal_name)) paste0(" *", journal_name, "*.") else ""
-  cat(sprintf("%d. %s (%s). %s.%s\n", n - i + 1, authors, pubs$year[i], sub("[.]$", "", pubs$title[i]), journal))
+  # A paragraph per paper with the number in bold: a Markdown list would
+  # renumber upwards from the first number.
+  cat(sprintf("**%d.** %s (%s). %s.%s\n\n", n - i + 1, authors, pubs$year[i], sub("[.]$", "", pubs$title[i]), journal))
 }
+cat("\\par\\endgroup\n\n")
 ```
 
 ---

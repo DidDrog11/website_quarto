@@ -8,10 +8,9 @@ institution: Uppsala University
 institution_url: https://www.uu.se/en/department/ecology-and-genetics
 location: Stockholm, Sweden
 
-# Contact. Personal address for now; swap for a dsimons.org address once
-# forwarding is set up. Also read by scripts/update_publications.R and
-# scripts/fetch_pdfs.R for polite API use.
-email: dsimons1987@gmail.com
+# Contact: the Uppsala address (owner, 2026-10-06). Also read by
+# scripts/update_publications.R and scripts/fetch_pdfs.R for polite API use.
+email: david.simons@ebc.uu.se
 
 orcid: 0000-0001-9655-1656
 github: DidDrog11
