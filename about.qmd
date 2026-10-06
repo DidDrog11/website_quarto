@@ -42,9 +42,9 @@ I trained in medicine first. I worked as a doctor at the Hospital for Tropical D
 
 ::: {.cv-timeline}
 - [2026–]{.cv-when} [**Birgitta Sintring Fellow**, Department of Ecology and Genetics, Uppsala University]{.cv-what}
+- [2025–]{.cv-when} [**External Expert**, European Centre for Disease Prevention and Control]{.cv-what}
 - [2023–]{.cv-when} [**Postdoctoral Scholar**, Department of Anthropology and Center for Infectious Disease Dynamics, Pennsylvania State University]{.cv-what}
 - [2023–]{.cv-when} [**Fellow-in-Residence**, Verena Consortium]{.cv-what}
-- [2025–]{.cv-when} [**External Expert**, European Centre for Disease Prevention and Control]{.cv-what}
 - [2021–2022]{.cv-when} [**Senior Analyst**, Outbreak Surveillance Team, UK Health Security Agency]{.cv-what}
 - [2020]{.cv-when} [**Visiting Researcher**, EcoHealth Alliance, New York]{.cv-what}
 - [2019–2022]{.cv-when} [**Resident Doctor**, Hospital for Tropical Diseases, University College London Hospitals]{.cv-what}
