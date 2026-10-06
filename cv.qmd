@@ -151,6 +151,10 @@ format:
 # the CV and the publications page agree. Numbered newest-highest, as on the site.
 pubs <- read.csv(here::here("data", "publications.csv"), stringsAsFactors = FALSE)
 pubs <- pubs[pubs$kind %in% c("article", "preprint"), ]
+# Drop DOIs set to `hide` in the overrides file, as the publications page does.
+overrides <- read.csv(here::here("data", "publications_overrides.csv"), stringsAsFactors = FALSE)
+hidden <- tolower(overrides$doi[overrides$action %in% "hide"])
+pubs <- pubs[!tolower(pubs$doi) %in% hidden, ]
 pubs <- pubs[order(-suppressWarnings(as.integer(pubs$year)), pubs$title), ]
 n <- nrow(pubs)
 # Long author lists are cut to six, keeping Simons D visible, as on the website.
