@@ -16,22 +16,22 @@ Research informed by fieldwork: trapping, sampling and serosurveys where land us
     <p>Human exposure to Lassa virus at village scale, and the behaviours that generate contact with rodents.</p>
   </li>
   <li class="theme-card zone-bank-voles">
-    <img class="card-thumb" src="/images/cards/bank-voles.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/bank-voles.webp" alt="" loading="lazy">
     <h3><a href="/research/bank-voles.html">Bank voles at Uppsala</a></h3>
     <p>From September 2026, microbial sensors for the contact networks that drive environmental transmission.</p>
   </li>
   <li class="theme-card zone-surveillance">
-    <img class="card-thumb" src="/images/cards/surveillance.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/surveillance.webp" alt="" loading="lazy">
     <h3><a href="/research/surveillance.html">Surveillance and outbreak response</a></h3>
     <p>Where to sample when resources are finite. Plus earlier work on COVID-19 and mpox.</p>
   </li>
   <li class="theme-card zone-vaccines">
-    <img class="card-thumb" src="/images/cards/vaccines.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/vaccines.webp" alt="" loading="lazy">
     <h3><a href="/research/vaccines.html">Vaccines and trial design</a></h3>
     <p>Designing trials for pathogens that arrive from wildlife, and the commitments that should govern self-disseminating vaccines.</p>
   </li>
   <li class="theme-card zone-rodent-disease-ecology">
-    <img class="card-thumb" src="/images/cards/rodent-disease-ecology.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/rodent-disease-ecology.webp" alt="" loading="lazy">
     <h3><a href="/research/rodent-disease-ecology.html">Rodent-borne disease ecology</a></h3>
     <p>Three pillars for prevention: disease ecology, synanthropy and rodentation.</p>
   </li>
@@ -47,22 +47,22 @@ Computational and other research: synthesis, modelling, tools and the work that 
 ```{=html}
 <ul class="card-grid">
   <li class="theme-card zone-arha">
-    <img class="card-thumb" src="/images/cards/arha.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/arha.webp" alt="" loading="lazy">
     <h3><a href="/research/arha.html">Project ArHa</a></h3>
     <p>A global synthesis of arenavirus and hantavirus sampling in small mammals, and what surveillance bias hides.</p>
   </li>
   <li class="theme-card zone-lassa-cities">
-    <img class="card-thumb" src="/images/cards/lassa-cities.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/lassa-cities.webp" alt="" loading="lazy">
     <h3><a href="/research/lassa-cities.html">Lassa fever and cities</a></h3>
     <p>What happens to spillover when the gradient runs into an expanding West African city.</p>
   </li>
   <li class="theme-card zone-lassa-epidemiology">
-    <img class="card-thumb" src="/images/cards/lassa-epidemiology.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/lassa-epidemiology.webp" alt="" loading="lazy">
     <h3><a href="/research/lassa-epidemiology.html">Lassa epidemiology</a></h3>
     <p>How many cases there really are, and what the sampling record can and cannot support.</p>
   </li>
   <li class="theme-card zone-tools">
-    <img class="card-thumb" src="/images/cards/tools.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/tools.webp" alt="" loading="lazy">
     <h3><a href="/research/tools.html">Open tools and data</a></h3>
     <p>Map Liberator, SiteTool, and a minimum data standard for wildlife disease research.</p>
   </li>
@@ -72,7 +72,7 @@ Computational and other research: synthesis, modelling, tools and the work that 
     <p>Quantitative epidemiology and disease modelling for health organisations and industry.</p>
   </li>
   <li class="theme-card zone-earlier-work">
-    <img class="card-thumb" src="/images/cards/earlier-work.webp" alt="" loading="lazy">
+    <img class="card-thumb card-thumb-figure" src="/images/cards/earlier-work.webp" alt="" loading="lazy">
     <h3><a href="/research/earlier-work.html">Earlier work</a></h3>
     <p>Antimicrobial resistance, African swine fever, peste des petits ruminants and digital health.</p>
   </li>

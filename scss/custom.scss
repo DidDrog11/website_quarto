@@ -839,3 +839,9 @@ body.landing {
   .hero-inner { padding-top: 1rem; }
   .hero-band h1:first-child, .hero-band .hero-title { margin-top: 0; }
 }
+
+// Paper figures on the cards are faded so they do not compete with the text;
+// photographs stay at full strength. Hovering or focusing a card restores it.
+.theme-card .card-thumb-figure { opacity: 0.4; filter: saturate(0.7); transition: opacity 0.2s ease, filter 0.2s ease; }
+.theme-card:hover .card-thumb-figure,
+.theme-card:focus-within .card-thumb-figure { opacity: 1; filter: none; }
