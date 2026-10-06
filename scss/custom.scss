@@ -421,10 +421,14 @@ main.content .landing-recent ul { max-width: none; }
     // The title link is stretched over the whole card to make it clickable.
     // Quarto draws its external-link arrow on the same ::after, so strip any
     // icon here; otherwise the arrow is stretched to fill the card.
-    a::after, a.external::after {
+    // Only the title link is stretched. Quarto's section anchors add a second
+    // link inside the heading after load; stretched too, it would cover the
+    // card and a click would jump to the anchor instead of opening the page.
+    a:not(.anchorjs-link)::after, a.external:not(.anchorjs-link)::after {
       content: ""; position: absolute; inset: 0;
       background: none !important; margin: 0; padding: 0;
     }
+    .anchorjs-link { display: none; }
   }
   p { margin: 0; font-size: 0.93rem; color: var(--ds-ink-muted); max-width: none; }
 
