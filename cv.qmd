@@ -6,6 +6,10 @@ title: "Curriculum Vitae"
 author: "David Simons, BSc, MBBS, DTM&H, MSc, PhD"
 date: "`r format(Sys.Date(), '%B %Y')`"
 listing: false
+# The CV is excluded from the site build, so var shortcodes do not resolve
+# here; read the same file as metadata instead.
+metadata-files:
+  - _variables.yml
 sitemap: false
 
 # -----------------
@@ -35,7 +39,7 @@ format:
 
 \centering
 
-**{{< var email >}}** • {{< var location >}} • [dsimons.org](https://www.dsimons.org) • [GitHub](https://github.com/DidDrog11) • [ORCID](https://orcid.org/0000-0001-9655-1656)
+**{{< meta email >}}** • {{< meta location >}} • [dsimons.org](https://www.dsimons.org) • [GitHub](https://github.com/DidDrog11) • [ORCID](https://orcid.org/0000-0001-9655-1656)
 
 \vspace{1cm}
 \noindent
@@ -51,7 +55,10 @@ format:
 **External Expert** \hfill 2025 -- Present  
 *European Centre for Disease Prevention and Control (ECDC), Stockholm, Sweden*
 
-**Postdoctoral Scholar** \hfill 2023 -- Present  
+**Collaborator, SCAPES project** \hfill 2026 -- Present  
+*The Pennsylvania State University, USA*
+
+**Postdoctoral Scholar** \hfill 2023 -- 2026  
 *The Pennsylvania State University, Department of Anthropology & Center for Infectious Disease Dynamics, USA*
 
 **Fellow-in-Residence** \hfill 2023 -- Present  
@@ -110,14 +117,11 @@ format:
 **Principal Investigator, Vetenskapsrådet (VR) Starting Grant (Under Review)** \hfill 2026  
 *HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. SEK 6,000,000*
 
-**Principal Investigator, Vetenskapsrådet (VR) Sweden-Korea Project Grant (Under Review)** \hfill 2026  
-*An AI-Directed One Health Risk Prediction Framework for Active Learning in Rodent-Borne Zoonoses. Uppsala University.*
+**Principal Investigator, Vetenskapsrådet (VR) Sweden-Korea Research Collaboration (Funded)** \hfill 2026 -- 2027  
+*An AI-Directed One Health Risk Prediction Framework for Active Learning in Rodent-Borne Zoonoses. Uppsala University, with Chungnam National University.*
 
-**Co-Principal Investigator, FORMAS Project Grant (Under Review)** \hfill 2026  
+**Co-Principal Investigator, FORMAS Project Grant, CASCADE (Under Review)** \hfill 2026  
 *Climate change impacts on public health and zoonotic dynamics in Sweden.*
-
-**Principal Investigator, Huck Seed Award Application (Under Review)** \hfill 2026  
-*Spillover Interface Surveillance: Geographically Informed Ecological Momentary Assessments (GEMA) for Lassa Fever Risk. \$80,000*
 
 **Co-Principal Investigator, VERENA Institute Grant (Funded)** \hfill 2023 -- 2024  
 *Project ArHa: Arenaviruses and Hantaviruses. \$5,000*
@@ -136,36 +140,33 @@ format:
 ### Publications
 
 ```{r}
-#| label: auto-pubs
+#| label: publications
 #| echo: false
-#| cache: true
 #| message: false
 #| warning: false
 #| results: asis
 
-if (!require("scholar")) install.packages("scholar")
-library(scholar)
-library(tidyverse)
-library(here)
-
-scholar_id <- "fT8u5MwAAAAJ"
-pubs <- get_publications(scholar_id)
-
-pubs |>
-  arrange(desc(year)) |>
-  mutate(pub_number = row_number()) |>
-  pwalk(function(pub_number, author, year, title, journal, ...) {
-    author_bold <- str_replace(author, "D Simons", "**D Simons**")
-    cat(
-      paste0(
-        pub_number, ". ", 
-        author_bold, " (", year, "). ",
-        title, ". *",
-        journal, "*.\n"
-      )
-    )
-  })
-
+# Read from data/publications.csv, the ORCID-based list behind the website, so
+# the CV and the publications page agree. Numbered newest-highest, as on the site.
+pubs <- read.csv(here::here("data", "publications.csv"), stringsAsFactors = FALSE)
+pubs <- pubs[pubs$kind %in% c("article", "preprint"), ]
+pubs <- pubs[order(-suppressWarnings(as.integer(pubs$year)), pubs$title), ]
+n <- nrow(pubs)
+# Long author lists are cut to six, keeping Simons D visible, as on the website.
+short_authors <- function(a) {
+  parts <- strsplit(a, ",\\s*")[[1]]
+  if (length(parts) <= 8) return(paste(parts, collapse = ", "))
+  me <- grep("\\bSimons D\\b", parts)
+  shown <- parts[1:6]
+  if (length(me) && me[1] > 6) shown <- c(shown, "…", parts[me[1]])
+  paste(c(shown, "et al."), collapse = ", ")
+}
+for (i in seq_len(n)) {
+  authors <- gsub("\\bSimons D\\b", "**Simons D**", short_authors(pubs$authors[i]))
+  journal_name <- gsub("&amp;", "&", pubs$journal[i], fixed = TRUE)
+  journal <- if (!is.na(journal_name) && nzchar(journal_name)) paste0(" *", journal_name, "*.") else ""
+  cat(sprintf("%d. %s (%s). %s.%s\n", n - i + 1, authors, pubs$year[i], sub("[.]$", "", pubs$title[i]), journal))
+}
 ```
 
 ---
