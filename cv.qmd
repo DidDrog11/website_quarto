@@ -1,21 +1,14 @@
 ---
-# -----------------
-# DOCUMENT METADATA
-# -----------------
-title: "Curriculum Vitae"
-author: "David Simons, BSc, MBBS, DTM&H, MSc, PhD"
-date: today
-date-format: "MMMM YYYY"
+# Curriculum vitae, rendered to cv.pdf (PDF only; excluded from the site build).
+# Rebuild with `quarto render cv.qmd` and commit cv.pdf.
+pagetitle: "David Simons, curriculum vitae"
 listing: false
+sitemap: false
 # The CV is excluded from the site build, so var shortcodes do not resolve
 # here; read the same file as metadata instead.
 metadata-files:
   - _variables.yml
-sitemap: false
 
-# -----------------
-# PDF FORMATTING OPTIONS
-# -----------------
 format:
   pdf:
     output-file: cv.pdf
@@ -25,120 +18,181 @@ format:
     sansfont: "TeX Gyre Heros"
     monofont: "TeX Gyre Cursor"
     geometry:
-      - top=1in
-      - bottom=1in
-      - left=1in
-      - right=1in
-    linestretch: 1.15
+      - top=2cm
+      - bottom=2.2cm
+      - left=2.2cm
+      - right=2.2cm
+    linestretch: 1.1
+    colorlinks: true
+    linkcolor: sage
+    urlcolor: sage
     include-in-header:
       text: |
+        \usepackage[explicit]{titlesec}
+        \usepackage{xcolor}
         \usepackage{fancyhdr}
+        \usepackage{lastpage}
+        \definecolor{sage}{HTML}{35604B}
+        \definecolor{muted}{HTML}{56605A}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{5pt}
+        \raggedright
+        % Section headings: small letter-spaced capitals in the site green, with a rule.
+        \titleformat{\section}{\sffamily\bfseries\small\color{sage}}{}{0pt}{\addfontfeature{LetterSpace=8}\MakeUppercase{#1}}[{\color{muted!35}\titlerule}]
+        \titlespacing*{\section}{0pt}{16pt}{8pt}
+        \titleformat{\subsection}{\sffamily\bfseries\small\color{muted}}{}{0pt}{#1}
+        \titlespacing*{\subsection}{0pt}{8pt}{4pt}
         \pagestyle{fancy}
-        \fancyfoot[C]{\thepage}
-        \fancyhead[L]{David Simons - CV}
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{0pt}
+        \fancyfoot[L]{\sffamily\footnotesize\color{muted}David Simons \textperiodcentered{} Curriculum vitae}
+        \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage{} of \pageref{LastPage}}
 ---
 
-\centering
+```{=latex}
+{\sffamily\bfseries\fontsize{24}{28}\selectfont David Simons}\par
+\vspace{2pt}
+{\sffamily\color{muted} BSc, MBBS, DTM\&H, MSc, PhD}\par
+\vspace{6pt}
+{\large Birgitta Sintring Fellow, Department of Ecology and Genetics, Uppsala University}\par
+\vspace{4pt}
+```
 
-**{{< meta email >}}** • {{< meta location >}} • [dsimons.org](https://www.dsimons.org) • [GitHub](https://github.com/DidDrog11) • [ORCID](https://orcid.org/0000-0001-9655-1656)
+{{< meta email >}} · {{< meta location >}} · [dsimons.org](https://www.dsimons.org) · [GitHub](https://github.com/DidDrog11) · [ORCID 0000-0001-9655-1656](https://orcid.org/0000-0001-9655-1656)
 
-\vspace{1cm}
-\noindent
-\hrule
+```{=latex}
+{\footnotesize\color{muted} Updated `r format(Sys.Date(), "%B %Y")`}
+```
 
----
+# Appointments
 
-### Professional Appointments
-
-**Birgitta Sintring Independent Research Fellow** \hfill Sept 2026 -- Present  
+**Birgitta Sintring Independent Research Fellow** \hfill Sept 2026 -- present \
 *Department of Ecology and Genetics, Uppsala University, Sweden*
 
-**External Expert** \hfill 2025 -- Present  
-*European Centre for Disease Prevention and Control (ECDC), Stockholm, Sweden*
-
-**Collaborator, SCAPES project** \hfill 2026 -- Present  
+**Collaborator, SCAPES project** \hfill 2026 -- present \
 *The Pennsylvania State University, USA*
 
-**Postdoctoral Scholar** \hfill 2023 -- 2026  
-*The Pennsylvania State University, Department of Anthropology & Center for Infectious Disease Dynamics, USA*
+**External Expert** \hfill 2025 -- present \
+*European Centre for Disease Prevention and Control (ECDC), Stockholm, Sweden*
 
-**Fellow-in-Residence** \hfill 2023 -- Present  
-*The VERENA Institute, USA*
+**Postdoctoral Scholar** \hfill 2023 -- 2026 \
+*Department of Anthropology and Center for Infectious Disease Dynamics, The Pennsylvania State University, USA*
 
-**Senior Analyst, Outbreak Surveillance Team** \hfill 2021 -- 2022  
+**Fellow-in-Residence** \hfill 2023 -- present \
+*The Verena Institute, USA*
+
+**Senior Analyst, Outbreak Surveillance Team** \hfill 2021 -- 2022 \
 *UK Health Security Agency, London, UK*
 
-**Resident Doctor, Hospital for Tropical Diseases** \hfill 2019 -- 2022  
-*University College London Hospital, London, UK*
-
-**Visiting Researcher** \hfill 2020  
+**Visiting Researcher** \hfill 2020 \
 *EcoHealth Alliance, New York, USA*
 
-**Locum Senior House Officer** \hfill 2018 -- 2019  
-*Various NHS Hospitals, London, UK*
+**Resident Doctor, Hospital for Tropical Diseases** \hfill 2019 -- 2022 \
+*University College London Hospitals, London, UK*
 
-**Foundation Doctor** \hfill 2016 -- 2018  
+**Locum Senior House Officer** \hfill 2018 -- 2019 \
+*Various NHS hospitals, London, UK*
+
+**Foundation Doctor** \hfill 2016 -- 2018 \
 *North-East London Foundation Training School, London, UK*
 
-**Research Assistant, Dept. of Microbiology, Tumour & Cell Biology** \hfill 2012  
-*Karolinska Institute, Stockholm, Sweden*
+**Research Assistant, Department of Microbiology, Tumour and Cell Biology** \hfill 2012 \
+*Karolinska Institutet, Stockholm, Sweden*
 
-**Clinical Research Scientist (Industrial Placement)** \hfill 2008 -- 2009  
+**Clinical Research Scientist (industrial placement)** \hfill 2008 -- 2009 \
 *GlaxoSmithKline, Harlow, UK*
 
----
+# Education
 
-### Education
+**PhD, Epidemiology of Emerging Zoonotic Infectious Diseases** \hfill 2024 \
+*University of London (RVC, UCL and LSHTM), London, UK*
 
-**PhD, Epidemiology of Emerging Zoonotic Infectious Diseases** \hfill 2024  
-*University of London (RVC, UCL, LSHTM), London, UK*
-
-**MSc, Tropical Medicine and International Health** \hfill 2019  
+**MSc, Tropical Medicine and International Health** \hfill 2019 \
 *London School of Hygiene and Tropical Medicine, London, UK*
 
-**Professional Diploma in Tropical Medicine and Hygiene (DTM&H)** \hfill 2018  
+**Professional Diploma in Tropical Medicine and Hygiene (DTM&H)** \hfill 2018 \
 *London School of Hygiene and Tropical Medicine, London, UK*
 
-**Membership of the Royal College of Physicians (Part 1)** \hfill 2017  
-*The Royal College of Physicians, London, UK*
+**Membership of the Royal College of Physicians (Part 1)** \hfill 2017 \
+*Royal College of Physicians, London, UK*
 
-**MBBS, Bachelor of Medicine and Bachelor of Surgery** \hfill 2016  
+**MBBS, Bachelor of Medicine and Bachelor of Surgery** \hfill 2016 \
 *King's College London, GKT School of Medical Education, London, UK*
 
-**MSc & BSc, Natural Sciences** \hfill 2011  
+**MSc and BSc, Natural Sciences** \hfill 2011 \
 *University of Leeds, Leeds, UK*
 
----
+# Research funding
 
-### Research Funding and Grants
+## Funded
 
-**Principal Investigator, Birgitta Sintring Fellowship (Funded)** \hfill 2026 -- Present  
+**Birgitta Sintring Fellowship**, Principal Investigator \hfill 2026 -- present \
 *Functional connectivity and microbial transmission pathways in Fennoscandian rodents. Uppsala University.*
 
-**Principal Investigator, Vetenskapsrådet (VR) Starting Grant (Under Review)** \hfill 2026  
-*HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. SEK 6,000,000*
+**Vetenskapsrådet, Sweden--South Korea Research Collaboration**, Principal Investigator \hfill 2026 -- 2027 \
+*An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses. Uppsala University, with Chungnam National University.*
 
-**Principal Investigator, Vetenskapsrådet (VR) Sweden-Korea Research Collaboration (Funded)** \hfill 2026 -- 2027  
-*An AI-Directed One Health Risk Prediction Framework for Active Learning in Rodent-Borne Zoonoses. Uppsala University, with Chungnam National University.*
+**Verena Institute**, Co-Principal Investigator \hfill 2023 -- 2024 \
+*Project ArHa: arenaviruses and hantaviruses. \$5,000.*
 
-**Co-Principal Investigator, FORMAS Project Grant, CASCADE (Under Review)** \hfill 2026  
+**EcoHealth Alliance**, Principal Investigator \hfill 2020 \
+*Forecasting global veterinary disease: modelling African swine fever. \$5,000.*
+
+**BBSRC LIDo Doctoral Training Partnership**, PhD studentship \hfill 2019 -- 2024 \
+*Investigating rodent ecology to understand Lassa fever spillover. £85,000.*
+
+## Under review
+
+**Vetenskapsrådet Starting Grant**, Principal Investigator \hfill 2026 \
+*HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. SEK 6,000,000.*
+
+**Formas Project Grant, CASCADE**, Co-Principal Investigator \hfill 2026 \
 *Climate change impacts on public health and zoonotic dynamics in Sweden.*
 
-**Co-Principal Investigator, VERENA Institute Grant (Funded)** \hfill 2023 -- 2024  
-*Project ArHa: Arenaviruses and Hantaviruses. \$5,000*
+# Editorial and professional service
 
-**Principal Investigator, PhD Studentship (BBSRC LIDo DTP - Funded)** \hfill 2019 -- 2024  
-*Investigating rodent ecology to understand Lassa fever spillover. £85,000*
+**Academic Editor**, *PLOS Neglected Tropical Diseases* \hfill Feb 2026 -- present
 
-**Principal Investigator, EcoHealth Alliance Grant (Funded)** \hfill 2020  
-*Forecasting Global Veterinary Disease: Modelling African Swine Fever. \$5,000*
+**E-learning curriculum, ECDC** \hfill 2025 \
+*Co-developed an e-learning course on the environmental determinants of communicable diseases.*
 
-**Marie Skłodowska-Curie Postdoctoral Fellowship (Awarded Seal of Excellence)** \hfill 2025  
-*HOST-V framework score evaluated in top-tier threshold globally.*
+**Peer review** \hfill \
+*26 reviews for 14 international journals; 2 book chapter reviews.*
 
----
+**Grant review** \hfill \
+*Grant Agency of the Czech Republic.*
 
-### Publications
+**Scientific committee**, Annual Rodent-Borne Zoonotic Disease Workshop \hfill
+
+# Teaching, mentoring and supervision
+
+**Thesis supervision** \hfill 2019 -- present \
+*Joint or sole supervisor of 8 students on medical elective, undergraduate and postgraduate research projects at UCL, LSHTM and the Royal Veterinary College.*
+
+**Postgraduate and professional lecturing** \hfill 2021 -- present \
+*Invited lecturer on postgraduate courses at LSHTM (DTM&H) and UCL (Infectious Diseases MSc).*
+
+**Undergraduate lecturing** \hfill 2023 -- present \
+*"Spillover: The Anthropology of Emerging Infectious Diseases", The Pennsylvania State University.*
+
+**Field and laboratory capacity building** \hfill 2019 -- present \
+*Recruited, trained and supervised field and laboratory teams in Sierra Leone and Nigeria in rodent sampling, PCR and antibody assays (ELISA, LIPS) under BSL-3 conditions.*
+
+# Invited presentations
+
+36 invited talks and posters at international conferences and institutions, including the ECOWAS Lassa Fever International Conference, ASTMH, EEID, LSHTM and the University of Idaho. Full list on request.
+
+# Skills
+
+**Data analysis and programming.** R (tidyverse, Quarto, Shiny, Stan, sf), QGIS, ArcGIS, Git and GitHub, SQL.
+
+**Laboratory and field.** Rodent trapping and handling, serological assays (ELISA), molecular diagnostics (PCR).
+
+**Clinical.** Infectious diseases, tropical medicine, emergency medicine. Registered with the General Medical Council.
+
+**Languages.** English (native), Swedish (learning).
+
+# Publications
 
 ```{r}
 #| label: publications
@@ -157,6 +211,7 @@ hidden <- tolower(overrides$doi[overrides$action %in% "hide"])
 pubs <- pubs[!tolower(pubs$doi) %in% hidden, ]
 pubs <- pubs[order(-suppressWarnings(as.integer(pubs$year)), pubs$title), ]
 n <- nrow(pubs)
+cat(sprintf("%d papers and preprints, newest first. Full list with links at [dsimons.org/publications](https://www.dsimons.org/publications.html).\n\n", n))
 # Long author lists are cut to six, keeping Simons D visible, as on the website.
 short_authors <- function(a) {
   parts <- strsplit(a, ",\\s*")[[1]]
@@ -166,86 +221,13 @@ short_authors <- function(a) {
   if (length(me) && me[1] > 6) shown <- c(shown, "…", parts[me[1]])
   paste(c(shown, "et al."), collapse = ", ")
 }
-# The header turns on \centering for the whole document; the list reads
-# better left-aligned.
-cat("\\begingroup\\raggedright\n\n")
 for (i in seq_len(n)) {
   authors <- gsub("\\bSimons D\\b", "**Simons D**", short_authors(pubs$authors[i]))
   journal_name <- gsub("&amp;", "&", pubs$journal[i], fixed = TRUE)
   journal <- if (!is.na(journal_name) && nzchar(journal_name)) paste0(" *", journal_name, "*.") else ""
+  preprint <- if (pubs$kind[i] == "preprint") " Preprint." else ""
   # A paragraph per paper with the number in bold: a Markdown list would
   # renumber upwards from the first number.
-  cat(sprintf("**%d.** %s (%s). %s.%s\n\n", n - i + 1, authors, pubs$year[i], sub("[.]$", "", pubs$title[i]), journal))
+  cat(sprintf("**%d.** %s (%s). %s.%s%s\n\n", n - i + 1, authors, pubs$year[i], sub("[.]$", "", pubs$title[i]), journal, preprint))
 }
-cat("\\par\\endgroup\n\n")
 ```
-
----
-
-### Invited Presentations
-*A selection of 36 invited talks and poster presentations at international conferences and institutions including the ECOWAS Lassa fever conference, ASTMH, EEID, LSHTM, and the University of Idaho. Full list available upon request.*
-
----
-
-### Teaching, Mentoring, and Supervision
-**Thesis Supervision** \hfill 2019 -- Present  
-*Joint or sole supervisor for 8 students on medical elective, undergraduate, and postgraduate research projects at UCL, LSHTM, and the Royal Veterinary College.*
-
-**Graduate & Professional Lecturing** \hfill 2021 -- Present  
-*Invited guest lecturer for postgraduate courses at LSHTM (DTM&H) and UCL (Infectious Diseases MSc).*
-
-**Undergraduate Lecturing** \hfill 2023 -- Present  
-*Lecturer for "Spillover: The Anthropology of Emerging Infectious Diseases" at The Pennsylvania State University.*
-
-**Field & Laboratory Capacity Building** \hfill 2019 -- Present  
-*Recruited, trained, and supervised multiple local field and laboratory teams in Sierra Leone and Nigeria in rodent sampling, molecular (PCR), and antibody-based (ELISA, LIPS) assays under BSL-3 conditions.*
-
----
-
-### Professional Service
-**External Expert, ECDC** \hfill 2025 -- Present  
-*Co-developing curriculum for an e-learning course on "Environmental Determinants of Communicable Diseases."*
-
-**Peer Review** \hfill  
-*26 peer reviews for 14 international journals; 2 book chapter reviews.*
-*Academic Editor at PLOS Neglected Tropical Diseases*
-
-**Grant Review** \hfill  
-*Reviewer for the Grant Agency of the Czech Republic.*
-
----
-
-## Skills
-
-::: {.columns}
-::: {.column width="50%"}
-**Data Analysis & Programming**
-
--   **R:** Tidyverse, R Markdown/Quarto, Shiny, Stan, `sf`
--   **GIS:** QGIS, ArcGIS
--   **Version Control:** Git, GitHub
--   **Databases:** SQL basics
-
-**Laboratory & Field**
-
--   Rodent trapping and handling
--   Serological assays (ELISA)
--   Molecular diagnostics (PCR)
-:::
-
-::: {.column width="50%"}
-**Languages**
-
--   **English:** Native
--   **Swedish:** In progress
-
-**Clinical**
-
--   Infectious Diseases
--   Tropical Medicine
--   Emergency Medicine
--   General Medical Council (GMC) Registered
-:::
-:::
-
----
