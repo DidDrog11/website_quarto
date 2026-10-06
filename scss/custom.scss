@@ -831,3 +831,11 @@ body[class*="zone-"] #title-block-header .quarto-title::before {
   }
 }
 .cv-when { color: var(--ds-ink-muted); font-variant-numeric: tabular-nums lining-nums; }
+
+// Home page: the hero starts right under the navbar, with no page margin,
+// padding or heading margin stacked above the title.
+body.landing {
+  main.content, #quarto-content, .page-columns { margin-top: 0; padding-top: 0; }
+  .hero-inner { padding-top: 1rem; }
+  .hero-band h1:first-child, .hero-band .hero-title { margin-top: 0; }
+}

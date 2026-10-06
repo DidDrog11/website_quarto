@@ -4,6 +4,7 @@ description-meta: "Epidemiologist and infectious disease ecologist. Rodent-borne
 page-layout: custom
 toc: false
 page-age: false
+body-classes: landing
 ---
 
 {{< include _includes/hero.qmd >}}
