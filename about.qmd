@@ -34,7 +34,7 @@ Epidemiologist and infectious disease ecologist. I study how people reshape the 
 
 As a [Birgitta Sintring Fellow](research/bank-voles.qmd) at Uppsala University, I am developing microbial sensors that measure indirect contact among bank voles, to understand how rodent-borne viruses move through host populations. I also lead a Vetenskapsrådet South Korea–Sweden project on [directing rodent sampling](research/surveillance.qmd), and I am a Fellow-in-Residence with the [Verena Consortium](https://www.viralemergence.org/), where I co-lead [Project ArHa](research/arha.qmd) with Stephanie Seifert.
 
-I am also a postdoctoral scholar in Sagan Friant's RISK lab at Pennsylvania State University, working on the [SCAPES](research/scapes.qmd) project in Nigeria, and I am on the external expert list of the European Centre for Disease Prevention and Control. My PhD, completed in 2024, studied Lassa fever host ecology in [Sierra Leone](research/sierra-leone.qmd), across the Royal Veterinary College, University College London and the London School of Hygiene and Tropical Medicine, funded by a BBSRC studentship through the LIDo doctoral training partnership.
+I joined Sagan Friant's RISK lab at Pennsylvania State University as a postdoctoral scholar on the [SCAPES](research/scapes.qmd) project in Nigeria, and continue on it as a collaborator, and I am on the external expert list of the European Centre for Disease Prevention and Control. My PhD, completed in 2024, studied Lassa fever host ecology in [Sierra Leone](research/sierra-leone.qmd), across the Royal Veterinary College, University College London and the London School of Hygiene and Tropical Medicine, funded by a BBSRC studentship through the LIDo doctoral training partnership.
 
 I trained in medicine first. I worked as a doctor at the Hospital for Tropical Diseases through the COVID-19 pandemic, and as an analyst in the UK Health Security Agency's outbreak surveillance team during the emergence of Omicron and the 2022 mpox outbreak. I am out of clinical practice while I learn Swedish to transfer my medical registration. I live in Stockholm.
 
@@ -43,7 +43,8 @@ I trained in medicine first. I worked as a doctor at the Hospital for Tropical D
 ::: {.cv-timeline}
 - [2026–]{.cv-when} [**Birgitta Sintring Fellow**, Department of Ecology and Genetics, Uppsala University]{.cv-what}
 - [2025–]{.cv-when} [**External Expert**, European Centre for Disease Prevention and Control]{.cv-what}
-- [2023–]{.cv-when} [**Postdoctoral Scholar**, Department of Anthropology and Center for Infectious Disease Dynamics, Pennsylvania State University]{.cv-what}
+- [2026–]{.cv-when} [**Collaborator**, SCAPES project, Pennsylvania State University]{.cv-what}
+- [2023–2026]{.cv-when} [**Postdoctoral Scholar**, Department of Anthropology and Center for Infectious Disease Dynamics, Pennsylvania State University]{.cv-what}
 - [2023–]{.cv-when} [**Fellow-in-Residence**, Verena Consortium]{.cv-what}
 - [2021–2022]{.cv-when} [**Senior Analyst**, Outbreak Surveillance Team, UK Health Security Agency]{.cv-what}
 - [2020]{.cv-when} [**Visiting Researcher**, EcoHealth Alliance, New York]{.cv-what}
