@@ -849,3 +849,82 @@ body.landing {
 .theme-card .card-thumb-figure { opacity: 0.4; filter: saturate(0.7); transition: opacity 0.2s ease, filter 0.2s ease; }
 .theme-card:hover .card-thumb-figure,
 .theme-card:focus-within .card-thumb-figure { opacity: 1; filter: none; }
+
+// ---------------------------------------------------------------------------
+// Publications filters
+// ---------------------------------------------------------------------------
+
+// Wide screens: the panel sits in the empty left margin beside the list. The
+// column runs from the top of the list (--pf-top, set by the script) to the
+// bottom of the page, and the panel is sticky inside it, so it stays in view.
+// The year headings stay top-level so they remain in the sidebar's year
+// ladder. Narrow screens: a "Filter papers" button above the list opens it.
+// Keep the breakpoint in step with the script on publications.qmd.
+@media (min-width: 1200px) {
+  main.content:has(> .pubs-filter-col) { position: relative; }
+  main.content > .pubs-filter-col {
+    position: absolute;
+    right: calc(100% + 2.5rem);
+    width: 13rem;
+    top: var(--pf-top, 0);
+    bottom: 0;
+  }
+  .pubs-filter-col .pub-filters {
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+  }
+  .pubs-filter-col .pub-filters > summary { display: none; }
+}
+.pub-filters {
+  margin-bottom: 1rem;
+  > summary {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--ds-surface-edge);
+    border-radius: 999px;
+    background: var(--ds-surface);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ds-primary);
+  }
+  &[open] > summary { margin-bottom: 0.75rem; }
+}
+.pf-form {
+  fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
+  legend { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-ink-muted); margin-bottom: 0.35rem; }
+  label {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: 0 0.45rem;
+    padding: 0.15rem 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  input { accent-color: var(--ds-primary); }
+  .pf-count { color: var(--ds-ink-muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+}
+.pf-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ds-ink-muted);
+}
+.pf-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.pf-chip, .pf-clear {
+  border: 1px solid var(--ds-surface-edge);
+  border-radius: 999px;
+  background: var(--ds-surface);
+  padding: 0.1rem 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ds-ink);
+  cursor: pointer;
+}
+.pf-chip::after { content: " ×"; color: var(--ds-ink-muted); }
+.pf-clear { background: none; border-color: transparent; color: var(--ds-primary); text-decoration: underline; }

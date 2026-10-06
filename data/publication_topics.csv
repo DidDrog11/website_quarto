@@ -1,0 +1,65 @@
+doi,topics,note
+10.1002/ecog.08455,tools;surveillance,SiteTool
+10.1038/s41591-025-04018-6,lassa;vaccines,One Health trial design
+10.1371/journal.pesy.0000023,surveillance;arha,Biodiversity-informed surveillance protocol
+10.4269/ajtmh.25-0120,lassa;rodent-ecology,Contact networks
+10.1371/journal.pntd.0014379,lassa;vaccines,SCAPES serosurvey
+10.1007/s10393-026-01810-9,lassa;rodent-ecology,Participatory rural appraisal
+10.64898/2026.01.26.26344575,tools;lassa,Map Liberator
+10.64898/2026.06.10.731004,arha,Orthohantavirus reassortment
+10.1371/journal.pone.0349028,digital-health,Cravings and lapses
+10.12688/wellcomeopenres.25937.2,lassa;rodent-ecology,SCAPES protocol
+10.1017/s0950268826101824,lassa,Socio-economic shield
+10.64898/2026.06.03.729761,arha;rodent-ecology,Reservoir status
+10.1038/s41597-025-05332-x,tools;surveillance,Minimum data standard
+10.1111/1365-2656.70187,lassa;rodent-ecology,Land use gradients
+10.12688/wellcomeopenres.24037.2,arha;tools,ArHa protocol
+10.1016/j.lanplh.2025.101300,rodent-ecology,Three pillars
+10.1126/science.adn3231,vaccines,Transmissible vaccines
+10.1371/journal.pdig.0000594,digital-health,Lapse prediction
+10.46471/gigabyte.100,tools;rodent-ecology,West African trapping dataset
+10.1093/ntr/ntad051,digital-health,Lapse classification
+10.1017/s0950268823000420,covid;surveillance,Omicron and Delta transmission
+10.1371/journal.pgph.0002159,lassa;surveillance,Sampling and sequencing biases
+10.1371/journal.pntd.0010772,rodent-ecology;lassa,Rodent trapping review
+10.12688/f1000research.55502.3,covid;digital-health,Smoking and hospitalisation
+10.2807/1560-7917.es.2022.27.22.2200422,mpox;surveillance,UK community transmission
+10.1056/nejmoa2119451,covid;vaccines,Omicron vaccine effectiveness
+10.1016/s1473-3099(22)00309-7,covid;vaccines,BA.2 vaccine effectiveness
+10.2807/1560-7917.es.2022.27.11.2200143,covid;surveillance,Omicron S-gene target failure
+10.1016/j.ijid.2022.05.058,mpox,mpox burden in Africa
+10.1093/inthealth/ihac076,lassa;surveillance,Under-reporting
+10.1038/s41467-022-32404-y,covid,Omicron-era dynamics
+10.1186/s12889-022-13069-0,covid,Local burden first wave
+10.1038/s41598-021-86266-3,covid;surveillance,NHS Pathways
+10.3390/pathogens10091160,other,AMR Salmonella
+10.1038/s41467-021-25531-5,covid,Contact tracing
+10.1186/s12916-021-01982-x,covid,Routine PCR testing
+10.1101/2021.12.18.21268003,covid,4C Mortality Score
+10.3390/antibiotics10020117,other,AMR E. coli
+10.1038/s41467-021-22213-0,covid,School-household networks
+10.1186/s12913-021-06509-x,covid,Bed pathways
+10.1371/journal.pcbi.1009098,covid,Contact matrices
+10.1016/s2468-2667(20)30308-x,covid,Quarantine and testing
+10.1093/ntr/ntab214,covid;digital-health,Smoking triangulation
+10.2807/1560-7917.es.2021.26.39.2001440,covid,Traveller importation
+10.1186/s12916-021-01924-7,covid,Restrictions and contacts
+10.1186/s12916-020-01872-8,covid,NPIs in 130 countries
+10.2807/1560-7917.es.2021.26.49.2001809,covid,Saturating density dependence
+10.1186/s12916-021-01906-9,covid;vaccines,Measles immunisation
+10.1186/s12941-021-00431-0,lassa;surveillance,One Health niche
+10.1016/s1473-3099(21)00079-7,covid;vaccines,Value of vaccination
+10.1038/s41467-020-18783-0,covid,China travel patterns
+10.1016/s2589-7500(20)30130-8,digital-health,Anthropocene commentary
+10.1016/s1473-3099(20)30457-6,covid,Isolation and contact tracing
+10.32388/1sc5l4,covid,Face masks review
+10.1016/j.ijid.2020.02.049,covid;surveillance,Is Africa prepared
+10.1016/s2352-3026(20)30122-8,covid,Sickle cell services
+10.1017/s0950268820000424,covid;surveillance,Passengers from China
+10.1186/s12916-020-01790-9,covid,Early global dynamics
+10.32388/vgjcun,covid;digital-health,RCP smoking review
+10.1111/add.15276,covid;digital-health,Smoking living review
+10.7554/elife.58699,covid,Diamond Princess
+10.1186/s12916-020-01779-4,covid,Kenyan informal settlements
+10.1038/s41591-020-1036-8,covid,Real-world network
+10.1016/j.appet.2012.07.017,other,Fat mass and eating behaviour

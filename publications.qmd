@@ -29,21 +29,64 @@ hidden <- read_csv(here::here("data", "publications_overrides.csv"), col_types =
   pull(doi) |>
   str_to_lower()
 
+# Topic tags for the filter, one row per paper, in data/publication_topics.csv.
+topic_tags <- read_csv(here::here("data", "publication_topics.csv"), col_types = cols(.default = col_character()),
+                   show_col_types = FALSE) |>
+  transmute(doi = str_to_lower(doi), topics = str_replace_all(topics, ";", " "))
+
+topic_labels <- c(lassa = "Lassa fever", arha = "Arenaviruses and hantaviruses", `rodent-ecology` = "Rodent ecology",
+                  surveillance = "Surveillance and outbreaks", covid = "COVID-19", mpox = "mpox",
+                  vaccines = "Vaccines and trials", tools = "Tools and data",
+                  `digital-health` = "Digital health and smoking", other = "Other")
+role_labels <- c(first = "First author", last = "Last author")
+status_labels <- c(published = "Published", preprint = "Preprint only")
+
 # ---- papers -----------------------------------------------------------------
 
 # Numbered newest-highest, so a paper keeps its number as new ones arrive.
-# Each year heading carries an explicit id, which the year ladder links to.
+# Authorship is read from the full author list: first and last position.
 papers <- pubs |>
   filter(kind %in% c("article", "preprint"), !str_to_lower(doi) %in% hidden) |>
   mutate(year_n = suppressWarnings(as.integer(year))) |>
   arrange(desc(year_n), title) |>
-  mutate(n = rev(seq_len(n())))
+  mutate(n = rev(seq_len(n())),
+         doi_key = str_to_lower(doi)) |>
+  left_join(topic_tags, by = c("doi_key" = "doi")) |>
+  rowwise() |>
+  mutate(role = {
+    a <- str_trim(str_split(authors, ",")[[1]])
+    paste(c(if (identical(a[1], "Simons D")) "first", if (length(a) > 1 && identical(a[length(a)], "Simons D")) "last"), collapse = " ")
+  }) |>
+  ungroup() |>
+  mutate(status = if_else(kind == "preprint", "preprint", "published"),
+         topics = coalesce(topics, "other"))
+
+untagged <- papers |> filter(!doi_key %in% topic_tags$doi)
+if (nrow(untagged)) message("Papers without topic tags (shown as Other): ", paste(untagged$doi, collapse = ", "))
+
+# The filter panel. Counts are over all papers; the script narrows the list.
+option_html <- function(group, labels, values) {
+  counts <- vapply(names(labels), function(k) sum(str_detect(values, paste0("(^| )", k, "( |$)"))), integer(1))
+  keep <- counts > 0
+  paste(sprintf('<label><input type="checkbox" name="%s" value="%s"> <span>%s</span> <span class="pf-count">%d</span></label>',
+                group, names(labels)[keep], labels[keep], counts[keep]), collapse = "\n")
+}
+cat("::: {.pubs-filter-col}\n\n```{=html}\n")
+cat('<details class="pub-filters">\n<summary>Filter papers</summary>\n<form class="pf-form" aria-label="Filter papers">\n')
+cat('<fieldset><legend>Topic</legend>\n', option_html("topic", topic_labels, papers$topics), '\n</fieldset>\n')
+cat('<fieldset><legend>Authorship</legend>\n', option_html("role", role_labels, papers$role), '\n</fieldset>\n')
+cat('<fieldset><legend>Status</legend>\n', option_html("status", status_labels, papers$status), '\n</fieldset>\n')
+cat('</form>\n</details>\n```\n\n:::\n\n')
+cat('```{=html}\n<div class="pf-status" aria-live="polite"><span class="pf-shown"></span><span class="pf-chips"></span></div>\n```\n\n')
 
 for (y in unique(papers$year_n)) {
   heading <- if (is.na(y)) "Undated {#year-undated}" else sprintf("%d {#year-%d}", y, y)
   cat(sprintf("## %s\n\n", heading))
   block <- papers |> filter(if (is.na(y)) is.na(year_n) else year_n == y)
-  for (i in seq_len(nrow(block))) render_entry(block[i, ], block$n[i])
+  for (i in seq_len(nrow(block))) {
+    attrs <- sprintf('data-topics="%s" data-role="%s" data-status="%s"', block$topics[i], block$role[i], block$status[i])
+    render_entry(block[i, ], block$n[i], attrs = attrs)
+  }
 }
 
 # ---- data and code ----------------------------------------------------------
@@ -66,7 +109,7 @@ if (nrow(datasets)) {
   for (i in seq_len(nrow(datasets))) {
     row <- datasets[i, ]
     label <- if (row$kind == "software") "Software" else "Dataset"
-    cat(sprintf("::: {.pub-entry .pub-entry-plain #pub-%s}\n::: {.pub-body}\n", row$id))
+    cat(sprintf("::: {.pub-entry .pub-entry-plain .pub-data #pub-%s}\n::: {.pub-body}\n", row$id))
     cat(sprintf("**%s**  \n", row$title))
     auth <- format_authors(row$authors)
     if (auth != "") cat(auth, "  \n", sep = "")
@@ -79,30 +122,114 @@ if (nrow(datasets)) {
 
 ```{=html}
 <script>
-// Year ladder: one rung per paper beside each year in the sidebar, so the
-// navigation also shows how many papers each year holds. The count is in the
-// link text for screen readers; the rungs are decoration.
-const buildLadder = () => {
+(() => {
+  // ---- Year ladder ---------------------------------------------------------
+  // One rung per visible paper beside each year in the sidebar. The count is
+  // in the link's label for screen readers; the rungs are decoration.
   // Quarto rewrites the sidebar link addresses after load, so match on the
   // fragment rather than the whole href.
-  document.querySelectorAll('#TOC a[href*="#year-"]').forEach(link => {
-    const section = document.getElementById(link.getAttribute("href").split("#")[1]);
-    if (!section) return;
-    const n = section.querySelectorAll(".pub-entry").length;
-    const rungs = document.createElement("span");
-    rungs.className = "year-rungs";
-    rungs.setAttribute("aria-hidden", "true");
-    for (let i = 0; i < n; i++) rungs.append(document.createElement("i"));
-    const count = document.createElement("span");
-    count.className = "year-count";
-    count.textContent = n;
-    link.prepend(rungs);
-    link.append(count);
-    link.setAttribute("aria-label", `${link.textContent.replace(/\d+$/, "").trim()}, ${n} ${n === 1 ? "paper" : "papers"}`);
-    link.closest("li")?.classList.add("year-rung-item");
-  });
-  document.querySelector("#TOC")?.classList.add("year-ladder");
-};
-if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", buildLadder); else buildLadder();
+  const updateLadder = () => {
+    document.querySelectorAll('#TOC a[href*="#year-"]').forEach(link => {
+      const section = document.getElementById(link.getAttribute("href").split("#")[1]);
+      if (!section) return;
+      const n = section.querySelectorAll(".pub-entry:not([hidden])").length;
+      if (!link.dataset.year) link.dataset.year = link.textContent.trim();
+      link.replaceChildren();
+      const rungs = document.createElement("span");
+      rungs.className = "year-rungs";
+      rungs.setAttribute("aria-hidden", "true");
+      for (let i = 0; i < n; i++) rungs.append(document.createElement("i"));
+      const count = document.createElement("span");
+      count.className = "year-count";
+      count.textContent = n;
+      link.append(rungs, document.createTextNode(link.dataset.year), count);
+      link.setAttribute("aria-label", `${link.dataset.year}, ${n} ${n === 1 ? "paper" : "papers"}`);
+      const item = link.closest("li");
+      item?.classList.add("year-rung-item");
+      if (item) item.hidden = n === 0;
+    });
+    document.querySelector("#TOC")?.classList.add("year-ladder");
+  };
+
+  // ---- Filters -------------------------------------------------------------
+  // Within a group any ticked option matches; across groups all must match.
+  // Without JavaScript the panel is inert and the full list shows.
+  const form = document.querySelector(".pf-form");
+  const details = document.querySelector(".pub-filters");
+  const entries = [...document.querySelectorAll(".pub-entry[data-topics]")];
+  const groups = { topic: "topics", role: "role", status: "status" };
+  const shown = document.querySelector(".pf-shown");
+  const chips = document.querySelector(".pf-chips");
+
+  const selected = () => Object.fromEntries(Object.keys(groups).map(g =>
+    [g, [...form.querySelectorAll(`input[name="${g}"]:checked`)].map(i => i.value)]));
+
+  const apply = () => {
+    const sel = selected();
+    let visible = 0;
+    entries.forEach(e => {
+      const ok = Object.entries(groups).every(([g, attr]) => {
+        if (!sel[g].length) return true;
+        const tags = (e.dataset[attr] || "").split(/\s+/);
+        return sel[g].some(v => tags.includes(v));
+      });
+      e.hidden = !ok;
+      if (ok) visible++;
+    });
+    document.querySelectorAll('section[id^="year-"]').forEach(s => {
+      s.hidden = !s.querySelector(".pub-entry:not([hidden])");
+    });
+    const active = Object.values(sel).some(v => v.length);
+    shown.textContent = active ? `Showing ${visible} of ${entries.length} papers` : `${entries.length} papers`;
+    chips.replaceChildren();
+    if (active) {
+      form.querySelectorAll("input:checked").forEach(input => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "pf-chip";
+        chip.textContent = input.parentElement.querySelector("span").textContent;
+        chip.setAttribute("aria-label", `Remove filter: ${chip.textContent}`);
+        chip.addEventListener("click", () => { input.checked = false; apply(); });
+        chips.append(chip);
+      });
+      const clear = document.createElement("button");
+      clear.type = "button";
+      clear.className = "pf-clear";
+      clear.textContent = "Clear";
+      clear.addEventListener("click", () => { form.reset(); apply(); });
+      chips.append(clear);
+    }
+    // Keep the filters in the address, so a filtered list can be shared.
+    const params = new URLSearchParams();
+    Object.entries(sel).forEach(([g, v]) => { if (v.length) params.set(g, v.join(",")); });
+    const query = params.toString();
+    history.replaceState(null, "", query ? `?${query}${location.hash}` : location.pathname + location.hash);
+    updateLadder();
+  };
+
+  const init = () => {
+    if (!form) { updateLadder(); return; }
+    const params = new URLSearchParams(location.search);
+    Object.keys(groups).forEach(g => (params.get(g) || "").split(",").filter(Boolean).forEach(v => {
+      const input = form.querySelector(`input[name="${g}"][value="${v}"]`);
+      if (input) input.checked = true;
+    }));
+    // Open beside the list on wide screens; a closed button above it on narrow ones.
+    const wide = window.matchMedia("(min-width: 1200px)");
+    // On wide screens the panel's column starts level with the list.
+    const col = document.querySelector(".pubs-filter-col");
+    const status = document.querySelector(".pf-status");
+    const setOpen = () => {
+      details.open = wide.matches;
+      if (col && status) col.style.setProperty("--pf-top", `${status.offsetTop}px`);
+    };
+    setOpen();
+    wide.addEventListener("change", setOpen);
+    window.addEventListener("resize", setOpen);
+    form.addEventListener("change", apply);
+    apply();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
 </script>
 ```

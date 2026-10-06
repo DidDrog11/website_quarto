@@ -118,13 +118,15 @@ render_note <- function(row, note, open = FALSE, read_more = TRUE) {
 }
 
 # One entry. With a number (publications list) it gets the number column;
-# without (programme pages) it is a plain single-column entry.
-render_entry <- function(row, n = NULL, open = FALSE, read_more = TRUE) {
+# without (programme pages) it is a plain single-column entry. `attrs` adds
+# extra div attributes, e.g. the data-* tags the publications filter reads.
+render_entry <- function(row, n = NULL, open = FALSE, read_more = TRUE, attrs = "") {
   note <- if (row$tier %in% c("card", "page")) read_note(row$id) else NULL
+  extra <- if (nzchar(attrs)) paste0(" ", attrs) else ""
   if (is.null(n)) {
-    cat(sprintf("::: {.pub-entry .pub-entry-plain #pub-%s}\n", row$id))
+    cat(sprintf("::: {.pub-entry .pub-entry-plain #pub-%s%s}\n", row$id, extra))
   } else {
-    cat(sprintf("::: {.pub-entry #pub-%s}\n", row$id))
+    cat(sprintf("::: {.pub-entry #pub-%s%s}\n", row$id, extra))
     cat(sprintf("::: {.pub-num}\n%d\n:::\n", n))
   }
   cat("::: {.pub-body}\n")
