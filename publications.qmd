@@ -5,7 +5,6 @@ toc: true
 toc-title: "By year"
 image: images/og-card.png
 toc-depth: 2
-title-block-banner: true
 execute:
   echo: false
   warning: false

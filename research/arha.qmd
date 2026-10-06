@@ -1,7 +1,6 @@
 ---
 title: "Project ArHa: Arenaviruses & Hantaviruses"
 subtitle: "A global synthesis of rodent-borne viral pathogens"
-title-block-banner: true
 toc: true
 ---
 

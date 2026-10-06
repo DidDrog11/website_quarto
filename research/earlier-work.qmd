@@ -1,7 +1,6 @@
 ---
 title: "Earlier work"
 subtitle: "Projects outside the current programmes, or where my role was more peripheral."
-title-block-banner: true
 toc: true
 execute:
   echo: false
@@ -23,7 +22,7 @@ From March 2020 the same group asked whether smoking changes the risk of SARS-Co
 
 ```{r}
 #| results: asis
-render_papers(c("10.1093/ntr/ntad051", "10.1371/journal.pdig.0000594", "10.1016/s2589-7500(20)30130-8",
+render_papers(c("10.1093/ntr/ntad051", "10.1371/journal.pdig.0000594", "10.1371/journal.pone.0349028", "10.1016/s2589-7500(20)30130-8",
                 "10.32388/vgjcun", "10.1111/add.15276", "10.1093/ntr/ntab214", "10.12688/f1000research.55502.3"), this_page)
 ```
 
