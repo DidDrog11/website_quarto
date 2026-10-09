@@ -26,12 +26,14 @@ body-classes: landing
      than 18 months. -->
 <ul class="recent-short">
   <li><a href="/research/surveillance.html#directing-rodent-sampling">New grant from Vetenskapsrådet</a></li>
+  <li><a href="/publications.html#pub-10_64898_2026_09_28_26364179">New preprint on the Andes virus outbreak</a></li>
   <li><a href="/research/lassa-cities.html">New paper in Epidemiology &amp; Infection</a></li>
   <li><a href="/research/arha.html">New preprint on reservoir status</a></li>
   <li><a href="/research/bank-voles.html">Birgitta Sintring Fellowship begins</a></li>
 </ul>
 <ul class="recent-long">
   <li><strong>Grant.</strong> Vetenskapsrådet South Korea–Sweden research collaboration, <em>An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses</em>, with Chungnam National University, October 2026 to December 2027. <a href="/research/surveillance.html#directing-rodent-sampling">More</a>.</li>
+  <li><strong>New preprint.</strong> <em>Open ecological, genomic and digital behavioural data resolve the 2026 MV Hondius Andes virus outbreak to the southern-Andean reservoir zone</em>, with David Redding and colleagues, on medRxiv. <a href="/publications.html#pub-10_64898_2026_09_28_26364179">More</a>.</li>
   <li><strong>New paper.</strong> <em>The socio-economic shield limits Lassa virus spillover in urban West Africa</em>, in <em>Epidemiology &amp; Infection</em>. <a href="/research/lassa-cities.html">More</a>.</li>
   <li><strong>New preprint.</strong> <em>Viral reservoir status in small mammals emerges as a predictable life-history trait</em>. <a href="/research/arha.html">More</a>.</li>
   <li><strong>Fellowship.</strong> Birgitta Sintring Fellowship, Uppsala University, from September 2026. <a href="/research/bank-voles.html">More</a>.</li>
