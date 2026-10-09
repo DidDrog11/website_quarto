@@ -44,6 +44,10 @@ status_labels <- c(published = "Published", preprint = "Preprint only")
 
 # Numbered newest-highest, so a paper keeps its number as new ones arrive.
 # Authorship is read from the full author list: first and last position.
+# Consortium papers list working-group members alphabetically after the main
+# authors, so a last position there is not senior authorship. List such DOIs
+# here (owner, 2026-10-09: Kucharski et al. 2020, CMMID working group).
+not_last_author <- c("10.1016/s1473-3099(20)30457-6")
 papers <- pubs |>
   filter(kind %in% c("article", "preprint"), !str_to_lower(doi) %in% hidden) |>
   mutate(year_n = suppressWarnings(as.integer(year))) |>
@@ -54,7 +58,7 @@ papers <- pubs |>
   rowwise() |>
   mutate(role = {
     a <- str_trim(str_split(authors, ",")[[1]])
-    paste(c(if (identical(a[1], "Simons D")) "first", if (length(a) > 1 && identical(a[length(a)], "Simons D")) "last"), collapse = " ")
+    paste(c(if (identical(a[1], "Simons D")) "first", if (length(a) > 1 && identical(a[length(a)], "Simons D") && !doi_key %in% not_last_author) "last"), collapse = " ")
   }) |>
   ungroup() |>
   mutate(status = if_else(kind == "preprint", "preprint", "published"),
