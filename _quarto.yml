@@ -67,6 +67,8 @@ website:
             href: research/scapes.qmd
           - text: "Bank voles at Uppsala"
             href: research/bank-voles.qmd
+          - text: "CASCADE, Sweden"
+            href: research/cascade.qmd
           - text: "Surveillance and outbreak response"
             href: research/surveillance.qmd
           - text: "Vaccines and trial design"

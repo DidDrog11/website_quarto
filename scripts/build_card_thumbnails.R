@@ -26,7 +26,8 @@ sources <- c(
   `lassa-epidemiology`     = "_freeze/research/lassa-epidemiology/figure-html/lassa-cases-1.png",
   tools                    = "open_science/images/map_liberator_app.webp",
   consultancy              = "images/hero_landscape.webp",
-  `earlier-work`           = "others/images/asf_map.png"
+  `earlier-work`           = "others/images/asf_map.png",
+  cascade                  = "images/cascade_snow_water.jpg"
 )
 
 # Read any of the source formats as an RGB array in [0, 1], flattening any

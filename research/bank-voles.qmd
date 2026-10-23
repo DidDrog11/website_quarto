@@ -7,9 +7,9 @@ image: "../rodent_ecology/figures/microbial_sensor.png"
 toc: true
 ---
 
-**Funding:** Birgitta Sintring Fellowship
-**Institution:** Department of Ecology and Genetics, Uppsala University
-**Collaborators:** Elin Videvall, Heikki Henttonen, Grimsö Wildlife Research Station
+**Funding:** Birgitta Sintring Fellowship \
+**Institution:** Department of Ecology and Genetics, Uppsala University \
+**Collaborators:** Elin Videvall, Heikki Henttonen, Grimsö Wildlife Research Station \
 **Code:** [GitHub](https://github.com/DidDrog11/microbial_sensor)
 
 ## Overview

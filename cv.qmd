@@ -132,6 +132,9 @@ format:
 **Vetenskapsrådet, Sweden--South Korea Research Collaboration**, Principal Investigator \hfill 2026 -- 2027 \
 *An AI-directed One Health risk prediction framework for active learning in rodent-borne zoonoses. Uppsala University, with Chungnam National University.*
 
+**Formas, CASCADE**, Co-applicant and work package lead (modelling), 50% of full time \hfill 2026 -- 2030 \
+*Climate-amplified spillover of vector-borne and zoonotic diseases in Sweden. Project leader Hussein Khalil, SLU. Nearly SEK 9,000,000 total.*
+
 **Verena Institute**, Co-Principal Investigator \hfill 2023 -- 2024 \
 *Project ArHa: arenaviruses and hantaviruses. \$5,000.*
 
@@ -145,9 +148,6 @@ format:
 
 **Vetenskapsrådet Starting Grant**, Principal Investigator \hfill 2026 \
 *HOST-V: Harnessing One-health Surveillance for Transforming Vaccine Trials for Epidemic Threats. SEK 6,000,000.*
-
-**Formas Project Grant, CASCADE**, Co-Principal Investigator \hfill 2026 \
-*Climate change impacts on public health and zoonotic dynamics in Sweden.*
 
 # Editorial and professional service
 

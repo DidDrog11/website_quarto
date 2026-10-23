@@ -21,6 +21,11 @@ Research informed by fieldwork: trapping, sampling and serosurveys where land us
     <p>From September 2026, microbial sensors for the contact networks that drive environmental transmission.</p>
   </li>
   <li class="theme-card zone-surveillance">
+    <img class="card-thumb" src="/images/cards/cascade.webp" alt="" loading="lazy">
+    <h3><a href="/research/cascade.html">CASCADE, Sweden</a></h3>
+    <p>How gradual warming and extreme weather change the risk of rodent- and tick-borne infection in Sweden.</p>
+  </li>
+  <li class="theme-card zone-surveillance">
     <img class="card-thumb card-thumb-figure" src="/images/cards/surveillance.webp" alt="" loading="lazy">
     <h3><a href="/research/surveillance.html">Surveillance and outbreak response</a></h3>
     <p>Where to sample when resources are finite. Plus earlier work on COVID-19 and mpox.</p>

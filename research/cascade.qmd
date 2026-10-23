@@ -1,0 +1,42 @@
+---
+title: "CASCADE, Sweden"
+body-classes: zone-surveillance
+subtitle: "Climate-amplified spillover of vector-borne and zoonotic diseases in Sweden"
+categories: [Hantavirus, Tularaemia, Tick-borne disease, Climate, Modelling, Sweden]
+image: ../images/og-card.png
+toc: true
+---
+
+**Funding:** Formas, National Research Programme for Climate, 2026–2030 \
+**Lead:** Hussein Khalil, Swedish University of Agricultural Sciences (SLU), Umeå \
+**Collaborators:** Frauke Ecke (University of Helsinki), Magnus Evander (Umeå University), Yonas Meheretu (SLU) \
+**Role:** co-applicant and work package lead (modelling), 50% of full time
+
+## Overview
+
+CASCADE (Climate-Amplified Spillover: Connecting Acute and gradual Drivers of Emerging vector-borne and zoonotic diseases in Sweden) asks how climate change raises the risk of rodent- and tick-borne infection in Sweden, where, and for whom. It runs from November 2026 to October 2030.
+
+Sweden is warming at roughly twice the global average, with the fastest shifts in the north and in winter. Several climate-sensitive infections, including nephropathia epidemica (Puumala orthohantavirus, PUUV), tularaemia (*Francisella tularensis*) and tick-borne diseases such as *Anaplasma phagocytophilum*, are already concentrated in the northern counties. Because routine surveillance only captures infections after people fall ill, it cannot anticipate how a rapidly changing climate will reshape the underlying hazard.
+
+## Two pathways
+
+CASCADE traces how climate change drives spillover through two distinct mechanisms.
+
+- **Gradual change.** Milder winters and longer, wetter summers favour the bank vole (*Clethrionomys glareolus*, the reservoir of PUUV) over competing species, extend the questing season of *Ixodes ricinus* ticks, and allow urban populations of *Rattus norvegicus* to expand.
+- **Extreme events.** Rain-on-snow events collapse the subnivean space that shelters voles through winter, driving them into buildings. Similarly, flooding flushes rats from sewers into homes, while summer heatwaves draw people into forests and coastal areas right as ecological risk peaks.
+
+## Field and surveillance approach
+
+To capture these dynamics, a space-for-time field design tracks reservoirs, ticks and pathogens along a mountain-to-coast climate gradient in Västerbotten, running from Ammarnäs, through Vindeln, to the Baltic coast. The milder coastal conditions today serve as a proxy for the future climate projected for the mountains. Alongside the gradient, enclosure experiments simulate extreme winter weather to measure its direct impact on PUUV transmission among voles.
+
+At a broader scale, a national surveillance platform links citizen-science rodent sightings, commercial pest-control records and meteorological data from the Swedish Meteorological and Hydrological Institute (SMHI). In parallel, urban rats are screened for Seoul orthohantavirus and *Leptospira* spp., while cross-sectional serosurveys measure exposure to PUUV, *F. tularensis* and *A. phagocytophilum* among hunters, forestry workers, rural residents and cabin users, stratified by gender and landscape position.
+
+## Modelling
+
+My work package integrates these field, experimental and surveillance streams using Bayesian hierarchical spatiotemporal models. We estimate the relative contributions of gradual warming and extreme weather to spillover risk, and project how that risk will shift across Sweden under future climate scenarios. Because Swedish warming will soon produce conditions with no local historical analogue, we anchor the models across a wider climatic envelope using global records from [Project ArHa](/research/arha.html) and its expansion, RoBoZone. Validated against human case notifications in SmiNet, these projections will form the basis of a scenario-based early-warning framework for public health authorities.
+
+## RoBoZone
+
+While Project ArHa synthesises global surveillance data for arenaviruses and hantaviruses (covering PUUV and Seoul orthohantavirus for CASCADE), RoBoZone (Rodent-Borne Zoonoses) expands this architecture to bacterial and vector-borne pathogens. It is a global database of zoonotic pathogen and vector detections in wild small mammals, compiled from the published literature. Initial curation focuses on CASCADE's remaining focal pathogens: *F. tularensis*, *A. phagocytophilum*, *Leptospira* spp., *Borrelia* spp. and tick-borne encephalitis virus. ArHa provides the foundational records, and future releases of ArHa will sit directly within RoBoZone as its arenavirus and hantavirus subset.
+
+Compiling Project ArHa manually took three years. To scale RoBoZone across multiple pathogen groups in a fraction of that time without sacrificing rigour, we use a human-audited, dual-LLM extraction pipeline. Two architecturally distinct, open-weight language models independently parse each paper into a Darwin Core-aligned schema. Rather than inferring values, the models must anchor every extracted record to an exact verbatim quote and page location, which are verified programmatically against the source text before deterministic taxonomic and spatial standardisation. Where the two models disagree, or where automated consistency checks fail, records are routed to human arbitration, supplemented by random human auditing of agreed records. We benchmark the pipeline's precision and recall against ArHa's manually curated records, settling each disagreement against the source paper, before deploying it on new pathogens. Running the pipeline on open-weight models keeps it reproducible with fixed model weights. Versioned releases are published as Darwin Core Archives on Zenodo.
