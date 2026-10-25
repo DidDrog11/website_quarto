@@ -10,8 +10,8 @@ Each record gives the species sampled, the place and date, the assays used and t
 
 :::: {.stat-row}
 ::: {.stat}
-[54,865]{.stat-num}
-[host sampling records in the v1.1 release]{.stat-label}
+[54,492]{.stat-num}
+[host sampling records in the v1.2 release]{.stat-label}
 :::
 ::: {.stat}
 [103]{.stat-num}
@@ -25,7 +25,7 @@ Each record gives the species sampled, the place and date, the assays used and t
 
 ## Use the data
 
-- **Release.** Version 1.1 is archived on Zenodo, [doi:10.5281/zenodo.21978983](https://doi.org/10.5281/zenodo.21978983). To cite all versions, use the concept DOI [10.5281/zenodo.21978982](https://doi.org/10.5281/zenodo.21978982).
+- **Release.** Version 1.2, released in October 2026, is archived on Zenodo, [doi:10.5281/zenodo.23639879](https://doi.org/10.5281/zenodo.23639879). It holds the linked tables as CSV and Parquet, a Darwin Core Archive, the data dictionary and the pipeline that builds them. It adds scripted corrections, a check of coordinates against country borders and the resolution of duplicate records. To cite all versions, use the concept DOI [10.5281/zenodo.21978982](https://doi.org/10.5281/zenodo.21978982).
 - **Explore.** The [ArHa database explorer](https://diddrog11.shinyapps.io/ArHa_Database_Explorer/) filters records by virus, host and region.
 - **Code and data dictionary.** The [GitHub repository](https://github.com/DidDrog11/arenavirus_hantavirus) holds the extraction and cleaning code and the data dictionary. It is released under CC0.
 - **Methods.** The search strategy, extraction criteria and database structure are in the published protocol, [doi:10.12688/wellcomeopenres.24037.2](https://doi.org/10.12688/wellcomeopenres.24037.2). A data paper describing the release is in preparation.
@@ -53,6 +53,10 @@ Projected globally, community host probability varies largely independently of s
 Host and virus phylogenies are congruent in both families, but most associations depart from strict co-divergence. Host switching has occurred alongside shared evolutionary history.
 
 ![**Phylogenetic congruence between viruses and their hosts.** The mammalian host phylogeny (top) against the *Hantaviridae* (bottom left) and *Arenaviridae* (bottom right), linked to PCR-positive host species. Thicker, darker links mark stronger congruence; thinner, fainter links suggest host switching. Figure 4 of the preprint, CC BY 4.0.](/arha/figures/fig4_tanglegram.webp){fig-alt="Tanglegram linking the mammalian host phylogeny above to hantavirus and arenavirus phylogenies below, with many crossing links."}
+
+## Talks
+
+- **INEEID Network, online, October 2026.** Project ArHa: how the database was built, what it holds and what has been done with it. [Slides](/presentations/2026-ineeid-arha/). All talks are on the [talks page](/talks.html).
 
 ## Papers
 

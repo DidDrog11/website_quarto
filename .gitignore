@@ -16,5 +16,10 @@
 # Personal archive of paper PDFs collected by scripts/fetch_pdfs.R. Not served; too large for git.
 /papers/
 
-# Talk decks, their figures and rendered output. Kept local; nothing here is committed.
-/presentations/
+# Talk decks. The source and its figures are committed, so the site can publish
+# them. Output from rendering a deck on its own, which lands beside the source,
+# is not; the site build writes to _site/.
+/presentations/**/*.html
+/presentations/**/*_files/
+# ...except the HTML fragments a deck includes, which are source.
+!/presentations/*/deck-*.html

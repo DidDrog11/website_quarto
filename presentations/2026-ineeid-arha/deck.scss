@@ -1,0 +1,68 @@
+/*-- scss:defaults --*/
+
+// Deck theme for the INEEID talk. Type and colours follow the website
+// (scss/custom.scss): Newsreader headings over Public Sans, and the seven
+// sections step along the hero's habitat gradient. The fonts are declared in
+// deck-head.html with paths relative to the page, so the deck also works when
+// opened from disk.
+
+$font-family-sans-serif: "Public Sans Variable", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+$presentation-heading-font: "Newsreader Variable", "Newsreader", ui-serif, Georgia, serif;
+$presentation-heading-font-weight: 600;
+$presentation-heading-color: #1e2420;
+$body-color: #1e2420;
+$link-color: #35604b;
+$presentation-h1-font-size: 2.3em;
+$presentation-h2-font-size: 1.5em;
+
+/*-- scss:rules --*/
+
+// Section colours, forest to town. Colour marks the section; text stays in ink.
+:root {
+  --sec-1: #2c4739;   // forest
+  --sec-2: #35604b;   // site primary
+  --sec-3: #5f7a46;   // farm
+  --sec-4: #a88248;   // village
+  --sec-5: #a4552f;   // dwelling
+  --sec-6: #7e6458;   // peri-urban
+  --sec-7: #5d6b72;   // town
+  --sec: var(--sec-1);
+  --ink-muted: #56605a;
+  --edge: #d5dbd1;
+}
+
+// Content slides make room for the tracker strip at the top.
+.reveal .slides section.has-tracker { padding-top: 28px; }
+
+.reveal .slides > .deck-tracker {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+  font-family: $font-family-sans-serif; font-size: 14px; line-height: 1.2;
+  color: var(--ink-muted); text-align: left; pointer-events: none;
+}
+.reveal .slides > .deck-tracker[hidden] { display: none; }
+.deck-tracker span {
+  display: block; padding-top: 5px; border-top: 4px solid var(--edge);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.deck-tracker span.done { border-top-color: color-mix(in srgb, var(--c) 45%, white); }
+.deck-tracker span.current { border-top-color: var(--c); color: #1e2420; font-weight: 600; }
+
+// Slide titles carry a short rule in the section colour. A "#" slide with
+// content of its own takes the same title size as a "##" slide.
+.reveal .slides section.has-tracker > h1 { font-size: $presentation-h2-font-size; }
+.reveal .slides section > h2:empty { display: none; }   // untitled slides ("Use it")
+.reveal .slides section.has-tracker > h2::after,
+.reveal .slides section.has-tracker > h1::after {
+  content: ""; display: block; width: 56px; height: 3px; margin-top: 0.18em;
+  background: var(--sec); border-radius: 2px;
+}
+
+// Section slides: a pale wash of the section colour and the section number
+// above the title.
+.reveal .slides section.section-slide { text-align: left; padding-top: 200px; }
+.reveal .slides section.section-slide h1 { font-size: 2.1em; line-height: 1.15; max-width: 85%; }
+.reveal .slides section.section-slide .sec-number {
+  font-family: $font-family-sans-serif; font-size: 0.6em; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--sec); margin-bottom: 0.5em;
+}

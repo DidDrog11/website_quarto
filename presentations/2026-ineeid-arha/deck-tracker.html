@@ -1,0 +1,80 @@
+<script>
+// Section tracker for the INEEID deck. Each section starts at the slide id
+// below; every slide after it belongs to that section until the next start.
+// Content slides show a seven-part strip at the top of the slide area, the
+// current section marked in its colour. Section slides get a wash of their
+// colour and a "3 / 7" line. The title and closing slides carry neither.
+(() => {
+  const sections = [         // [first slide id, tracker label]
+    [null, "Problem"],       // null: the first slide after the title
+    ["how-we-built-it", "Building"],
+    ["what-it-contains", "Contents"],
+    ["questions-addressed-using-the-whole-database", "Whole database"],
+    ["questions-able-to-be-addressed-using-subsets-of-the-database", "Subsets"],
+    ["what-next", "Next"],
+    ["use-it", "Use it"]];
+  const skip = new Set(["title", "thank-you"]);
+
+  // Tag every slide with its section. Quarto nests each "#" section into a
+  // vertical stack, so walk all slides in document order, not the top level.
+  let current = -1;
+  document.querySelectorAll(".reveal .slides section.slide").forEach(slide => {
+    const start = sections.findIndex(s => s[0] === slide.id);
+    if (start >= 0) current = start;
+    else if (current < 0 && slide.id !== "title") current = 0;
+    if (current < 0 || skip.has(slide.id)) return;
+    const n = current + 1;
+    slide.style.setProperty("--sec", `var(--sec-${n})`);
+    slide.dataset.section = n;
+
+    // A "#" slide holding only its heading is a section slide; one with
+    // content of its own ("How we built it") is treated as a content slide.
+    const bare = [...slide.children].every(el => el.tagName === "H1" || el.matches("aside.notes"));
+    if (slide.classList.contains("level1") && bare) {
+      // Fixed position rather than centred, so titles of one, two or three
+      // lines all start at the same height.
+      slide.classList.add("section-slide");
+      slide.classList.remove("center");
+      slide.dataset.backgroundColor = `color-mix(in srgb, var(--sec-${n}) 12%, white)`;
+      const num = document.createElement("div");
+      num.className = "sec-number";
+      num.textContent = `${n} / ${sections.length}`;
+      slide.prepend(num);
+    } else {
+      slide.classList.add("has-tracker");
+    }
+  });
+
+  // One strip, inside the scaled slide area so it sits at the slide's top
+  // edge whatever the slide's own vertical alignment.
+  const strip = document.createElement("div");
+  strip.className = "deck-tracker";
+  strip.setAttribute("aria-hidden", "true");
+  const parts = sections.map(([, label], i) => {
+    const span = document.createElement("span");
+    span.textContent = label;
+    span.style.setProperty("--c", `var(--sec-${i + 1})`);
+    strip.append(span);
+    return span;
+  });
+  document.querySelector(".reveal .slides").append(strip);
+
+  const update = slide => {
+    const show = slide && slide.classList.contains("has-tracker");
+    strip.hidden = !show;
+    if (!show) return;
+    const at = Number(slide.dataset.section) - 1;
+    parts.forEach((p, i) => {
+      p.classList.toggle("done", i < at);
+      p.classList.toggle("current", i === at);
+    });
+  };
+  const hook = () => {
+    update(Reveal.getCurrentSlide());
+    Reveal.on("slidechanged", e => update(e.currentSlide));
+    Reveal.sync();
+    Reveal.layout();
+  };
+  if (Reveal.isReady && Reveal.isReady()) hook(); else Reveal.on("ready", hook);
+})();
+</script>

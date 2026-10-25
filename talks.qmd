@@ -1,0 +1,39 @@
+---
+title: "Talks"
+description: "Talks, slides and posters, newest first."
+image: images/og-card.png
+toc: true
+toc-title: "By year"
+---
+
+Slides from talks and conferences, newest first, with where each was given, for whom, and the research page it belongs to.
+
+## 2026
+
+**INEEID Network, online, 20 October 2026** \
+Project ArHa: a global record of arenavirus and hantavirus sampling in small mammals. An invited 45-minute talk to the network led by Stephanie Seifert, on how the database was built, what it holds, what has been done with it and where it goes next. \
+[Slides](/presentations/2026-ineeid-arha/) · [Project ArHa](/research/arha.html)
+
+## 2025
+
+**Second Lassa Fever International Conference, Abidjan, 2025** \
+Rodent contact networks from the Sierra Leone trapping study. \
+[Slides](/lassa/files/rodent_network/oral_presentation_2.pdf) · [Host ecology in Sierra Leone](/research/sierra-leone.html)
+
+## 2023
+
+**American Society of Tropical Medicine and Hygiene, Chicago, 2023** \
+Rodent contact networks from the Sierra Leone trapping study. \
+[Slides](/lassa/files/rodent_network/ASTMH_presentation.pdf) · [Host ecology in Sierra Leone](/research/sierra-leone.html)
+
+## 2022
+
+**Ecology and Evolution of Infectious Diseases, 2022** \
+Results from the first year of rodent trapping in Sierra Leone. \
+[Video](https://www.youtube.com/watch?v=vxQLYwDRvK8) · [Slides](/lassa/files/david_simons_EEID.pdf) · [Host ecology in Sierra Leone](/research/sierra-leone.html)
+
+## 2021
+
+**Ecology and Evolution of Infectious Diseases, 2021** \
+Poster on the review of rodent trapping studies in West Africa. \
+[Poster](/lassa/files/EEID_poster.pdf) · [Host ecology in Sierra Leone](/research/sierra-leone.html)

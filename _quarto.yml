@@ -3,9 +3,8 @@ project:
   render:
     - "*.qmd"
     - "!cv.qmd"
-    # Talk decks are not published yet. "*.qmd" above matches in every
-    # folder, so they must be excluded explicitly. Remove this line to publish.
-    - "!presentations/"
+    # Talk decks render with the site. "*.qmd" above matches in every folder,
+    # so presentations/<year>-<name>/index.qmd is picked up without listing it.
     - "arha/"
     - "covid/"
     - "images/"
@@ -26,6 +25,7 @@ project:
     - "images/og-card.png"
     - "data/lassa_cases.csv"
     - "data/lassa_hosts.csv"
+    - "presentations/*/data/*"   # data that talk decks fetch at run time
     # Images and files from the retired paper pages (2026-10-05). Nothing links
     # to some of them any more, so they are listed here to keep their old URLs.
     - "arha/figures/*"
@@ -91,6 +91,8 @@ website:
             href: research/earlier-work.qmd
       - href: publications.qmd
         text: "Publications"
+      - href: talks.qmd
+        text: "Talks"
       - href: about.qmd
         text: "About"
       - href: cv.pdf
