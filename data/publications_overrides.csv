@@ -10,7 +10,9 @@ doi,tier,page,note,action,preprint_doi,pdf_url,comment,also_on
 10.12688/wellcomeopenres.24037.2,page,research/arha.qmd,,,10.1101/2025.01.17.633514,,ArHa protocol. Wellcome Open Res. ArHa programme page.,
 10.64898/2026.06.03.729761,page,research/arha.qmd,,,,,Reservoir status as a life-history trait. Preprint. ArHa programme page.,
 10.64898/2026.06.10.731004,page,research/arha.qmd,,,,,Hantavirus reassortment determinants. Preprint. ArHa programme page.,
-10.5281/zenodo.21978982,card,,,,,,ArHa software release. Data and code section.,
+10.5281/zenodo.21978982,,,,hide,,,ArHa concept DOI as the v1.1 record. Superseded by the v1.2 release below.,
+10.5281/zenodo.21978983,,,,hide,,,ArHa v1.1 release. Superseded by v1.2.,
+10.5281/zenodo.23639879,card,,,,,,ArHa v1.2 release (October 2026). Data and code section.,
 10.1038/s41591-025-04018-6,page,research/vaccines.qmd,,,,https://www.nature.com/articles/s41591-025-04018-6.pdf,One Health trial design. Nature Medicine. Vaccines and trial design page. Free to read but not CC; link to publisher PDF.,research/scapes.qmd
 10.1126/science.adn3231,page,research/vaccines.qmd,,add,,,Transmissible vaccines. Science. Vaccines and trial design page.,
 10.1016/j.lanplh.2025.101300,page,research/rodent-disease-ecology.qmd,,add,,,Three pillars of rodent-borne disease ecology. Lancet Planet Health. Own page.,research/scapes.qmd
@@ -30,3 +32,4 @@ doi,tier,page,note,action,preprint_doi,pdf_url,comment,also_on
 10.5281/zenodo.17725053,,,,hide,,,SCAPES protocol deposit on Zenodo. Protocol deposits are dropped.,
 10.1186/s12889-022-13320-8,,,,hide,,,Correction notice for 10.1186/s12889-022-13069-0. Corrections are not listed separately.,
 10.64898/2026.09.28.26364179,card,,,,,,Andes virus MV Hondius outbreak. medRxiv preprint. Summary on the publications list.,
+10.64898/2026.10.14.26365510,page,research/lassa-epidemiology.qmd,,,,,Reported Lassa fever CFR in Nigeria. medRxiv preprint. Lassa epidemiology page.,research/vaccines.qmd
