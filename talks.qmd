@@ -10,6 +10,10 @@ Slides from talks and conferences, newest first, with where each was given, for 
 
 ## 2026
 
+**Chungnam National University, Daejeon, 5 November 2026** \
+From satellite pixels to sampling decisions: vision transformers and active learning for rodent-borne zoonoses. An invited talk for the Vetenskapsrådet Sweden–Korea research collaboration, on how landscape embeddings describe habitat without choosing the variables first, and how model uncertainty can direct where rodents are trapped next. \
+[Slides](/presentations/2026-vit-active-learning/) · [Surveillance and outbreak response](/research/surveillance.html)
+
 **INEEID Network, online, 20 October 2026** \
 Project ArHa: a global record of arenavirus and hantavirus sampling in small mammals. An invited 45-minute talk to the network led by Stephanie Seifert, on how the database was built, what it holds, what has been done with it and where it goes next. \
 [Slides](/presentations/2026-ineeid-arha/) · [Project ArHa](/research/arha.html)

@@ -19,7 +19,7 @@ Each record gives the species sampled, the place and date, the assays used and t
 :::
 ::: {.stat}
 [46%]{.stat-num}
-[of rodent genera never sampled for these viruses]{.stat-label}
+[of rodent and shrew genera never sampled for these viruses]{.stat-label}
 :::
 ::::
 

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="1160" height="430" fill="white"/>
+
+  <!-- Step titles -->
+  <g font-size="20" font-weight="bold" fill="#222" text-anchor="middle">
+    <text x="150" y="40">1. Cut into patches</text>
+    <text x="440" y="40">2. Patch → vector</text>
+    <text x="745" y="40">3. Attention</text>
+    <text x="1060" y="40">4. Embedding</text>
+  </g>
+
+  <!-- 1. Satellite image as a 4 x 4 grid of patches: fields, river, forest, village -->
+  <g stroke="white" stroke-width="4">
+    <rect x="30" y="80" width="60" height="60" fill="#c9b458"/>
+    <rect x="90" y="80" width="60" height="60" fill="#8fb04a"/>
+    <rect x="150" y="80" width="60" height="60" fill="#2f5d34"/>
+    <rect x="210" y="80" width="60" height="60" fill="#2f5d34"/>
+    <rect x="30" y="140" width="60" height="60" fill="#8fb04a"/>
+    <rect x="90" y="140" width="60" height="60" fill="#4a86b5"/>
+    <rect x="150" y="140" width="60" height="60" fill="#8fb04a"/>
+    <rect x="210" y="140" width="60" height="60" fill="#2f5d34"/>
+    <rect x="30" y="200" width="60" height="60" fill="#4a86b5"/>
+    <rect x="90" y="200" width="60" height="60" fill="#c9b458"/>
+    <rect x="150" y="200" width="60" height="60" fill="#9a9a9a"/>
+    <rect x="210" y="200" width="60" height="60" fill="#8fb04a"/>
+    <rect x="30" y="260" width="60" height="60" fill="#8fb04a"/>
+    <rect x="90" y="260" width="60" height="60" fill="#c9b458"/>
+    <rect x="150" y="260" width="60" height="60" fill="#4a86b5"/>
+    <rect x="210" y="260" width="60" height="60" fill="#9a9a9a"/>
+  </g>
+  <g font-size="15" fill="#444" text-anchor="middle">
+    <text x="150" y="350">Fields, river, forest, village</text>
+    <text x="150" y="372">(like words in a sentence)</text>
+  </g>
+
+  <path d="M285,200 L325,200" stroke="#555" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 2. Patch tokens: one vector (column of numbers) per patch -->
+  <g stroke="#333" stroke-width="1">
+    <g transform="translate(345,110)">
+      <rect width="26" height="26" fill="#c9b458"/><rect y="30" width="26" height="22" fill="#eee"/><rect y="56" width="26" height="22" fill="#ccc"/><rect y="82" width="26" height="22" fill="#e4e4e4"/><rect y="108" width="26" height="22" fill="#bbb"/>
+    </g>
+    <g transform="translate(385,110)">
+      <rect width="26" height="26" fill="#8fb04a"/><rect y="30" width="26" height="22" fill="#ddd"/><rect y="56" width="26" height="22" fill="#f2f2f2"/><rect y="82" width="26" height="22" fill="#c4c4c4"/><rect y="108" width="26" height="22" fill="#e9e9e9"/>
+    </g>
+    <g transform="translate(425,110)">
+      <rect width="26" height="26" fill="#2f5d34"/><rect y="30" width="26" height="22" fill="#bbb"/><rect y="56" width="26" height="22" fill="#e0e0e0"/><rect y="82" width="26" height="22" fill="#f4f4f4"/><rect y="108" width="26" height="22" fill="#cfcfcf"/>
+    </g>
+    <g transform="translate(465,110)">
+      <rect width="26" height="26" fill="#4a86b5"/><rect y="30" width="26" height="22" fill="#f0f0f0"/><rect y="56" width="26" height="22" fill="#c8c8c8"/><rect y="82" width="26" height="22" fill="#dadada"/><rect y="108" width="26" height="22" fill="#b5b5b5"/>
+    </g>
+    <g transform="translate(505,110)">
+      <rect width="26" height="26" fill="#9a9a9a"/><rect y="30" width="26" height="22" fill="#d6d6d6"/><rect y="56" width="26" height="22" fill="#bdbdbd"/><rect y="82" width="26" height="22" fill="#efefef"/><rect y="108" width="26" height="22" fill="#d0d0d0"/>
+    </g>
+  </g>
+  <text x="440" y="275" font-size="22" fill="#444" text-anchor="middle">… one per patch</text>
+  <g font-size="15" fill="#444" text-anchor="middle">
+    <text x="440" y="350">Numbers describe the patch</text>
+    <text x="440" y="372">and where it sits in the image</text>
+  </g>
+
+  <path d="M555,200 L595,200" stroke="#555" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 3. Attention: one patch (river) weighs every other patch; line width = weight -->
+  <g fill="none" stroke="#d1495b" stroke-linecap="round">
+    <path d="M745,230 Q685,120 640,215" stroke-width="7"/>
+    <path d="M745,230 Q715,150 690,215" stroke-width="2"/>
+    <path d="M745,230 Q775,150 800,215" stroke-width="5"/>
+    <path d="M745,230 Q800,110 850,215" stroke-width="1.5"/>
+  </g>
+  <g stroke="#333" stroke-width="1">
+    <rect x="627" y="215" width="26" height="26" fill="#c9b458"/>
+    <rect x="677" y="215" width="26" height="26" fill="#8fb04a"/>
+    <rect x="732" y="215" width="26" height="26" fill="#4a86b5" stroke="#d1495b" stroke-width="3"/>
+    <rect x="787" y="215" width="26" height="26" fill="#9a9a9a"/>
+    <rect x="837" y="215" width="26" height="26" fill="#2f5d34"/>
+  </g>
+  <g font-size="15" fill="#444" text-anchor="middle">
+    <text x="745" y="290">Thicker line = more weight</text>
+    <text x="745" y="350">Learns context: a river next to</text>
+    <text x="745" y="372">fields differs from one in forest</text>
+  </g>
+
+  <path d="M890,200 L955,200" stroke="#555" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 4. Output embedding: a single vector summarising the landscape -->
+  <g stroke="#333" stroke-width="1">
+    <rect x="1045" y="85" width="30" height="24" fill="#3b528b"/>
+    <rect x="1045" y="109" width="30" height="24" fill="#5ec962"/>
+    <rect x="1045" y="133" width="30" height="24" fill="#21918c"/>
+    <rect x="1045" y="157" width="30" height="24" fill="#fde725"/>
+    <rect x="1045" y="181" width="30" height="24" fill="#440154"/>
+    <rect x="1045" y="205" width="30" height="24" fill="#31688e"/>
+    <rect x="1045" y="229" width="30" height="24" fill="#90d743"/>
+    <rect x="1045" y="253" width="30" height="24" fill="#35b779"/>
+  </g>
+  <text x="1060" y="300" font-size="22" fill="#444" text-anchor="middle">⋮</text>
+  <g font-size="15" fill="#444" text-anchor="middle">
+    <text x="1060" y="350">One vector per pixel</text>
+    <text x="1060" y="372">(AlphaEarth: 64 numbers)</text>
+  </g>
+</svg>

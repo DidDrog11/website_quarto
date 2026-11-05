@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+
+// Type and colour follow the website (scss/custom.scss): Newsreader headings
+// over Public Sans. The fonts are declared in deck-head.html with paths
+// relative to the page, so the deck also works when opened from disk. Unlike
+// the INEEID deck this one has no section tracker, so none of that is here.
+
+$font-family-sans-serif: "Public Sans Variable", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+$presentation-heading-font: "Newsreader Variable", "Newsreader", ui-serif, Georgia, serif;
+$presentation-heading-font-weight: 600;
+$presentation-heading-color: #1e2420;
+$body-color: #1e2420;
+$link-color: #35604b;
+$presentation-h1-font-size: 2.1em;
+$presentation-h2-font-size: 1.5em;
+
+/*-- scss:rules --*/
+
+// Slide titles carry a short rule in the site's primary green.
+.reveal .slides section > h2::after {
+  content: ""; display: block; width: 56px; height: 3px; margin-top: 0.18em;
+  background: #35604b; border-radius: 2px;
+}
+
+// Section slides are the "#" headings, set left with room above.
+.reveal .slides section > h1 { text-align: left; }
